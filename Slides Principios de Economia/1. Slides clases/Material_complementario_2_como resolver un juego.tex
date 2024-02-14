@@ -1,0 +1,271 @@
+\documentclass[14pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Singapore}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[demo]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+%\author[María Gabriela Ertola Navajas]{Gabriela Ertola Navajas}
+\title{ECONOM\'{I}A I (E010)}
+\subtitle{Tema 1 \\ Introducción}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\institute{} 
+\date{12 de marzo, 2020} 
+%\subject{} 
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+%\begin{frame}
+%\titlepage
+%\centering
+%\includegraphics[scale=0.25]{logoUDESA.eps} 
+%\end{frame}
+
+\begin{frame}
+\frametitle{ECONOM\'{I}A I (E010)}
+\centering
+Tema 3 \\ \vspace{4mm} Interacciones sociales \\ \vspace{4mm} ¿Cómo resolver un juego? \\ \vspace{4mm} \includegraphics[scale=0.25]{Figures/logoUDESA.jpg} 
+\end{frame}
+
+\begin{frame}
+\frametitle{1. Dilema del prisionero}
+\begin{itemize}
+\item Dos sospechosos son arrestados y acusados de un delito.
+\item La policía no tiene evidencia suficiente para condenar a los sospechosos a menos que uno confiese.
+\item La policía encierra a los sospechosos en celdas separadas y les explica las consecuencias derivadas de las decisiones que formen.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{2. Dilema de los prisioneros}
+\begin{itemize}
+\item Si ninguno confiesa, ambos serán condenados por un delito menor sentenciados a un mes de cárcel. 
+\item Si ambos, confiesan serán sentenciados a seis meses de cárcel. 
+\item Finalmente, si uno confiesa y el otro no, el que confiesa será puesto en libertad inmediatamente y el otro
+será sentenciado a nueve meses en prisión, seis por el delito y tres más por obstrucción a la justicia.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{3. Dilema de los prisioneros}
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No Confesar & $(-1,-1)$ & $(-9,0)$ \\\cline{3-4}
+      & Confesar & $(0,-9)$ & $(-6,-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{4. Dilema de los prisioneros}
+\begin{itemize}
+\item Cada jugador cuenta con dos estrategias posibles: confesar y no confesar. 
+\item Las ganancias de los dos jugadores cuando eligen un par concreto de estrategias aparecen en la casilla correspondiente de la matriz binaria. 
+\item Por convención, la ganancia del llamado jugador-fila (Preso 1) es la primera ganancia, seguida, por la ganancia del jugador columna (Preso 2). 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{5. Dilema de los prisioneros}
+\begin{itemize}
+\item Por ejemplo, el preso 1 elige no confesar y el preso 2 elige confesar, el preso 1 recibe una ganancia de -9 (que representa nueve meses en prisión) y el preso 2 recibe una ganancia de 0 (que representa la inmediata puesta en libertad).
+\item La representación en forma normal de un juego especifica: 
+\begin{enumerate}
+\item [1] los jugadores en el juego,
+\item [2] las estrategias de que dispone cada jugador, y 
+\item [3] la ganancia de cada jugador en cada combinación posible de estrategias.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{6. ¿Cómo resolvemos un juego?}
+Nos ponemos en la piel del Preso 1... \\ \vspace{2mm}
+Si el preso 2 No Confiesa, el Preso 1 puede: \vspace{2mm}
+\begin{itemize}
+    \item  No Confesar: y va un mes a la cárcel \\ \vspace{2mm}
+    \item Confesar: y lo liberan en el momento
+    \\ \vspace{2mm}
+\end{itemize}
+¿Qué decidirá y por qué?
+\end{frame}
+
+\begin{frame}
+\frametitle{7. ¿Cómo resolvemos un juego?}
+¿Qué decidirá y por qué?
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(\boldsymbol{-1},-1)$ & $(-9,0)$ \\\cline{3-4}
+      & Confesar & $(\boldsymbol{0},-9)$ & $(-6,-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{8. ¿Cómo resolvemos un juego?}
+Subrayamos la mejor respuesta:
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1,-1)$ & $(-9,0)$ \\\cline{3-4}
+      & Confesar & $(\underline{0},-9)$ & $(-6,-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{9. ¿Cómo resolvemos un juego?}
+Pero si el preso 2 Confiesa, el Preso 1 puede: \vspace{2mm}
+\begin{itemize}
+    \item  No Confesar: y va 9 meses a la cárcel \\ \vspace{2mm}
+    \item Confesar: y va 6 meses a la cárcel
+    \\ \vspace{2mm}
+\end{itemize}
+¿Qué decidirá y por qué?
+\end{frame}
+
+\begin{frame}
+\frametitle{10. ¿Cómo resolvemos un juego?}
+¿Qué decidirá y por qué?
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1, -1)$ & $(\boldsymbol{-9},0)$ \\\cline{3-4}
+      & Confesar & $(\underline{0},-9)$ & $(\boldsymbol{-6},-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{11. ¿Cómo resolvemos un juego?}
+Subrayamos la mejor respuesta:
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1,-1)$ & $(-9,0)$ \\\cline{3-4}
+      & Confesar & $(\underline{0},-9)$ & $(\underline{-6},-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+- Confesar es una estrategia dominante para el Preso 1
+\end{frame}
+
+\begin{frame}
+\frametitle{12. ¿Cómo resolvemos un juego?}
+Ahora nos ponemos en la piel del Preso 2... \\ \vspace{2mm}
+Si el Preso 1 No Confiesa, el Preso 2 puede: 
+\\ \vspace{2mm} 
+\begin{itemize}
+    \item No Confesar: y va un mes a la cárcel \\ \vspace{2mm}
+    \item Confesar: y lo liberan en el momento
+    \\ \vspace{2mm}
+    ¿Qué decidirá y por qué?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{13. ¿Cómo resolvemos un juego?}
+¿Qué decidirá y por qué?
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1,\boldsymbol{-1})$ & $(-9,\boldsymbol{0})$ \\\cline{3-4}
+      & Confesar & $(\underline{0},-9)$ & $(\underline{-6},-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{14. ¿Cómo resolvemos un juego?}
+Subrayamos la mejor respuesta:
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1,-1)$ & $(-9,\underline{0})$ \\\cline{3-4}
+      & Confesar & $(\underline{0},-9)$ & $(\underline{-6},-6)$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{15. ¿Cómo resolvemos un juego?}
+Pero si el Preso 1 Confiesa, el Preso 2 puede: \vspace{2mm}
+\begin{itemize}
+    \item  No Confesar: y va 9 meses a la cárcel \\ \vspace{2mm}
+    \item Confesar: y va 6 meses a la cárcel
+    \\ \vspace{2mm}
+\end{itemize}
+¿Qué decidirá y por qué?
+\end{frame}
+
+
+\begin{frame}
+\frametitle{16. ¿Cómo resolvemos un juego?}
+¿Qué decidirá y por qué?
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1,-1)$ & $(-9,0)$ \\\cline{3-4}
+      & Confesar & $(\underline{0},\boldsymbol{-9})$ & $(\underline{-6},\boldsymbol{-6})$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+- Confesar es una estrategia dominante para el Preso 2
+\end{frame}
+
+\begin{frame}
+\frametitle{17. ¿Cómo resolvemos un juego?}
+Subrayamos la mejor respuesta:
+\begin{table}
+     \begin{tabular}{cc|c|c|}
+      & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
+      & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No Confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
+      \multirow{}{Preso $1$}  & No confesar & $(-1,-1)$ & $(-9,\underline{0})$ \\\cline{3-4}
+      & Confesar & $(\underline{0},-9)$ & $(\underline{-6},\underline{-6})$ \\\cline{3-4}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{18. Conclusiones}
+\begin{itemize}
+    \item  $\lbrace$Confesar,Confesar$\rbrace$ es el único equilibrio en este juego y lleva a que cada jugador pase 6 meses en la cárcel
+    \item Es un \textbf{equilibrio en estrategia dominante} porque ambos jugadores juegan su estrategia dominante
+    \item Es un \textbf{Equilibrio de Nash} porque ninguno de los dos presos querría cambiar su decisión después de ver lo que el otro jugador eligió
+    \begin{itemize}
+        \item Cada jugador ha adoptado su mejor estrategia
+        \item Ningún jugador gana cambiando su estrategia, si ningún otro cambia la suya
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{19. Conclusiones}
+\begin{itemize}
+    \item  $\lbrace$Confesar,Confesar$\rbrace$ es el único equilibrio en este juego y lleva a que cada jugador pase 6 meses en la cárcel
+    \item Pero ambos estarían mejor si ambos no confesaran!
+    \item Por lo tanto, el resultado previsto no es el mejor resultado factible
+    \item La cooperación no siempre se logra
+    \end{itemize}
+\end{frame}
+
+\end{document}

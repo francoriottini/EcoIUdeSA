@@ -1,0 +1,130 @@
+\documentclass[14pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Singapore}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{caption}
+\usepackage{subcaption}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\title{ECONOM\'{I}A I (E010)}
+\subtitle{Tema 1 \\ Introducción}
+\setbeamertemplate{navigation symbols}{}
+
+
+\begin{document}
+
+\begin{frame}
+\frametitle{ECONOM\'{I}A I (E010) \\ \vspace{12mm} Magistral 17}
+\centering
+Tema 8 \\ Distorsiones al equilibrio de mercado \\ \vspace{4mm}
+\includegraphics[scale=0.25]{logoUDESA.jpg} 
+\end{frame}
+
+\begin{frame}{32. Asimetrías de información}
+    \begin{itemize}
+        \item \textbf{Riesgo moral o acción oculta} alguien no puede ver las acciones del otro
+            \begin{itemize}
+            \item Ejemplos: seguros en general, incentivos a ahorrar, etc. 
+            \end{itemize}
+        \item \textbf{Selección adversa} Es cuando no conocemos una característica de la contraparte (atributos ocultos)
+            \begin{itemize}
+            \item Ejemplos: seguros en general, usados. 
+            \end{itemize}
+        %\item El resultado es que el mercado incluso puede desaparecer!
+    \end{itemize}
+    \end{frame}
+    
+\begin{frame}{33. El mercado de los limones de Akerlof}
+\begin{itemize}
+    \item Dos tipos de autos: buenos y fallados
+    \item q son buenos y (1-q) son malos 
+    \item Para el vendedor el auto bueno vale 1000 y el lemon 500 
+    \item Para el comprador el auto bueno vale 1500 y el lemon 750 
+    \item Vamos a ver cuanto estaría dispuesto a pagar un comprador y dado eso después vemos que le conviene hacer al vendedor
+    \item El comprador esta dispuesta a pagar seria su valor esperado
+    \item Si piensa que la probabilidad que un auto sea bueno sea  $\mu$ y que sea malo  $(1-\mu)$ el valor esperado para un auto típico en el mercado sería  $\mu 1500 + (1-\mu) 750= 750 + \mu 750$ 
+    \item El vendedor venderá un auto si lo que cobra por él supera lo que el lo valúa
+\end{itemize}
+\end{frame}
+
+\begin{frame}{34. El mercado de los limones II}
+\begin{itemize}
+    \item Si tiene un lemon lo venderá si 
+    $500 \leq 750 + \mu 750$
+    \item Que se da siempre. Lo cual quiere decir que si el vendedor tiene un lemon lo pone en el mercado siempre
+    \item Si tiene un auto bueno, lo venderá si 
+    $1000 \leq 750 + \mu 750 $ (1)
+    \item Esto solo se daría si $\mu \geq \frac{1}{3}$ 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{35. El mercado de los limones III}
+\begin{itemize}
+\item  Si $ q \geq \frac{1}{3}$, (hay suficiente buenos) hay un equilibrio donde $\mu = q \geq \frac{1}{3}$ y $p= 750 + \mu 750$ y se venden los dos tipos de autos. 
+\item Pero si $q \leq \frac{1}{3}$ entonces por la ecuación (1) sabemos que $\mu=0 $, lo cual quiere decir que se venden solo limones y el precio de venta es de $p= 750$. 
+\item El mercado para autos buenos desapareció aun cuando dijimos al principio que estos tenían más valor para los consumidores que para los vendedores. %¡La mano invisible de Adam Smith no pudo operar por la asimetría de información!
+
+\end{itemize} 
+\end{frame}
+
+\begin{frame}{36. Riesgo moral y el colapso del mercado de seguros}
+ \begin{itemize}
+     \item Un individuo que tiene que comprar un seguro de incendio para su casa. 
+     \item Pueden pasar dos cosas. O que la casa no se incendie (llamemos a este evento B, por bueno) o que la casa se incendie (llamemos a este evento M por malo). 
+    \item B sucede con probabilidad $p$ y el evento malo con probabilidad $(1-p)$. 
+    \item Si se produce el evento malo, el individuo sufre una perdida de tamaño $L$
+    \item La la probabilidad del evento bueno depende en parte de alguna acción del individuo, $p(e)$.
+    \item Quien ofrece el seguro no puede ver esta acción. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{37. Riesgo moral II}
+    \begin{itemize}
+    \item Veamos que pasa si la compañía ofrece una cobertura de valor $C$ a un precio $\pi$. 
+    \item Si pasa el escenario bueno la utilidad para el individuo es 
+    $Y_B = y - \pi C$
+    \item Si se produce el evento malo su utilidad es 
+    $Y_M = y - L - \pi C + C$
+    \item ¿Qué $\pi$ podrían cobrar la compañía de seguros? Vamos a asumir el caso más favorable al asegurador, que es que la compañías de seguro salen hechas. 
+    \item La ecuación de ganancias de las aseguradoras es  
+    $\pi C - (1-p) C$
+    \item Si esta ganancia la hacemos $0$ el (menor) precio que puede cobrar la compañía es $\pi=(1-p)$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{38. Riesgo moral III}
+    \begin{itemize}
+    \item Si el individuo compra una cobertura de $C=L$ en el evento bueno su utilidad es $y-\pi L$ y en el evento malo es $y-L-\pi L+L=y-\pi L $
+    \item Al comprar cobertura total, le es indiferente si se produce el evento bueno o el malo. 
+    \item Pero entonces $e=0$ y la probabilidad del siniestro va a ser más alta. 
+    \item Consideremos el caso en el cual si el individuo no hace nada el siniestro ocurre con probabilidad 1. En ese caso $p=0$ y $\pi=1$
+    \item La utilidad para el individuo de comprar seguro es $y-L$, que resulta peor que no comprar seguro. 
+    \item ¡Es decir que el mercado asegurador desaparece! 
+  \end{itemize}   
+\end{frame}
+
+
+\begin{frame}{39. Discusión}
+    \begin{itemize}
+        \item ¿Por qué pierden valor los autos al salir de la concesionaria?
+        \item Políticas de deducibles
+        \item Obama care
+    \end{itemize}
+\end{frame}
+
+
+
+\end{document}
+    
+    
+    
+    
+    

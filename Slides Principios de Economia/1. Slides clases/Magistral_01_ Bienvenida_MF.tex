@@ -1,0 +1,526 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage[english]{babel} %set language; note: after changing this, you need to delete all auxiliary files to recompile
+\usepackage[utf8]{inputenc} %define file encoding; latin1 is the other often used option
+\usepackage{csquotes} % provides context sensitive quotation facilities
+\usepackage{graphicx} %allows for inserting figures
+\usepackage{booktabs} % for table formatting without vertical lines
+\usepackage{textcomp} % allow for example using the Euro sign with \texteuro
+\usepackage{stackengine}
+\usepackage{wasysym}
+\usepackage{tikzsymbols}
+\usepackage{textcomp}
+% ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
+\setbeamertemplate{navigation symbols}
+
+\newcommand{\bubblethis}[2]{
+        \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+        (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
+        aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
+    }%
+\tikzset{face/.style={shape=circle,minimum size=4ex,shading=radial,outer sep=0pt,
+        inner color=white!50!yellow,outer color= yellow!70!orange}}
+%% Some commands to make the code easier
+\newcommand{\emoticon}[1][]{%
+  \node[face,#1] (emoticon) {};
+  %% The eyes are fixed.
+  \draw[fill=white] (-1ex,0ex) ..controls (-0.5ex,0.2ex)and(0.5ex,0.2ex)..
+        (1ex,0.0ex) ..controls ( 1.5ex,1.5ex)and( 0.2ex,1.7ex)..
+        (0ex,0.4ex) ..controls (-0.2ex,1.7ex)and(-1.5ex,1.5ex)..
+        (-1ex,0ex)--cycle;}
+\newcommand{\pupils}{
+  %% standard pupils
+  \fill[shift={(0.5ex,0.5ex)},rotate=80] 
+       (0,0) ellipse (0.3ex and 0.15ex);
+  \fill[shift={(-0.5ex,0.5ex)},rotate=100] 
+       (0,0) ellipse (0.3ex and 0.15ex);}
+
+\newcommand{\emoticonname}[1]{
+  \node[below=1ex of emoticon,font=\footnotesize,
+        minimum width=4cm]{#1};}
+\usepackage{scalerel}
+\usetikzlibrary{positioning}
+\usepackage{xcolor,amssymb}
+\newcommand\dangersignb[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\newcommand\dangersignw[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\color{white}\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\usepackage{fontawesome} % Social Icons
+\usepackage{epstopdf} % allow embedding eps-figures
+\usepackage{tikz} % allows drawing figures
+\usepackage{amsmath,amssymb,amsthm} %advanced math facilities
+\usepackage{lmodern} %uses font that support italic and bold at the same time
+\usepackage{hyperref}
+\usepackage{tikz}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
+
+\usefonttheme[onlymath]{serif} %set math font to serif ones
+
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7} %define beamerblue color for later use
+
+%%% defines highlight command to set text blue
+\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+
+
+%%%%%%% commands defining backup slides so that frame numbering is correct
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+%%%% end of defining backup slides
+
+%Specify figure caption, see also http://tex.stackexchange.com/questions/155738/caption-package-not-working-with-beamer
+\setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
+%\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
+
+
+\usetheme{Boadilla}
+
+%set options of hyperref package
+\hypersetup{
+    bookmarksnumbered=true, %put section numbers in bookmarks
+    naturalnames=true, %use LATEX-computed names for links
+    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
+    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
+    colorlinks=true, %color links
+    anchorcolor=black, %set color of anchors
+    linkcolor=beamerblue, %set link color to beamer blue
+    citecolor=blue, %set cite color to beamer blue
+    pdfpagemode=UseThumbs, %set default mode of PDF display
+    breaklinks=true, %break long links
+    pdfstartpage=1 %start at first page
+    }
+
+
+% --------------------
+% Overall information
+% --------------------
+\title[Principios de Economía]{Principios de Economía}
+\date{}
+\author[Fariña]{Maximiliano Fariña }
+\vspace{0.4cm}
+\institute[]{Universidad de San Andrés \\
+2023} 
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\centering
+\includegraphics[scale=0.25]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Profesores y mails}
+\begin{itemize}
+    \item Maxi (mfarina@udesa.edu.ar)
+    \item Alan (astarobinski@udesa.edu.ar)
+    \item Samuel (sarispetejada@udesa.edu.ar)
+\end{itemize}
+Los horarios de consulta semanales se van a publicar en el Campus Virtual
+\end{frame}
+
+\begin{frame}
+\frametitle{Modalidad de trabajo}
+\begin{itemize}
+    \item ¡Este curso implica mucho trabajo! Pero...  \vspace{2mm}
+    \item ¡Vamos a trabajar en temas muy interesantes y útiles!  \vspace{2mm}
+    \item 28 clases magistrales a lo largo del semestre 
+\begin{itemize}
+        \item 14 antes del receso de parciales, 14 en la segunda parte
+        \item ¿Cuándo? Miércoles y jueves de 9 a 10:40 h
+\end{itemize}
+    \item 13 tutoriales, una vez por semana, empezando la semana que viene 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Es importante comenzar a estudiar desde el primer día}
+\begin{itemize}
+    \item Este curso tiene \textbf{EXAMEN FINAL}...
+    \Item El trabajo a lo largo del semestre es fundamental
+    \item Una parte importante de la nota se define a lo largo del semestre:
+        \begin{itemize}
+            \item 10 pop-quizzes
+            \item 13 tutoriales (con entregas semanales) y, al menos, 1 trabajo práctico
+            \item 1 parcial escrito presencial 
+        \end{itemize}
+    \item En base al trabajo en clase vamos a construir una proxy del desempeño de cada alumno/a: la ``nota umbral''!!!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nota ``umbral''}
+\begin{itemize}
+    \item La nota ``umbral'' es un indicador del trabajo durante el semestre que \textbf{otorga acceso a ``privilegios'' de evaluación} en base al trabajo realizado
+    \item ¿Cuenta todo? NO!
+        \begin{itemize}
+            \item Los 8 mejores quizzes
+            \item Las mejores 9 ejercitaciones de tutoriales y el trabajo práctico
+            \item La nota del primer examen parcial
+        \end{itemize}
+    \item ¿Cómo la calculo? Haciendo un promedio simple de las notas que cuentan:
+    \end{itemize}
+    
+\begin{center}
+ $N_{umbral}=1/3N_{quizzes}+1/3N_{tutoriales}+1/3N_{parcial 1}$   
+ 
+\end{center}    
+\end{frame}
+
+\begin{frame}
+\frametitle{Nota "umbral"}
+\begin{itemize}
+    \item La nota umbral se define el último día de clases, es decir, el 16 de junio      
+    \begin{itemize}
+            \item Si la nota umbral es igual o mayor que 6 ($N_{umbral} \geq 6$) entonces accedes al Segundo Parcial
+            \item Si la nota umbral es menor que 6 ($N_{umbral} < 6$) entonces debes rendir Final       
+            \end{itemize}
+    \item NO se redondea
+    \item ¿Cómo son esos exámenes? Todo está en el programa
+            \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{¿Quienes rinden Examen Final?}
+\begin{itemize}
+    \item Aquellos que desaprobaron el examen parcial
+    \item Aquellos que, habiendo aprobado el parcial, tienen una nota umbral menor a 6
+    \item Está contemplada la posibilidad de dar el final para aquellos que puedan acceder al segundo parcial pero deseen rendir el final para 'mejorar' la nota del parcial. Quien quiera hacer esto, debe confirmar la decisión vía email a los profesores antes del 17 de noviembre
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nota del curso}
+\small
+\begin{itemize}
+    \item Para los que hayan accedido al segundo parcial \\
+\end{itemize}
+\begin{center}
+ {$N_{curso}=0,1N_{quizzes}+0,2N_{tutorial}+0,35N_{parcial 1}+0,35N_{parcial 2}$}   
+\end{center}
+
+\begin{itemize}
+    \item Para los que hayan accedido al final
+\end{itemize}
+\begin{center}
+  {$N_{curso}=0,1N_{quizzes}+0,2N_{tutorial}+0,7N_{final}$}   
+\end{center}
+
+\begin{itemize}    
+    \item Deben notar que, si van a rendir final, la nota del parcial NO cuenta!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Para aprobar este curso}
+Para pasar este curso es estrictamente necesario obtener al menos 4 puntos en:
+\vspace{2mm}
+\begin{itemize}
+    \item Ambos parciales ($N_{parcial 1} \geq 4$ y $N_{parcial 2} \geq 4$) o el examen final sin redondeo ($N_{final} \geq 4$)
+\end{itemize}
+\centering y
+\vspace{2mm}
+\begin{itemize}
+    \item La nota del curso ($N_{curso} \geq 4$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Recuperatorio}
+\begin{itemize}
+    \item Sólo para los estudiantes que hayan tenido una nota ‘umbral’ igual o mayor a 6
+\end{itemize}
+    \begin{center}
+        $N_{umbral}=1/3N_{quizzes}+1/3N_{tutorial}+1/3N_{parcial 1} \geq 6$
+    \end{center}
+    
+\begin{itemize}
+    \item El recuperatorio es como un examen final pero la nota del curso será como máximo 6:
+\end{itemize}
+\centering
+\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/notarecup.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Materiales: TODO en el Campus Virtual}
+Materiales principales
+\begin{itemize}
+    \item Capítulos del Libro
+    \item Slides de las magistrales (antes de la clase)
+    \item Ejercitaciones para las tutoriales
+    \item Recursos adicionales
+    \item Grabaciones
+    \begin{itemize}
+        \item Vamos a seguir un fascinante libro de texto: \\
+        Ertola y Struzenegger [2022]:  \textit{Principios de Economía}
+        \item Ver calendario de lecturas para cada sesión
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+    \Huge ¿Preguntas?
+\end{center}
+\end{frame}
+
+\end{document}
+
+
+
+
+
+\begin{frame}
+\frametitle{\href{http://www.core-econ.org}{Proyecto CORE} \url{http://www.core-econ.org}}
+\centering
+\includegraphics[scale=0.45]{Magistrales O_2020/core.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Calendario de lecturas}
+\centering
+\includegraphics[scale=0.6]{Magistrales O_2020/biblio.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Calendario de lecturas}
+\centering
+\includegraphics[scale=0.6]{Magistrales O_2020/biblio2.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evaluación del curso ($N_{curso}$)}
+\begin{itemize}
+    \item Promedio de pop-quizzes ($N_{quizzes}$, 10\% de $N_{curso}$) \vspace{2mm}
+    \item Trabajo en tutoriales ($N_{tutorial}$, 20\% de $N_{curso}$) \vspace{2mm}
+    \item Exámenes escritos (70\% de $N_{curso}$)
+    \begin{itemize} \vspace{2mm}
+        \item Dos parciales ($N_{parcial 1}$, $N_{parcial 2}$ 35\% de $N_{curso}$) \vspace{2mm}
+        \item Un final ($N_{final}$, 70\% de $N_{curso}$)
+    \end{itemize}    
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pop-quizzes}
+12 exámenes sorpresa (muy cortos) \vspace{2mm}
+\begin{itemize}
+    \item Sólo 4 minutos, al principio de la lección, en horario en punto!
+    \item 6 preguntas, sobre la lectura del día
+    \item Multiple choice y/o verdadero/falso
+    \item Calculando la nota:
+\end{itemize}
+    \vspace{2mm}
+\includegraphics[scale=0.6]{Magistrales O_2020/notaquizzes.jpg}
+\begin{itemize}
+    \item ¿Cómo me preparo?
+    \item El primero no será sorpresa... ¡es el lunes que viene!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tutoriales}
+Se va a trabajar alrededor de ejercitaciones \begin{itemize}
+    \item Disponibles en el Campus Virtual
+    \begin{itemize}
+            \item Típicamente, con dos semanas de antelación
+        \end{itemize}
+    \item Ejercicios
+        \begin{itemize}
+            \item Algunos para hacer y entregar antes de la tutorial
+            \item Los demás se van a hacer y discutir en clase
+        \end{itemize}
+    \item Materiales
+        \begin{itemize}
+            \item En general, sólo el libro de texto
+            \item Trabajo en la computadora
+        \end{itemize}
+\end{itemize} 
+    \vspace{2mm}
+Evaluación tutorial 
+\begin{itemize} 
+        \item Resolución de la guía de ejercicios (50\%)
+        \item Trabajo grupal (40\%)
+        \item Nota concepto (10\%)
+    \end{itemize}   
+\end{frame}
+
+\begin{frame}
+\frametitle{Exámenes}
+\begin{itemize}
+    \item Los exámenes (muy probablemente) serán virtuales
+        \begin{itemize}
+            \item Se incluirán preguntas multiple choice, verdaderos/falsos con discusión, y ejercicios
+            \item Los parciales evaluarán los temas discutidos en cada mitad del curso y tendrán más preguntas que las que se tienen que responder
+            \item El final cubre toda la materia y no habrá posibilidad de elección
+        \end{itemize}
+    \item Accediendo al segundo parcial
+        \begin{itemize}
+            \item Todos deben participar del primer parcial
+            \item El acceso al segundo es sólo para los que hayan obtenido una ‘nota umbral’ igual o mayor a seis ($N_{umbral} \geq 6$)
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estructura exámenes}
+\centering
+\includegraphics[scale=0.8]{Magistrales O_2020/examenes.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nota "umbral"}
+\begin{itemize}
+    \item Este curso contiene un alto número de puntos de evaluación a lo largo del semestre:
+        \begin{itemize}
+            \item 12 pop-quizzes
+            \item 13 tutoriales (con distintas evaluaciones dentro)
+            \item Exámenes escritos
+        \end{itemize}
+    \item La nota ‘umbral’ es simplemente un indicador del trabajo durante el semestre que puede dar acceso a ‘privilegios’ de evaluación
+        \begin{itemize}
+            \item Es el promedio (no ponderado) de la evaluación en quizzes, primer parcial y tutoriales:  
+        \end{itemize}
+        $N_{umbral}=1/3N_{quizzes}+1/3N_{tutorial}+1/3N_{parcial 1}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nota del curso}
+\begin{itemize}
+    \item Para los que hayan accedido al segundo parcial 
+\end{itemize}
+\small{$N_{curso}=0,1N_{quizzes}+0,2N_{tutorial}+0,35N_{parcial 1}+0,35N_{parcial 2}$}
+\vspace{2mm}
+\begin{itemize}
+    \item Para los que hayan accedido al final
+\end{itemize}
+\small{$N_{curso}=0,1N_{quizzes}+0,2N_{tutorial}+0,7N_{final}$}
+\vspace{2mm}
+\begin{itemize}
+    \item Está contemplada la posibilidad de dar el final para aquellos que puedan acceder al segundo parcial. Quien quiera hacer esto, debe confirma la decisión vía email a los profesores antes del 20 de noviembre.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Para aprobar este curso}
+Para pasar este curso es estrictamente necesario obtener al menos 4 puntos en:
+\vspace{2mm}
+\begin{itemize}
+    \item Ambos parciales ($N_{parcial 1} \geq 4$ y $N_{parcial 2} \geq 4$) o el examen final sin redondeo ($N_{final} \geq 4$)
+\end{itemize}
+\centering Y
+\vspace{2mm}
+\begin{itemize}
+    \item La nota del curso ($N_{curso} \geq 4$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Recuperatorio}
+\begin{itemize}
+    \item Sólo para los estudiantes que hayan tenido una nota ‘umbral’ igual o mayor a seis
+\end{itemize}
+    $N_{umbral}=1/3N_{quizzes}+1/3N_{tutorial}+1/3N_{parcial 1} \geq 6$
+\begin{itemize}
+    \item El recuperatorio será como un examen final (es decir, sin elección de preguntas)
+    \item La nota del curso en caso de recuperatorio será como máximo 6:
+\end{itemize}
+\centering
+\includegraphics[scale=0.6]{Magistrales O_2020/notarecup.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Comunicación}
+\begin{itemize}
+    \item Prácticamente toda la información relevante del curso va a estar disponible en el Campus Virtual
+    \item Consulten el Campus Virtual en forma regular
+    \item ¡Hablen! Pregunten en clase a los instructores
+    \item Contáctennos por correo electrónico 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Feedback sobre las clases}
+\begin{itemize}
+    \item Realmente nos interesa saber como va el curso!!! \vspace{2mm}
+    \item 2 opciones: \vspace{2mm}
+        \begin{itemize}
+            \item Nos pueden enviar un mail y contarnos que piensan 
+            \item Nos pueden contestar una encuesta anónima que no podremos rastrear... Por supuesto, no podremos responder a estos mensajes!
+  
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Plagio y deshonestidad intelectual}
+\small{
+    La Universidad de San Andrés exige un estricto apego a los cánones de honestidad intelectual. La existencia de plagio configura un grave deshonor, impropio en la vida universitaria. Su configuración no sólo se produce con la existencia de copia literal en los exámenes sino toda vez que se advierta un aprovechamiento abusivo del esfuerzo intelectual  - ajeno. El Código de Ética de la Universidad considera conducta punible la apropiación de labor intelectual ajena desmereciendo los contenidos de novedad y originalidad que es dable esperar en los trabajos requeridos. La presunta violación a estas normas dará lugar a la conformación de un Tribunal de Ética que, en función de la gravedad de la falta, recomendará sanciones disciplinarias que pueden incluir el apercibimiento, la suspensión o expulsión.}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estructura del programa}
+\begin{itemize}
+\begin{itemize}
+    \item Introducción
+    \item Escasez y elección
+    \itemInteracciones sociales
+    \item Instituciones, poder, ganadores y perdedores
+    \item Dentro de la firma
+    \item Firmas eligiendo precio y cantidad
+    \item Tomando precios
+    \item Mercado laboral
+    \item Crédito, dinero y bancos
+    \item Fallas de mercado
+    \item Fluctuaciones económicas
+    \item Política fiscal
+    \item Política monetaria
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ahora si podemos comenzar...}
+\centering
+\huge
+¡ BIENVENIDOS \\ \vspace{3mm} a \\ \vspace{3mm} ECONOMIA I !
+\end{frame}
+
