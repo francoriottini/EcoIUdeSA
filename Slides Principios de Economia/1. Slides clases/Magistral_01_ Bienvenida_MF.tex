@@ -63,23 +63,6 @@
     urlcolor=blue,
 }
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
-
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -130,26 +113,28 @@
 % --------------------
 \title[Principios de Economía]{Principios de Economía}
 \date{}
-\author[Fariña]{Maximiliano Fariña }
+\author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés \\
-2023} 
+2024} 
 
 \begin{document}
 
 
 \begin{frame}
-\titlepage
-\centering
-\includegraphics[scale=0.25]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+
+    \titlepage
+    \centering
+    \includegraphics[scale=0.25]{../Figures/logoUDESA.jpg} 
+
 \end{frame}
 
 \begin{frame}
 \frametitle{Profesores y mails}
 \begin{itemize}
-    \item Maxi (mfarina@udesa.edu.ar)
-    \item Alan (astarobinski@udesa.edu.ar)
-    \item Samuel (sarispetejada@udesa.edu.ar)
+    \item Franco (friottinidepetris@udesa.edu.ar)
+    \item Rodri (rmartin@udesa.edu.ar)
+    \item Carol (cgabel@udesa.edu.ar)
 \end{itemize}
 Los horarios de consulta semanales se van a publicar en el Campus Virtual
 \end{frame}
@@ -172,7 +157,7 @@ Los horarios de consulta semanales se van a publicar en el Campus Virtual
 \frametitle{Es importante comenzar a estudiar desde el primer día}
 \begin{itemize}
     \item Este curso tiene \textbf{EXAMEN FINAL}...
-    \Item El trabajo a lo largo del semestre es fundamental
+    \item El trabajo a lo largo del semestre es fundamental
     \item Una parte importante de la nota se define a lo largo del semestre:
         \begin{itemize}
             \item 10 pop-quizzes
@@ -181,6 +166,7 @@ Los horarios de consulta semanales se van a publicar en el Campus Virtual
         \end{itemize}
     \item En base al trabajo en clase vamos a construir una proxy del desempeño de cada alumno/a: la ``nota umbral''!!!
 \end{itemize}
+
 \end{frame}
 
 \begin{frame}
@@ -273,7 +259,8 @@ Para pasar este curso es estrictamente necesario obtener al menos 4 puntos en:
     \item El recuperatorio es como un examen final pero la nota del curso será como máximo 6:
 \end{itemize}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/notarecup.jpg}
+\includegraphics[scale=0.6]{../Figures/notarecup.jpg}
+
 \end{frame}
 
 \begin{frame}
@@ -309,19 +296,19 @@ Materiales principales
 \begin{frame}
 \frametitle{\href{http://www.core-econ.org}{Proyecto CORE} \url{http://www.core-econ.org}}
 \centering
-\includegraphics[scale=0.45]{Magistrales O_2020/core.jpg}
+\includegraphics[scale=0.45]{Magistrales O_2020\core.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Calendario de lecturas}
 \centering
-\includegraphics[scale=0.6]{Magistrales O_2020/biblio.jpg}
+\includegraphics[scale=0.6]{Magistrales O_2020\biblio.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Calendario de lecturas}
 \centering
-\includegraphics[scale=0.6]{Magistrales O_2020/biblio2.jpg}
+\includegraphics[scale=0.6]{Magistrales O_2020\biblio2.jpg}
 \end{frame}
 
 \begin{frame}
@@ -347,7 +334,7 @@ Materiales principales
     \item Calculando la nota:
 \end{itemize}
     \vspace{2mm}
-\includegraphics[scale=0.6]{Magistrales O_2020/notaquizzes.jpg}
+\includegraphics[scale=0.6]{../Figures/notaquizzes.jpg}
 \begin{itemize}
     \item ¿Cómo me preparo?
     \item El primero no será sorpresa... ¡es el lunes que viene!
@@ -401,7 +388,7 @@ Evaluación tutorial
 \begin{frame}
 \frametitle{Estructura exámenes}
 \centering
-\includegraphics[scale=0.8]{Magistrales O_2020/examenes.jpg}
+\includegraphics[scale=0.8]{../Figures/examenes.jpg}
 \end{frame}
 
 \begin{frame}
@@ -464,7 +451,7 @@ Para pasar este curso es estrictamente necesario obtener al menos 4 puntos en:
     \item La nota del curso en caso de recuperatorio será como máximo 6:
 \end{itemize}
 \centering
-\includegraphics[scale=0.6]{Magistrales O_2020/notarecup.jpg}
+\includegraphics[scale=0.6]{Magistrales O_2020\notarecup.jpg}
 \end{frame}
 
 \begin{frame}
