@@ -1,0 +1,1 @@
+Este es un repositorio público que contendrá las slides de mis clases de Economía 1 en la Universidad de San Andres. Las mismas serán impartidas martes y miercoles, con un primer grupo de 9 a 10.30hs y un segundo grupo de 10.40 a 12.10 hs.
