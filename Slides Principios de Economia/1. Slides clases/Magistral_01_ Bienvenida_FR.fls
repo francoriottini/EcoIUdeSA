@@ -1,7 +1,7 @@
 PWD g:\Otros ordenadores\Mi portátil\UDESA\ECO I\Otoño 2024\Slides Principios de Economia\1. Slides clases
 INPUT C:\Users\franc\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT g:\Otros ordenadores\Mi portátil\UDESA\ECO I\Otoño 2024\Slides Principios de Economia\1. Slides clases\Magistral_01_ Bienvenida_MF.tex
-OUTPUT Magistral_01_ Bienvenida_MF.log
+INPUT g:\Otros ordenadores\Mi portátil\UDESA\ECO I\Otoño 2024\Slides Principios de Economia\1. Slides clases\Magistral_01_ Bienvenida_FR.tex
+OUTPUT Magistral_01_ Bienvenida_FR.log
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamer.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamer.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamer.cls
@@ -1082,7 +1082,7 @@ INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamerinnerthemedefault.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamerinnerthemedefault.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamerinnerthemedefault.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamericonbook.pdf
-OUTPUT Magistral_01_ Bienvenida_MF.pdf
+OUTPUT Magistral_01_ Bienvenida_FR.pdf
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamericonbook.pdf
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamericonbook.pdf
 INPUT C:\Program Files\MiKTeX\tex\latex\beamer\beamericonbook.20.pdf
@@ -1633,27 +1633,27 @@ INPUT C:\Program Files\MiKTeX\tex\latex\lm\ot1lmss.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\lm\ot1lmss.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\lm\ot1lmss.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmss10.tfm
-INPUT .\Magistral_01_ Bienvenida_MF.aux
-INPUT Magistral_01_ Bienvenida_MF.aux
-INPUT Magistral_01_ Bienvenida_MF.aux
-OUTPUT Magistral_01_ Bienvenida_MF.aux
+INPUT .\Magistral_01_ Bienvenida_FR.aux
+INPUT Magistral_01_ Bienvenida_FR.aux
+INPUT Magistral_01_ Bienvenida_FR.aux
+OUTPUT Magistral_01_ Bienvenida_FR.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics\color.sty
-INPUT .\Magistral_01_ Bienvenida_MF.out
-INPUT Magistral_01_ Bienvenida_MF.out
-INPUT .\Magistral_01_ Bienvenida_MF.out
-INPUT Magistral_01_ Bienvenida_MF.out
-INPUT .\Magistral_01_ Bienvenida_MF.out
-INPUT Magistral_01_ Bienvenida_MF.out
-INPUT .\Magistral_01_ Bienvenida_MF.out
-INPUT Magistral_01_ Bienvenida_MF.out
-INPUT .\Magistral_01_ Bienvenida_MF.out
-INPUT .\Magistral_01_ Bienvenida_MF.out
-OUTPUT Magistral_01_ Bienvenida_MF.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
+INPUT Magistral_01_ Bienvenida_FR.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
+INPUT Magistral_01_ Bienvenida_FR.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
+INPUT Magistral_01_ Bienvenida_FR.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
+INPUT Magistral_01_ Bienvenida_FR.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
+OUTPUT Magistral_01_ Bienvenida_FR.out
 INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-basic-dictionary-English.dict
 INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-basic-dictionary-English.dict
 INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-basic-dictionary-English.dict
@@ -1678,9 +1678,9 @@ INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-theorem-dictionary
 INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-theorem-dictionary-English.dict
 INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-theorem-dictionary-English.dict
 INPUT C:\Program Files\MiKTeX\tex\latex\translator\translator-theorem-dictionary-English.dict
-INPUT .\Magistral_01_ Bienvenida_MF.nav
-INPUT Magistral_01_ Bienvenida_MF.nav
-INPUT Magistral_01_ Bienvenida_MF.nav
+INPUT .\Magistral_01_ Bienvenida_FR.nav
+INPUT Magistral_01_ Bienvenida_FR.nav
+INPUT Magistral_01_ Bienvenida_FR.nav
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmss8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmss12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmss8.tfm
@@ -1772,12 +1772,13 @@ INPUT ..\Figures\notarecup.jpg
 INPUT ..\Figures\notarecup.jpg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmsso10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmss17.tfm
-OUTPUT Magistral_01_ Bienvenida_MF.nav
-OUTPUT Magistral_01_ Bienvenida_MF.toc
-OUTPUT Magistral_01_ Bienvenida_MF.snm
-INPUT Magistral_01_ Bienvenida_MF.aux
-INPUT .\Magistral_01_ Bienvenida_MF.out
-INPUT .\Magistral_01_ Bienvenida_MF.out
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmss17.tfm
+OUTPUT Magistral_01_ Bienvenida_FR.nav
+OUTPUT Magistral_01_ Bienvenida_FR.toc
+OUTPUT Magistral_01_ Bienvenida_FR.snm
+INPUT Magistral_01_ Bienvenida_FR.aux
+INPUT .\Magistral_01_ Bienvenida_FR.out
+INPUT .\Magistral_01_ Bienvenida_FR.out
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
