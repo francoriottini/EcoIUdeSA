@@ -7,3 +7,6 @@
 *.snm
 *.gz
 *.toc
+*.run.xml
+*.synctex(busy)
+*.bcf
