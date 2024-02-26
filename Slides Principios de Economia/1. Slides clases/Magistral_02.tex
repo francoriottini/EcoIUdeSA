@@ -55,7 +55,6 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-\usepackage{hyperref}
 \usepackage{tikz}
 \hypersetup{
     colorlinks=true,
@@ -64,23 +63,7 @@
     urlcolor=blue,
 }
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
-
+\usepackage{hyperref}
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -124,7 +107,12 @@
     breaklinks=true, %break long links
     pdfstartpage=1 %start at first page
     }
-
+% You can copy any following box you like to your code.
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 % --------------------
 % Overall information
@@ -132,7 +120,7 @@
 \title[Principios de Economía]{Principios de Economía \vspace{4mm}
 \\ Magistral 2}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -141,7 +129,7 @@
 \begin{frame}
 \titlepage
 \centering
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 
@@ -201,26 +189,37 @@
 \begin{itemize}
     \item  \href{https://econ.video/2017/08/28/the-simpsons-opportunity-cost-of-lines/}{El costo de oportunidad}
     \begin{itemize}
-        \item El costo de oportunidad de una alternativa es el valor de lo que se renuncia al optar por esa alternativa
+        \item El costo de oportunidad de una decisión es el valor al que se renuncia al rechazar la mejor alternativa posible.
     \end{itemize}
     \vspace{2mm}
-    \item La falacia del costo hundido.  
+    \item \textbf{La falacia del costo hundido}  
     \begin{itemize}
         \item Ocurre cuando se están considerando costos y beneficios que no varían con las consecuencias de su decisión
-        \item Let it go!
+        \item Si voy a tener que afrontar igual un costo sea cual sea la decisión que tome entonces no lo debo tener en cuenta!
     \end{itemize}
     \vspace{2mm}
     \item \href{https://www.goodfood.com.au/eat-out/good-food-guides/the-surprising-costs-of-running-a-restaurant-20180327-h0y23c}{Los costos escondidos} 
     \vspace{2mm}
-\end{itemize} 
+\end{itemize}
+Este forma de pensar nos permite escribir la siguiente regla:
+\begin{boxA}
+    Elegir una alternativa dada si y sólo si la variación que experimentarán los beneficios como consecuencia de elegir dicha alternativa excede a la variación que experimentarán los costos 
+\end{boxA}
+
 \end{frame}
 
+\begin{frame}
+\frametitle{Entonces.. }
+    \begin{boxA}
+        En lo que siempre vamos a estar pensando a lo largo de la materia es en costos marginales y beneficios marginales    
+    \end{boxA}
+\end{frame}
 \begin{frame}
 \frametitle{Pensemos algunos casos}
 \begin{itemize}
     \item Vamos a usar los conceptos y el modelo para comprender como las personas toman decisiones: \vspace{2mm}
     \begin{itemize} 
-    \item ¿Que sucede si pierdo la entrada que compre para el recital de Taylor Swift? \vspace{2mm}
+    \item ¿Que sucede si \textbf{pierdo} la entrada que compre para el recital de Taylor Swift? \vspace{2mm}
     \item ¿Por qué solo en las grandes ciudades los Remis/Taxis están pintados de un mismo color? \vspace{2mm}
     \item ¿Por qué los colectivos escolares no tienen cinturón de seguridad? 
     \end{itemize}
@@ -242,7 +241,7 @@
 \begin{frame}
 \frametitle{La decisión de consumo}
 \centering
-\includegraphics[scale=0.7]{Slides Principios de Economia/Figures/Tema_02.1_pizzabirra.jpg}
+\includegraphics[scale=0.7]{../Figures/Tema_02.1_pizzabirra.jpg}
 \begin{itemize}
 \item ¿Qué tiene en cuenta un consumidor al momento de consumir un producto?
 \end{itemize}
@@ -260,72 +259,81 @@
 \end{itemize}
 \end{frame}
 
-%\title[Principios de Economía]{Principios de Economía \vspace{4mm}
-%\\ Capítulo 6: Restricción Presupuestaria}
-%\date{}
-%\author[Fariña]{Maximiliano Fariña }
-%\vspace{0.4cm}
-%\institute[]{Introduzca su nombre aquí} 
-
-
 \begin{frame}
 \frametitle{El problema del estudiante}
 \centering
-\includegraphics[scale=0.5]{Slides Principios de Economia/Figures/Tema_02.2_rp.png}
+\includegraphics[scale=0.5]{../Figures/Tema_02.2_rp.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{El problema del estudiante}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.3_rp1.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.3_rp1.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Restricción presupuestaria}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.4_rp2.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.4_rp2.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{¿Cuánto puede consumir?}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.5_rp3.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.5_rp3.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{El precio de la pizza}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.6_rp4.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.6_rp4.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{El precio de la cerveza}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.7_rp5.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.7_rp5.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Precios relativos}
 \centering
-\includegraphics[scale=0.55]{Slides Principios de Economia/Figures/Tema_02.8_rp6.jpg}
+\includegraphics[scale=0.55]{../Figures/Tema_02.8_rp6.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Pendiente}
 \begin{itemize}
     \item Llamamos "pendiente" a la inclinación de una función en un punto particular.
-    \item En general, va a estar determinada por la distancia vertical con respecto a la distancia horizontal. \\ \vspace{2mm}
+    \item En general, va a estar determinada por el cambio vertical con respecto al cambio horizontal. \\ \vspace{2mm}
     \begin{center}
-        $Pendiente = \frac{\text{Distancia Vertical}}
-    {\text{Distancia Horizontal}}$
-    \end{center}  \vspace{2mm}
-    \item En el caso de la restricción presupuestaria del ejemplo, este ratio es constante a lo largo de la función, y va a estar dado por los precios relativos de la pizza. \\ \vspace{2mm}
-     \begin{center}
-    $Pendiente = - \frac{\text{Precio Pizza}}{\text{Precio Cerveza}}= -\frac{P_{Pizza}}{P_{Cerveza}}=-\frac{P_P}{P_C}$
+        $Pendiente =\frac{\Delta Y}{\Delta X} = \frac{\text{Cambio Vertical}}
+    {\text{Cambio Horizontal}}$
     \end{center}
 \end{itemize} 
+Ahora bien, si nos movemos a lo largo de la restricción presupuestaria, se va a cumplir que lo que dejo de gastar en un bien tiene que ser igual a lo que comienzo a gastar del otro. Por ende:
+\begin{center}
+    \[-\Delta Y \times P_Y = \Delta X \times P_X \]
+\end{center}
+Reordenando esa ecuación, obtenemos que:
+\begin{center}
+    \[\frac{\Delta Y}{\Delta X} = -\frac{P_X}{P_Y} \]
+\end{center}
+Que es lo mismo que la pendiente!
+
 \end{frame}
 
+\begin{frame}
+\frametitle{Pendiente}
+    \begin{itemize}
+        \item En el caso de la restricción presupuestaria del ejemplo \\
+        \begin{center}
+            $Pendiente = - \frac{\text{Precio Pizza}}{\text{Precio Cerveza}}= -\frac{P_P}{P_C} = -\frac{50}{100} = -\frac{1}{2}$
+        \end{center}
+        \item Esto nos da una noción de cuanto debo resignar de un bien para poder consumir una unidad más del otro.
+        \item En este caso, me dice que si resigno una pizza puedo consumir media cerveza más.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{Tasa Marginal de Transformación}
@@ -341,13 +349,13 @@
 \begin{frame}
 \frametitle{Si rompemos el chanchito o vamos a la casa de la abuela...}
 \centering
-\includegraphics[scale=0.55]{Slides Principios de Economia/Figures/Tema_02.9_rp7.jpg}
+\includegraphics[scale=0.55]{../Figures/Tema_02.9_rp7.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Recursos}
 \centering
-\includegraphics[scale=0.55]{Slides Principios de Economia/Figures/Tema_02.10_rp8.jpg}
+\includegraphics[scale=0.55]{../Figures/Tema_02.10_rp8.jpg}
 \end{frame}
 
 \begin{frame}
@@ -376,7 +384,7 @@
 \end{itemize}
 \vspace{3mm}
 \centering
-\includegraphics[scale=0.55]{Slides Principios de Economia/Figures/Lentes.jpeg}
+\includegraphics[scale=0.55]{../Figures/Lentes.jpeg}
 \end{frame}
 
 
