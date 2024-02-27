@@ -58,22 +58,6 @@
 
 \usepackage{tikz}
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
 \usepackage{hyperref}
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
@@ -104,7 +88,26 @@
 
 \usetheme{Boadilla}
 
+%set options of hyperref package
+\hypersetup{
+    bookmarksnumbered=true, %put section numbers in bookmarks
+    naturalnames=true, %use LATEX-computed names for links
+    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
+    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
+    colorlinks=true, %color links
+    anchorcolor=black, %set color of anchors
+    linkcolor=beamerblue, %set link color to beamer blue
+    citecolor=blue, %set cite color to beamer blue
+    pdfpagemode=UseThumbs, %set default mode of PDF display
+    breaklinks=true, %break long links
+    pdfstartpage=1 %start at first page
+    }
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 % --------------------
 % Overall information
 % --------------------
@@ -146,7 +149,9 @@ Magistral 1}
     \item Es una ciencia social: estudia diversos aspectos de las sociedades
     \vspace{2mm}
     \begin{center}
+        \begin{boxA}
         La economía es una ciencia empírica y social que se ocupa de la manera en que se administran los recursos escasos
+        \end{boxA}
     \end{center}
 \end{itemize}
 \end{frame}
@@ -166,6 +171,17 @@ ESTO NO...\vspace{1mm} \\
     \item Busca asignar eficientemente recursos escasos \vspace{3mm} \\
     \item ¿Que quiere decir ``eficientemente''? Depende del objetivo que tengamos en mente! Pero siempre tendrá que ver con utilizar los recursos de la mejor manera posible (desaprovechando lo menor cantidad posible) \vspace{3mm} \\
     \item ¿Qué mecanismos tiene para realizar dicha asignación? 
+    \begin{itemize}
+        \item Sorteo?
+        \item El que primero levanta la mano?
+        \item El que más necesita?
+        \item Designar alguien que decida?
+        \begin{boxA}
+            \begin{center}
+                \textbf{O EL MERCADO !}
+            \end{center}
+        \end{boxA}
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -175,6 +191,11 @@ El color de la persona indica la preferencia por el color de la taza. Supongamos
 \begin{center}
     \includegraphics[scale=0.8]{../Figures/Tazon.png}
 \end{center}
+\begin{itemize}
+    \item ¿Es eficiente esta asignación?
+    \item ¿Qué pasaría si el mecanismo de asignación fuera un planificador central? ¿A gran escala se puede?
+    \item ¿Y un mercado? La gente podría cambiar el que quisiera por uno de su preferencia
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -184,8 +205,12 @@ El color de la persona indica la preferencia por el color de la taza. Supongamos
     \end{center}
     \begin{itemize}
         \small
-        \item La idea de eficiencias es muy relevante ya que implica un win-win
-        \item \textbf{Los economistas consideran que una asignación es ineficiente cuando podemos mejorar el bienestar de alguien (o de varios) sin perjudicar a otros}
+        \item La idea de eficiencia es muy relevante ya que implica un win-win
+        \begin{center}
+            \begin{boxA} 
+                \textbf{Los economistas consideran que una asignación es ineficiente cuando podemos mejorar el bienestar de alguien (o de varios) sin perjudicar a otros}
+            \end{boxA}
+        \end{center}
         \item Ojo: Eficiente no quiere decir justa...
         \item Eficiencia y equidad (distribución) son asuntos distintos para el economista
     \end{itemize}
@@ -228,35 +253,47 @@ Estudiar las causas y consecuencias de los problemas sociales es un reto
 \end{frame}
 
 \begin{frame}
-\frametitle{¿Qué es un modelo?}
+\frametitle{¿Cómo construimos modelos?}
 \begin{itemize}
     \item ¡El mundo es muy complejo! Para entenderlo debemos simplificar la realidad \vspace{2mm} \\ $\Rightarrow$
     Supuestos y modelos \vspace{2mm}
     \item ¿Que es un modelo? Es una simplificación de la realidad \vspace{2mm}
+    \item Construimos una descripción simplificada en base a \textbf{la pregunta de interés} 
     \item  \href{https://www.youtube.com/watch?v=zwDA3GmcwJU}{``Del rigor de la ciencia''} 
     Jorge Luis Borges
+    \item La conclusión de los modelos requiere derivar conclusiones lógicas de supuestos (utilizando algebra, gráficos, cálculo, etc.)
+    \item El formalismo en los modelos no es otra cosa que "asegurar el razonamiento lógico" que nos lleva de los supuestos a las conclusiones.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{¿Cómo construimos modelos?}
-\begin{itemize}
-\item Construimos una descripción simplificada en base a \textbf{la pregunta de interés}
-\item Determinamos las hipotesis y resultados del modelo 
-\item Validación de una teoría: comparación de sus predicciones con la realidad.
-\item Nunca podemos afirmar que una hipótesis es cierta porque esté de acuerdo con los hechos.
-\item Si podemos negar la verdad de una hipótesis en base a ellos.
-\item “No existe lógica de la verificación, sí de la refutación” (Blaug).
-\item Una teoría estará bien corroborada, no cuando esté de acuerdo con un gran número de hechos, sino cuando seamos incapaces de encontrar hechos que la refuten. La teoría resiste y se consolida.
-\end{itemize} 
+    \begin{itemize}
+        \item Determinamos las hipotesis y resultados del modelo 
+        \item Validación de una teoría: comparación de sus predicciones con la realidad.
+        \item Nunca podemos afirmar que una hipótesis es cierta porque esté de acuerdo con los hechos.
+        \item Si podemos negar la verdad de una hipótesis en base a ellos.
+        \item “No existe lógica de la verificación, sí de la refutación” (Blaug).
+        \begin{center}
+            \begin{boxA}
+                \textbf{Una teoría estará bien corroborada, no cuando esté de acuerdo con un gran número de hechos, sino cuando seamos incapaces de encontrar hechos que la refuten. La teoría resiste y se consolida.}
+            \end{boxA}
+        \end{center}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Modelos y supuestos}
 \begin{itemize}
-    \item En un sentido estricto, todos los supuestos son irrealistas. No se puede hacer una descripción exacta de la realidad. \vspace{2mm}
-    \item No hay que examinar el grado de realismo de los supuestos, sino su utilidad para entender la realidad. \vspace{2mm}
-    \item “Criticar los modelos económicos por sus supuestos irrealistas es como criticar los experimentos de la bola rodante de Galileo por utilizar un plano perfeccionado para tener la menor fricción posible”
+    \item En un sentido estricto, todos los supuestos son irrealistas. No se puede hacer una descripción exacta de la realidad
+    \item No hay que examinar el grado de realismo de los supuestos, sino su utilidad para entender la realidad
+    \item Muchas veces esta utilidad radica en la capacidad de, luego derivadas las conclusiones, modificar los supuestos para ver como se modifican esas conclusiones
+    \begin{center}
+        \begin{boxA}
+            \textbf{“Criticar los modelos económicos por sus supuestos irrealistas es como criticar los experimentos de la bola rodante de Galileo por utilizar un plano perfeccionado para tener la menor fricción posible” (Nancy Cartwright)}
+        \end{boxA}
+    \end{center}
+    
 \end{itemize}
 \end{frame}
 
