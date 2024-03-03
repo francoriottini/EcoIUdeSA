@@ -13,14 +13,6 @@
 % ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}
 
-%\newcommand{\bubblethis}[2]{
- %       \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
- %       (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
- %       aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
- %   }%
-%\tikzset{face/.style={shape=circle,minimum size=4ex,shading=radial,outer sep=0pt,
- %       inner color=white!50!yellow,outer color= yellow!70!orange}}
-
 %% Some commands to make the code easier
 \newcommand{\emoticon}[1][]{%
   \node[face,#1] (emoticon) {};
@@ -55,32 +47,15 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-\usepackage{hyperref}
-\usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
-\usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
 
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -109,21 +84,7 @@
 
 
 \usetheme{Boadilla}
-
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
+\usepackage{hyperref}
 
 
 % --------------------
@@ -132,7 +93,7 @@
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 4: La elección del individuo y la curva de demanda individual}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -142,42 +103,66 @@
 \begin{frame}
 \titlepage
 \centering
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 \begin{frame}
 \frametitle{¡Retomemos!}
-\centering
-\includegraphics[scale=0.5]{Slides Principios de Economia/Figures/Tema_02.2_rp.png}
-% Copiar imagen que se cambi antes
+\begin{itemize}
+  \item Hasta ahora, hemos visto cómo un individuo toma decisiones de consumo
+  \item Dada su restricción presupuestaria, elegía la canasta de consumo que se situaba en la curva de indiferencia más lejana
+  \item Luego vimos que sucedía cuando cambiaba el nivel de ingreso y cuando se movía en precio de uno de los bienes (efecto ingreso y efecto sustitución) 
+  \item Hoy veremos como esto se traslada a una curva de demanda individual.
+\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Tenemos la restricción presupuestaria}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.4_rp2.jpg}
-% C6_1.jpg
-% O SACAR DE ESTE LAS CANTIDADES EN EJES Y EN Q Y HOMOGENEIZAR O AL REVES, SUMARLO EN LOS OTROS QUE SIGUEN (LOS SIGUIENTES 2)
-\end{frame}
 
 \begin{frame}
-\frametitle{Agregamos las preferencias}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.18_rp16.jpg}
-% C8_1.jpg
-\end{frame}
-
-\begin{frame}
-\frametitle{Y encontramos el equilibrio}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.19_rp17.jpg}
-% C8_2.jpg
+\frametitle{Así finalizamos}
+\begin{center}
+\begin{figure}[H]
+\renewcommand{\figurename}{Figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
+\draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
+\node [right] at (5.5,1.8) {$U_3$};
+\draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
+\node [right] at (3.1,1.6) {$U_2$};
+\node[below] at (3.4,0) {\footnotesize 20};
+\node[below] at (2.22,0) {\footnotesize 10};
+\node[below] at (0.8,0) {\footnotesize 5};
+\draw [thick] (0,4.8) -- (7.5,0);
+\draw [thick] (0,4.8) -- (2.7,0);
+\draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
+\draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
+\draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
+\draw [thick, gray] (0,3.3) -- (5.3,0);
+\draw[semithick, blue, <-] (1,-1)--(3.2,-1);
+\node[] at (1.7,-1.2){\tiny Efecto};
+\node[] at (2.4,-1.2){\tiny Total};
+\draw[semithick, blue, <-] (2.4,1.1)--(3.2,1.1);
+\node[] at (2.9,0.9){\tiny Efecto};
+\node[] at (2.9,0.6){\tiny Ingreso};
+\draw[semithick, blue, <-] (1,1.1)--(2,1.1);
+\node[] at (1.5,0.9){\tiny Efecto};
+\node[] at (1.5,0.6){\tiny Sustitución};
+\node [above] at (2.4,1.9) {$C$};
+\draw[fill] (2.22,1.9) circle [radius =0.06];
+\node [right] at (0.8,3.5) {$B$};
+\draw[fill] (0.9,3.25) circle [radius =0.06];
+\node [right] at (3.4,2.8) {$A$};
+\draw[fill] (3.43,2.6) circle [radius =0.06];
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Cambios en el precio de la pizza}
 \begin{itemize}
-    \item Si mantenemos constantes el ingreso del individuo y el precio de la cerveza, ¿cómo afectará un cambio en el precio de la pizza a la cantidad de pizza que adquiera el consumidor? \vspace{2mm}
+    \item Si mantenemos constantes el ingreso del individuo y el precio de la cerveza, ¿cómo afectará un cambio en el precio de la pizza a la cantidad de pizza que adquiera el consumidor?
     \begin{itemize}
          \item La canasta de bienes asequible es la que resulta de igualar la pendiente de la curva de indiferencia con la pendiente de la restricción presupuestaria. 
     \end{itemize}
@@ -185,70 +170,86 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Si aumenta el precio de la pizza:}
+\frametitle{Si aumenta el precio de la pizza}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.20_rp18.jpg}
-% C8_9.jpg SIN B, EL PUNTO B, LA UTILIDAD U2
+\includegraphics[scale=0.6]{../Figures/Tema_02.20_rp18.jpg}
 \end{frame}
 
 \begin{frame}
-\frametitle{El nuevo equilibrio es B:}
+\frametitle{El nuevo equilibrio es B}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.22_rp20.jpg}
-% C8_9.jpg 
+\includegraphics[scale=0.6]{../Figures/Tema_02.22_rp20.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Pensemos un minuto que tenemos aquí...}
 \begin{itemize}
-    \item Cuando realizamos este ejercicio, estamos obteniendo las cantidades del bien que el individuo está dispuesto a consumir (dado su presupuesto) a cada precio... \vspace{2mm}
+    \item Cuando realizamos este ejercicio, estamos obteniendo las cantidades del bien que el individuo está dispuesto a consumir (dado su presupuesto) a cada precio...
     \item Entonces si repetimos el ejercicio varias veces, podríamos ver qué sucede con las cantidades demandadas del consumidor cada vez que el precio aumenta un poquito más.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Repitamos el ejercicio de pensar que sucede si cambian los precios... primero el precio es \$50:}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.53_derivacioncurvademanda.png}
+\frametitle{Repitamos el ejercicio de pensar que sucede si cambian los precios... primero el precio es \$50}
+\begin{center}
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.11.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.12.png}
+  \end{minipage}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Ahora el precio es \$100:}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.54_derivacioncurvademanda1.png}
+\begin{center}
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.13.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.14.png}
+  \end{minipage}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Y si seguimos aumentando de a \$50...}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.55_derivacioncurvademanda2.png}
+\begin{center}
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.15.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.16.png}
+  \end{minipage}
+\end{center}
 \end{frame}
 
-% esta ya no va, hay que borrar
 \begin{frame}
-\frametitle{Y si seguimos asi...}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.56_derivacioncurvademanda3.png}
-\end{frame}
-
-\begin{frame}
-\frametitle{¡¡¡Obtenemos la curva de demanda del estudiante!!!}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.57_derivacioncurvademanda4.png}
-%C8.18
+\frametitle{Y si seguimos asi...¡¡¡Obtenemos la curva de demanda del estudiante!!!}
+\begin{center}
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.17.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+      \includegraphics[width=\linewidth]{../Figures/C8.18.png}
+  \end{minipage}
+\end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{¿Cómo pasamos de la curva de demanda individual a la curva de demanda del mercado?}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Demandaagregada.png}
-% HACER UNA NUEVA CON LA MISMA ESTRUCTURA QUE LAS DEL TEXTO
+  \begin{boxA}
+    \begin{center}
+      \textbf{La demanda individual} es la cantidad de un bien que un individuo está dispuesto a comprar a cada precio.
+    \end{center}
+  \end{boxA}
 \end{frame}
 
 \begin{frame}
 \frametitle{Curva de demanda del mercado}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.58_demanda.png}
+\includegraphics[scale=0.6]{../Figures/Tema_02.58_demanda.png}
 %C10_4.jpg
 \end{frame}
 
@@ -257,26 +258,14 @@
 \begin{itemize}
     \item La curva de demanda muestra cuál es la disposición máxima a pagar de los consumidores para cada cantidad del bien, o \vspace{2mm}
     \item ... cuál es la cantidad máxima del bien que está dispuesto a consumir el individuo a cada precio.
+    \begin{boxA}
+      \begin{center}
+        ¿Cuales son los factores que afectan a la función de demanda? \\
+        Leer capítulo 10 sin falta!
+      \end{center}
+    \end{boxA}
 \end{itemize}
 \end{frame}
-
-% Esta clase sigue en Magistral 9
-
-%%%%%%%%%% SEPARAR CAPITULO 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\title[Principios de Economía]{Principios de Economía %\vspace{4mm}
-%\\ Capítulo 9: Ocio y Consumo}
-%\date{}
-%\author[Fariña]{Maximiliano Fariña }
-%\vspace{0.4cm}
-%\institute[]{Introduzca su nombre aquí} 
-
-%\begin{frame}
-%\titlepage
-%\centering
-%\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
-%\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{¿Cómo se determina el ingreso?}
@@ -309,64 +298,28 @@
 \begin{frame}
 \frametitle{Gráficamente..}
 \begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
-\draw[thin](0,6.5)--(7.5,0);
-\draw[thick, dashed,gray] (4.75,2.3)--(4.75,0);
-\draw[thick, dashed,gray] (4.75,2.3)--(0 ,2.3);
-\node[below] at (4.75,0){\footnotesize 19};
-\node[left] at (0,2.3){\footnotesize \$ 50};
-\draw[fill] (7.5,0) circle [radius =0.12] node [below] {\footnotesize 24};
-\draw[fill] (0,6.5) circle [radius =0.12] node [left] {\footnotesize \$240};
-\end{tikzpicture}
-\end{center}
-\caption{Ocio y consumo}
-\label{fig:C6.17}
-\end{figure}
+  \includegraphics[scale=0.6]{../Figures/C9.1.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{La TMS en el modelo ocio - consumo}
-\begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
-\draw[thin](0,6.5)--(7.5,0);
-\draw[thick, dashed,gray] (4.75,2.3)--(4.75,0);
-\draw[thick, dashed,gray] (4.75,2.3)--(0 ,2.3);
-\draw[thick, dashed,gray] (4.15,2.9)--(4.15,0);
-\draw[thick, dashed,gray] (4.15,2.9)--(0 ,2.9);
-\node[below] at (4.75,0){\footnotesize 19};
-\node[left] at (0,2.3){\footnotesize \$ 50};
-\node[below] at (4,0){\footnotesize 18};
-\node[left] at (0,2.9){\footnotesize \$ 60};
-\draw[fill] (0,6.5) circle [radius =0.12] node [left] {\footnotesize \$240};
-\draw [thin,->, decorate,decoration={brace,amplitude=4pt},xshift=0pt,yshift=5pt] (-1.5,2.8) -- (-1.5,2);
-\draw [thin,->,decorate,decoration={brace,amplitude=4pt, mirror},xshift=0pt,yshift=5pt](3.9,-0.9) -- (4.85,-0.9);
-\draw[fill] (7.5,0) circle [radius =0.12] node [below] {\footnotesize 24};
-  \node[left] at (-1.75,2.9){\scriptsize Salario};   
-    \node[left] at (-1.6,2.3){\scriptsize por hora};
-      \node[] at (4.1,-1.2){\scriptsize Una hora más de trabajo}; 
-    \node[] at (4.2,-1.7){=}; 
-    \node[] at (4.1,-2.1){\scriptsize Una hora menos de ocio};
-\end{tikzpicture}
-\end{center}
-\caption{Ocio y consumo II}
-\label{fig:C6.18}
-\end{figure}
-\end{center}
+\frametitle{La TMT en el modelo ocio - consumo}
+  \begin{center}
+    \includegraphics[scale=0.6]{../Figures/C9.2.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{La TMS en el modelo ocio - consumo}
+  \begin{center}
+    \includegraphics[scale=0.6]{../Figures/C9.3.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{El equilibrio}
 \begin{center}
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/C9.4.png}
+\includegraphics[scale=0.6]{../Figures/C9.4.png}
 \end{center}
 \end{frame}
 
@@ -374,42 +327,7 @@
 \begin{frame}
 \frametitle{¿Por qué G no es un equilibrio?}
 \begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
-\draw[thin, gray] (0.75,9).. controls (2,3) and (6, 2) .. (9, 1.75) node [right]{\footnotesize $U_2$} ;
-\draw[thin] (1.75,9).. controls (2.15,4.35) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $U_3$};
- \draw[thin] (0,8)--(9.75,0) ;
- \draw[thick,gray,dashed] (3.9,0)--(3.9,4.9)--(0,4.85);
-%  \draw[thick,gray,dashed] (1.4,0)--(1.4,6.9)--(0,6.9);
-% \draw[thick,gray,dashed] (2.2,0)--(2.2,6.2)--(0,6.2); 
-\draw[thick,gray,dashed] (6.4,0)--(6.4,2.75)--(0,2.75);
-\draw[thick,gray,dashed] (7.35,0)--(7.35,1.975)--(0,1.975);
-\draw[thick,gray,dashed] (0,2.195)--(6.4,2.195);
-\draw[fill] (3.9,4.85) circle [radius =0.11] node [above] {\scriptsize A};
-\draw[fill] (7.35,1.975) circle [radius =0.11] node [above] {\scriptsize G};
-\draw[fill] (6.4,2.195) circle [radius =0.11] node [below left] {\scriptsize F};
-\draw[fill] (6.4,2.75) circle [radius =0.11] node [above] {\scriptsize E};
-% \draw[fill] (1.4,6.9) circle [radius =0.11] node [above] {\scriptsize B};      
-% \draw[fill] (2.2,6.2) circle [radius =0.11] node [above] {\scriptsize C};  
-% \node[below] at (1.4,0) {\footnotesize 5};
-% \node[below] at (2.2,0) {\footnotesize 6};
-\node[below] at (3.9,0) {\footnotesize 14};
-\node[below] at (6.4,0) {\footnotesize 21};
-\node[below] at (7.35,0) {\footnotesize 22};
-\node[left] at (0,1.7) {\footnotesize \$ 20};
-\node[left] at (0,2.195) {\footnotesize \$ 22};
-\node[left] at (0,2.85) {\footnotesize \$ 30};
-\node[left] at (0,4.85) {\footnotesize \$ 100};
-% \node[left] at (0,6.2) {\footnotesize \$ 900};
-% \node[left] at (0,6.9) {\footnotesize \$ 950};
-\end{tikzpicture}
-\end{center}
-\caption{Ocio y consumo II}
-\label{fig:C6.23}
-\end{figure}
+  \includegraphics[scale=0.6]{../Figures/C9.6.png}
 \end{center}
 \end{frame}
 
