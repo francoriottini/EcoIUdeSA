@@ -55,31 +55,11 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-\usepackage{hyperref}
+
 \usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
+
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
 
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
@@ -91,6 +71,11 @@
 
 
 %%%%%%% commands defining backup slides so that frame numbering is correct
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 \newcommand{\backupbegin}{
    \newcounter{framenumberappendix}
@@ -109,29 +94,14 @@
 
 
 \usetheme{Boadilla}
-
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
-
+\usepackage{hyperref}
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 3: Preferencias y utilidad}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -140,62 +110,72 @@
 \begin{frame}
 \titlepage
 \centering
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 \begin{frame}
 \frametitle{Las preferencias del estudiante}
 \centering
-\includegraphics[scale=0.55]{Slides Principios de Economia/Figures/Tema_02.11_rp9.png}
-% Esta imagen no esta en el libro, hay que armarla de nuevo y agregar en la slide un texto nuestro para completarla
-% Esta imagen no esta en el libro, la llamariamos ImagenC7_1(orden segun aparicion)
+\includegraphics[scale=0.55]{../Figures/Tema_02.11_rp9.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{Hay distintas combinaciones...}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.12_rp10.jpg}
-% C7_1.jpg 
+\includegraphics[scale=0.60]{../Figures/Tema_02.12_rp10.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{...que me dejan igual de feliz}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.13_rp11.jpg}
-% C7_2.jpg 
+\includegraphics[scale=0.55]{../Figures/Tema_02.13_rp11.jpg}
+\begin{itemize}
+    \item No nos interesa el "nivel de felicidad" en esta curva\dots
+    \item \dots ya que posiblemente todos ustedes tengan distinto nivel de "felicidad" en estos puntos\dots
+    \item \dots sino que nos interesa compararlos!
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Pero hay infinitas combinaciones...}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.15_rp12.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.15_rp12.jpg}
 % C7_3.jpg 
 \end{frame}
 
 \begin{frame}
 \frametitle{... que podemos comparar}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.15_rp13.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.15_rp13.jpg}
 % C7_4.jpg y agregarle flechitas hacia la curva de indiferencia mas alta  
 \end{frame}
 
 \begin{frame}
 \frametitle{Y construimos un mapa de preferencias}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_02.16_rp14.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_02.16_rp14.jpg}
 % C7_5.jpg
 \end{frame}
 
 \begin{frame}
-\frametitle{Las curvas de indiferencia}
-\begin{itemize}
-    \item Las curvas de indiferencia tienen pendiente negativa. 
-    \item Las curvas de indiferencia más altas corresponden a niveles de utilidad más altos (más es mejor).
-    \item Las curvas de indiferencia son usualmente suaves: quiere decir que cambios pequeños en la cantidad de bienes no causan grandes saltos en utilidad.
-    \item Las curvas de indiferencia no se cruzan (transitividad). 
-    % Agregar la imagen C7_7 en otra slide 
-    \item Las curvas de indiferencia se hacen más planas hacia la derecha y verticales a la izquierda (gusto por la diversidad).
-\end{itemize} 
+\frametitle{Supuestos de la relación de preferencias}
+\begin{enumerate}
+\item Completitud: Los consumidores pueden \textbf{comparar} y \textbf{ordenar} cualquier par de canastas de bienes
+\item Monotonicidad fuerte: Si una canasta tiene al menos una unidad más de un bien, entonces esa canasta es preferida. Esto produce curvas de indiferencia que tienen las siguientes propiedades:
+    \begin{itemize}
+        \item Las curvas de indiferencia tienen pendiente negativa. 
+        \item Las curvas de indiferencia más altas corresponden a niveles de utilidad más altos (más es mejor).
+        \item No hay satisfacción local
+    \end{itemize}
+\item Transitividad: Si un consumidor prefiere la canasta A a la B y la B a la C, entonces prefiere la canasta A a la C.
+    \begin{itemize}
+        \item Las curvas de indiferencia no se cruzan
+    \end{itemize}
+\item Convexidad: Los consumidores prefieren consumir canastas de consumo \textit{balanceadas} antes que aquellas canastas que tienen mucho de un solo bien
+    \begin{itemize}
+        \item Las curvas de indiferencia son convexas: se hacen más empinadas a la izquierda y más planas a la derecha 
+    \end{itemize}
+\end{enumerate} 
 \end{frame}
 
 
@@ -203,27 +183,34 @@
 \frametitle{¿Qué es la utilidad marginal decreciente?}
 \begin{itemize}
     \item Nos dice cómo cambia la utilidad total cuando agregamos una unidad adicional de un bien mientras dejamos constante la cantidad del otro bien 
-    \end{itemize}     
+    \item Esto podemos verlo relacionando la utilidad total con la cantidad de uno de los bienes que posee el consumidor    
+\end{itemize}     
 \begin{center}
-    \includegraphics[scale=0.5]{Slides Principios de Economia/Figures/C7.9.png}
-    \end{center}
+    \includegraphics[scale=0.3]{../Figures/C7.9b.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Costo-beneficio} 
-% cambiar el formato del texto, quede separado de la imagen 
+\frametitle{Tasa Marginal de sustitución}
+\begin{itemize}
+    \item Lo que estoy dispuesto a sacrificar para beneficiarme de una unidad adicional de un bien va cambiando a lo largo de la curva de indiferencia.
+    \item La pendiente de la curva de indiferencia describe esa relacion: es la tasa marginal de sustitución
+\end{itemize} 
 \centering
-\includegraphics[scale=0.65]{Slides Principios de Economia/Figures/Tema_02.17_rp15.jpg}
-% C7_11.jpg
+\includegraphics[scale=0.5]{../Figures/C7.9.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{Tasa Marginal de Sustitución}
 \begin{itemize}
     \item La TMS es la cantidad de unidades de un bien que el individuo está dispuesto a sacrificar a cambio de una unidad adicional del otro bien, de tal manera que se mantiene constante su nivel de utilidad.
-    \item Es la pendiente de las curvas de indiferencia.
+    \item Es la pendiente de las curvas de indiferencia:
+    \begin{align*}
+        UMg_x \cdot \Delta X &= UMg_y \cdot - \Delta Y \\
+        TMS = \frac{\Delta X}{\Delta Y} &= - \frac{UMg_x}{UMg_y}
+    \end{align*}    
     \item Intuitivamente, nos indica cuántos porrones de cerveza estamos dispuestos a sacrificar a cambio de consumir una porción adicional de pizza.
-    \item  ¡No es constante!
+    \item ¡No es constante!
 \end{itemize} 
 \end{frame}
 
@@ -237,38 +224,19 @@
 \end{itemize} 
 \end{frame}
 
-%%%%%%%%%% SEPARAR CAPITULO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%\title[Principios de Economía]{Principios de Economía \vspace{4mm}
-%\\ Capítulo 8: Elección del individuo y la curva de demanda individual}
-%\date{}
-%\vspace{0.4cm}
-%\institute[]{Introduzca su nombre aquí} 
-
-%\begin{document}
-
-%\begin{frame}
-%\titlepage
-%\centering
-%\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
-%\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}
 \frametitle{Comportamiento del consumidor}
 \begin{itemize}
-    \item Se puede entonces ver a los consumidores como individuos que tienen: 
-    \vspace{0mm}
+    \item Se puede entonces ver a los consumidores como individuos que tienen:
     \begin{itemize}
-        \item[1.] Recursos limitados. \\
-        - Por lo tanto, enfrentan una restricción presupuestaria. \vspace{2mm}
-        \item[2.] Ciertas preferencias sobre diferentes productos. \\ \vspace{2mm}
+        \item[1.] Recursos limitados. Por lo tanto, enfrentan una restricción presupuestaria. Solo puede elegir entre las canastas de consumo alcanzables
+        para él
+        \item[2.] Ciertas preferencias sobre diferentes productos. Para elegir la canasta que más le gusta, debe tener en cuenta
+        sus preferencias
     \end{itemize}
-    
-    \item También hacemos un supuesto adicional: \vspace{2mm}
+    \item También hacemos un supuesto adicional:
     \begin{itemize}
-    \item Los individuos son RACIONALES. \\ \vspace{2mm}
-    - ¿En qué forma se suele entender esto?
-      \\ Que toman la mejor decisión posible dada la información.
+    \item Los individuos son \textbf{racionales}: Toman la mejor decisión posible dada la información.
     \end{itemize}
 \end{itemize} 
 \end{frame}
@@ -276,49 +244,54 @@
 \begin{frame}
 \frametitle{Volviendo al problema del estudiante:}
 \centering
-\includegraphics[scale=0.65]{Slides Principios de Economia/Figures/Tema_02.18_rp16.jpg}
-% C8_1.jpg
+\includegraphics[scale=0.65]{../Figures/Tema_02.18_rp16.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Equilibrio}
 \centering
-\includegraphics[scale=0.65]{Slides Principios de Economia/Figures/Tema_02.19_rp17.jpg}
-% C8_2.jpg
+\includegraphics[scale=0.65]{../Figures/Tema_02.19_rp17.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Maximizando la utilidad}
 \begin{itemize}
-    \item Una idea central en economía es que las personas buscan maximizar su felicidad.
-    \\ \vspace{2mm}
-    - En la jerga se dice que los individuos intentan ``maximizar su utilidad''. \\ \vspace{2mm}
-    - La función de utilidad es la que describe cómo los bienes se traducen en utilidad: \vspace{2mm}
-        \begin{itemize}
-        Las curvas de indiferencia no son otra cosa que ``cortes'' de esa función para distintos niveles de utilidad.
-        \end{itemize}
-    \item Habitualmente, expresamos y estudiamos este comportamiento con modelos matemáticos.
+    \item Una idea central en economía es que las personas buscan maximizar su felicidad
+    \begin{itemize}
+    \item En la jerga se dice que los individuos intentan ``maximizar su utilidad''
+    \item La función de utilidad es la que describe cómo las canastas de bienes se traducen en utilidad
+    \item Las curvas de indiferencia no son otra cosa que ``cortes'' de esa función para distintos niveles de utilidad
+    \end{itemize}
+    \begin{boxA}
+        \begin{center}
+        Los individuos van a elegir la canasta que más le gusta (por pertenecer la curva de indiferencia más alta) dentro del conjunto de todas las canastas alcanzables
+        \end{center}
+    \end{boxA}
 \end{itemize} 
 \end{frame}
 
 \begin{frame}
 \frametitle{Tratemos de entender para que sirve pensar de este modo...}
 \centering
-\includegraphics[scale=0.5]{Slides Principios de Economia/Figures/Tema_02.23_rp21.png}
-% Esta imagen no esta en el libro, la llamariamos ImagenC8_1(orden segun aparicion)
+\includegraphics[scale=0.5]{../Figures/Tema_02.23_rp21.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{¿Por qué B no es el punto donde se maximiza la utilidad?}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/C8.3.png}
+\includegraphics[scale=0.6]{../Figures/C8.3.png}
 \end{frame}
 
-%\begin{frame}
-%\frametitle{¿Qué sucede en el equilibrio A?}
-%Explicar que en ese punto se igualan TMS y TMT
-%\end{frame}
-
+\begin{frame}{Resumiendo como decide el consumidor}
+    \begin{itemize}
+        \item La TMS es la pendiente de la curva de indiferencia y representa la cantidad de bien Y que el consumidor está dispuesto a sacrificar por una unidad adicional del bien X de manera tal que se mantenga constante la utilidad constante
+        \[TMS = - \frac{UMg_x}{UMg_y}\]
+        \item la TMT es la pendiente de la restricción presupuestaria y muestra la relación a la cual el mercado le permite al consumidor cambiar un producto por el otro
+        \[TMT = - \frac{P_x}{P_y}\]
+        \item Si $TMS > TMT$, el consumidor está dispuesto a sacrificar más bien Y por una unidad adicional de bien X que lo que el mercado le pide por esa unidad adicional de bien X
+        \item La canasta óptima es aquella en la que la TMS es igual a la TMT
+    \end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{Respuesta a shocks (ceteris paribus)}
@@ -341,38 +314,19 @@
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
 \node [right] at (5.5,1.8) {$U_3$};
-%\draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
-%\node [right] at (3.1,1.6) {$U_2$};
+
 \node[below] at (3.4,0) {\footnotesize 20};
-%\node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-%\node [right] at (6,1.1) {$C$};
-%\node [right] at (0.5,4.1) {$\texttt{I}$};
 \draw [thick] (0,4.8) -- (7.5,0);
-%\draw [thick] (0,4.8) -- (2.7,0);
-%\draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
-%\draw [thick] (0,3.3) -- (5.3,0);
-%\draw[dashed](2.2,1.9)--(2.2,0);
-%\node [above] at (2.4,1.9) {$C$};
-%\draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
-%\node [right] at (0.8,3.5) {$B$};
-%\draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
 \draw[fill] (3.43,2.6) circle [radius =0.06];
 \end{tikzpicture}
 \end{center}
 \end{figure}
 \end{center}
-% C8_8.png
 \end{frame}
 
 \begin{frame}
@@ -381,22 +335,25 @@
     \item Ceteris paribus: manteniendo todo lo demás constante.
     \item La restricción presupuestaria se desplaza de manera paralela hacia la derecha (con aumento de ingreso) o hacia la izquierda (con disminución de ingreso).
     \item El consumidor va a tener un conjunto factible diferente.
-    \item El cambio en el ingreso no altera los precios relativos. \vspace{1mm}
-    \item Habrá una nueva canasta óptima para el consumidor, que dependerá de las preferencias del individuo por los bienes en cuestión.  \vspace{1mm}
+    \item El cambio en el ingreso no altera los precios relativos.
+    \item Habrá una nueva canasta óptima para el consumidor, que dependerá de las preferencias del individuo por los bienes en cuestión, es decir, de la forma que presenten las curvas de indiferencia contenidas en el mapa de indiferencia
 \end{itemize}
 \end{frame}
 
-%\begin{frame}{Cuando aumentan las cantidades demandadas}
-% C8_4.png
-%\end{frame}
+\begin{frame}{Cuando aumentan las cantidades demandadas (bienes normales)}
+    \centering
+    \includegraphics[scale=0.5]{../Figures/C.8.4.png}
+\end{frame}
 
-%\begin{frame}{Cuando disminuyen las cantidades demandadas}
-% C8_5.png
-%\end{frame}
+\begin{frame}{Cuando disminuyen las cantidades demandadas (bienes inferiores)}
+    \centering
+    \includegraphics[scale=0.5]{../Figures/C.8.5.png}
+\end{frame}
 
-%\begin{frame}{Cuando se mantienen constantes las cantidades demandadas}
-% C8_6.png
-%\end{frame}
+\begin{frame}{Cuando se mantienen constantes las cantidades demandadas}
+    \centering
+    \includegraphics[scale=0.5]{../Figures/C.8.6.png}
+\end{frame}
 
 \begin{frame}
 \frametitle{Cuando hay un shock en el precio de un bien}
@@ -404,92 +361,57 @@
     \item Ceteris paribus: manteniendo todo lo demás constante.
     \item La restricción presupuestaria pivotea sobre el bien que no cambia el precio, reduciendo (aumentando) la cantidad máxima del bien afectado por el aumento (disminución) del precio.  
     \item El consumidor va a tener menos (más) canastas disponibles porque su conjunto factible se ha reducido (expandido).
-    \item El cambio en el precio de un bien también altera los precios relativos. \vspace{1mm}
-    \item Habrá una nueva canasta óptima para el consumidor.  \vspace{1mm}
+    \item El cambio en el precio de un bien también altera los precios relativos. 
+    \item Habrá una nueva canasta óptima para el consumidor.
 \end{itemize}
 \end{frame}
 
-%\begin{frame}{Aumento del precio} 
-% cambiar imagen a C8_7.png
-%\end{frame} 
-
-%\begin{frame}{Disminución del precio} 
-% AGREGAR IMAGEN NUEVA QUE NO ESTA EN EL LIBRO
-%\end{frame}
-
 \begin{frame}
-\frametitle{¿Cuál es el efecto total de un aumento en el precio de la pizza? Partimos del equilibrio A: }
+\frametitle{¿Cuál es el efecto total de un aumento en el precio de la pizza? Partimos del equilibrio A}
 \begin{center}
 \begin{figure}[H]
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
-%\draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
-%\node [right] at (3.1,1.6) {$U_2$};
+\node [right] at (5.5,1.8) {$U_1$};
 \node[below] at (3.4,0) {\footnotesize 20};
-%\node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
-%\node [right] at (6,1.1) {$C$};
-%\node [right] at (0.5,4.1) {$\texttt{I}$};
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
-%\draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
+\draw[thick, dashed,gray](0,2.6)--(3.4,2.6);
+\node[below] at (-0.3,2.9) {\footnotesize 10};
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
-%\draw [thick] (0,3.3) -- (5.3,0);
-%\draw[dashed](2.2,1.9)--(2.2,0);
-%\node [above] at (2.4,1.9) {$C$};
-%\draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
-%\node [right] at (0.8,3.5) {$B$};
-%\draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
 \draw[fill] (3.43,2.6) circle [radius =0.06];
 \end{tikzpicture}
 \end{center}
 \end{figure}
 \end{center}
-% cambiar imagen a C8_7.png
 \end{frame}
 
 \begin{frame}
-\frametitle{La nueva canasta óptima es B:}
+\frametitle{La nueva canasta óptima es B}
 \begin{center}
 \begin{figure}[H]
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
+\node [right] at (5.5,1.8) {$U_1$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
 \node [right] at (3.1,1.6) {$U_2$};
 \node[below] at (3.4,0) {\footnotesize 20};
 \node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
-%\node [right] at (6,1.1) {$C$};
-%\node [right] at (0.5,4.1) {$\texttt{I}$};
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
+\draw[thick, dashed,gray](0,3.2)--(0.9,3.2);
+\node[below] at (-0.3,3.5) {\footnotesize 15};
+\draw[thick, dashed,gray](0,2.6)--(3.4,2.6);
+\node[below] at (-0.3,2.9) {\footnotesize 10};
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
-%\draw [thick] (0,3.3) -- (5.3,0);
-%\draw[dashed](2.2,1.9)--(2.2,0);
-%\node [above] at (2.4,1.9) {$C$};
-%\draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right] at (0.8,3.5) {$B$};
 \draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
@@ -498,50 +420,33 @@
 \end{center}
 \end{figure}
 \end{center}
-% cambiar imagen a C8_8.png
 \end{frame}
 
 \begin{frame}
-\frametitle{El efecto total de un aumento en el precio es:} 
+\frametitle{El efecto total de un aumento en el precio de la Pizza} 
 \begin{center}
 \begin{figure}[H]
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
+\node [right] at (5.5,1.8) {$U_1$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
 \node [right] at (3.1,1.6) {$U_2$};
 \node[below] at (3.4,0) {\footnotesize 20};
-%\node[below] at (2.22,0) {\footnotesize 10};
 \node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,1.9) {\footnotesize 7};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
-%\draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
-%\draw[thick, dashed,gray](0,1.9)--(2.22,1.9);
-%\draw [thick, gray] (0,3.3) -- (5.3,0);
-
 \draw[semithick, blue, <-] (1,1.1)--(3.2,1.1);
+\draw[thick, dashed,gray](0,3.2)--(0.9,3.2);
+\node[below] at (-0.3,3.5) {\footnotesize 15};
+\draw[thick, dashed,gray](0,2.6)--(3.4,2.6);
+\node[below] at (-0.3,2.9) {\footnotesize 10};
 \node[] at (2.9,0.9){\tiny Efecto};
 \node[] at (2.9,0.6){\tiny Total};
-
-%\draw[semithick, blue, <-] (1,1.1)--(2,1.1);
-%\node[] at (1.5,0.9){\tiny Efecto};
-%\node[] at (1.5,0.6){\tiny Sustitución};
-
-%\node [above] at (2.4,1.9) {$C$};
-%\draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right] at (0.8,3.5) {$B$};
 \draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
@@ -550,11 +455,6 @@
 \end{center}
 \end{figure}
 \end{center}
-% cambiar imagen a C8_9.png
-% AGREGAR UNA FLCECHA 
-%\draw[semithick, blue, <-] (1,1.1)--(3.2,1.1);
-%\node[] at (2.9,0.9){\tiny Efecto};
-%\node[] at (2.9,0.6){\tiny Total};
 \end{frame}
 
 \begin{frame}
@@ -563,22 +463,12 @@
     \item Un aumento en el precio de la pizza produce dos efectos:
     \begin{itemize}
         \item Disminuye el poder de compra, porque el consumidor tiene menor poder adquisitivo.
-        \item Aumenta el costo de oportunidad de comprar cerveza.
+        \item Aumenta el costo de oportunidad de la pizza, porque el precio relativo de la pizza ha aumentado (ahora es una cerveza entera!).
     \end{itemize}
-    \item Tenemos dos efectos
-    \begin{itemize}
-    \item Efecto ingreso: \\
-    - La restricción presupuestaria se desplaza hacia adentro. \\
-    - El efecto que el ingreso menor tendría si no hubiera cambios en el costo de oportunidad.
-    \item Efecto sustitución: \\
-    - La pendiente de la restricción presupuestaria (TMT) aumenta: el efecto del cambio en el costo de oportunidad, porque cambiaron los precios relativos.
-    \end{itemize}
+    \item \textbf{Efecto ingreso}: El efecto que el ingreso menor tendría si no hubiera cambios en el costo de oportunidad
+    \item \textbf{Efecto sustitución}: El efecto del cambio en el costo de oportunidad, porque cambiaron los precios relativos (aumentó la TMT, o sea la pendiente de la RP).
 \end{itemize} 
 \end{frame}
-
-%\begin{frame}
-%\frametitle{¿Cómo podemos separar estos dos efectos?} %agregar una slide de cada uno, con lo que mandamos. Agregar algunas ideas. 
-%\end{frame}
 
 \begin{frame}
 \frametitle{Y si le damos menos dinero para que esté sobre $U_2$, ¿elige B?}
@@ -587,46 +477,23 @@
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
+\node [right] at (5.5,1.8) {$U_1$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
 \node [right] at (3.1,1.6) {$U_2$};
 \node[below] at (3.4,0) {\footnotesize 20};
-%\node[below] at (2.22,0) {\footnotesize 10};
 \node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,1.9) {\footnotesize 7};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
-%\draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
-%\draw[thick, dashed,gray](0,1.9)--(2.22,1.9);
 \draw [thick, gray] (0,3.3) -- (5.3,0);
-
-%\draw[semithick, blue, <-] (1,1.1)--(3.2,1.1);
-%\node[] at (2.9,0.9){\tiny Efecto};
-%\node[] at (2.9,0.6){\tiny Total};
-
-%\draw[semithick, blue, <-] (1,1.1)--(2,1.1);
-%\node[] at (1.5,0.9){\tiny Efecto};
-%\node[] at (1.5,0.6){\tiny Sustitución};
-
-%\node [above] at (2.4,1.9) {$C$};
-%\draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right] at (0.8,3.5) {$B$};
 \draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
 \draw[fill] (3.43,2.6) circle [radius =0.06];
 \end{tikzpicture}
-%C8_9.jpg sin el punto C marcado
 \end{center}
 
 \end{figure}
@@ -641,40 +508,22 @@
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
+\node [right] at (5.5,1.8) {$U_1$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
 \node [right] at (3.1,1.6) {$U_2$};
 \node[below] at (3.4,0) {\footnotesize 20};
 \node[below] at (2.22,0) {\footnotesize 10};
 \node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,1.9) {\footnotesize 7};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
 \draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
-%\draw[thick, dashed,gray](0,1.9)--(2.22,1.9);
 \draw [thick, gray] (0,3.3) -- (5.3,0);
-
-%\draw[semithick, blue, <-] (1,1.1)--(3.2,1.1);
-%\node[] at (2.9,0.9){\tiny Efecto};
-%\node[] at (2.9,0.6){\tiny Total};
-
-%\draw[semithick, blue, <-] (1,1.1)--(2,1.1);
-%\node[] at (1.5,0.9){\tiny Efecto};
-%\node[] at (1.5,0.6){\tiny Sustitución};
-
 \node [above] at (2.4,1.9) {$C$};
 \draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right] at (0.8,3.5) {$B$};
 \draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
@@ -687,50 +536,31 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{El efecto ingreso} %aclarar el gris 
+\frametitle{El efecto ingreso}
 \begin{center}
 \begin{figure}[H]
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
+\node [right] at (5.5,1.8) {$U_1$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
 \node [right] at (3.1,1.6) {$U_2$};
 \node[below] at (3.4,0) {\footnotesize 20};
 \node[below] at (2.22,0) {\footnotesize 10};
 \node[below,gray] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,1.9) {\footnotesize 7};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick,gray] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
 \draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
-%\draw[thick, dashed,gray](0,1.9)--(2.22,1.9);
 \draw [thick] (0,3.3) -- (5.3,0);
-
-%\draw[semithick, blue, <-] (1,1.1)--(3.2,1.1);
-%\node[] at (2.9,0.9){\tiny Efecto};
-%\node[] at (2.9,0.6){\tiny Total};
-
 \draw[semithick, blue, <-] (2.4,1.1)--(3.2,1.1);
 \node[] at (2.9,0.9){\tiny Efecto};
 \node[] at (2.9,0.6){\tiny Ingreso};
-
-%\draw[semithick, blue, <-] (1,1.1)--(2,1.1);
-%\node[] at (1.5,0.9){\tiny Efecto};
-%\node[] at (1.5,0.6){\tiny Sustitución};
-
 \node [above] at (2.4,1.9) {$C$};
 \draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right,gray] at (0.8,3.5) {$B$};
 \draw[fill,gray] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
@@ -741,20 +571,14 @@
 \end{center}
 \end{frame}
 
-%\begin{frame}
-%\frametitle{Pero en realidad, los precios relativos cambiaron...}
-% NUEVO GRAFICO CON DOS PENDIENTES DISTINTAS Y UNA SOLA UTILIDAD
-%\end{frame}
-
 \begin{frame}
-\frametitle{El efecto sustitución} %aclarar el gris
+\frametitle{El efecto sustitución}
 \begin{center}
 \begin{figure}[H]
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick,gray] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
 \node [right] at (5.5,1.8) {$U_3$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
@@ -762,35 +586,17 @@
 \node[below,gray] at (3.4,0) {\footnotesize 20};
 \node[below] at (2.22,0) {\footnotesize 10};
 \node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,1.9) {\footnotesize 7};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
 \draw [thick,gray] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
 \draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
-%\draw[thick, dashed,gray](0,1.9)--(2.22,1.9);
 \draw [thick] (0,3.3) -- (5.3,0);
-
-%\draw[semithick, blue, <-] (1,1.1)--(3.2,1.1);
-%\node[] at (2.9,0.9){\tiny Efecto};
-%\node[] at (2.9,0.6){\tiny Total};
-
-%\draw[semithick, blue, <-] (2.4,1.1)--(3.2,1.1);
-%\node[] at (2.9,0.9){\tiny Efecto};
-%\node[] at (2.9,0.6){\tiny Ingreso};
-
 \draw[semithick, blue, <-] (1,1.1)--(2,1.1);
 \node[] at (1.5,0.9){\tiny Efecto};
 \node[] at (1.5,0.6){\tiny Sustitución};
-
 \node [above] at (2.4,1.9) {$C$};
 \draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right] at (0.8,3.5) {$B$};
 \draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right,gray] at (3.4,2.8) {$A$};
@@ -803,14 +609,13 @@
 
 
 \begin{frame}
-\frametitle{La suma del efecto sustitución y el efecto ingreso nos da el efecto total} %aclarar el gris
+\frametitle{La suma del efecto sustitución y el efecto ingreso nos da el efecto total}
 \begin{center}
 \begin{figure}[H]
 \renewcommand{\figurename}{Figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[very thick,<->] (0,5) node[left]{Porrones de}--(0,0)--(8,0) node[below]{Porciones de pizza};
-\node [below left] at (0,4.7) {cerveza};
+\draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
 \node [right] at (5.5,1.8) {$U_3$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
@@ -818,35 +623,23 @@
 \node[below] at (3.4,0) {\footnotesize 20};
 \node[below] at (2.22,0) {\footnotesize 10};
 \node[below] at (0.8,0) {\footnotesize 5};
-%\node[left] at (0,1.9) {\footnotesize 7};
-%\node[left] at (0,2.6) {\footnotesize 10};
-%\node[left] at (0,3.25) {\footnotesize 15};
-
 \draw [thick] (0,4.8) -- (7.5,0);
 \draw [thick] (0,4.8) -- (2.7,0);
 \draw[thick, dashed,gray](0.9,3.2)--(0.9,0);
 \draw[thick, dashed,gray](3.4,2.6)--(3.4,0);
-%\draw[thick, dashed,gray](0.9,3.25)--(0,3.25);
-%\draw[thick, dashed,gray](3.43,2.6)--(0,2.6);
 \draw[thick, dashed,gray](2.22,1.9)--(2.22,0);
-%\draw[thick, dashed,gray](0,1.9)--(2.22,1.9);
 \draw [thick, gray] (0,3.3) -- (5.3,0);
-
 \draw[semithick, blue, <-] (1,-1)--(3.2,-1);
 \node[] at (1.7,-1.2){\tiny Efecto};
 \node[] at (2.4,-1.2){\tiny Total};
-
 \draw[semithick, blue, <-] (2.4,1.1)--(3.2,1.1);
 \node[] at (2.9,0.9){\tiny Efecto};
 \node[] at (2.9,0.6){\tiny Ingreso};
-
 \draw[semithick, blue, <-] (1,1.1)--(2,1.1);
 \node[] at (1.5,0.9){\tiny Efecto};
 \node[] at (1.5,0.6){\tiny Sustitución};
-
 \node [above] at (2.4,1.9) {$C$};
 \draw[fill] (2.22,1.9) circle [radius =0.06];
-%\node [above] at (3,1.7) {$\texttt{I}$};
 \node [right] at (0.8,3.5) {$B$};
 \draw[fill] (0.9,3.25) circle [radius =0.06];
 \node [right] at (3.4,2.8) {$A$};
