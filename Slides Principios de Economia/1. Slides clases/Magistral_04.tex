@@ -126,7 +126,7 @@
 \begin{tikzpicture}[scale=0.8]
 \draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(8,0) node[below]{Pizza};
 \draw [thick] (2.2,3.8) to [out=310,in=170] (5.5,1.8);
-\node [right] at (5.5,1.8) {$U_3$};
+\node [right] at (5.5,1.8) {$U_1$};
 \draw [thick] (0.3,4.5) to [out=290,in=165] (3.1,1.6);
 \node [right] at (3.1,1.6) {$U_2$};
 \node[below] at (3.4,0) {\footnotesize 20};
@@ -158,6 +158,8 @@
 \end{figure}
 \end{center}
 \end{frame}
+
+% Acá podríamos agregar una slide hablando de los bienes Giffen.
 
 \begin{frame}
 \frametitle{Cambios en el precio de la pizza}
@@ -238,33 +240,81 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{¿Cómo pasamos de la curva de demanda individual a la curva de demanda del mercado?}
   \begin{boxA}
     \begin{center}
-      \textbf{La demanda individual} es la cantidad de un bien que un individuo está dispuesto a comprar a cada precio.
+      El conjunto de canastas de consumo óptimas forman lo que denominamos la curva precio-consumo.
+    \end{center}
+  \end{boxA}
+
+  \begin{boxA}
+    \begin{center}
+      La demanda individual es la cantidad de un bien que un individuo está dispuesto a comprar a cada precio.
+    \end{center}
+  \end{boxA}
+  \begin{center}
+    En nuestro ejemplo, tenemos la curva de demanda de pizza, que nos indica la cantidad de porciones de pizza que Paula está dispuesta a comprar a cada precio de la porción de pizza.
+  \end{center}
+  \begin{boxA}
+    \begin{center}
+      Alternativamente, podemos interpretar cada punto de la curva de demanda como la máxima disposición a pagar del consumidor, dada una cantidad de bienes
     \end{center}
   \end{boxA}
 \end{frame}
 
 \begin{frame}
-\frametitle{Curva de demanda del mercado}
+\frametitle{¿Curva de demanda del mercado?}
 \centering
 \includegraphics[scale=0.6]{../Figures/Tema_02.58_demanda.png}
 %C10_4.jpg
 \end{frame}
 
 \begin{frame}
-\frametitle{¿Qué es la demanda?}
-\begin{itemize}
+  \frametitle{¿Como construir la demanda de mercado?}
+  \begin{itemize}
+    \item Para construir la demanda total de un mercado, sumamos las cantidades individuales demandadas para cada precio.
+  \end{itemize}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{../Figures/C10.2.png}      
+  \end{figure} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{¿Y si tenemos demandas individuales distintas?}
+  \begin{itemize}
+    \item Seguimos sumando las cantidades demandadas a cada precio. Eso no quita que haya puntos en donde solo demanda una sola persona, como en el siguiente ejemplo.
+  \end{itemize}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{../Figures/C10.3.png}       
+  \end{figure}
+\end{frame}
+
+  
+\begin{frame}
+  \frametitle{¿Qué es la demanda?}
+  \begin{itemize}
     \item La curva de demanda muestra cuál es la disposición máxima a pagar de los consumidores para cada cantidad del bien, o \vspace{2mm}
     \item ... cuál es la cantidad máxima del bien que está dispuesto a consumir el individuo a cada precio.
-    \begin{boxA}
-      \begin{center}
-        ¿Cuales son los factores que afectan a la función de demanda? \\
-        Leer capítulo 10 sin falta!
-      \end{center}
-    \end{boxA}
-\end{itemize}
+    
+    \centering
+    \includegraphics[scale=0.7]{../Figures/C10.4.png}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Factores que afectan a la función de demanda}
+  \begin{itemize}
+    \item El ingreso (bienes normales, inferiores o neutrales)
+    \item El precio de otros bienes (sustitutos y complementarios)
+    \item Los gustos y preferencias del consumidor
+    \item Las expectativas del consumidor
+    \item Shocks externos
+  \end{itemize}
+  \begin{boxA}
+    \begin{center}
+      No confundir cambios en la demanda con cambios en las cantidades demandadas
+    \end{center}
+  \end{boxA}
 \end{frame}
 
 \begin{frame}
@@ -284,35 +334,43 @@
     \item Enfrenta un trade off entre dos bienes: las horas de tiempo libre y el consumo en bienes.
     \item Hay un límite físico: la cantidad de horas por día que puede trabajar o disfrutar.
     \begin{equation}
-     24 = H_{Ocio} + H_{Trabajo}.
+      24 = H_{Ocio} + H_{Trabajo}.
     \end{equation}
-    \item El costo de oportunidad del tiempo libre es el salario. 
+    \item El costo de oportunidad del tiempo libre (ocio) es el salario. 
     \item El consumo se define por la cantidad de horas de trabajo multiplicado por el salario:
-    \begin{equation}
-    Consumo = (24-H_{Ocio}) * Salario. 
-    \end{equation}
+    \begin{align*}
+      Consumo &= (24-H_{Ocio}) * Salario \\
+      Consumo &= Ingreso 
+    \end{align}
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Gráficamente..}
-\begin{center}
-  \includegraphics[scale=0.5]{../Figures/C9.1.png}
-\end{center}
+  \frametitle{Gráficamente..}
+  \begin{center}
+    \includegraphics[scale=0.5]{../Figures/C9.1.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{La TMT en el modelo ocio - consumo}
+  \frametitle{La TMT en el modelo ocio - consumo}
+  \begin{itemize}
+    \item La TMT ahora nos dice cuál es el costo de oportunidad de una hora de ocio.
+    \item Representa el salario por hora (que se transforma en consumo)
+  \end{itemize}
   \begin{center}
-    \includegraphics[scale=0.45]{../Figures/C9.2.png}
+    \includegraphics[scale=0.35]{../Figures/C9.2.png}
   \end{center}
 \end{frame}
 
 \begin{frame}
   \frametitle{La TMS en el modelo ocio - consumo}
+  \begin{itemize}
+    \item La TMS representa la cantidad de consumo que el individuo está dispuesto a resignar por una hora más de tiempo libre, de manera tal que se mantenga constante su utilidad.
+  \end{itemize}
   \begin{center}
-    \includegraphics[scale=0.5]{../Figures/C9.3.png}
+    \includegraphics[scale=0.4]{../Figures/C9.3.png}
   \end{center}
 \end{frame}
 
@@ -323,29 +381,66 @@
 \end{center}
 \end{frame}
 
-
 \begin{frame}
-\frametitle{¿Por qué G no es un equilibrio?}
-\begin{center}
-  \includegraphics[scale=0.5]{../Figures/C9.6.png}
-\end{center}
+  \frametitle{¿Por qué G no es un equilibrio?}
+  \begin{center}
+    \includegraphics[scale=0.5]{../Figures/C9.6.png}
+  \end{center}
 \end{frame}
 
-%AGREGAR SLIDES
+\begin{frame}
+  \frametitle{¿Por qué B no es un equilibrio?}
+  \begin{center}
+    \includegraphics[scale=0.8]{../Figures/C9.5.png}
+  \end{center}
+\end{frame}
 
-% SHOCK DE INGRESO EXTRA FIGURA 9.7
+\begin{frame}
+  \frametitle{Un shock de ingreso extra}
+  \begin{center}
+    \includegraphics[scale=0.8]{../Figures/C9.7.png}
+  \end{center}
+\end{frame}
 
-% UN AUMENTO EN EL SALARIO FIGURA 9.8
+\begin{frame}
+  \frametitle{Un aumento del salario}
+  \begin{center}
+    \includegraphics[scale=0.8]{../Figures/C9.8.png}
+  \end{center}
+\end{frame}
 
-% EL NUEVO EQUILIBRIO FIGURA 9.9 (EFECTO TOTAL)
+\begin{frame}
+  \frametitle{Un aumento del salario II}
+  \begin{center}
+    \includegraphics[scale=0.8]{../Figures/C9.9.png}
+  \end{center}
+\end{frame}
 
-% EFECTO INGRESO FIGURA 9.10 (PONER EN GRIS LO QUE NO CORRESPONDE AL EFECTO INGRESO)
+\begin{frame}
+  \frametitle{Descomponiendo el efecto total}
+  \begin{center}
+    \includegraphics[scale=0.8]{../Figures/C9.10.png}
+  \end{center}
+\end{frame}
 
-% EFECTO SUSTITUCION FIGURA 9.11 (PONER EN GRIS LO QUE NO CORRESPONDE AL EFECTO SUSTITUCION)
+\begin{frame}
+  \frametitle{Descomponiendo el efecto total}
+  \begin{center}
+    \includegraphics[scale=0.8]{../Figures/C9.11.png}
+  \end{center}
+\end{frame}
 
-% LA CURVA DE OFERTA DE TRABAJO DE LARGO PLAZO
-% Texto explicando brevemente que refiera a que se observo en el largo plazo
+\begin{frame}
+  \frametitle{El largo plazo}
+  \begin{itemize}
 
+    \item En la practica parece ser que hay una compensación exacta entre el efecto sustitución y el efecto ingreso.
+    \item Eso quiere decir que los aumentos visualizados en el ingreso a lo largo de la historia no se tradujeron en una baja muy grande del tiempo trabajado.
+    \item En el corto plazo, puede cambiar alguna decisión, pero no solemos pensar en el ocio como un bien normal (o sea que cuando aumenta el costo de oportunidad -salario- aumente mi consumo de ocio) ni como un bien inferior (cuando aumenta el salario - costo de oportunidad del ocio - disminuya el consumo de ocio).
+
+  \end{itemize}
+
+\end{frame}
 
 
 \end{document}
