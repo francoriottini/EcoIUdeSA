@@ -55,32 +55,10 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-\usepackage{hyperref}
-\usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
-\usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
 
+\usepackage{tikz}
+
+\usepackage{tcolorbox}
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -101,6 +79,14 @@
    \addtocounter{framenumber}{\value{framenumberappendix}}
 }
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+
+\usepackage{hyperref}
+
 %%%% end of defining backup slides
 
 %Specify figure caption, see also http://tex.stackexchange.com/questions/155738/caption-package-not-working-with-beamer
@@ -110,28 +96,13 @@
 
 \usetheme{Boadilla}
 
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
-
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 5: Dentro de la firma}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -141,25 +112,25 @@
 \begin{frame}
 \titlepage
 \centering
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 \begin{frame}
-\frametitle{El comportamiento de la firma}
-\begin{itemize}
-    \item ¿Cuál es el objetivo de las empresas? \vspace{2mm} \\
-    \begin{center}
-        ¡¡¡GANAR DINERO!!!
-    \end{center}  \vspace{2mm} \\
-     \item Seguramente los empresarios tienen otros objetivos, pero quizás los satisfacen usando parte de sus ganancias. 
-     \item Las empresas que no buscan ganar dinero van a tener problemas para sobrevivir (¿Cómo hacer una gran fortuna en la industria del vino? Empezando con una grande!) 
-    \item Las decisiones que toman las empresas dependen de 
+    \frametitle{El comportamiento de la firma}
     \begin{itemize}
-        \item de las características del mercado (la demanda), y \\
-        \item de los costos de producción,
-        \item ... las políticas gubernamentales (por ejemplo impuestos) van a afectar las decisiones
+        \item ¿Cuál es el objetivo de las empresas?
+        \begin{center}
+            ¡¡¡GANAR DINERO!!!
+        \end{center}
+        \item Seguramente los empresarios tienen otros objetivos, pero quizás los satisfacen usando parte de sus ganancias. 
+        \item Las empresas que no buscan ganar dinero van a tener problemas para sobrevivir (¿Cómo hacer una gran fortuna en la industria del vino? Empezando con una grande!) 
+        \item Las decisiones que toman las empresas dependen de 
+        \begin{itemize}
+            \item de las características del mercado (la demanda), y
+            \item de los costos de producción,
+            \item ... las políticas gubernamentales (por ejemplo impuestos) van a afectar las decisiones
+        \end{itemize}    
     \end{itemize}    
-\end{itemize}    
 \end{frame}
 
 \begin{frame}
@@ -173,7 +144,7 @@
         \item Sus capacidades tecnológicas \\
         - Las características de su función de producción dada por sus costos de producción
         \end{itemize}
-    \item Tomando en cuenta estas restricciones, la empresa toma decisiones \\
+    \item Tomando en cuenta estas restricciones, la empresa toma decisiones
     \begin{itemize}
         \item Sobre el precio al que ofrece sus productos...
         \item ... y la cantidad de este producto que va a producir
@@ -183,15 +154,11 @@
 
 \begin{frame}
 \frametitle{¿Que información necesita la firma para decidir qué precio cobrar?}
-\begin{itemize}
-    \item Para decidir qué precio cobrar, una empresa necesita información sobre la demanda
+    Para decidir qué precio cobrar, una empresa necesita información sobre la demanda
     \begin{itemize}
-        \item ¿Qué es la demanda? \\
+        \item ¿Qué es la demanda?
     La demanda es cuánto están dispuestos a pagar los consumidores potenciales por su producto
     \end{itemize}
-    \item Recuerden como estimamos la demanda de pizza de Eco I... ¡con una encuesta sobre la disposición a pagar!
-
-\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -200,17 +167,19 @@
     \item Una vez que conocemos la demanda... ¿cómo se elige cuánto producir y el precio que cobrar?
     \vspace{2mm}
     \item El problema principal de la empresa es el de la maximización del beneficio
-    \vspace{2mm}     \begin{itemize}
-        \item ¿Qué es el beneficio? \vspace{2mm} \\ 
-        Beneficio = Ingresos totales – Costos totales
+    \begin{itemize}
+        \item ¿Qué es el beneficio? \vspace{2mm} \\
+        \begin{center} 
+        Beneficio = Ingresos Totales – Costos Totales
+        \end{center}
         \vspace{2mm}
         \item ¿Qué es el ingreso total? 
         \vspace{2mm} \\ 
-        El valor de la producción al precio ofrecido (p·q)
+        El valor de la producción al precio ofrecido ($p \cdot q$)
         \vspace{2mm}
         \item ¿Qué es el costo total?
         \vspace{2mm} \\ 
-        Los costos por unidad, por la cantidad de unidades producidas (c·q)
+        Los costos por unidad, por la cantidad de unidades producidas ($c \cdot q$)
     \end{itemize} 
 \end{itemize} 
 \end{frame}
@@ -218,99 +187,145 @@
 \begin{frame}
 \frametitle{Vamos a ser maestros pizzeros}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.12_maestrospizzeros.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_06.12_maestrospizzeros.jpg}
 \end{frame}
 
 \begin{frame}
-\frametitle{Pensando en los costos}
-\begin{itemize}
-    \item Costos explícitos
+    \frametitle{Pensando en los costos}
     \begin{itemize}
-        \item Harina, levadura, sal, agua, etc.
-        \item Alquiler del negocio (podríamos ser los dueños pero en ese caso...)
-        \item Salario de los empleados 
-        \item Servicios que hay que pagar (agua, luz, gas, etc.)
+        \item Costos explícitos
+        \begin{itemize}
+            \item Harina, levadura, sal, agua, etc.
+            \item Alquiler del negocio (podríamos ser los dueños pero en ese caso...)
+            \item Salario de los empleados 
+            \item Servicios que hay que pagar (agua, luz, gas, etc.)
+        \end{itemize}
+        \item Costos implícitos (Costo de oportunidad)
+        \begin{itemize}
+            \item El costo del capital invertido (que podría ser utilizado en otra actividad económica)
+            \item El salario que perdemos por la actividad alternativa
+        \end{itemize}
     \end{itemize}
-    \item Costos implícitos
+\end{frame}
+
+\begin{frame}{Beneficio Económico versus Beneficio Contable}
     \begin{itemize}
-        \item El salario que perdemos por la actividad alternativa
-        \item El costo del capital invertido (que podría ser utilizado en otra actividad económica)
+        \item El beneficio contable es la diferencia entre los ingresos obtenidos y los gastos incurridos.
+        \item El beneficio económico incluye los costos de oportunidad.
+        \item ¿En que piensan los contadores? En el \textbf{beneficio contable}
+        \item ¿En que piensan los economistas? En el \textbf{beneficio económico}
     \end{itemize}
-\end{itemize}
+
+    \begin{boxA}
+        \begin{center}
+            El beneficio contable es la diferencia entre los ingresos obtenidos y los gastos incurridos mientras que el beneficio económico incluye los costos de oportunidad.
+        \end{center}
+    \end{boxA}
 \end{frame}
 
 \begin{frame}
-\frametitle{Ganancia económica versus ganancia contable}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.13_beneficioeconomicovscontable.png}
+    \frametitle{Alta ganancia contable, baja ganancia económica}
+    \centering
+    \includegraphics[scale=0.6]{../YPF.png}
 \end{frame}
 
-\begin{frame}
-\frametitle{Alta ganancia contable, baja ganancia económica}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/YPF.png}
+\begin{frame}{Regla de decisión básica}
+
+    \begin{itemize}
+        \item La regla de decisión básica es que la empresa va a producir hasta el punto en el que el beneficio económico marginal sea cero.
+        \item ¿Qué es el beneficio económico marginal?
+        \item ¿Qué es el ingreso marginal?
+        \item ¿Qué es el costo marginal?
+        \item ¿Que pasa si el ingreso marginal es mayor que el costo marginal? La empresa puede aumentar su beneficio produciendo más.
+        \item ¿Qué pasa si el ingreso marginal es menor que el costo marginal? La empresa puede aumentar su beneficio produciendo menos.
+    \end{itemize}
+
+    \begin{boxA}
+        \begin{center}
+            Las empresas producen hasta el punto en el que el costo marginal se iguala al ingreso marginal, que es el punto en el que se maximiza el beneficio.
+        \end{center}
+    \end{boxA}
 \end{frame}
 
-
+\begin{frame}{La función de producción}
+    \begin{boxA}
+        \begin{center}
+            La función de producción es una expresión matemática que indica la cantidad máxima de bienes que una empresa puede producir, dada su tecnología, a partir de la combinación una cantidad específica de insumos.
+        \end{center}
+    \end{boxA}
+    \begin{itemize}
+        \item Vamos a diferenciar entre el corto y el largo plazo
+    \end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{La función de producción en el corto plazo...}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.14_funciondeproduccionmedialunas.jpg}
+\includegraphics[scale=0.5]{../Figures/C12.1.png}
 \end{frame}
 
 \begin{frame}
-\frametitle{La función de producción de pizzas}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.15.jpg}
-\end{frame}
-
-\begin{frame}
-\frametitle{Contratando a un empleado adicional}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.16.jpg}
+    \frametitle{Contratando a un empleado adicional}
+    \begin{itemize}
+        \item Si observamos la función de producción anterior, la cantidad de producción que suma cada trabajador adicicional es distinta dependiendo cuantos trabajadores ya tengo
+        \item Esto quiere decir que lo que cambia a medida que contrato más trabajadores es el \textbf{producto marginal}
+        \item El producto marginal es la cantidad de producción adicional que se genera al aumentar la cantidad de trabajadores en una unidad
+        \[ PMg = \frac{\Delta Q}{\Delta L} \]
+        \item Además, esto va a cambiar el \textbf{producto medio}\dots
+        \item El producto medio representa la cantidad de producto que cada trabajador genera en promedio (durante un periodo de tiempo dado)
+        \[ PMe = \frac{Q}{L} \]
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Producto marginal y medio}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Prod1.png}
+\includegraphics[scale=0.6]{../Figures/T12.3.png}
 \end{frame}
 
-
 \begin{frame}
-\frametitle{Producto medio}
-\centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Prod2.png}
+    \frametitle{Producto marginal y medio}
+    \centering
+    \includegraphics[scale=0.65]{../Figures/C12.7.png}
 \end{frame}
 
 \begin{frame}{Producción y costos}
 \begin{itemize}
-    \item La función de producción tiene una representación como función de costos
-      \item Los costos son de dos tipos
-      \begin{itemize} 
-      \item Los costos fijos (no cambian con la producción)
-      \item Los costos variables (cambian con la producción)
-      \end{itemize}
+    \item La función de producción puede verse también como una función de costos
+    \item ¿Por qué? Porque los costos de producción están intrinsecamente relacionados con la cantidad de producción
+    \item Por ende, el producto marginal va a estar muy relacionado con el costo marginal
+    \item Los costos son de dos tipos
+    \begin{itemize} 
+        \item Los costos fijos (no cambian con la producción)
+        \item Los costos variables (cambian con la producción)
+    \end{itemize}
+    \item En largo plazo, vamos a asumir que todos los costos cambian con el nivel de producción\dots
+    \item Si esto pasa, no hay costos fijos en el largo plazo!
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Veamos los costos fijos...}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.17.jpg}
+\includegraphics[scale=0.6]{../Figures/C13.1.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{y ahora los costos variables}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.18.jpg}
+\includegraphics[scale=0.6]{../Figures/C13.2.png}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La forma de los costos variables}
+    \centering
+    \includegraphics[scale=0.6]{../Figures/C13.2.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{Los costos totales}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.19.jpg}
+\includegraphics[scale=0.6]{../Figures/C13.3.png}
 \end{frame}
 
 \begin{frame}
@@ -333,7 +348,7 @@
 \begin{frame}
 \frametitle{Costos: ¡para completar! }
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Cost1.png}
+\includegraphics[scale=0.6]{../Figures/Cost1.png}
 \end{frame}
 
 \begin{frame}
@@ -355,59 +370,31 @@
 \begin{frame}
 \frametitle{¿Cómo construir los costos medios?}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.21_funciondeproduccionmedialunas7.jpg}
+\includegraphics[scale=0.5]{../Figures/C13.6.png}
 \end{frame}
 
-%$\begin{frame}
-%\frametitle{¿Cómo construir el costo marginal?}
-%\centering
-%\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.26_costos5.jpg}
-%\end{frame}
 
 \begin{frame}
 \frametitle{¿Cómo construir el costo marginal?}
 \centering
-\includegraphics[scale=0.9]{Slides Principios de Economia/Figures/Contruyendocmg.png}
+\includegraphics[scale=0.9]{../Figures/Contruyendocmg.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{Graficando costo medio y marginal en el mismo gráfico}
 \centering
-\includegraphics[scale=0.9]{Slides Principios de Economia/Figures/Costoscp.png}
+\includegraphics[scale=0.9]{../Figures/Costoscp.png}
 \end{frame}
-
-%\begin{frame}
-%\frametitle{Los costos del negocio}
-%\centering
-%\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.20.jpg}
-%\end{frame}
 
 \begin{frame}
 \frametitle{Las propiedades de las curvas}
 \begin{itemize}
     \item El costo marginal eventualmente aumenta debido a los rendimientos marginales decrecientes.
-    \item La curva de costo total promedio suele tener forma de U. Bajan los costos fijos medios y aumentan los costos fijos medios variables.
+    \item La curva de costo total promedio suele tener forma de U. Bajan los costos fijos medios y aumentan los costos variables medios.
     \item La curva de costo marginal corta la curva de costo total promedio en su nivel mínimo.
     \item Si el costo marginal es menor al costo medio, el costo medio disminuye al aumentarla producción
 \end{itemize}
 \end{frame}
-
-\begin{frame}
-\frametitle{El error de confundir Cme con Cmg}
-\begin{itemize}
-    \item Nos enteramos que la universidad cuenta con un centro de llamadas que ya no usa.
-    \item Al consultar a las autoridades, responden: «Bueno, una llamada cuesta \$200, mientras que mandar una carta cuesta \$100 ». 
-    \item ¿Cómo calculo el costo? Para estimar el costo, la Universidad sumó el costo del sistema informático de telefonía que había comprado años antes y el costo de pagar a estudiantes para realizar las llamadas, y dividieron esa cifra entre el número total de llamadas.
-    \item ¿Cuál es el error?
-\end{itemize}
-\end{frame}
-
-
-%\begin{frame}
-%\frametitle{La curva de oferta del mercado de pizzas}
-%\centering
-%\includegraphics[scale=0.15]{Slides Principios de Economia/Figures/Tema_06.29.jpg}
-%\end{frame}
 
 
 \end{document}

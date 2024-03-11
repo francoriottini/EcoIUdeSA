@@ -55,32 +55,8 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-\usepackage{hyperref}
 \usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
-
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -110,20 +86,7 @@
 
 \usetheme{Boadilla}
 
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
+\usepackage{hyperref}
 
 
 % --------------------
@@ -132,7 +95,7 @@
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 6: Dentro de la firma II}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -143,7 +106,7 @@
 \begin{frame}
 \titlepage
 \centering
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 
@@ -177,13 +140,13 @@
 \begin{frame}
 \frametitle{Vamos a ver que pasa con diferentes precios....}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.20.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_06.20.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{La curva de oferta de la empresa}
 %\centering
-%\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.28.jpg}
+%\includegraphics[scale=0.6]{../Figures/Tema_06.28.jpg}
 
 \begin{center}
 \begin{figure}[H]
@@ -348,25 +311,25 @@
 \begin{frame}
 \frametitle{Costos en el largo plazo}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.24.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_06.24.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Costos en el largo plazo}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.25.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_06.25.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Costos en el largo plazo}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.26.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_06.26.jpg}
 \end{frame}
 
 \begin{frame}
 \frametitle{Costos en el largo plazo}
 \centering
-\includegraphics[scale=0.6]{Slides Principios de Economia/Figures/Tema_06.25_costos4.jpg}
+\includegraphics[scale=0.6]{../Figures/Tema_06.25_costos4.jpg}
 \end{frame}
 
 \end{document}
