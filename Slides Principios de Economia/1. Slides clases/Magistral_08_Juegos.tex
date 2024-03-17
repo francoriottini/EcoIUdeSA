@@ -90,6 +90,11 @@
 
 \usepackage{hyperref}
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 % --------------------
 % Overall information
 % --------------------
@@ -99,8 +104,6 @@
 \author[Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
-
-
 
 \begin{document}
 
@@ -113,6 +116,10 @@
 \begin{frame}
 \frametitle{Dilemas Sociales}
 \begin{itemize}
+    \item La interacción estratégica puede generar ciertos desvíos
+    \item Cuando hay una interacción estratégica, el resultado de un agente
+    depende no solo de lo que hace ese agente, sino también en
+    gran medida, de cómo actúan o reaccionan otros agentes.
     \item Una parte de la economía estudia este tipo de dilemas sociales
     \item Para modelar estos dilemas sociales y distintos tipos de interacciones sociales se suele utilizar lo que se conoce como teoría de juegos
     \end{itemize}
@@ -134,61 +141,105 @@
 \begin{frame}{Estudiando juegos}
     \begin{itemize}
         \item El término ``juegos'' refiere básicamente a modelos de interacción estratégica
-        \begin{itemize}
-            \item Es decir, modelos donde las personas involucradas en una interacción social saben que sus acciones afectan a otros y viceversa
-            \begin{itemize}
-                \item En este contexto, una estrategia es una acción (o un curso de acción) que puede tomar una persona cuando es consciente de esta dependencia mutua de los resultados
-            \end{itemize}
-        \end{itemize}
+        \item Es decir, modelos donde las personas involucradas en una interacción social saben que sus acciones afectan a otros y viceversa
+        \begin{boxA}
+            \centering
+            Un juego es cualquier situación en la que los participantes, a los que llamaremos jugadores, toman decisiones estratégicas, es decir, toman en cuenta las acciones y respuestas de los demás.
+        \end{boxA}
+        \item Estas decisiones estratégicas dan como resultado premios o castigos para
+        los jugadores.        
         \item ¿Cómo analizamos interacciones sociales?
         \begin{itemize}
             \item Definimos las características de un juego
-            \item Obtenemos ‘modos de jugar’
-            \begin{itemize}
-                \item que cumplen con ciertos criterios y nos ayudan a entender si esa manera de jugar es una buena
-            \end{itemize}
+            \item Principalmente reglas y resultados
+            \item Obtenemos ‘modos de jugar’: analizamos cuales son las decisiones óptimas para los jugadores
         \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tipos de juegos}
+    \begin{itemize}
+        \item Juegos simultáneos: donde se toma una decisión one-shot. Cada agente tuvo que tomar su decisión sin haber observado las del resto.
+        \item Juegos secuenciales: donde los jugadores toman sus decisiones de forma consecutiva. Los jugadores tienen alguna información acerca de las elecciones de otros jugadores
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Elementos de un juego}
     \begin{itemize}
-        \item \textbf{Los jugadores:} quién está interactuando con quién.\vspace{4mm}
-        \item \textbf{Las estrategias viables:} qué acciones están abiertas a los jugadores.\vspace{4mm}
-        \item \textbf{La información:} lo que cada jugador sabe al tomar su decisión.\vspace{4mm}
-        \item \textbf{Los beneficios:} cuáles serán los resultados para cada una de las posibles combinaciones de acciones.\vspace{4mm}
+        \item \textbf{Los jugadores:} Quién está interactuando con quién.
+        \item \textbf{Las estrategias viables:} Qué acciones están abiertas a los jugadores.
+        \item \textbf{La información:} Lo que cada jugador sabe al tomar su decisión.
+        \begin{itemize}
+            \item Información perfecta: todos los jugadores conocen los movimientos realizados previamente por el resto de jugadores (solo en juegos secuenciales).
+            \item Información completa: cada jugador conoce las estrategias y recompensas del resto de jugadores, pero no tiene porqué conocer las acciones de estos.
+        \end{itemize}
+        \item \textbf{Los pagos:} Cuáles serán los resultados para cada una de las posibles combinaciones de acciones.\vspace{4mm}
     \end{itemize}
 \end{frame}
 
-% \begin{frame}
-%     \frametitle{Tipos de juegos}
-%     \begin{itemize}
-%         \item Juegos simultáneos: donde se toma una decisión one-shot.\vspace{4mm}
-%         \item Juegos secuenciales: donde los jugadores toman sus decisiones de forma consecutiva.\vspace{4mm}
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{Juegos Simultaneos}
+    \begin{itemize}
+        \item Los jugadores deciden a la vez o bien desconocen los movimientos anteriores de los otros jugadores.
+        \item Tenemos dos productores: Jorge y Walter.
+        \item Cada uno debe decidir cuanto producir tomando en cuenta lo que piensa que hará el otro.
+        \item Estrategias:
+        \begin{itemize}
+            \item Walter está analizando colocar una plantación de manzanas o plantar trigo.
+            \item Jorge está analizando si iniciar una producción de miel o plantar trigo.
+        \end{itemize}
+        \item Para resolver el juego es util construir una \textbf{matriz de pagos}
 
+        \centering
+        \includegraphics[scale=0.6]{../Figures/T20.1.png}
 
-% \begin{frame}
-%     \frametitle{ Estudiando juegos}
-%     \begin{itemize}
-%         \item “The Economy” presenta un problema de división de trabajo
-%     \begin{itemize}
-%         \item Dos individuos deben decidir qué producir, con el riesgo de terminar produciendo lo mismo
-%             \begin{itemize}
-%                 \item ¿Por qué es esto un problema?
-%                 \item Por alguna razón, no se pueden poner de acuerdo
-%                 \item Toman decisiones en forma independiente
-%                 \item Juegan una sola vez   
-%             \end{itemize}
-%         \item ¿Arroz o mandioca?
-%             \begin{itemize}
-%                 \item Asumimos que ninguno puede producir ambos...
-%                 \item ... y que Bala es mejor produciendo arroz, mientras que Anil es mejor produciendo mandioca
-%             \end{itemize}
-%     \end{itemize}
-% \end{frame}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Representación Normal del juego}
+    \centering
+    \includegraphics[scale=0.6]{../Figures/T20.2.png}
+    \begin{boxA}
+        \centering
+        Esta matriz se denomina representación normal de un juego. Un
+juego está representado en forma normal cuando la lista de todos
+los posibles resultados de cada jugador, con todas las posibles
+combinaciones de estrategias, viene dada para cualquier secuencia
+de decisiones en el juego.
+    \end{boxA}
+\end{frame}
+
+\begin{frame}{Resolviendo el juego}
+    
+    \begin{itemize}
+        \item Es útil pensar que cada uno quiere tomar la mejor decisión posible\dots
+        \item ¿Cuál es la mejor respuesta de cada individuo?
+        \item La mejor respuesta es aquella estrategia que le da al jugador el mayor pago, dada la estrategia que elige el otro jugador.
+        \begin{boxA}
+            \centering
+            Se denomina mejor respuesta a aquella estrategia que proporciona al jugador el pago más elevado, condicional a lo que se conjetura que harán los demás.
+        \end{boxA}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mejor respuesta de Jorge}
+    
+    Si independientemente de lo que elige Walter, a Jorge siempre le conviene hacer lo mismo, decimos que producir miel es una \textbf{estrategia dominante} para Jorge.
+    
+    \centering
+    \includegraphics[scale=0.6]{../Figures/T20.3.png}
+
+    \begin{boxA}
+        \centering
+        Una estrategia dominante es una mejor respuesta a todas las posibles estrategias de otro jugador. Si un agente tiene una estrategia dominante siempre la va a jugar, independientemente de la estrategia que juegue el rival.
+    \end{boxA}
+\end{frame}
+
+\begin{frame}{Mejor respuesta de Walter}
+    \centering
+    \includegraphics[scale=0.6]{../Figures/T20.4.png}
+\end{frame}
 
 % \begin{frame}{El juego de Anil y Bala}
 %     \begin{itemize}
