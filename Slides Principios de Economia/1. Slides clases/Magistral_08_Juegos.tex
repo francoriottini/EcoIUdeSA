@@ -52,11 +52,11 @@
 }
 \usepackage{fontawesome} % Social Icons
 \usepackage{epstopdf} % allow embedding eps-figures
-\usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 
 \usepackage{tikz}
+\usetikzlibrary{shapes,arrows.meta,positioning}
 
 \usepackage{tcolorbox}
 
@@ -111,6 +111,13 @@
 \titlepage
 \centering
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
+\end{frame}
+
+\begin{frame}
+    \begin{boxA}
+        \centering
+        CAMBIOS EN EL CRONOGRAMA DE LECTURAS!
+    \end{boxA}
 \end{frame}
 
 \begin{frame}
@@ -241,484 +248,139 @@ de decisiones en el juego.
     \includegraphics[scale=0.6]{../Figures/T20.4.png}
 \end{frame}
 
-% \begin{frame}{El juego de Anil y Bala}
-%     \begin{itemize}
-%         \item Jugadores
-%         \begin{itemize}
-%             \item Anil y Bala, dos agricultores que deciden en qué cultivo especializarse
-%         \end{itemize}
-%         \item Estrategias viables
-%         \begin{itemize}
-%             \item Arroz o mandioca
-%         \end{itemize}
-%         \item Información
-%         \begin{itemize}
-%             \item Ningún agricultor sabe lo que el otro elige
-%         \end{itemize}
-%         \item Pagos
-%         \begin{itemize}
-%             \item Dependerá de los precios de mercado y de la calidad de la tierra
-%         \end{itemize}
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{Equilibrio de Nash}
+    Un perfil de estrategias es un equilibrio de Nash si, dadas las estrategias del rival, cada uno de los agentes está jugando su mejor respuesta.
+    \begin{boxA}
+        \centering
+        En un equilibrio de Nash, ninguno de los jugadores tiene incentivos a desviarse, debido a que no puede obtener un pago mayor cambiando de estrategia.
+    \end{boxA}
+    \centering
+    \includegraphics[scale=0.6]{../Figures/T20.5.png}
+\end{frame}
 
-% \begin{frame}{Escenarios}
-%     \centering
-%     \includegraphics[scale=0.65]{../Figures/Tema_03_7_bala.jpg}
-% \end{frame}
+\begin{frame}{Equilibrio Pareto Eficiente}
+    \begin{center}
+        \includegraphics[scale=0.6]{../Figures/T20.5.png}
+    \end{center}
+    Este resultado también permite que Walter y Jorge obtengan el mejor resultado posible. Si esto sucede, decimos que se alcanza un resultado \textbf{Pareto eficiente}.
+    \begin{boxA}
+        \centering
+        En un equilibrio Pareto eficiente, no hay otra situación o alternativa en donde uno esté mejor y ninguno esté peor. 
+    \end{boxA}
+    Este es el concepto de eficiencia del que hablamos al principio de la materia, donde decíamos que una asignación era \textbf{eficiente} si no podíamos mejorar la situación de un agente sin empeorar la de otro.
+\end{frame}
 
-% \begin{frame}{Construyendo la matriz de pagos}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_8_bala.jpg}
-% \end{frame}
+\begin{frame}{Equilibrios Multiples}
+    Existen situaciones en las que un juego puede tener más de un equilibrio de Nash.
+    \begin{itemize}
+        \item Agus y Juani son dos hermanos que quieren ir al cine a ver una película.
+        \item Juani prefiere ver el drama y Agus prefiere la película de acción. 
+        \item Ambos valoran más el hecho de ir juntos a ver su película favorita solos.
+    \end{itemize}
+    \begin{center}
+        \includegraphics[scale=0.5]{../Figures/T20.6.png}
+        \includegraphics[scale=0.5]{../Figures/T20.7.png}
+    \end{center}
+\end{frame}
 
-% \begin{frame}
-%     \frametitle{Construyendo la matriz de pagos}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_9_bala.jpg}
-% \end{frame}
+\begin{frame}{El dilema del prisionero}
+    \begin{itemize}
+        \item Dos potenciales criminales son arrestados y se les ofrece un trato.
+        \begin{itemize}
+            \item Si ninguno confiesa, ambos serán sentenciados a un mes de cárcel.
+            \item Si ambos confiesan, serán sentenciados a seis meses de cárcel.
+            \item Si uno confiesa y el otro no, el que confesó será puesto inmediatamente en libertad, mientras que el que no confesó será condenado a nueve meses (seis por el robo y tres por obstrucción a la justicia).
+        \end{itemize}
+        \item Cada jugador cuenta con dos posibles estrategias: confesar o no confesar
+    \end{itemize}
+    \begin{center}
+        \includegraphics[scale=0.6]{../Figures/T20.8.png}
+    \end{center}
+\end{frame}
+\begin{frame}{El dilema del prisionero}
+    \begin{center}
+        \includegraphics[scale=0.6]{../Figures/T20.9.png}
+    \end{center}
+    \begin{itemize}
+        \item El equilibrio de Nash es que ambos confiesen.
+        \item Tampoco querran cambiar su decisión luego de ver el resultado.
+        \item Se genera un dilema desde el punto de vista cooperativo.
+        \item Este resultado es subóptimo.
+        \item Se trata de un \textbf{equilibrio en estrategias dominantes}: siempre van a elegir confesar, no importa lo que juegue el rival.
+    \end{itemize}
+    \begin{boxA}
+        \centering
+        El principal impedimento para que los jugadores lleguen a este equilibrio superador es que siempre existirán incentivos para desviarse de cualquier par de estrategias que no sean el equilibrio de Nash
+    \end{boxA}
+\end{frame}
 
-% \begin{frame}
-%     \frametitle{ Construyendo la matriz de pagos}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_10_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{Construyendo la matriz de pagos}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_11_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{Matriz de pagos}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_12_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{¿Cómo pensamos el problema?}
-%     \begin{itemize}
-%         \item ¿Cuál es la mejor respuesta de cada individuo?
-%         \begin{itemize}
-%             \item Aquella estrategia que brinda los mayores pagos, dada la estrategia seleccionada por la otra persona
-%         \end{itemize}
-%         \item A veces, existe una estrategia dominante
-%         \begin{itemize}
-%             \item Esta es una mejor respuesta a todas las posibles estrategias de otro jugador
-%         \end{itemize}
-%         \item Si se encuentra un resultado donde cada individuo juega su estrategia dominante, entonces nos encontramos con un equilibrio en estrategia dominante
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{ ¿Cómo piensa Anil?}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_13_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{ ¿Cómo piensa Anil?}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_14_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{ ¿Qué hace Anil?}
-%     \centering
-%     \includegraphics[scale=0.6]{../Figures/Tema_03_15_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ ¿Cómo piensa Bala?}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_16_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ ¿Cómo piensa Bala?}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_17_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ ¿Qué hace Bala?}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_18_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Equilibrio}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_19_bala.jpg}
-% \end{frame}
-
-% \begin{frame}
-%     \frametitle{Teoría de juegos y estrategia competitiva}
-%     \begin{block}{Equilibrio de Nash}
-%     Un equilibrio de Nash es un par de estrategias, una para cada jugador, en las que cada estrategia es la mejor respuesta dado lo que hace el otro
-%     \end{block}
-%     \vspace{5mm}
-%     En equilibrio, cada jugador está haciendo lo mejor que puede, dado lo que el otro jugador también lo está haciendo
-% \end{frame}
+\begin{frame}{¿Como se sale del dilema?}
+    \begin{itemize}
+        \item ¿Cómo podemos llegar al resultado de cooperación?
+        \item Incorporar dilemas morales
+        \begin{itemize}
+            \item Juego del ultimátum.
+            \item No delatar es "lo que está bien"
+        \end{itemize}
+        \item Juegos repetidos:
+        \begin{itemize}
+            \item Los jugadores pueden establecer castigos en base a lo actuado en las diferentes instancias del juego.
+            \item  Si uno se desvía del comportamiento que piensa que corresponde, el otro lo castigará en los próximos períodos.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
 
 
-% \begin{frame}
-%     \frametitle{Otro juego: Dilema del prisionero}
-%     \begin{itemize}
-%         \item Dos sospechosos son arrestados y acusados de un delito
-%         \item La policía no tiene evidencia suficiente para condenar a los sospechosos a menos que uno confiese
-%         \item La policía encierra a los sospechosos en celdas separadas y les explica las consecuencias derivadas de las decisiones que formen
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{Juegos Secuenciales}
+    \begin{itemize}
+        \item Los jugadores toman decisiones en forma consecutiva, es decir, primero decide un jugador y luego el otro.
+        \item Ya no podemos presentar el juego en forma de cuadro, sino que tenemos lo que se denomina \textbf{representación en forma extensiva} de un juego.
+        \item Para resolvernos ya no nos va a alcanzar encontrar la mejor respuesta, sino que vamos a tener que utilizar \textbf{inducción hacia atrás}.
+    \end{itemize}
+\end{frame}
 
-% \begin{frame}
-%     \frametitle{Dilema de los prisioneros}
-%     \begin{itemize}
-%         \item Si ninguno confiesa, ambos serán condenados por un delito menor sentenciados a un mes de cárcel
-%         \item Si ambos, confiesan serán sentenciados a seis meses de cárcel
-%         \item Finalmente, si uno confiesa y el otro no, el que confiesa será puesto en libertad inmediatamente y el otro será sentenciado a nueve meses en prisión, seis por el delito y tres más por obstrucción a la justicia
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{El robo al Banco Rio}
+    \begin{itemize}
+        \item Dos ladrones entran a un reconocido banco.
+        \item Se llevan \$200 millones pero al escapar se los lleva el ladron 1, prometiendo que le enviará la mitad al ladron 2.
+        \item El ladron 2 decide amenazarlo, con que si no cumple la promesa lo denunciará a la policía
+        \item El ladron 1 decide primero... cumplir la promesa o no cumplirla y enviarle solo \$25 millones 
+        \item El Ladrón 2 va a decidir segundo, luego de observar qué hizo el Ladrón 1. Sus estrategias van a ser: tomar lo que el Ladrón 1 le envió o denunciarlo a la policía.
+    \end{itemize}
+\end{frame}
 
-% \begin{frame}
-% \frametitle{Dilema de los prisioneros}
-% \begin{table}
-%      \begin{tabular}{cc|c|c|}
-%       & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Preso $2$}\\
-%       & \multicolumn{1}{c}{} & \multicolumn{1}{c}{No confesar}  & \multicolumn{1}{c}{Confesar} \\\cline{3-4}
-%       \multirow{}{Preso $1$}  & No Confesar & $(-1,-1)$ & $(-9,0)$ \\\cline{3-4}
-%       & Confesar & $(0,-9)$ & $(-6,-6)$ \\\cline{3-4}
-%     \end{tabular}
-%   \end{table}
-% \end{frame}
-
-%\begin{frame}
-%\frametitle{Dilema de los prisioneros}
-%\begin{itemize}
-%\item Cada jugador cuenta con dos estrategias posibles: confesar y no confesar. 
-%\item Las ganancias de los dos jugadores cuando eligen un par concreto de estrategias aparecen en la casilla correspondiente de la matriz binaria. 
-%\item Por convención, la ganancia del llamado jugador-fila (Preso 1) es la primera ganancia, seguida, por la ganancia del jugador columna (Preso 2). 
-%\end{itemize}
-%\end{frame}
+\begin{frame}{El robo al Banco Rio}
+    \begin{center}
+        \includegraphics[scale=0.6]{../Figures/C20.2.png}
+    \end{center}
+\end{frame}
 
 
-%\begin{frame}
-%\frametitle{ Otro juego}
-%\begin{itemize}
-%    \item Dos empresas productoras de \textit{smartphones}
-%    \item Comparten por igual el mercado de un país por, digamos, \$8 millones
-%    \item Enfrentan el problema de invertir en publicidad
-%        \begin{itemize}
-%        \item Si ambos invierten en publicidad, mantienen su proporción del mercado inalterada
-%        \item Si uno de ellos invierte  \$1 millón, se queda con $\frac{3}{4}$ del mercado
-%        \end{itemize}
-%    \item ¿Cómo analizamos este caso?    
-%\end{itemize}
-%\end{frame}
+\begin{frame}{El robo al Banco Rio}
+    \begin{itemize}
+        \item Para resolver este problema, vamos a utilizar la inducción hacia atrás.
+        \item Lo primero que vamos a hacer es observar qué le conviene hacer al Ladrón 2 si el Ladrón 1 no cumple su promesa.
+        \item Si el Ladrón 1 no cumple su promesa, al Ladrón 2 ¿le conviene aceptar o no aceptar? Como su pago es \$25 millones si acepta y -\$100 millones si no acepta, claramente
+        le convendrá aceptar.
+        \item Si el Ladrón 2 amenaza con denunciar al Ladrón 1, decimos que nos encontramos ante una "amenaza no creíble".
+        \item El Ladrón 2 no tendrá incentivos para cumplir con su palabra.
+        \begin{boxA}
+            \centering
+            Con la inducción hacia atras, recorremos ``hacia atrás'' el ``arbol'' hasta llegar
+            al nodo inicial, identificando en cada nodo la estrategia óptima en
+            anticipación del comportamiento que se espera hacia adelante.            
+        \end{boxA}
+    \end{itemize}
+\end{frame}
 
-%\begin{frame}
-%\frametitle{ El juego de Apple y Samsung}
-%\begin{itemize}
-%    \item Jugadores
-%        \begin{itemize}
-%        \item Apple y Samsung, dos compañías que quieren maximizar su participación en el mercado
-%        \end{itemize}
-%    \item Estrategias viables
-%        \begin{itemize}
-%        \item Publicitar o no publicitar
-%        \end{itemize}
-%    \item Información
-%        \begin{itemize}
-%        \item Ambos tienen la misma información, y ninguno puede ver la decisión del otro antes de jugar
-%        \end{itemize}
-%    \item Pagos
-%        \begin{itemize}
-%        \item Dependerá del costo de publicidad y el mercado
-%        \end{itemize}
-%\end{itemize}
-%\end{frame}
-
-%\begin{frame}
-%\frametitle{ Matriz de pagos}
-%\centering
-%\includegraphics[scale=0.6]{../Figures/Tema_03_20_bala.jpg}
-%\end{frame}
-
-%\begin{frame}
-%\frametitle{ Equilibrio}
-%\centering
-%\includegraphics[scale=0.6]{../Figures/Tema_03_21_bala.jpg}
-%\end{frame}
-
-% \begin{frame}
-% \frametitle{Dilema del prisionero}
-%     \begin{itemize}
-%         \item Típicamente, un juego con un equilibrio en estrategia dominante donde el resultado son pagos individuales y totales inferiores a otras estrategias posibles
-%     \end{itemize}
-%     \textbf{El resultado socialmente óptimo no es alcanzado} \vspace{2mm}
-%     \begin{itemize}
-%         \item Este tipo de dilema es útil para representar una serie de problemáticas sociales
-%         \begin{itemize}
-%         \item Desde temas ambientales hasta conflictos en la provisión de algunos tipos de bienes
-%         \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Problemas y soluciones}
-% \begin{itemize}
-%     \item ¿Por qué se llega a este tipo de resultado y en qué forma se puede amenorar o solucionar?
-%     \item Algunas razones (y soluciones)
-%         \begin{itemize}
-%         \item Los jugadores sólo se preocupan por sus propios beneficios \\
-%         - Podemos introducir preferencias sociales
-%         \item Nadie puede hacer que los jugadores paguen por las consecuencias de sus acciones sobre los demás \\
-%         - Juegos repetidos, normas sociales y castigo de pares
-%         \item Los jugadores no pueden coordinar sus acciones con antelación \\
-%         - Cambiar las reglas del juego (instituciones y políticas)
-%         \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Asfaltando la calle}
-% \begin{itemize}
-%     \item Dos familias viven en una calle de tierra (Álvarez y Benítez)
-%     \item Ambas se beneficiarían si se asfaltara la calle
-%         \begin{itemize}
-%         \item Por ejemplo, tendrían que gastar menos en arreglo y limpieza de sus autos por \$15.000
-%         \end{itemize}
-%     \item Enfrentan el problema de invertir en el asfalto
-%         \begin{itemize}
-%         \item El costo de asfaltar la calle es de \$20.000
-%         \item Puede pagarlo una u otra familia, o las dos juntas
-%         \end{itemize}
-% \item ¿Cómo analizamos este caso?
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{El juego del asfalto}
-% \begin{itemize}
-%     \item Jugadores
-%         \begin{itemize}
-%         \item Familias Álvarez y Benítez
-%         \end{itemize}
-%     \item Estrategias viables
-%         \begin{itemize}
-%         \item Pagar o no pagar por el asfalto
-%         \end{itemize}
-%     \item Información
-%         \begin{itemize}
-%         \item Ambos tienen la misma información, y ninguno puede ver la decisión del otro antes de jugar
-%         \end{itemize}
-%     \item Pagos
-%         \begin{itemize}
-%         \item Dependerá del ahorro en arreglos del auto y la contribución al costo del asfalto
-%         \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Pagando por el asfalto}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_27_abel.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{El problema del bien público}
-% \begin{itemize}
-%     \item Existe un tipo de bien, usualmente llamado bien público, con dos características distintivas:
-%     \begin{itemize}
-%         \item Es no rival \\
-%         - Su uso por una persona no perjudica o impide el uso simultáneo por parte de otros individuos
-%         \item Es no excluyente \\
-%         - No se puede impedir ser utilizado
-%     \end{itemize}
-%     \item El dilema del prisionero ilustra un problema de los bienes públicos: pueden no producirse
-%     \begin{itemize}
-%         \item Dadas sus característica, existe la posibilidad de hacer free-riding \\
-%         - ¡No contribuir es la estrategia dominante!
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Pagando por los costos que uno genera}
-% \begin{itemize}
-%     \item Tanto en el caso del asfalto, como en el de los pesticidas elaborado en “The Economy”: \\
-% \end{itemize}
-% \vspace{5mm}
-% \textbf{Es difícil hacer pagar a los jugadores por la
-% consecuencias de sus acciones sobre los demás}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Mitigando el problema}
-% \begin{itemize}
-%     \item Mecanismos ayudan a reducir el problema
-%     \begin{itemize}
-%         \item Juegos repetidos \\
-%         - Repetición contribuye a la cooperación: las consecuencias en el futuro hacen la estrategia egoísta sub-óptima
-%         \item Normas sociales \\
-%         - Reglas que indican como actuar en contextos particulares \\
-%         - Individuos a veces incurren en considerables costos para castigar a pares que violan normas sociales o llevan a cabo acciones que consideran injustas (¿gusto por equidad?)
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Aprendiendo sobre preferencias}
-% \begin{itemize}
-%     \item Los economistas utilizan a veces experimentos para aprender sobre las preferencias
-%     \begin{itemize}
-%         \item En el laboratorio: \\
-%         - Se puede controlar las decisiones de los participantes y sus resultados \\
-%         - Se puede crear un grupo de control / tratamiento para la comparación \\
-%         - Los resultados pueden ser replicados \\
-%         - Se pueden controlar otras variables
-%         \item En el campo \\
-%         - Algunos experimentos de laboratorio no pueden predecir la toma de decisiones en el mundo real \\
-%         - El campo provee un contexto más realista en el que las personas toman decisiones
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ El dilema de la guardería}
-% \begin{itemize}
-%     \item Un experimento `real' (`field experiment')
-%        \begin{itemize}
-%        \item Se introdujo una multa a la llegada tarde de los padres... con un resultado no esperado \\
-%         - ¡Más padres empezaron a llegar tarde!
-%         \end{itemize}
-%     \item ¿Por qué?
-%         \begin{itemize}
-%         \item Antes del experimento, llegar tarde era `incorrecto' 
-%         \item El tiempo de los maestros pasó a tener un valor definido \\
-%         - El precio del retardo, que los padres podían estar dispuestos a pagar o no \\ 
-%         \item En este caso, se dice que los incentivos hicieron un crowding out de las preferencias sociales
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ En el campo ... con padres y niños}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_28_guarderia.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Negociando}
-% \begin{itemize}
-%     \item La cooperación es posible aun cuando agentes 
-%     actúan en forma independiente
-%     \begin{itemize}
-%         \item En muchos de los ejemplos que discutimos no fue necesario que los individuos se pusieran de acuerdo \\
-%         - A veces las condiciones del juego ayudaban (con Anil y Bala), o si se repetía el juego, o si permitía sancionar a los que no colaboraban
-%     \end{itemize}
-%     \item Pero la negociación es otra herramienta para conseguir un acuerdo mutuamente beneficioso
-%     \begin{itemize}
-%         \item Más fácil decirlo que hacerlo \\
-%         - ¿Cómo repartir los costos y beneficios de la interacción?
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Motivando preferencias sociales}
-% \begin{itemize}
-%         \item Altruismo
-%         \begin{itemize}
-%             \item Una persona puede ser altruista y preocuparse de la felicidad (o sobre algún otro aspecto del bienestar) de los demás
-%         \end{itemize}
-%         \item Equidad
-%         \begin{itemize}
-%             \item La importancia de distribuir recursos en forma justa \\
-%             - Motivación por lo que los economistas llaman `aversión por la desigualdad'
-%         \end{itemize}
-%         \item Reciprocidad
-%         \begin{itemize}
-%             \item Existencia de preferencias recíprocas \\
-%             - Si en el pasado han sido generosos con nosotros, merecemos tratar en forma generosa
-%         \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Juego del ultimátum}
-% \begin{itemize}
-%         \item Una herramienta muy utilizada para estudiar preferencias sociales es el juego del ultimátum
-%         \begin{itemize}
-%             \item ü Dos jugadores, seleccionados aleatoriamente \\ 
-%             - Proponente \\
-%             - Receptor
-%             \item El proponente recibe algo de valor (típicamente dinero) y debe ofrecerle al receptor una parte \\
-%             - Que puede ser cualquier cosa entre todo y nada \\
-%             - El receptor sabe cuán grande es el total
-%             \item Una vez que el receptor escucha la oferta, decide si la acepta o no \\
-%             - Si la oferta es rechazada, nadie recibe nada \\
-%             - Si es aceptada, se reparte como sugirió el proponente
-%         \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Juego secuencial}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_29_arbol.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ Agricultores versus estudiantes}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_32_ultimatum.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ ¿Cuál es el beneficio esperado?}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_31_ultimatum.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{ La batalla de los sexos}
-% \begin{itemize}
-%         \item Una pareja arregló para ir al cine
-%         \begin{itemize}
-%             \item Alberto y Beatriz
-%         \end{itemize}
-%         \item No recuerdan qué película iban a ver
-%         \begin{itemize}
-%             \item Alberto quería ir a ver una comedia romántica
-%             \item Beatriz una de acción
-%         \end{itemize}
-%         \item Ambos prefieren ir al mismo lugar que desencontrarse
-%         \item No tienen forma de comunicarse
-%         \item ¿Cómo analizamos este caso?
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Y si hay competencia?}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_03_33_batallasexo.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Juegos de coordinación}
-% \begin{itemize}
-%         \item La batalla de los sexos es un típico juego de coordinación
-%         \begin{itemize}
-%             \item Ilustra situaciones que encontramos por doquier en la sociedad \\
-%             - ¿Qué plataforma de social media usar? ¿De qué lado del camino conducir?
-%         \end{itemize}
-%         \item En este caso, el pago era idéntico en ambos equilibrios, pero puede que los jugadores queden atrapados en un mal equilibrio
-%         \begin{itemize}
-%             \item ¿Cómo se decide, por ejemplo, pasar de una tecnología a otra cuando la nueva implica un costo para el capitalista y para el trabajador?
-%         \end{itemize}
-% \end{itemize}
-% \end{frame}
+\begin{frame}{Conclusión}
+    \begin{itemize}
+        \item No todo es color de rosas como cuando veíamos comercio.
+        \item Ciertos comportamientos y ciertas configuraciones pueden generar resultados que no sean los óptimos desde el punto de vista social.
+        \item Existen otras configuraciones, como los juegos con \textbf{estrategias mixtas} donde ya no tenemos certeza, sino que asignamos probabilidades a las estrategias de los jugadores.
+        \item La teoría de juegos es una herramienta muy útil para entender y modelar comportamientos estratégicos.
+        \item Además, es util para pensar en los efectos de políticas públicas y en las expectativas que tienen los agentes.
+    \end{itemize}
+\end{frame}
 
 \end{document}
