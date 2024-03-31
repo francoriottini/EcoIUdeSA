@@ -85,6 +85,11 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 \usetheme{Boadilla}
 
@@ -93,7 +98,7 @@
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 11: Elasticidad}
+\\ Magistral 11: Mercados, eficiencia y elasticidad}
 \date{}
 \author[Riottini]{Riottini Franco}
 \vspace{0.4cm}
@@ -107,265 +112,240 @@
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
-%\begin{frame}{Elasticidad precio de rutas áereas}
-%\centering
-%\includegraphics[scale=0.55]{../Figures/ElasticidadVuelos.png}
-%\end{frame}
+\begin{frame}{Acerca de la eficiencia del mercado}
+    \begin{itemize}
+      \item La planificación centralizada que planteamos en la primera clase como mecanismo de asignación tiene, principalmente, dos problemas: la \textbf{información} que precisa y los \textbf{incentivos} que genera.
+      \item El mecanismo de asignación de los mercados es un mecanismo de asignación descentralizado que resuelve estos problemas a través del intercambio.
+      \item El mercado genera así asignaciones eficientes, donde se comparan constantemente la \textbf{valoración} de las personas por los bienes con los \textbf{costos} de produccción.
+      \item Eficiencia en un sentido modesto... eficiencia en el sentido de Pareto!
+    \end{itemize}
+\end{frame}
 
-\begin{frame}
-\frametitle{Sensibilidad de la demanda}
-\begin{itemize}
-    \item La pendiente de la curva de demanda tiene información relevante para las empresas\vspace{2mm}
-    \begin{itemize}
-        \item La pendiente muestra la relación costo-beneficio que la firma enfrenta entre precio y cantidad.\vspace{4mm}
-     \end{itemize}
-    \item ¿Nos ayuda a pensar qué tan sensible es la demanda ante cambios en los precios?\vspace{2mm}
-    \begin{itemize}
-        \item En parte, si, pero para pensar en esto usamos el concepto de \textbf{elasticidad-precio}: \\\vspace{2mm}
-      \item Intuitivamente, se refiere al grado de reacción de los consumidores a cambios en el precio del producto 
-    \end{itemize}
-    \end{itemize}
+\begin{frame}{La eficiencia de mercado en términos gráficos}
+  \centering
+  \includegraphics[scale=0.6]{../Figures/C17.4.png} 
+\end{frame}
+\begin{frame}{La eficiencia de mercado en términos gráficos}
+  \begin{itemize}
+    \item Sabemos que la pendiente negativa de la demanda refleja la disposición a pagar.
+    \item Sin embargo no es lo que \textbf{efectivamete} pagan los consumidores\dots
+    \item Esta diferencia entre lo que está dispuesto a pagar una persona y lo que efectivamente paga es un excedente.
+    \item Este excedente lo llamaremos \textbf{excedente del consumidor}.
+  \end{itemize}
+  \centering
+  \includegraphics[scale=0.4]{../Figures/C17.5.png}
+  \includegraphics[scale=0.4]{../Figures/C17.6.png}
+\end{frame}
+
+\begin{frame}{La eficiencia de mercado en términos gráficos}
+  \begin{itemize}
+    \item Algo similar sucede por el lado de la oferta\dots
+    \item Los productores que estén dispuestos a vender su producto a un precio menor al precio de equilibrio tienen una ganancia representada por la diferencia entre lo que estaban dispuestos a recibir y lo que efectivamente reciben.
+    \item Este excedente lo llamaremos \textbf{excedente del productor}.
+  \end{itemize}
+  \centering
+  \includegraphics[scale=0.4]{../Figures/C17.7.png}
+  \includegraphics[scale=0.4]{../Figures/C17.8.png}
+\end{frame}
+
+\begin{frame}{La eficiencia de mercado en términos gráficos}
+  \begin{itemize}
+    \item A la suma del excedente del consumidor y del productor se la denomina excedente total.
+    \item La eficiencia de mercado se refiere a la maximización del excedente total.
+    \item Cuando la asignación no es la de equilibrio de mercado, existen ganancias o beneficios no explotados.
+  \end{itemize}
+  \centering
+  \includegraphics[scale=0.5]{../Figures/C17.9.png}
+\end{frame}
+
+\begin{frame}{La eficiencia de mercado en términos gráficos}
+  \begin{boxA}
+    \centering
+    Llamamos perdida de peso muerto a los beneficios no explotados que se generan cuando la asignación no es un equilibrio o es un equlibrio \textit{distinto} al de competencia perfecta.
+  \end{boxA}
+  \centering
+  \includegraphics[scale=0.4]{../Figures/C17.10.png}
+  \includegraphics[scale=0.4]{../Figures/C17.11.png}
+\end{frame}
+
+\begin{frame}{Elasticidad}
+
+  \begin{itemize}
+    \item La pendiente de las curvas de oferta y demanda tiene información valiosa que no hemos discutido todavía.
+    \item La reacción que tenga la cantidad demandada o ofrecida ante un cambio en alguno de los factores involucrados en el equilibrio va a variar de acuerdo a si la demanda o la oferta son más o menos empinadas.
+    \item Para medir la forma en las que los consumidores y los productores responden a los cambios en los factores que determinan la demanda y la oferta, utilizaremos un nuevo concepto: el de la \textbf{elasticidad}. 
+  \end{itemize}
+  \begin{boxA}
+    \centering
+    La elasticidad es una medida de la respuesta o reacción \textit{relativa} que tienen los agentes frente a cambios de ciertas variables o determinantes económicos. Intuitivamente, nos dice cuanto reaccionan los consumidores o los productores ante un cambio en alguno de los factores.
+  \end{boxA}
 \end{frame}
 
 \begin{frame}
 \frametitle{Elasticidad precio de la demanda}
 \begin{itemize}
-    \item A diferencia de la pendiente, la elasticidad precio mira cambios porcentuales:
-    \begin{center}
-    \includegraphics[scale=0.7]{../Figures/Tema_06.43_elasticidadformula.png}
-    \end{center}
+    \item El concepto matemático que los economistas usamos para ver qué tan sensible es la cantidad que se demanda ante un cambio en el precio de un bien se denomina elasticidad precio de la demanda.
+    \begin{equation*}
+        \epsilon = \left|\frac{- \Delta \% Q}{\Delta \% P}\right| = \left|\frac{\frac{- \Delta Q}{Q}}{\frac{\Delta P}{P}}\right| = \left|-\frac{\Delta Q}{\Delta P} \frac{P}{Q}\right|
+    \end{equation*}
+    \item Debido a que la cantidad demandada de un bien está negativamente relacionada con el precio del bien, el cambio porcentual en la cantidad siempre tendrá un signo opuesto al del cambio porcentual en el precio.
+    \item ¿Como interpretarlo? Como el cambio \% que se produce en la cantidad demandada ante un cambio de 1\% en el precio.
     \end{itemize}
 \end{frame}
+
+\begin{frame}{Elasticidad precio de la demanda}
+  \begin{itemize}
+    \item Si ante un cambio en el precio de un bien, la cantidad
+    demandada cambia en una proporción menor al cambio proporcional
+    del precio, se dice que la demanda es \textbf{inelástica}.
+    \item Esto sucede siempre que la elasticidad sea \textbf{menor a 1}.
+    \item En el caso en el que la elasticidad sea 0, la demanda es \textbf{perfectamente inelástica}.
+  \end{itemize}
+    \centering
+  \includegraphics[scale=0.4]{../Figures/C16.1.png}
+  \includegraphics[scale=0.4]{../Figures/C16.2.png}
+\end{frame}
+
+\begin{frame}{Elasticidad precio de la demanda}
+  \begin{itemize}
+    \item Si ante un cambio en el precio de un bien, la cantidad
+    demandada cambia en una proporción mayor al cambio proporcional
+    del precio, se dice que la demanda es \textbf{elastica}.
+    \item Esto sucede siempre que la elasticidad sea \textbf{mayor a 1}.
+    \item En el caso en el que la elasticidad sea $\infty$, la demanda es \textbf{perfectamente elástica}.
+  \end{itemize}
+  \centering
+  \includegraphics[scale=0.4]{../Figures/C16.3.png}
+  \includegraphics[scale=0.4]{../Figures/C16.5.png}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Elasticidad precio de la demanda}
-\begin{itemize}
-    \item Medida de sensibilidad: ¿cuál es el cambio \% en la cantidad demandada ante un cambio de 1\% en el precio? \\\vspace{2mm}
+  \begin{itemize}
+    \item Medida de sensibilidad: ¿Cuál es el cambio \% en la cantidad demandada ante un cambio de 1\% en el precio?
     \begin{itemize}
-        \item Como la demanda cae ante un aumento en el precio, se suele cambiar el signo para que la relación nos de positiva (esto facilita la interpretación)\vspace{4mm}
+        \item Usamos el modulo para facilitar la interpretación! 
     \end{itemize}
-    \item ¿Qué tan elástica? \\\vspace{2mm}
-    - Si $e > 1$ decimos que la demanda es elástica \\
-    - Si $e = 1$ decimos que la demanda es unitaria \\
-    - Si $e < 1$ decimos que la demanda es inelástica
+    \item ¿Qué tan elástica?
+    \begin{itemize}
+      \item Si $\epsilon > 1$ decimos que la demanda es elástica
+      \item Si $\epsilon = 1$ decimos que la demanda es unitaria
+      \item Si $\epsilon < 1$ decimos que la demanda es inelástica
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Determinantes de la elasticidad precio de la demanda}
+  \begin{itemize}
+    \item \textbf{Disponibilidad de sustitutos cercanos}. Bienes con sustitutos cercanos tienden a tener demandas más elásticas.
+    \item \textbf{La necesidad de consumo}. Cuanto más necesario sea el consumo de un bien o servicio, menor capacidad de
+    respuesta tendrá el consumidor y más inelástica será la demanda.
+    \item \textbf{La temporalidad de ajuste en el consumo}. Mientras más largo
+    sea el período temporal que estemos considerando para el ajuste en las cantidades,
+    los bienes tienden a tener demandas más elásticas, precisamente
+    porque los consumidores pueden ajustar su consumo con el tiempo.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Elasticidad Puntual y Pendiente}
+  \begin{footnotesize}
+    \begin{equation*}
+      \epsilon = \left|\frac{- \Delta \% Q}{\Delta \% P}\right| = \left|\frac{\frac{- \Delta Q}{Q}}{\frac{\Delta P}{P}}\right| = \left|-\frac{\Delta Q}{\Delta P} \frac{P}{Q}\right|\,\,\,\,\,\,\text{y}\,\,\,\,\,\, \text{pend} = \frac{\Delta P}{\Delta Q}
+    \end{equation*}
+    
+  \end{footnotesize}
+  \begin{itemize}
+    \item La pendiente forma parte del concepto de elasticidad. Una demanda muy empinada es relativamente inelástica, y una bastante plana es elástica.
+    \item ¡Ojo! La elasticidad puede cambiar a medida que nos movemos a lo largo de la curva de demanda, aun si la pendiente no lo hace.
+  \end{itemize}
+    \centering
+    \includegraphics[scale=0.35]{../Figures/C16.7.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elasticidad constante}
+\includegraphics[scale=0.6]{../Figures/Tema_06.45_elasticidad.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pendiente constante}
+\includegraphics[scale=0.6]{../Figures/Tema_06.46_elasticidad2.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ingreso total (pxq) y elasticidad}
+\begin{itemize}
+    \item El impacto de un cambio de precio en los ingresos totales, depende de la elasticidad de la demanda.
+    \item Si la demanda es inelástica un incremento en el precio provoca un decremento en la cantidad demandada proporcionalmente más pequeño, por lo cual los ingresos totales se incrementan.
+    \item Si la curva de la demanda es elástica, un incremento en el precio provoca una disminución en la cantidad demandada proporcionalmente más grande, por lo que los ingresos totales disminuyen.
+    \item Es decir:
+    \begin{itemize}
+        \item Cuando la demanda es inelástica, el precio y los ingresos totales se mueven en la misma dirección.
+        \item Cuando la demanda es elástica, el precio y los ingresos totales se mueven en direcciones opuestas.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Elasticidad Punto Medio}
+  \begin{itemize}
+      \item Hay otra forma de calcular la elasticidad, \textbf{la elasticidad punto medio}.
+      \item Se utiliza para calcular la elasticidad entre dos puntos
+      específicos de la curva de demanda que enfrenta una firma y se define
+      de la siguiente manera:
+    \end{itemize}
+    \begin{equation*}
+      \epsilon = \left|\frac{- \Delta \% Q}{\Delta \% P}\right|= \left|\frac{- \Delta Q}{\Delta P} \frac{- \hat Q}{\hat P}\right| = \left|\frac{\frac{- \Delta Q}{\frac{(Q_2+Q_1)}{2}}}{\frac{\Delta P}{\frac{(P_2+P_1)}{2}}}\right| = \left|-\frac{\Delta Q}{\Delta P} \frac{\frac{(P_2+P_1)}{2}}{\frac{(Q_2+Q_1)}{2}}\right|
+    \end{equation*}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Elasticidad precio de la oferta}
+    \begin{equation*}
+      \epsilon^{O}_p = \frac{\Delta \% Q}{\Delta \% P} = \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}} = \frac{\Delta Q}{\Delta P} \frac{P}{Q}
+    \end{equation*}
+    \begin{itemize}
+      \item \textbf{Elástica}: Un cambio en el precio del bien provoca un cambio
+      proporcional mayor en la oferta del bien.
+      \item \textbf{Inelástica}: Un cambio en el precio de un bien, su
+      cantidad ofertada cambia en una proporción menor al cambio en
+      el precio.
+      \item \textbf{Unitaria}: un cambio en el precio se traduce como un cambio en la
+      cantidad ofertada en la misma proporción.
+      \item \textbf{Perfectamente elástica} y \textbf{Perfectamente inelástica}.
+      \item \textbf{Factores}: Posibilidad de stockearse, tiempo de producción, procesos productivos, etc.    
     \end{itemize}
 \end{frame}
 
-% \begin{frame}
-% \frametitle{Determinantes de la elasticidad precio de la demanda}
-% \begin{itemize}
-%     \item Disponibilidad de sustitutos cercanos: bienes con sustitutos cercanos tienden a tener demandas más elásticas.\vspace{4mm}
-%  \item Necesidades vs Lujos: necesidades tienden a tener demandas inelásticas, mientras que los lujos demandas elásticas.\vspace{4mm}
-% \item Definición de mercado: Helado. Helado bombon escoces.\vspace{4mm}
-% \item Horizonte de tiempo: Gasolina. Cae poco la cantidad demandada en el CP y más en el LP
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{Elasticidad Cruzada}
+  \begin{itemize}
+    \item Elasticidad Cruzada: Es el cambio porcentual en las cantidades demandadas cuando el precio de otro bien cambia 1\%.
+    \begin{equation*}
+      \epsilon_{x,y} = \frac{\Delta \% Q_x}{\Delta \% P_y}
+    \end{equation*}
+    \begin{itemize}
+        \item Si la elasticidad cruzada es 0, no hay relación entre ambos bienes.
+        \item Si esta elasticidad es mayor a 0, los bienes son sustitutos, es decir, cuando se incrementa el precio de y aumenta la cantidad demandada de x; 
+        \item Si es menor a 0, los bienes son complementarios, es decir, si aumenta el precio de y baja la cantidad demandada de x.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
 
-% \begin{frame}
-% \frametitle{Elasticidad y pendiente}
-% \begin{itemize}
-%     \item Ambos conceptos están relacionados
-%     \begin{center}
-%     \includegraphics[scale=0.5]{../Figures/Tema_06.44_elasticidadpendiente.png}
-%     \end{center}
-%         \begin{itemize}
-%         \item La pendiente forma parte del concepto de elasticidad.\vspace{2mm}
-%         \item Una curva de demanda muy empinada es relativamente inelástica, y una bastante plana es elástica.\vspace{4mm}
-%         \end{itemize}
-%     \item ¡Pero no son lo mismo!\vspace{2mm}
-%         \begin{itemize}
-%             \item Notar que la elasticidad puede cambiar a medida que nos movemos a lo largo de la curva de demanda, aun si la pendiente no lo hace.\vspace{2mm}
-%             \item ¡Y viceversa!
-%         \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Elasticidad constante}
-% \includegraphics[scale=0.6]{../Figures/Tema_06.45_elasticidad.png}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Pendiente constante}
-% \includegraphics[scale=0.6]{../Figures/Tema_06.46_elasticidad2.png}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una demanda elástica?}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.24_equilibrioyexcedente2.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una demanda inelástica?}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.25_equilibrioyexcedente3.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una oferta elástica?}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.26_equilibrioyexcedente4.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una oferta inelástica?}
-% \includegraphics[scale=0.55]{../Figures/Tema_07.25_equilibrioyexcedente3.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Ingreso total (pxq) y elasticidad}
-% \begin{itemize}
-%     \item El impacto de un cambio de precio en los ingresos totales, depende de la elasticidad de la demanda.
-%     \item Si la demanda es inelástica un incremento en el precio provoca un decremento en la cantidad demandada proporcionalmente más pequeño, por lo cual los ingresos totales se incrementan.
-%     \item Si la curva de la demanda es elástica, un incremento en el precio provoca una disminución en la cantidad demandada proporcionalmente más grande, por lo que los ingresos totales disminuyen.
-%     \item Es decir:
-%     \begin{itemize}
-%         \item Cuando la demanda es inelástica, el precio y los ingresos totales se mueven en la misma dirección.
-%         \item Cuando la demanda es elástica, el precio y los ingresos totales se mueven en direcciones opuestas.
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Elasticidad}
-% \small Hay dos formas diferentes de estimar la elasticidad
-% \centering
-% \begin{block}{Elasticidad puntual}
-% \begin{equation}
-% \epsilon = -  \frac{\bigtriangleup \% Q}{\bigtriangleup \% P}
-% \end{equation}
-% \begin{equation}
-% \epsilon = - \frac{\frac{\bigtriangleup Q}{Q}}{\frac{\bigtriangleup P}{P}}
-% \end{equation}
-% \begin{equation}
-% \epsilon = - \frac{\bigtriangleup Q}{ \bigtriangleup P} \frac{P}{Q}
-% \end{equation}
-% \end{block}
-% \end{frame}
-
-
-% \begin{frame}
-% \frametitle{Elasticidad}
-% \small 
-% \centering
-% \begin{block}{Elasticidad de punto medio}
-% \begin{equation} 
-% \epsilon = -  \frac{\bigtriangleup \% Q}{\bigtriangleup \% P}
-% \end{equation}
-% \begin{equation}
-% \epsilon = -  \frac{\frac{\bigtriangleup Q}{(Q_2+Q_1)/2}}{\frac{\bigtriangleup P}{(P_2+P_1)/2}}
-% \end{equation}
-% \begin{equation}
-% \epsilon = - \frac{\frac{\bigtriangleup Q}{\text{Punto medio de Q}}}{\frac{\bigtriangleup P}{\text{Punto medio de P}}}
-% \end{equation}
-% \begin{equation}
-% \epsilon = - \frac{\bigtriangleup Q}{ \bigtriangleup P} \frac{\text{Punto medio de P}}{\text{Punto medio de Q}}
-% \end{equation}
-% \end{block}
-% \end{frame}
-
-
-% \begin{frame}
-% \frametitle{Otras elasticidades}
-% \begin{itemize}
-%     \item Elasticidad cruzada
-%     \begin{itemize}
-%         \item Mide la influencia del precio de un bien sobre el otro.
-%         \item Si esta elasticidad es mayor a 0, los bienes son sustitutos, es decir, cuando se incrementa el precio de y aumenta la cantidad demandada de x; 
-%         \item Si es menor a 0, los bienes son complementarios, es decir, si aumenta el precio de y baja la cantidad demandada de X . \vspace{4mm}
-%     \end{itemize}
-%     \item Elasticidad ingreso
-%         \begin{itemize}
-%         \item Si la elasticidad precio es mayor a 0, estamos en presencia de bienes normales
-%         \item si es menor a 0, son bienes inferiores. 
-%         \item A su vez, si la elasticidad ingreso es mayor a 1 es un bien de lujo.
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Un ejemplo....}
-% \begin{itemize}
-%     \item Pachi es una joven pastelera que inicio su propio negocio\vspace{2mm}
-%     \item ¿Cual es la elasticidad de cada producto.....
-%     \end{itemize}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Pachi.png}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{El impacto de los impuestos}
-% \begin{itemize}
-%     \item ¿Qué es un impuesto?\vspace{2mm}
-%     \begin{itemize}
-%         \item Es un tributo generalmente establecido por el Estado 
-%        \begin{itemize} 
-%         - para financiar sus gastos
-%         - para ‘guiar’ el comportamiento (por ejemplo en el caso de externalidades)\vspace{4mm}
-%         \end{itemize}   
-%     \end{itemize}
-%     \item Existen diversos tipos:\vspace{2mm}
-%     \begin{itemize}
-%         \item Al consumo, al trabajo, al ingreso, a la propiedad, etc.
-%     \end{itemize}\vspace{4mm}
-%     \item Un impuesto aumentará el precio que los consumidores pagan sobre un bien...\vspace{4mm}
-%     \item La elasticidad precio de la demanda tendrá influencia sobre el efecto del impuesto.
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Impuestos y eficiencia}
-% \begin{itemize}
-%     \item La introducción de impuestos aleja la economía del equilibrio competitivo\vspace{2mm}
-%     \begin{itemize}
-%         \item Los impuestos sobre oferentes/consumidores desplazan la curva de oferta/demanda porque el precio es más alto para cada cantidad
-%         \item Al recaudar impuestos el Estado genera una pérdida de peso muerto.\vspace{4mm}
-%     \end{itemize}
-%     \item La recaudación se extrae del excedente de consumidores y productores
-%     \begin{itemize}
-%         \item La incidencia del impuesto depende de la elasticidad relativa de consumidores y productores
-%         \item El grupo menos elástico lleva más de la carga fiscal
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-
-% \begin{frame}
-% \frametitle{Impuestos y elasticidad}
-% \begin{itemize}
-%     \item Un impuesto puede reducir mucho las ventas si su demanda es altamente elástica.\vspace{2mm}
-%     \begin{itemize}
-%         \item ¡Y eso puede ser lo que el gobierno intenta hacer! \\
-%         - P.ej., impuestos sobre bienes ‘malos’ para la sociedad como el tabaco o el alcohol o por contaminar.\vspace{4mm}
-%     \end{itemize}
-%     \item Pero si un impuesto causa una importante caída en las ventas, también reduce los ingresos del impuesto.\vspace{4mm}
-%     \item Si un gobierno que desea aumentar los ingresos a partir del impuesto, debería elegir gravar productos con demanda inelástica.\vspace{4mm}
-%     \begin{itemize}
-%         \item ¿Qué tipo de productos pueden tener una demanda de estas características?
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
+\begin{frame}{Elasticidad Ingreso}
+  \begin{itemize}
+    \item Elasticidad Ingreso: Es el cambio porcentual en las cantidades demandadas cuando el ingreso cambia 1\%.
+    \begin{equation*}
+      \epsilon_I = \frac{\Delta \% Q}{\Delta \% I}
+    \end{equation*}    
+    \begin{itemize}
+        \item Si se mueven en conjunto ingreso y cantidades, la elasticidad ingreso será mayor a 0 y estamos en presencia de bienes normales.
+        \item si la elasticidad ingreso es negativa, ante un cambio en el ingreso la cantidad demandada del bien se mueve en la dirección opuesta. En este caso estamos en presencia de un bien inferior.
+        \item A su vez, si la elasticidad ingreso es mayor a 1 decimos que estamos ante un bien de lujo.
+    \end{itemize}
+    \item En estos ultimos casos, no usamos modulo. En la oferta no lo hicimos porque la pendiente es positiva y, por ende, la elasticidad siempre lo será también.
+    \item En los otros dos casos, conocer el signo nos ayuda a interpretar que tipo de bienes son, por lo que es necesario sacar el modulo para interpretar completamente.
+\end{itemize}
+\end{frame}
 
 \end{document}
-
-% \begin{frame}
-% \frametitle{Impacto de los impuestos}
-% \begin{itemize}
-%     \item ¿Cuánto va a cambiar los impuestos el comportamiento de los individuos?
-%     \begin{itemize}
-%         \item ¿Qué tan grande va a ser la pérdida de peso muerto? \\
-%         - ¿Porqué es relevante conocer la elasticidad de demanda? \\
-%         - ¿Qué tipo de productos tienen demanda inelástica?
-%     \end{itemize}
-%     \item ¿Qué hace el gobierno con los recursos que recauda?
-%     \item A veces el gobierno quiere cambiar el comportamiento
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Impacto de un impuesto a los vendedores}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.29_impuesto1.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Impacto de un impuesto a los vendedores}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.30_impuesto2.jpg}
-% \end{frame}
