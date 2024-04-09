@@ -84,6 +84,11 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 \usetheme{Boadilla}
 % --------------------
@@ -169,6 +174,11 @@
 \includegraphics[scale=0.6]{../Figures/Tema_06.32_ingresototal3.png}
 \end{frame}
 
+\begin{frame}{El ingreso marginal}
+    \centering
+    \includegraphics[scale=0.45]{../Figures/C22.4.png}
+\end{frame}
+
 \begin{frame}
 \frametitle{El ingreso marginal}
 \includegraphics[scale=0.6]{../Figures/Tema_06.33_ingresomarginal.png}
@@ -189,118 +199,44 @@
 \includegraphics[scale=0.6]{../Figures/Tema_06.34_beneficios.jpg}
 \end{frame}
 
-\begin{frame}
-\frametitle{La lógica marginal}
+\begin{frame}{La lógica marginal}
     \begin{itemize}
-        \item El punto que maximiza el beneficio es donde la curva de IMg cruza la curva de CMg\vspace{4mm}
-        \item Recordemos que 
-        \[B = p·q – C(q) = IT(q) - C(q)\]
+        \item El punto que maximiza el beneficio es donde la curva de IMg cruza la curva de CMg.
+        \item Recordemos que
+
+        \[ B = p \cdot q – C(q) = IT(q) - C(q)\]
         \begin{itemize}
-            \item Para cualquier valor de q, el cambio del beneficio si q fuera aumentado en una unidad sería la diferencia entre el cambio en ingresos, y el cambio en costos: \vspace{2mm} \\ \hspace{10mm}
-            \begin{center} Beneficio marginal = IMg - CMg \end{center}
+            \item Para cualquier valor de $q$, el cambio del beneficio si $q$ fuera aumentado en una unidad sería la diferencia entre el cambio en ingresos, y el cambio en costos:
+            
+            \begin{center} 
+                Beneficio marginal = IMg - CMg 
+            \end{center}
+
             \item Entonces:
             \begin{itemize}
-                \item Si $IMg > CMg$ aumentando q se podrían incrementar los beneficios \\
-                \item Si $IMg < CMg$ el beneficio marginal es negativo, con lo que sería mejor disminuir q para aumentar los beneficios
+                \item Si $IMg > CMg$ aumentando $q$ se podrían incrementar los beneficios.
+                \item Si $IMg < CMg$ el beneficio marginal es negativo, con lo que sería mejor disminuir $q$ para aumentar los beneficios.
             \end{itemize}
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Maximización de beneficios}
-\begin{figure}[h!]
-\centering
-\scalebox{0.5}{
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,1344); %set diagram left start at 0, and has height of 1344
-
-%Straight Lines [id:da18243805432710514] 
-\draw    (202,871.69) -- (406,1108.5) ;
-%Shape: Parabola [id:dp7498100266891665] 
-\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]  (201,819.5) .. controls (269.33,562.42) and (337.67,562.42) .. (406,819.5) ;
-%Straight Lines [id:da26559851992662464] 
-\draw    (201,821.69) -- (472,821.69) ;
-\draw [shift={(474,821.69)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines [id:da5363525623734258] 
-\draw    (201,1107.69) -- (472,1107.69) ;
-\draw [shift={(474,1107.69)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines [id:da3817553551786188] 
-\draw    (201,821.69) -- (201,591.69) ;
-\draw [shift={(201,589.69)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines [id:da7748677219246147] 
-\draw    (201,1107.69) -- (200.01,854.69) ;
-\draw [shift={(200,852.69)}, rotate = 449.78] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Shape: Circle [id:dp8783199097392036] 
-\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (300.72,627.58) .. controls (300.1,626.08) and (300.85,624.47) .. (302.39,623.98) .. controls (303.92,623.49) and (305.67,624.3) .. (306.28,625.8) .. controls (306.9,627.3) and (306.15,628.91) .. (304.61,629.4) .. controls (303.08,629.89) and (301.33,629.07) .. (300.72,627.58) -- cycle ;
-%Straight Lines [id:da4368467901848765] 
-\draw    (202,871.69) -- (362,1231.69) ;
-%Straight Lines [id:da5238163933422064] 
-\draw    (303.5,626.69) -- (305,1107.69) ;
-%Shape: Circle [id:dp1228744006153617] 
-\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (301.22,990.98) .. controls (300.6,989.49) and (301.35,987.87) .. (302.89,987.38) .. controls (304.42,986.89) and (306.17,987.71) .. (306.78,989.2) .. controls (307.4,990.7) and (306.65,992.31) .. (305.11,992.8) .. controls (303.58,993.3) and (301.83,992.48) .. (301.22,990.98) -- cycle ;
-%Shape: Circle [id:dp15078348251983176] 
-\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (302.22,1108.58) .. controls (301.6,1107.08) and (302.35,1105.47) .. (303.89,1104.98) .. controls (305.42,1104.49) and (307.17,1105.3) .. (307.78,1106.8) .. controls (308.4,1108.3) and (307.65,1109.91) .. (306.11,1110.4) .. controls (304.58,1110.89) and (302.83,1110.07) .. (302.22,1108.58) -- cycle ;
-%Straight Lines [id:da3583437704153747] 
-\draw    (201,989.69) -- (304,990.09) ;
-%Straight Lines [id:da11618331349069289] 
-\draw    (202,626.69) -- (303.5,626.69) ;
-
-% Text Node
-\draw (474,1119.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {Q};
-% Text Node
-\draw (474,821.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {Q};
-% Text Node
-\draw (138,556.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{39.58pt}\setlength\topsep{0pt}
-\begin{center}
-Ingreso \\total
-\end{center}
-
-\end{minipage}};
-% Text Node
-\draw (150,832.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {Precio};
-% Text Node
-\draw (177,978.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {P{\scriptsize E}};
-% Text Node
-\draw (294,822.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {Q{\scriptsize E}};
-% Text Node
-\draw (407,1083.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {D};
-% Text Node
-\draw (409,785.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {IT};
-% Text Node
-\draw (343,1160.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {IMg};
-% Text Node
-\draw (298,602) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\footnotesize E}};
-% Text Node
-\draw (291,1108.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {Q{\scriptsize E}};
-% Text Node
-\draw (306,967) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\footnotesize E}};
-% Text Node
-\draw (137,606.69) node [anchor=north west][inner sep=0.75pt]   [align=left] {Ingreso \ \\máximo};
-
-
-\end{tikzpicture}
-}
-\end{figure}
+\begin{frame}{Equilibrio del monopolista}
+    \centering
+    \includegraphics[scale=0.6]{../Figures/C22.5.png}
 \end{frame}
-
-
-
 
 \begin{frame}
 \frametitle{Excedentes y peso muerto}
 \begin{itemize}
-    \item Las ganancias totales del intercambio están determinadas por los excedentes de consumidores y productores\vspace{2mm}
+    \item Las ganancias totales del intercambio están determinadas por los excedentes de consumidores y productores
     \begin{itemize}
-        \item El excedente del consumidor \\ - Diferencia entre disposición a pagar y precio de compra\vspace{1mm}
-        \item Excedente del productor \\ - Diferencia entre precio y costo de una unidad adicional\vspace{4mm}
+        \item El excedente del consumidor: Diferencia entre disposición a pagar y precio de compra
+        \item Excedente del productor: Diferencia entre precio y costo de una unidad adicional
     \end{itemize}
-    \item Si no terminamos en una asignación Pareto eficiente tenemos una ‘pérdida de peso muerto’\vspace{2mm}
+    \item Si no terminamos en una asignación Pareto eficiente tenemos una ‘pérdida de peso muerto’
     \begin{itemize}
-        \item Pérdida de excedente total con respecto a una asignación eficiente de Pareto \\
-        - Es decir, hay ganancias no explotadas del comercio
+        \item Pérdida de excedente total con respecto a una asignación eficiente de Pareto. Es decir, hay ganancias no explotadas del comercio
     \end{itemize}
     \end{itemize}
 \end{frame}
@@ -330,76 +266,83 @@ Ingreso \\total
 \includegraphics[scale=0.6]{../Figures/Tema_06.42_excedente5.jpg}
 \end{frame}
 
-\begin{frame}
-\frametitle{Elasticidad y maximización}
-\begin{itemize}
-    \item Claramente, la firma va a elegir un nivel de producción en la parte elástica de la demanda\vspace{2mm}
+\begin{frame}{Perdida de eficiencia}
     \begin{itemize}
-        \item Cuando en la parte inelástica, $IMg < 0$, con lo cual se puede estar mejor reduciendo la producción\vspace{4mm}
+        \item El excedente total en la presencia
+        de un monopolista es menor que en el caso de competencia perfecta, y la
+        diferencia está dada por el triángulo verde.
+        \item La mejora paretiana se
+        alcanza si se redistribuye el excedente adicional de tal manera que alguno
+        de los agentes esté mejor sin que el otro esté peor.
+        \item Bajo monopolio, hay transacciones que no se terminan haciendo y que se hubiesen podido hacer en un contexto de competencia perfecta.
     \end{itemize}
-    \item La elasticidad precio de la demanda afecta el margen de beneficio $(p – CMg)$ de la empresa\vspace{2mm}
-    \begin{itemize}
-        \item Cuanto mas elástica es la curva, menos margen, y menor la perdida de peso muerto \\
-        - Pequeños cambios en precios $\rightarrow$ gran diferencia en ventas
-        \item El markup (margen de ganancia como \% del precio) es inversamente proporcional a la elasticidad precio de la demanda
-    \end{itemize}
-\end{itemize}
+    \begin{boxA}
+        El monopolio genera una pérdida de eficiencia puesto que transacciones deseables, que se llevarían a cabo en un contexto de competencia perfecta 
+        (ya que el costo marginal es menor a la valoración del consumidor), no son realizadas.
+    \end{boxA}
 \end{frame}
 
-\begin{frame}
-\frametitle{Demanda más elástica}
-\includegraphics[scale=0.6]{../Figures/Tema_06.47_elasticidad3.png}
-\end{frame}
-
-\begin{frame}
-\frametitle{Demanda más inelástica}
-\includegraphics[scale=0.6]{../Figures/Tema_06.48_elasticidad4.png}
-\end{frame}
-
-\begin{frame}
-\frametitle{Poder de mercado}
-\begin{itemize}
-    \item El margen de beneficio de una empresa depende de la elasticidad de la demanda\vspace{2mm}
+\begin{frame}{Elasticidad y maximización}
     \begin{itemize}
-        \item Esta, a su vez se ve afectada por la competencia: \\
-        - Demanda relativamente inelástica si hay pocos sustitutos. \\
-        - Las empresas con poder de mercado tienen suficiente poder de negociación para fijar los precios sin perder clientes a los competidores.\vspace{4mm}
+        \item Los beneficios del monopolio dependen de la elasticidad de la demanda a la que se enfrentan.
+        \item ¿Qué sucede en el caso donde la demanda es perfectamente elástica?
+        \item Cuanto más inelástica sea la demanda, mas puede aprovechar el monopolista su poder de mercado.
+        \item Cuanto más elástica sea la demanda, la pérdida de peso muerto es menor.
     \end{itemize}
-    \item La política de competencia (antitrust), que limita el poder de mercado, puede beneficiar a los consumidores\vspace{2mm}
-    \begin{itemize}
-        \item Por ejemplo, cuando empresas se pueden agrupar en un cartel (poniéndose de acuerdo para mantener precios altos)
-    \end{itemize}
-\end{itemize}
+    \begin{boxA}
+        El poder de mercado del monopolio depende de la elasticidad de
+        la curva de demanda. Una curva de demanda más elástica reduce
+        el mark-up y la pérdida de eficiencia.
+
+    \end{boxA}
 \end{frame}
 
-\begin{frame}
-\frametitle{Ganando poder de mercado}
-\begin{itemize}
-    \item ¿Cómo aumentar el poder de mercado?\vspace{2mm}
+\begin{frame}{La pérdida de eficiencia del
+monopolio depende de la elasticidad de
+la demanda}
+    \centering
+    \includegraphics[scale=0.55]{../Figures/C22.9.png}
+\end{frame}
+\begin{frame}{Poder de mercado}
     \begin{itemize}
-        \item La innovación tecnológica permite diferenciar los productos \\
-        - Una empresa que inventan un producto completamente nuevo pueden prevenir la competencia por completo a través de patentes o las leyes de copyright\vspace{1mm}
-        \item Con la publicidad las empresas pueden atraer a los consumidores, alejándolos de la competencia y creando lealtad a la marca \\      - Puede ser más eficaz que los descuentos en el aumento de la demanda de una marca\vspace{4mm}
+        \item El margen de beneficio del monopolista depende de la elasticidad de la demanda.
+        \item Esta, a su vez se ve afectada por la competencia.
+        \begin{itemize}
+            \item Demanda relativamente inelástica si hay pocos sustitutos.
+            \item Demanda de bienes esenciales o de primera necesidad también son más inelásticas.
+            \item Las empresas con poder de mercado tienen suficiente poder de negociación para fijar los precios sin perder clientes a los competidores.
         \end{itemize}
-        \item Ambas tácticas pueden cambiar la curva de demanda que enfrenta la empresa
-\end{itemize}
+        \item La política de competencia (antitrust), que limita el poder de mercado, puede beneficiar a los consumidores.
+        \begin{itemize}
+            \item Por ejemplo, cuando empresas se pueden agrupar en un cartel (poniéndose de acuerdo para mantener precios altos).
+            \item La reducción de costos de entrada también puede ser beneficiosa para los consumidores.
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Monopolios naturales}
-\begin{itemize}
-    \item Hay casos en los cuales el poder monopólico surge de características tecnológicas, de estructura de costos\vspace{2mm}
+\begin{frame}{Monopolios naturales}
     \begin{itemize}
-        \item Cuando el costo medio es decreciente \\
-        - Economías de escala, altos costos fijos, o precios de factores que caen cuanto mas compra la empresa.\vspace{1mm}
-        \item La empresa debe elegir un precio al menos igual al costo medio, que es más alto que el costo marginal \\
-        - ¿Por qué?\vspace{4mm}
+        \item Hay casos en los cuales el poder monopólico surge de características tecnológicas, de estructura de costos.
+        \item El costo marginal es constante y muy bajo.
+        \item El costo medio es decreciente. 
+        \begin{itemize}
+            \item Economías de escala, altos costos fijos, o precios de factores que caen cuanto mas compra la empresa.
+            \item Los altos costos fijos imponen barreras a la entrada.
         \end{itemize}
-    \item En estos casos tenemos un monopolio natural\vspace{2mm}
-    \begin{itemize}
-        \item En estos casos, en lugar de fomentar la competencia, el gobierno suele poner controles de precios o hacer estas empresas de propiedad pública
+        \item La empresa debe elegir un precio al menos igual al costo medio, que es más alto que el costo marginal.
+        \begin{itemize}
+            \item ¿Por qué?
+        \end{itemize}
+        \item En estos casos tenemos un monopolio natural.
+        \begin{itemize}
+            \item En lugar de fomentar la competencia, el gobierno suele poner controles de precios o hacer estas empresas de propiedad pública.
+        \end{itemize}
     \end{itemize}
-    \end{itemize}
+\end{frame}
+
+\begin{frame}{Monopolio Natural}
+    \centering
+    \includegraphics[scale=0.75]{../Figures/C22.10.png}
 \end{frame}
 
 \begin{frame}
@@ -436,114 +379,50 @@ Ingreso \\total
 \begin{frame}
 \frametitle{Competencia imperfecta}
 \begin{itemize}
-    \item La empresa típica se ubica en algún punto entre los casos extremos de la competencia perfecta y el monopolio \vspace{4mm}
-    \item Mercados de competencia imperfecta \vspace{2mm}
+    \item La empresa típica se ubica en algún punto entre los casos extremos de la competencia perfecta y el monopolio.
+    \item Mercados de competencia imperfecta.
     \begin{itemize}
-        \item Oligopolio: sólo hay pocos vendedores, cada uno de los cuales ofrece un producto idéntico o similar a los productos ofrecidos por otros vendedores
-        \item Competencia monopolística: existen numerosas empresas que venden productos similares, pero no idénticos porque logran diferenciarse
+        \item Oligopolio: sólo hay pocos vendedores, cada uno de los cuales ofrece un producto idéntico o similar a los productos ofrecidos por otros vendedores.
+        \item Competencia monopolística: existen numerosas empresas que venden productos similares, pero no idénticos porque logran diferenciarse.
     \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Determinantes de la concentración}
-\begin{itemize}
-    \item Costos
-        \begin{itemize}
-        \item La existencia de economías de escala hace que solo sobrevivan en el mercado pocas empresas produciendo una gran parte de lo que demanda el mercado 
-        \end{itemize}
-    \vspace{2mm}
-    \item Barreras a la entrada 
-        \begin{itemize}
-        \item Cuando hay barreras a la entrada se bloquea el acceso para que otros empresas ingresen al mercado
-        \end{itemize}
-    \vspace{2mm}
-    \item Interdependencia estratégica
-        \begin{itemize}
-        \item Cuando las decisiones de una empresa dependen de las decisiones que toman otras empresas 
-        \end{itemize}
+    \begin{itemize}
+        \item Costos.
+            \begin{itemize}
+            \item La existencia de economías de escala hace que solo sobrevivan en el mercado pocas empresas produciendo una gran parte de lo que demanda el mercado. 
+            \end{itemize}
+        \item Barreras a la entrada .
+            \begin{itemize}
+            \item Cuando hay barreras a la entrada se bloquea el acceso para que otros empresas ingresen al mercado.
+            \end{itemize}
+        \item Interdependencia estratégica.
+            \begin{itemize}
+            \item Cuando las decisiones de una empresa dependen de las decisiones que toman otras empresas. 
+            \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Oligopolio}
 \begin{itemize}
-    \item Competencia entre unas pocas empresas. \vspace{4mm}
-    \item Obliga a las empresas a tener en cuenta las reacciones de las competidoras a las desviaciones de los precios de los niveles de producción.\vspace{4mm}
+    \item Competencia entre unas pocas empresas.
+    \item Obliga a las empresas a tener en cuenta las reacciones de las competidoras a las desviaciones de los precios de los niveles de producción.
     \item Se introducen consideraciones estratégicas en sus mercados.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{¿Cómo compiten pocas empresas?}
-\begin{itemize}
-    \item Modelo de Cournot: las empresas eligen cantidades de manera simultánea. \vspace{2mm}
-    \item Modelo de Bertrand: las empresas deciden el precio que establecen y lo hacen de manera simultánea.  \vspace{2mm}
-    \item Colusión: las empresas eligen precio o cantidad de manera simultánea pero coordinada, es decir, poniéndose de acuerdo. Ejemplo: OPEP y Beers.
-    \item Modelo de líder y seguidores: en este caso la competencia es secuencial, es decir, una empresa líder decide primero y luego los seguidores observan la acción y eligen su respuesta. Por ejemplo, precios establecidos por Mc Donald´s y Burger King. Las empresas pueden elegir precios o cantidades.
-\end{itemize}
-\end{frame}
 
-% \begin{frame}
-% \frametitle{Veamos un ejemplo}
-% \centering
-% \begin{table}
-% \begin{tabular}{|c|c|c|c|}
-% \hline
-% \multicolumn{2}{|c|}{}                                     & \multicolumn{2}{c|}{\textbf{Empresa B}}              \\ \cline{3-4} 
-% \multicolumn{2}{|c|}{\multirow{}{}{\textbf{}}}          & \textbf{Producción Alta}           & \textbf{Producción Baja} \\ \hline
-%                                    & \textbf{Producción Alta} & {\color[HTML]{000000} 1.600 ; 1.600} & 2.000 ; 1.500            \\ \cline{2-4} 
-% \multirow{}{}{\textbf{Empresa A}} & \textbf{Producción Baja}    & 1.500 ; 2.000                         & 1.800 ; 1.800           \\ \hline
-% \end{tabular}
-% \end{table}
-% \end{frame}
-
-
-\begin{frame}
-\frametitle{Cartel}
-\begin{itemize}
-    \item Es una organización de empresas independientes, que producen bienes similares.\vspace{4mm}
-    \item Trabajan conjuntamente para elevar los precios y restringir la producción.\vspace{4mm}
-    \item Se comportan como un monopolista.\vspace{4mm}
-    \item Colusión explicita versus colusión tácita.\vspace{4mm}
-    \end{itemize}
-\end{frame}
-
-
-%\begin{frame}
-%\frametitle{La maximización de beneficios del Cartel}
-%\includegraphics[scale=0.6]{../Figures/Tema_06.35_beneficios2.jpg}
-%\end{frame}
-
-\begin{frame}
-\frametitle{Obstáculos para el cartel}
-\begin{itemize}
-    \item Son ilegales.\vspace{4mm}
-    \item Hay incentivos para romper los acuerdos\vspace{2mm}
-    \begin{itemize}
-        \item Cobrando un precio apenas más bajo, una empresa aumentando su participación de mercado y saca enormes beneficios.\vspace{1mm}
-        \item Esto sucede porque la demanda individual es elástica.
-    \end{itemize}
-   % \item Hoy en día hay una fuerte competencia procedente de empresas extranjeras además de las nacionales
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{El caso de las cementeras}
-\centering
-\includegraphics[width=0.95\textwidth]{../Figures/Cartel.png}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Competencia monopolística}
+\begin{frame}{Competencia monopolística}
 \begin{center}
-  \href{https://www.youtube.com/watch?v=po0jY4WvCIc}{    \includegraphics[width=0.75\textwidth]{../Figures/Diferenciacion (1).png}}
+  \href{https://www.youtube.com/watch?v=po0jY4WvCIc}{\includegraphics[width=0.75\textwidth]{../Figures/Diferenciacion (1).png}}
 \end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{Competencia monopolística}
+\begin{frame}{Competencia monopolística}
 \begin{itemize}
     \item Hay muchos compradores y vendedores\vspace{2mm}
     \item Es fácil entrar y salir\vspace{2mm}
@@ -556,130 +435,4 @@ Ingreso \\total
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{La maximización de beneficios en Competencia Monopolística en corto plazo}
-%\centering
-%\includegraphics[scale=0.75]{../Figures/Tema_08.01_compmonop.jpg}
-
-\begin{figure}[h!]
-\renewcommand{\figurename}{Figure}
-
-%\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-\begin{center}
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-% \path (0,1278); %set diagram left start at 0, and has height of 1278
-
-%Straight Lines Eje
-\draw    (94,318) -- (364,318) ;
-\draw [shift={(366,318)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines: Eje
-\draw    (94,318) -- (94,68) ;
-\draw [shift={(94,66)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-
-% Membrete eje Y
-\draw (77,46) node [anchor=north west][inner sep=0.75pt]   [align=left] {$p$};
-% Membrete eje X
-\draw (366,318) node [anchor=north west][inner sep=0.75pt]   [align=left] {$q$};
-
-
-% AR 
-\draw    (95,91) -- (330,310) ;
-\draw (320,290) node [anchor=north west][inner sep=0.75pt]   [align=left] {Demanda};
-% Img (MR)
-\draw    (95,91) -- (240,317) ;
-\draw (240,300) node [anchor=north west][inner sep=0.75pt]   [align=left] {Img};
-% dash lines
-\draw[thick, dashed, gray] (94,193)-- (202,193) -- (202,320);
-\node [below] at (200,318) {$q_1$};
-%Shape: Rectangle profit
-\draw  [fill={rgb:red,4;green,2;yellow,1 }  ,fill opacity=0.48 ] (94,193) -- (202,193) -- (202,220) -- (94,220) ;
-\draw (72,190) node [anchor=north west][inner sep=0.75pt]   [align=left] {$p_1$};
-%Curve Lines Cme T 
-\draw    (135,158) .. controls (147,269) and (280,210) .. (302,165) ;
-\draw (302,165) node [anchor=north west][inner sep=0.75pt]   [align=left] {CmeT};
-% curve line Cmg
-\draw    (116,290) .. controls (158,355) and (250,179) .. (281,133) ;
-\draw (281,133) node [anchor=north west][inner sep=0.75pt]   [align=left] {Cmg};
-
-% short run equilibrium
-
-\draw[thin, ->] (170,202).. controls (210,180) and         (210,185)..(219,175);
-\node[right] at (190,165) {\footnotesize Beneficio};
-
-\end{tikzpicture}
-\end{center}
-\end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Competencia monopolística en el largo plazo}
-\begin{itemize}
-    \item Los beneficios positivos en el corto plazo atraen nuevas empresas.\vspace{2mm}
-    \item La demanda que enfrenta la empresa se contrae.\vspace{2mm}
-    \item Los precios son superiores a los costos marginales.\vspace{2mm}
-    \item En el largo plazo, los beneficios de la empresa son iguales a cero, es decir, tiene beneficios normales.
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{La maximización de beneficios en Competencia Monopolística en largo plazo}
-%\centering
-%\includegraphics[scale=0.7]{../Figures/Tema_08.02_compmonop.jpg}
-
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-%\begin{tikzpicture}[scale=0.45]
-%\centering
-%\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-\begin{center}
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-% \path (0,1278); %set diagram left start at 0, and has height of 1278
-
-%Straight Lines [id:da6898288131267385] 
-\draw    (94,318) -- (364,318) ;
-\draw [shift={(366,318)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines [id:da9536118190051617] 
-\draw    (94,318) -- (94,68) ;
-\draw [shift={(94,66)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-% AR 
-\draw    (95,91) -- (201,317) ;
-\draw (200,300) node [anchor=north west][inner sep=0.75pt]   [align=left] {Demanda};
-% Img (MR)
-\draw    (95,91) -- (150,317) ;
-\draw (155,300) node [anchor=north west][inner sep=0.75pt]   [align=left] {Img};
-% dash lines
-\draw[thick, dashed, gray] (94,191)-- (146,191) -- (146,320);
-\node [below] at (146,318) {$q_1$};
-\draw (72,191) node [anchor=north west][inner sep=0.75pt]   [align=left] {$p_1$};
-%Shape: Rectangle profit
-%\draw  [fill={rgb:red,4;green,2;yellow,1 }  ,fill opacity=0.48 ] (94,193) -- (202,193) -- (202,220) -- (94,220) ;
-
-
-%Curve Lines Cme T 
-% MAS ALEJADA LA CME T
-%\draw    (180,128) .. controls (147,200) and (280,210) .. (302,165) ;
-%\draw (302,165) node [anchor=north west][inner sep=0.75pt]   [align=left] {CmeT};
-% MISMA QUE LA DE SHORT RUN
-\draw    (135,158) .. controls (147,269) and (280,210) .. (302,165) ;
-\draw (302,165) node [anchor=north west][inner sep=0.75pt]   [align=left] {CmeT};
-
-% curve line Cmg
-\draw    (116,290) .. controls (158,355) and (250,179) .. (281,133) ;
-\draw (281,133) node [anchor=north west][inner sep=0.75pt]   [align=left] {Cmg};
-
-% Text Node
-\draw (77,46) node [anchor=north west][inner sep=0.75pt]   [align=left] {$p$};
-% Text Node
-\draw (366,318) node [anchor=north west][inner sep=0.75pt]   [align=left] {$q$};
-
-% Long run equilibrium
-\draw[thin, ->] (150,191).. controls (190,160) and         (210,125)..(210,125);
-\node[right] at (200,100) {\footnotesize Equilibrio de};
-\node[right] at (200,115) {\footnotesize largo plazo};
-
-\end{tikzpicture}
-\end{center}
-\end{figure}
-
-\end{frame}
 \end{document}
