@@ -1,0 +1,56 @@
+Piense en la frontera factible (_feasible frontier_) de un estudiante que enfrenta un _trade-off_ entre ocio y las notas que obtiene en el curso (como vimos varias veces en clase y en el libro _The Economy_). En el eje horizontal tenemos horas de ocio y en el vertical la notas que obtiene. Si el estudiante descubre una estrategia que le permite aumentar su productividad un 10% en términos de nota por hora trabajada, esto se va a reflejar en la frontera como:
+A) Un aumento vertical en la frontera, que va a ser mayor en términos de notas cuanto mayor sean las horas de estudio
+B) Un movimiento en la frontera en forma paralela hacia arriba de 0.1 puntos para cualquier nivel de estudio
+C) Una reducción de la frontera en forma proporcional a las horas trabajadas
+D) Todas las anteriores
+E) Ninguna de las anteriores
+ANSWER: A
+Muchos problemas sociales pueden ser representados como un dilema del prisionero, en el cual los agentes terminan en situaciones socialmente sub-óptimos. Distintos mecanismos pueden ayudar a eliminar o reducir este problema, entre ellos: 
+A) Ayudar a los jugadores a desarrollar preferencias sociales
+B) Hacer que el juego sea repetido
+C) Introducir normas sociales
+D) Todas las anteriores
+E) Ninguna de las anteriores
+ANSWER: D
+Considere el siguiente juego simultáneo:  Benito IzquierdaDerechaAntonioArriba3, 31, 4Abajo4, 12, 2 En este contexto, sabemos que es dominada en términos de Pareto:
+A) (Arriba, Izquierda)
+B) (Arriba, Derecha)
+C) (Abajo, Izquierda)
+D) (Abajo, Derecha)
+E) Ninguna de las anteriores
+ANSWER: D
+La eficiencia en términos de Pareto implica que:
+A) Nadie se puede beneficiar sin causar un daño a otra persona
+B) Una o más personas se pueden benefician y están dispuestas a compensar a los dañados
+C) Personas racionales consideran costos y beneficios 
+D) Todas las anteriores
+E) Ninguna de las anteriores 
+ANSWER: A
+El gráfico de abajo ilustra un modelo de elección donde existe un conflicto entre un trabajador y el dueño de los recursos (p.ej. un terrateniente o un capitalista):[PMCII.2.png]Los puntos entre A y C (p.ej., B) son parte de la curva Pareto eficiente. Sabemos que:
+A) Si estamos en la asignación D, el trabajador va a estar dispuesto a aceptar la asignación B para mejorar la eficiencia
+B) La pendiente de la curva de indiferencia del trabajador que pasa por B, en la asignación B, es la misma que la tasa marginal de transformación de la frontera factible en A
+C) En valor absoluto, la tasa marginal de transformación en A es mayor a la de D
+D) Todas las anteriores
+E) Ninguna de las anteriores
+ANSWER: B
+Si una firma debe usar tres veces más de cada factor de producción o insumo para producir el doble de cantidad, entonces su función de producción tiene rendimientos:
+A) Decrecientes de escala
+B) Crecientes de escala
+C) Constantes a escala
+D) Todas las anteriores
+E) Ninguna de las anteriores
+ANSWER: A
+Si una empresa tiene la siguiente función de costos totales: C(Q) = 4Q, sabemos que sus costos fijos, (Cf), costos variables (Cv), costos medios (CMe) y costos marginales (CMg) van a ser: 
+A) Cf = 0; Cv = 4; CMe = 4; CMg = 4
+B) Cf = 4; Cv = Q; CMe = 1; CMg = 1
+C) Cf = 0; Cv = 4Q; CMe = Q; CMg = Q
+D) Cf = 0; Cv = 4Q; CMe = 4; CMg = 4
+E) Ninguna de las anteriores 
+ANSWER: D
+En un juego simultáneo sin repetición
+A) Un jugador observa lo que otros hacen antes de decidir cómo actuar.
+B) Un jugador decide su acción, teniendo en cuenta lo que otros jugadores pueden hacerdespués de conocer su movimiento.
+C) Los jugadores se coordinan para encontrar las acciones que conducen a un resultadoóptimo para la sociedad.
+D) Un jugador elige una acción teniendo en cuenta las posibles acciones que otros jugadorespueden tomar.
+E) Ninguna de las anteriores
+ANSWER: D
