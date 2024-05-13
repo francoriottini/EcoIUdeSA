@@ -53,30 +53,7 @@
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 \usepackage{hyperref}
 \usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
-
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -103,32 +80,22 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 \usetheme{Boadilla}
-
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
 
 
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 17: Distorsiones de mercado II}
+\\ Magistral 17: Distorsiones de mercado III}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Riottini Franco}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -138,9 +105,8 @@
 \begin{frame}
 \titlepage
 \centering
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
-
 
 \begin{frame}{Distorsiones al equilibrio de mercado}
     \begin{itemize}
@@ -162,20 +128,27 @@
     \end{itemize}
 \end{frame}
 
-
 \begin{frame}{Asimetrías de información}
+    \begin{boxA}
+        \centering
+        Hay información asimétrica
+        cuando una de las partes tiene información de importancia para una
+        transacción que la otra parte desconoce.
+    \end{boxA}
+\end{frame}
+
+\begin{frame}
+    \textbf{Selección adversa} sucede cuando no conocemos una característica de la contraparte (atributos ocultos).
     \begin{itemize}
-        \item {\textbf{Riesgo moral o acción oculta}} alguien no puede ver las acciones del otro
-            \begin{itemize}
-            \item Ejemplos: seguros en general, incentivos a ahorrar, etc. 
-            \end{itemize}
-            \vspace{3mm}
-        \item {\textbf{Selección adversa}} sucede cuando no conocemos una característica de la contraparte (atributos ocultos)
-            \begin{itemize}
-            \item Ejemplos: seguros en general, mercado de usados, empresas buscando contratar, etc.  
-            \end{itemize}
-            \end{itemize}
-    \end{frame}
+        \item Ejemplos: seguros en general, mercado de usados, empresas buscando contratar, etc.  
+        \item No podemos saber que gente se enferma mas que otra, no podemos saber que auto está en peor estado que otro (o solo una aproximación), no podemos saber si un trabajador es eficiente o no, etc.
+    \end{itemize}
+    \textbf{Riesgo moral} alguien no puede ver las acciones del otro.
+    \begin{itemize}
+        \item Ejemplos: seguros en general, incentivos a ahorrar, incentivos a trabajar, etc.
+        \item No podemos ver si la gente se cuida para no enfermarse, no podemos ver si el conductor maneja con cuidado, no podemos ver si la gente ahorra lo suficiente como para pagar sus deudas, no podemos ver si el empleado se esfuerza, etc.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}{Ejemplos}
     \begin{itemize}
@@ -187,46 +160,45 @@
     \item \href{https://www.youtube.com/watch?v=SrPu-xGrKrk}{\textbf{Buying a car}}
     \item \href{https://www.youtube.com/watch?v=ZZq0ShjEd-E}{\textbf{But he has a Bud Light}}
     \end{itemize}
-
 \end{frame}
     
 \begin{frame}{El mercado de los limones de Akerlof}
-\begin{itemize}
-    \item Dos tipos de autos: buenos (q) y malos (1 - q)
     \begin{itemize}
-    \item Para el vendedor el auto bueno vale 1000 y el lemon 500 
-    \item Para el comprador el auto bueno vale 1500 y el lemon 750 
-    \end{itemize} \vspace{3mm}
-    \item Vamos a ver cuanto estaría dispuesto a pagar un comprador y dado eso después vemos que le conviene hacer al vendedor
-    \begin{itemize}
-    \item El comprador está dispuesto a pagar su valor esperado
-    \end{itemize} \vspace{3mm}
-    \item Si piensa que la probabilidad que un auto sea bueno sea  $\mu$ y que sea malo  $(1-\mu)$ el valor esperado para un auto típico en el mercado sería  $\mu 1500 + (1-\mu) 750= 750 + \mu 750$ 
-\end{itemize}
+        \item Dos tipos de autos: buenos $(q)$ y malos, limones, $(1 - q)$
+        \begin{itemize}
+            \item Para el vendedor el auto bueno vale 1000 y el malo 500.
+            \item Para el comprador el auto bueno vale 1500 y el malo 750.
+            \item ¿A cuanto se venden los autos si sabemos cual es cual? 
+        \end{itemize}
+        \item Vamos a ver cuanto estaría dispuesto a pagar un comprador y dado eso después vemos que le conviene hacer al vendedor
+        \begin{itemize}
+            \item El comprador \textbf{está dispuesto a pagar su valor esperado}, pero no sabe cuanto es $q$ (o se puede pensar que en el mercado puede que $q \neq \mu$).
+            \item Si piensa que la probabilidad que un auto sea bueno sea  $\mu$ y que sea malo  $(1-\mu)$ el valor esperado para un auto típico en el mercado sería  $\mu 1500 + (1-\mu) 750= 750 + \mu 750$ 
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{El mercado de los limones II}
-\begin{itemize}
-    \item El vendedor venderá un auto si lo que cobra por él supera su propia valoración:
-    \vspace{3mm}
-    \item Si tiene un auto malo lo venderá si 
-    $500 \leq 750 + \mu 750$
+\begin{frame}{El mercado de los limones de Akerlof}
     \begin{itemize}
-    \item Esto se da siempre: quiere decir que si el vendedor tiene un lemon lo pone en el mercado siempre
-    \end{itemize} \vspace{3mm}
-    \item Si tiene un auto bueno, lo venderá si 
-    $1000 \leq 750 + \mu 750 $ (1)
-    \begin{itemize}
-    \item Esto solo se daría si $\mu \geq \frac{1}{3}$
-    \end{itemize} \vspace{3mm}
-\end{itemize}
+        \item El vendedor venderá un auto si lo que cobra por él supera su propia valoración:
+        \item Si tiene un auto malo lo venderá si 
+        \begin{equation*}
+            500 \leq 750 + \mu 750
+        \end{equation*}
+        Esto se da siempre: quiere decir que si el vendedor tiene un lemon lo pone en el mercado siempre
+        \item Si tiene un auto bueno, lo venderá si 
+        \begin{equation} \label{eq:1}
+            1000 \leq 750 + \mu 750
+        \end{equation}
+        Esto solo se daría si $\mu \geq \frac{1}{3}$
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{El mercado de los limones III}
+\begin{frame}{El mercado de los limones de Akerlof}
 \begin{itemize}
     \item  Si $ q \geq \frac{1}{3}$, (hay suficiente buenos) hay un equilibrio donde $\mu = q \geq \frac{1}{3}$ y $p= 750 + \mu 750$ y se venden los dos tipos de autos 
     \vspace{1mm}
-    \item Pero si $q \leq \frac{1}{3}$ entonces por la ecuación (1) sabemos que el auto no se vende
+    \item Pero si $q \leq \frac{1}{3}$ entonces por la ecuación \eqref{eq:1} sabemos que el auto no se vende
     \begin{itemize}
     \item El vendedor no tiene incentivos a tener autos nuevos, puesto que no los vendería en este caso
     \item Si $q= \mu = 0 $, quiere decir que se venden sólo limones y el precio de venta es de $p= 750$ 
@@ -237,60 +209,66 @@
 \end{frame}
 
 \begin{frame}{Riesgo moral y el colapso del mercado de seguros}
- \begin{itemize}
-    \item Imaginemos una persona que tiene que comprar un seguro de incendio para su casa
     \begin{itemize}
-    \item la casa puede no incendiarse y el individuo no pierde nada : Evento Bueno con probabilidad $p$
-    \item la casa puede incendiarse y el individuo sufre una pérdida de tamaño $L$: Evento Malo con probabilidad $(1-p)$ 
-    \end{itemize}
-    \vspace{1mm}
-    \item La probabilidad del evento bueno depende en parte de alguna acción del individuo, vamos a decir que depende del esfuerzo del individuo: $p(e)$
-    \begin{itemize}
-    \item Por ejemplo: el individuo esta alerta a no dejar electrodomésticos enchufados, ni hornallas encendidas, le hace mantenimiento al hagor, etc.
-    \end{itemize}
-    \item La clave es entender que quien ofrece el seguro no puede ver esta acción o esfuerzo
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Riesgo moral II}
-    \begin{itemize}
-    \item Si la compañía aseguradora ofrece una cobertura de valor $C$ a un precio $\pi C$ (el precio depende de la cobertura) \vspace{2mm}
-    \item En el escenario bueno, la utilidad para el individuo es 
-    $U_B = y - \pi C$
-    \item Si se produce el evento malo, su utilidad para el individuo es 
-    $U_M = y - L - \pi C + C$ \vspace{2mm}
-    \item ¿Qué $\pi$ podría cobrar la compañía de seguros?
-    \begin{itemize}
-    \item La ecuación de ganancias de las aseguradoras es  
-    $\pi C - (1-p) C$
-    \item Si esta ganancia la hacemos $0$ el (menor) porcentaje que puede cobrar la compañía es $\pi=(1-p)$
-    \end{itemize}
+        \item Imaginemos una persona que tiene que comprar un seguro de incendio para su casa
+        \begin{itemize}
+            \item La casa puede no incendiarse y el individuo no pierde nada: Evento Bueno con probabilidad $p$
+            \item La casa puede incendiarse y el individuo sufre una pérdida de tamaño $L$: Evento Malo con probabilidad $(1-p)$ 
+        \end{itemize}
+        \item La probabilidad del evento bueno depende en parte de alguna acción del individuo, vamos a decir que depende del esfuerzo del individuo: $p(e)$
+        \begin{itemize}
+            \item Por ejemplo: el individuo esta alerta a no dejar electrodomésticos enchufados, ni hornallas encendidas, le hace mantenimiento al hagor, etc.
+            \item Cuanto más alto el esfuerzo, menos la probabilidad del incidente. Pero\dots
+        \end{itemize}
+        \item La clave es entender que quien ofrece el seguro no puede ver esta acción o esfuerzo
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Riesgo moral III}
+\begin{frame}{Riesgo moral y el colapso del mercado de seguros}
     \begin{itemize}
-    \item Si el individuo compra una cobertura de $C=L$, es decir, se asegura totalmente:
-    \begin{itemize}
-    \item En el escenario bueno, la utilidad para el individuo es 
-    $U_B = y - \pi L$
-    \item Si se produce el evento malo, su utilidad para el individuo es 
-    $U_M = y - L - \pi L + L = y - \pi L$ 
+        \item Si la compañía aseguradora ofrece una cobertura de valor $C$ a un precio $\pi C$ (el precio depende de la cobertura) \vspace{2mm}
+        \item En el escenario bueno, la utilidad para el individuo es
+        \begin{equation*}
+            U_B = y - \pi C
+        \end{equation*}
+        \item Si se produce el evento malo, su utilidad para el individuo es
+        \begin{equation*}
+            U_M = y - L - \pi C + C
+        \end{equation*}
+        \item ¿Qué $\pi$ (precio) podría cobrar la compañía de seguros?
+        \begin{itemize}
+        \item La ecuación de ganancias de las aseguradoras es
+        \begin{equation*}
+            \pi C - (1-p) C
+        \end{equation*}
+        \item Si esta ganancia la hacemos $0$ el (menor) porcentaje que puede cobrar la compañía es $\pi=(1-p)$
+        \end{itemize}
     \end{itemize}
-    \item Le es indiferente si se produce el evento bueno o el malo 
-    \item Pero entonces $e=0$, es decir, no va a esforzarse por cuidar la casa, y la probabilidad del evento malo va a ser más alta \vspace{2mm}
-    \item Si el individuo no hace nada el siniestro ocurre con probabilidad $(1-p)=1$, y en este caso, $p=0$ y $\pi=1$
-    \item La utilidad para el individuo de comprar seguro es $y-L$, que resulta peor que no comprar seguro $y$
-    \item ¡Es decir que el mercado asegurador desaparece! 
-  \end{itemize}   
+\end{frame}
+
+\begin{frame}{Riesgo moral y el colapso del mercado de seguros}
+    \begin{itemize}
+        \item Si el individuo compra una cobertura de $C=L$, es decir, se asegura totalmente:
+        \begin{itemize}
+        \item En el escenario bueno, la utilidad para el individuo es 
+        $U_B = y - \pi L$
+        \item Si se produce el evento malo, su utilidad para el individuo es 
+        $U_M = y - L - \pi L + L = y - \pi L$ 
+        \end{itemize}
+        \item Le es indiferente si se produce el evento bueno o el malo 
+        \item Pero entonces $e=0$, es decir, no va a esforzarse por cuidar la casa, y la probabilidad del evento malo va a ser más alta.
+        \item Si el individuo no hace nada el siniestro ocurre con probabilidad $(1-p)=1$, y en este caso, $p=0$ y $\pi=1$
+        \item La utilidad para el individuo de comprar seguro es $y - L$, que resulta lo mismo que no comprar seguro $y - () L$
+        \item ¡Es decir que el mercado asegurador desaparece!
+    \end{itemize}   
 \end{frame}
 
 
 \begin{frame}{Discusiones}
     \begin{itemize}
-        \item ¿Por qué pierden valor los autos al salir de la concesionaria? \vspace{1mm}
-        \item Políticas de deducibles \vspace{1mm}
-        \item Obama care
+        \item ¿Por qué pierden valor los autos al salir de la concesionaria?
+        \item Políticas de deducibles.
+        \item Obama care.
     \end{itemize}
 \end{frame}
 
