@@ -53,30 +53,7 @@
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 \usepackage{hyperref}
 \usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
 \usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
-
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -103,32 +80,21 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 
 \usetheme{Boadilla}
-
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
-
 
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 19: Teoría de crecimiento }
+\\ Magistral 19: Teoría de crecimiento}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Riottini Franco}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -140,12 +106,12 @@
 \centering
 Magistral 18
 
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 \begin{frame}{El ciclo económico}
     \begin{figure} [H]   
-\includegraphics[scale=0.75]{Slides Principios de Economia/Figures/32.7.pdf}
+\includegraphics[scale=0.75]{../Figures/32.7.pdf}
 \label{fig:19.1}
 \end{figure}
 
@@ -159,19 +125,19 @@ Magistral 18
 
 \begin{frame}{Ciclos en el PBI en EEUU}
 
-\centering\includegraphics[width=12cm]{Slides Principios de Economia/Figures/32.8.pdf}\
+\centering\includegraphics[width=12cm]{../Figures/32.8.pdf}\
 
 \end{frame}
 
 \begin{frame}{Ciclos en el PBI en Argentina}
 
-\centering\includegraphics[width=12cm]{Slides Principios de Economia/Figures/32.9.pdf}\
+\centering\includegraphics[width=12cm]{../Figures/32.9.pdf}\
 
 \end{frame}
 
 \begin{frame}{Datos con estacionalidad vs. desestacionalizados}
 
-\centering\includegraphics[width=11cm]{Slides Principios de Economia/Figures/32.14.pdf}\
+\centering\includegraphics[width=11cm]{../Figures/32.14.pdf}\
 
 \end{frame}
 
@@ -201,20 +167,20 @@ Magistral 18
 
 \begin{frame}{Evolución reciente del nivel de actividad}
 
-\centering\includegraphics[width=11cm]{Slides Principios de Economia/Figures/32.16.pdf}\
+\centering\includegraphics[width=11cm]{../Figures/32.16.pdf}\
 
 \end{frame}
 
 \begin{frame}{Estimando el ciclo}
 
-\centering\includegraphics[width=12cm]{Slides Principios de Economia/Figures/32.13.pdf}\
+\centering\includegraphics[width=12cm]{../Figures/32.13.pdf}\
 
 \end{frame}
 
 
 \begin{frame}{Ciclos Económicos comparados}
 
-\centering\includegraphics[width=12cm]{Slides Principios de Economia/Figures/P12.png}\
+\centering\includegraphics[width=12cm]{../Figures/P12.png}\
 
 \end{frame}
 
@@ -227,70 +193,70 @@ Magistral 18
 \begin{frame}
 \frametitle{Tomemos una economía}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.2_tomemosunaeconomia.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.2_tomemosunaeconomia.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Frontera de posibilidades}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.3_frontera.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.3_frontera.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Frontera de posibilidades}
 \begin{center}
-    \includegraphics[scale=0.55]{Slides Principios de Economia/Tema_11.4_fronteradeposibilidades.jpg}
+    \includegraphics[scale=0.55]{../Tema_11.4_fronteradeposibilidades.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Fuera de la frontera}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.5_fueradelafrontera.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.5_fueradelafrontera.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Misma frontera}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.6_lamismafrontera.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.6_lamismafrontera.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Cambio en la tecnología}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.7_cambiotecnologico.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.7_cambiotecnologico.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Cambio en los factores}
 \begin{center}
-    \includegraphics[scale=0.55]{Slides Principios de Economia/Tema_11.8_cambioenlosfactores.jpg}
+    \includegraphics[scale=0.55]{../Tema_11.8_cambioenlosfactores.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Shock exógeno}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.9_pandemia.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.9_pandemia.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Cambios en el equilibrio}
 \begin{center}
-    \includegraphics[scale=0.6]{Slides Principios de Economia/Tema_11.10_crecimiento.jpg}
+    \includegraphics[scale=0.6]{../Tema_11.10_crecimiento.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Luces nocturnas}
 \begin{center}
-    \includegraphics[scale=0.06]{Slides Principios de Economia/Tema_11.11_crecimiento2.jpg}
+    \includegraphics[scale=0.06]{../Tema_11.11_crecimiento2.jpg}
 \end{center}
 Fuente: \href{https://www.nasa.gov/feature/goddard/2017/new-night-lights-maps-open-up-possible-real-time-applications}{NASA}
 \end{frame}
@@ -298,13 +264,13 @@ Fuente: \href{https://www.nasa.gov/feature/goddard/2017/new-night-lights-maps-op
 \begin{frame}
 \frametitle{Crecimiento}
 \begin{center}
-    \href{https://ourworldindata.org/grapher/gdp-per-capita-worldbank} {\includegraphics[width=0.9\textwidth]{Slides Principios de Economia/Figures/gdppc2020.png}}
+    \href{https://ourworldindata.org/grapher/gdp-per-capita-worldbank} {\includegraphics[width=0.9\textwidth]{../Figures/gdppc2020.png}}
 \end{center}
 Fuente: Our World in Data
 \end{frame}
 
 \begin{frame}{Crecimiento del GDP per cápita}
-    \begin{figure} [H]   \includegraphics[scale=0.5]{Slides Principios de Economia/Figures/C17.1.png}
+    \begin{figure} [H]   \includegraphics[scale=0.5]{../Figures/C17.1.png}
 \end{figure}
 \end{frame}
 
@@ -330,7 +296,7 @@ Fuente: Our World in Data
 \end{frame}
 
 %\begin{frame}{Felicidad y nivel de ingreso}
-%    \begin{figure} [H]   \includegraphics[scale=0.5]{Slides Principios de Economia/Figures/C17.2.png}
+%    \begin{figure} [H]   \includegraphics[scale=0.5]{../Figures/C17.2.png}
 %\end{figure}
 %\end{frame}
 
@@ -356,7 +322,7 @@ Fuente: Our World in Data
 %\begin{frame}
 %\frametitle{HDI (2017)}
 %\begin{center}
-%    \href{https://ourworldindata.org/grapher/human-development-index?country=~ZWE} {\includegraphics[scale=0.35]{Slides Principios de Economia/Figures/Tema_11.27_hdi_PBI.png}}
+%    \href{https://ourworldindata.org/grapher/human-development-index?country=~ZWE} {\includegraphics[scale=0.35]{../Figures/Tema_11.27_hdi_PBI.png}}
 %\end{center}
 %Fuente: Our World in Data
 %\end{frame}
@@ -364,7 +330,7 @@ Fuente: Our World in Data
 \begin{frame}
 \frametitle{PBI y desarrollo}
 \begin{center}
-    \href{https://ourworldindata.org/grapher/hdi-vs-gdp-per-capita} {\includegraphics[scale=0.35]{Slides Principios de Economia/Tema_11.27_hdi_2.png}}
+    \href{https://ourworldindata.org/grapher/hdi-vs-gdp-per-capita} {\includegraphics[scale=0.35]{../Tema_11.27_hdi_2.png}}
 \end{center}
 Fuente: Our World in Data
 \end{frame}
@@ -381,14 +347,14 @@ Fuente: Our World in Data
 \end{frame}
 
 \begin{frame}{Un ejemplo de productividad}
-    \begin{figure} [H]   \includegraphics[scale=0.55]{Slides Principios de Economia/Figures/C17.3.png}
+    \begin{figure} [H]   \includegraphics[scale=0.55]{../Figures/C17.3.png}
 \label{fig:17.3}
 \end{figure}
 \end{frame}
 
 
 \begin{frame}{La descomposición de crecimiento para Argentina}
-    \begin{figure} [H]   \includegraphics[scale=0.55]{Slides Principios de Economia/Figures/C17.4.png}
+    \begin{figure} [H]   \includegraphics[scale=0.55]{../Figures/C17.4.png}
 \caption{\textbf{Descomposición del crecimiento de Argentina}}
 \label{fig:26.4}
 \end{figure}
@@ -399,7 +365,7 @@ Fuente: Our World in Data
     
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Slides Principios de Economia/Figures/C26.2.png}
+\includegraphics[width=0.8\textwidth]{../Figures/C26.2.png}
 \end{center}
 \caption{\textbf{Frontera entre Bolivia (izquierda) y Brazil}}
 \label{fig:border_bol_bra}
@@ -409,7 +375,7 @@ Fuente: Our World in Data
 \begin{frame}{Instituciones}
     \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Slides Principios de Economia/Figures/C26.3.png}
+\includegraphics[width=0.8\textwidth]{../Figures/C26.3.png}
 \end{center}
 \caption{\textbf{Península de Corea de noche}}
 \label{fig:korea}
@@ -477,7 +443,7 @@ Fuente: Our World in Data
     \item Los números al lado de las flechas son las diferencias entre las dos personas, indicadas por las flechas
 \end{itemize} 
     \begin{center}    
-    \includegraphics[scale=0.5]{Slides Principios de Economia/Tema_04.15_gini.jpg}
+    \includegraphics[scale=0.5]{../Tema_04.15_gini.jpg}
     \end{center}
 \end{frame}
 
@@ -551,14 +517,14 @@ El coeficiente de Gini es igual a
 \begin{frame} 
 \frametitle{Un ejemplo aplicado}
     \begin{center}    
-    \includegraphics[scale=0.55]{Slides Principios de Economia/Tema_04.16_lorenz1.jpg}
+    \includegraphics[scale=0.55]{../Tema_04.16_lorenz1.jpg}
     \end{center}
 \end{frame}
 
 \begin{frame} 
 \frametitle{Un ejemplo aplicado}
     \begin{center}    
-    \includegraphics[scale=0.55]{Slides Principios de Economia/Tema_04.17_lorenz2.jpg}
+    \includegraphics[scale=0.55]{../Tema_04.17_lorenz2.jpg}
     \end{center}
 \end{frame}
 
@@ -577,14 +543,14 @@ El coeficiente de Gini es igual a
 \begin{frame} 
 \frametitle{Un ejemplo aplicado}
     \begin{center}    
-    \includegraphics[scale=0.55]{Slides Principios de Economia/Tema_04.18_lorenz3.jpg}
+    \includegraphics[scale=0.55]{../Tema_04.18_lorenz3.jpg}
     \end{center}
 \end{frame}
 
 \begin{frame} 
 \frametitle{Un ejemplo aplicado}
     \begin{center}    
-    \includegraphics[scale=0.55]{Slides Principios de Economia/Tema_04.20_variedaddesigual.jpg}
+    \includegraphics[scale=0.55]{../Tema_04.20_variedaddesigual.jpg}
     \end{center}
 \end{frame}
 
