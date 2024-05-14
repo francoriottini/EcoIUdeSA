@@ -191,8 +191,8 @@
     \begin{tikzpicture}[scale=0.7,every node/.style={scale=0.7, inner sep=0, outer sep=0}]
 
         % Coordenadas de los ejes
-        \draw[thick, black] (0, 0) -- (7, 0); % Eje x
-        \draw[thick, black] (0, 0) -- (0, 7);  % Eje y
+        \draw[->, black] (0, 0) -- (7, 0) node[below right] {$Q$}; % Eje x
+        \draw[->, black] (0, 0) -- (0, 7) node[above left] {$P$};  % Eje y
         
         % Números de valores en y
         \node[black, anchor=east] at (-0.5, 6) {1500};
@@ -234,6 +234,54 @@
     \end{itemize}
     \centering
     \includegraphics[scale=0.4]{../Figures/FMI_Riesgo_Moral.jpg}
+\end{frame}
+
+\begin{frame}{Riesgo Moral en el Mercado de Seguros}
+    \begin{itemize}
+        \item En el mercado de seguros, los individuos pueden alterar su nivel de esfuerzo para prevenir riesgos, lo que afecta la prima del seguro. El riesgo moral surge cuando los asegurados reducen su esfuerzo tras obtener cobertura.
+        \begin{itemize}
+            \item \textbf{Demanda de seguros (D)}: Depende del riesgo de incidente ($p$) y de la cantidad ($Q$).
+            \[P = a - \frac{b}{p} Q \]
+            \item A medida que aumenta $p$, la demanda se hace más elástica (menos empinada!).
+            \item \textbf{Oferta de seguros (O)}: Depende del riesgo de incidente ($p$) y de las cantidades que vendan (aun que esto puede no ser importante).
+            \[P = p + c Q \]
+            \item A medida que aumenta $p$ cambia la ordenada al origen de la oferta.
+            \item Ahora, cuando el esfuerzo baja, el riesgo aumenta...
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+    
+\begin{frame}
+    \frametitle{Riesgo Moral en el Mercado de Seguros}
+    \begin{center}
+        \begin{tikzpicture}[scale=1,every node/.style={scale=0.7, inner sep=0, outer sep=0}]
+        % Ejes
+        \draw[->] (0,0) -- (6,0) node[below right] {$Q$};
+        \draw[->] (0,0) -- (0,6) node[above left] {$P$};
+        
+        % Curva de Demanda
+        \draw[thick, black] (0,4) -- (2,0.5) node[below right] {$D (p = 0.2)$};
+        \draw[thick, blue] (0,4) -- (4,0.5) node[below right] {$D' (p = 0.4)$};
+        \draw[dashed, blue] (0,4) -- (7,0.5) node[below right] {$D''$};
+
+        % Curva de Oferta
+        \draw[thick, black] (0,0.5) -- (5,4) node[below right] {$O$};
+        \draw[thick, red] (0,1.5) -- (5,5) node[below right] {$O'$};
+        \draw[dashed, red] (0,4) -- (3.5,6.5) node[below right] {$O''$};
+
+        % Números de valores en y
+        \node[black, anchor=east] at (-0.2, 0.5) {$p = 0.2$};
+        \node[black, anchor=east] at (-0.2, 1.5) {$p = 0.4$};
+
+        % % Etiquetas de puntos
+        % \draw[dotted] (3,0) -- (3,3) -- (0,3);
+        % \node at (3,-0.3) {C*};
+        % \node at (-0.3,3) {P*};
+        
+        % Punto de equilibrio
+        % \node at (3,3) [circle,fill,inner sep=1.5pt]{};
+    \end{tikzpicture}
+    \end{center}
 \end{frame}
 
 \begin{frame}
