@@ -4,6 +4,8 @@ Calendario [G13N](FR_G13_Calendario%20de%20clases.docx)
 
 Calendario [G14N](FR_G14_Calendario%20de%20clases.docx)
 
+[Programa](Programa%202024%20FR%20V.27.11.docx)
+
 ### Clase 1: Introducción a la economía
 
 [Slides de la Clase 1](Slides%20Principios%20de%20Economia/1.%20Slides%20clases/Magistral_01_Introduccion_FR.pdf)
