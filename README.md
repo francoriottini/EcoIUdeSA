@@ -1,5 +1,9 @@
 Este es un repositorio público que contendrá las slides de mis clases de Economía 1 en la Universidad de San Andres. Las mismas serán impartidas martes y miercoles, con un primer grupo de 9 a 10.30hs y un segundo grupo de 10.40 a 12.10 hs.
 
+Calendario [G13N](FR_G13_Calendario de clases.docx)
+
+Calendario [G14N](FR_G14_Calendario de clases.docx)
+
 ### Clase 1: Introducción a la economía
 
 [Slides de la Clase 1](Slides%20Principios%20de%20Economia/1.%20Slides%20clases/Magistral_01_Introduccion_FR.pdf)
