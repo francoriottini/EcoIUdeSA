@@ -203,21 +203,23 @@ Magistral 21
 
     Partiendo de la siguiente igualdad:
 
-    \[y_t = c_t + s_t\]
-    donde \(y_t\) es el ingreso, \(c_t\) es el consumo y \(s_t\) es el ahorro del período, en el período siguiente se podrá consumir el ingreso de ese período, más lo que se ahorro el período anterior multiplicado por la tasa de interés (simplifiquemos pensando que en $t+1$ se consume todo y no se ahorra):
+    \[y_t = c_t + a_t\]
+    donde \(y_t\) es el ingreso, \(c_t\) es el consumo y \(a_t\) es el ahorro del período, en el período siguiente se podrá consumir el ingreso de ese período, más lo que se ahorro el período anterior multiplicado por la tasa de interés (simplifiquemos pensando que en $t+1$ se consume todo y no se ahorra):
 
-    \[c_{t+1} = y_{t+1} + (1+r)\,s_t\]
+    \[c_{t+1} = y_{t+1} + (1+r)\,a_t\]
     Si reemplazo $s_t$ de la primera ecuación en la segunda, obtengo:
     \[c_{t+1} = y_{t+1} + (1+r)\,(y_t - c_t)\]
+\end{frame}
+
+\begin{frame}{Modelo de elección del consumo presente y consumo futuro: restricción intertemporal CON crédito}
     Donde luego
-    \[c_{t+1} = _{t+1} + (1+r)\,y_t - (1+r)\,c_t\]
+    \[c_{t+1} = y_{t+1} + (1+r)\,y_t - (1+r)\,c_t\]
     Donde queda formada una restricción presupuestaria entre el consumo presente y el consumo futuro. Características:
     \begin{itemize}
         \item Pendiente $-(1+r)$: Si consumo una unidad más hoy, consumo $-(1+r)$ mañana. Si consumo una unidad menos hoy, consumo $(1+r)$ más mañana.
         \item Ordenada al origen $c_{t+1} = y_{t+1} + (1+r)\,y_t$: Si no consumo nada hoy, consumo $y_{t+1} + (1+r)\,y_t$ mañana. Ahorré todo!
         \item Raíz $c_t = y_t + y_{t+1}/(1+r)$: Si consumo todo hoy, consumo $y_t + y_{t+1}/(1+r)$ mañana. Pedí prestado todo lo que iba a tener de ingreso el período siguiente!
     \end{itemize}
-
 \end{frame}
 
 
