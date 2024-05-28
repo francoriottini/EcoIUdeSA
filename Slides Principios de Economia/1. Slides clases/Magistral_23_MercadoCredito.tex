@@ -199,6 +199,29 @@ Magistral 21
 \end{frame}
 
 \begin{frame}{Modelo de elección del consumo presente y consumo futuro: restricción intertemporal CON crédito}
+    Si hay crédito, puedo armar una restricción presupuestaria jugando con la tasa de interés.
+
+    Partiendo de la siguiente igualdad:
+
+    \[y_t = c_t + s_t\]
+    donde \(y_t\) es el ingreso, \(c_t\) es el consumo y \(s_t\) es el ahorro del período, en el período siguiente se podrá consumir el ingreso de ese período, más lo que se ahorro el período anterior multiplicado por la tasa de interés (simplifiquemos pensando que en $t+1$ se consume todo y no se ahorra):
+
+    \[c_{t+1} = y_{t+1} + (1+r)\,s_t\]
+    Si reemplazo $s_t$ de la primera ecuación en la segunda, obtengo:
+    \[c_{t+1} = y_{t+1} + (1+r)\,(y_t - c_t)\]
+    Donde luego
+    \[c_{t+1} = _{t+1} + (1+r)\,y_t - (1+r)\,c_t\]
+    Donde queda formada una restricción presupuestaria entre el consumo presente y el consumo futuro. Características:
+    \begin{itemize}
+        \item Pendiente $-(1+r)$: Si consumo una unidad más hoy, consumo $-(1+r)$ mañana. Si consumo una unidad menos hoy, consumo $(1+r)$ más mañana.
+        \item Ordenada al origen $c_{t+1} = y_{t+1} + (1+r)\,y_t$: Si no consumo nada hoy, consumo $y_{t+1} + (1+r)\,y_t$ mañana. Ahorré todo!
+        \item Raíz $c_t = y_t + y_{t+1}/(1+r)$: Si consumo todo hoy, consumo $y_t + y_{t+1}/(1+r)$ mañana. Pedí prestado todo lo que iba a tener de ingreso el período siguiente!
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Modelo de elección del consumo presente y consumo futuro: restricción intertemporal CON crédito}
     \begin{center}
         \includegraphics[scale=0.65]{../Figures/C35.5.png}
     \end{center} 
@@ -272,114 +295,6 @@ Magistral 21
     \end{center}  
 \end{frame}
 
-\begin{frame}{El efecto de un cambio en la tasa de interés}
-    \begin{center}
-        \begin{figure}[H]
-        \renewcommand{\figurename}{Figure}
-            \begin{center}
-                \begin{tikzpicture}[scale=0.45]
-                    % Ejes
-                    \draw[very thick,<->] (0,15) node[left]{$c_{t+1}$}--(0,0)--(15,0) node[below]{$c_{t}$}; 
-                    % Curva de indiferencia
-                    \draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75); 
-                    % Restricción presupuestaria 1
-                    \draw[semithick] (0,8.75)--(9.1,0); 
-                    % Restricción presupuestaria con mayor interés
-                    \draw[semithick, blue] (0,7.4)--(11.6,0); 
-                    % Líneas punteadas y punto de equilibrio
-                    \draw[thick, gray, dashed](4.1, 4.65)--(4.1, 0);
-                    \draw[thick, gray, dashed](4.1, 4.85)--(0, 4.85);
-                    \draw[fill] (4.1,4.85) circle [radius =0.11];  
-                    % Etiquetas
-                    \node[below] at (4,0) {\footnotesize $y_t = c_t$};
-                    \node[left] at (0,4.85){\footnotesize $y_{t+1} = c_{t+1}$};
-                    % Flechas curvas que indican el cambio
-                    \draw[->, red, thick, bend left=20] (9.1,0) to (11.6,0) node[midway, above, sloped] {\footnotesize $\uparrow r$};
-                    \draw[->, red, thick, bend right=20] (0,8.75) to (0,7.4) node[midway, right] {\footnotesize $\uparrow r$};
-                \end{tikzpicture}
-            \end{center}
-        \end{figure}
-    \end{center}  
-\end{frame}
-
-% \begin{frame}{Apalancamiento}
-% %    \begin{center}
-% % \begin{figure}[H]
-% % \renewcommand{\figurename}{Figure}
-% % \begin{center}
-% % \begin{tikzpicture}[scale=0.5]
-% % \draw[very thick,<->] (0,11) node[left]{$c_{t+1}$}--(0,0)--(11,0) node[below]{$c_{t}$};
-% % \draw[semithick, gray] (1,9).. controls (2,3) and (6, 2) .. (9, 1.5) ;
-% % %\draw[semithick, gray] (0.25,9).. controls (0.5,3) and (7, 1) .. (9, 0);
-% % \draw[semithick, gray] (0.25,9).. controls (0.5,3) and (7, 1) .. (9, 0.6);
-% % \draw[semithick] (0,5.85)--(9.1,0);
-% %   \draw[thick,gray, dashed](4.5, 3)--(4.5, 0);
-% %   \draw[thick,gray, dashed](4.5, 3)--(0, 3);
-% %   \node[below] at (4.6,0) {\footnotesize $c_t$};
-% %   \node[left] at (0,3){\footnotesize $c_{t+1}$};
-% %   \draw[fill] (4.5,3) circle [radius =0.11] ;   
-% %     \draw[fill] (9.05,0) circle [radius =0.11] node [below] {\footnotesize $y_t$} ;   
-% %   \node[left] at (0,5.85){\scriptsize $c_{t+1} = y_t (1+\pi)$};   
-% %  \draw [semithick,decorate,decoration={brace,amplitude=3pt},xshift=0pt,yshift=5pt](-1.25,0) -- (-1.25,3);  
-% %   \draw [semithick,decorate,decoration={brace,amplitude=3pt, mirror},xshift=0pt,yshift=5pt](0,-1) -- (4.5,-1); 
-
-% %     \draw [semithick,decorate,decoration={brace,amplitude=3pt, mirror},xshift=0pt,yshift=5pt](4.7,-1) -- (9,-1); 
-% %   \node[left] at (-1.5,1.75){\scriptsize Consumo};   
-% %     \node[left] at (-1.65,1.25){\scriptsize mañana};
-% %   \node[below] at (2.25,-1){\scriptsize Consumo hoy};      
-% %     \node[below] at (6.85,-1){\scriptsize Inversión};     
-% % \end{tikzpicture} 
-% % \end{center}
-% % \end{figure}
-% % \end{center}   
-% \end{frame}
-
-
-% \begin{frame}{Apalancamiento}
-% %     \begin{center}
-% % \begin{figure}[H]
-% % \renewcommand{\figurename}{Figure}
-% % \begin{center}
-% % \begin{tikzpicture}[scale=0.5]
-% % \draw[very thick,<->] (0,11) node[left]{$c_{t+1}$}--(0,0)--(11,0) node[below]{$c_{t}$};
-% % %\draw[semithick, gray] (0.25,9).. controls (0.5,2) and (6, 0.5) .. (7, 0);
-% % \draw[semithick, gray] (0.25,9).. controls (0.5,2) and (6, 0.5) .. (8, 0.6);
-% % \draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75);
-% % \draw[semithick] (0,8.75)--(9.1,0);
-% % \draw[semithick] (0,8.75)--(7,0);
-% %   \draw[thick,gray, dashed](4.1, 4.65)--(4.1, 0);
-% %   \draw[thick,gray, dashed](4.1, 4.85)--(0, 4.85);
-% %   \draw[fill] (4.1,4.85) circle [radius =0.11] ;  
-% %   \node[below] at (4,0) {\footnotesize $c_t$};
-% %   \node[left]                (0,4.85){\footnotesize $c_{t+1}$};
-% %     \draw[fill] (6.95,0) circle [radius =0.11] node [below] {\footnotesize $y_t$} ;   
-% %   \node[left] at (0,8.75){\scriptsize $c_{t+1} = y_t (1+\pi)$}; 
-% %    \draw [semithick,decorate,decoration={brace,amplitude=3pt},xshift=0pt,yshift=5pt](-1.25,0) -- (-1.25,4.8); 
-% %       \draw [semithick,decorate,decoration={brace,amplitude=3pt,mirror},xshift=0pt,yshift=5pt](-1.25,8.35) -- (-1.25,4.8); 
-% %   \draw [semithick,decorate,decoration={brace,amplitude=3pt, mirror},xshift=0pt,yshift=5pt](0,-1) -- (4,-1); 
-% % \draw [semithick,decorate,decoration={brace,amplitude=3pt},xshift=0pt,yshift=5pt](0.25,0.2) -- (6.6,0.2); 
-% %   \node[left] at (-1.5,3){\scriptsize Consumo};   
-% %     \node[left] at (-1.65,2.5){\scriptsize mañana};
-% %   \node[below] at (2.25,-1){\scriptsize Consumo hoy};
-% %   \node[below] at (2.25,-1.5){\scriptsize (pidiendo prestado)};
-% %     \node[left] at (4.25,1){\scriptsize Inversión};
-% %       \node[left] at (-1.75,6.75){\scriptsize Repago };   
-% %     \node[left] at (-1.5,6.25){\scriptsize préstamo};
-% % \end{tikzpicture}
-% % \end{center}
-% % \end{figure}
-% % \end{center} 
-% \end{frame}
-
-% \begin{frame}{El Gran Elon}
-%    \begin{figure} [H]
-%     \centering
-%     \href{https://twitter.com/Stelladmarco/status/1103059259586052097}{
-%     \includegraphics[scale=0.5]{../Figures/C31.9.png}}
-% \end{figure} 
-% \end{frame} 
-
-
 \begin{frame}{Otras teorías del ahorro}
    \begin{itemize}
        \item Ciclo de vida
@@ -407,60 +322,6 @@ Magistral 21
     \end{itemize}
 \end{frame}
 
-
-% \begin{frame}{El WACC}
-% \begin{itemize}
-%     \item ¿Cuál es el costo de capital que deberíamos usar?
-%     \item La manera mas conocida es la del costo capital promedio ponderado (CCPP, o WACC por sus siglas en inglés)
-% \end{itemize}
-     
-% \begin{equation}
-% WACC=\alpha _{eq}r_{eq}+\left( 1-\alpha _{eq}\right) r_{debt},
-% \end{equation}
-
-% \begin{equation}
-% \alpha _{eq}=\left( \frac{\text{Net worth}}{\text{Total Assets}}\right) 
-% \end{equation}
-% \end{frame}
-
-% \begin{frame}{La opción de invertir de Pindyck}
-%     Supongamos que podemos hacer una inversión inicial de \$2200, lo que nos lleva al siguiente pago estocástico:
-%     \begin{center}
-%         \begin{tabular}{cccc}
-%             $t=0$ & & $t=1$ & \hspace{0.15cm} $t=2$ \\[1.5mm]
-%             & $q$ & $P_{1} = 300$ & \hspace{0.15cm} ... \\
-%             $P_{0} = 200$ &&& \\
-%             & $1-q$ & $P_{1} = 100$ & \hspace{0.15cm} ... \\
-%         \end{tabular}
-%     \end{center}
-% \end{frame}
-
-
-% \begin{frame}{La opción de invertir de Pindyck}
-%     \begin{equation}
-% VPN= - 2200+\sum\limits_{t=0}^{\infty }\frac{200}{\left( 1.1\right) ^{t}}%
-% =-2200+2200=\$0.  \label{basic}
-% \end{equation}
-
-% \end{frame}
-
-% \begin{frame}{La opción de invertir de Pindyck}
-% ¿Qué pasa si espero un periodo para invertir?
-% \scriptsize
-% \begin{equation}
-% VPN=0.5\left[ -\frac{2200}{1.1}+\sum\limits_{t=1}^{\infty }\frac{300}{%
-% \left( 1.1\right) ^{t}}\right] =0.5\left[ -\frac{2200}{1.1}+\frac{300}{%
-% \left( 1.1\right) }\left( 1+\frac{1}{1.1}+\frac{1}{1.1^{2}}+ ... \right) %
-% \right]
-% \end{equation}
-
-% \begin{equation}
-% =0.5\left[ -\frac{2200}{1.1}+\frac{300}{\left( 1.1\right) }\left( \frac{1%
-% }{1-\frac{1}{1.1}}\right) \right] =0.5\left[ -\frac{2200}{1.1}+\frac{300}{%
-% \left( 1.1\right) }\left( \frac{1.1}{0.1}\right) \right] = 500!
-% \end{equation}
-% \end{frame}
-
 \begin{frame}{Demanda agregada y el mercado de crédito}
 
 $$ Y = C(r) + I(r) + G $$
@@ -469,7 +330,7 @@ $$ Y = C(r) + I(r) + G $$
 
 \begin{itemize}
 \item En una economía cerrada:
-$$ Y – C(r) – G(r) = I $$
+$$ Y – C(r) – G = I(r) $$
 \end{itemize}
 \begin{itemize}
 \item Que es como decir que lo que ahorro es lo que invierto
@@ -481,48 +342,61 @@ $$ Y – C(r) – G(r) = I $$
 
 
 \begin{frame}{El mercado de crédito}
-\begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{$r$}--(0,0)--(11,0) node[below]{$FP$};
+    \begin{center}
+        \begin{figure}[H]
+        \renewcommand{\figurename}{Figure}
+            \begin{center}
+                \begin{tikzpicture}[scale=0.6]
+                    \draw[very thick,<->] (0,11) node[left]{$r$}--(0,0)--(11,0) node[below]{$FP$};
+                    \draw[thin](1,1.5)--(9,9) node [right] {$O_{FP}$};
+                    \draw[thin](1,9)--(9,1.2) node [above right] {$D_{FP}$};
+                    \draw[thick,dashed,gray] (0,5.2)--(4.9,5.2)--(4.9,0);
+                    \draw[fill] (4.9,5.2) circle [radius =0.075]; 
+                    \node[below] at (4.9,0) {\footnotesize $FP^{*}$};
+                    \node[left] at (0,5.2) {\footnotesize $r^{*}$};
+                \end{tikzpicture}
+            \end{center}
+        \end{figure}
+    \end{center}  
+\end{frame}
 
-%\node[] at(5,-1.5) {\underline{Mercado de Crédito}};
-\draw[thin](1,1.5)--(9,9) node [right] {$O_{FP}$};
-\draw[thin](1,9)--(9,1.2) node [above right] {$D_{FP}$};
-\draw[thick,dashed,gray] (0,5.2)--(4.9,5.2)--(4.9,0);
-\draw[fill] (4.9,5.2) circle [radius =0.075]; 
-\node[below] at (4.9,0) {\footnotesize $FP^{*}$};
-\node[left] at (0,5.2) {\footnotesize $r^{*}$};
-\end{tikzpicture}
-\end{center}
-\end{figure}
-\end{center}  
+\begin{frame}{El mercado de crédito}
+    \begin{itemize}
+        \item La tasa de interés de equilibrio se alcanza cuando la demanda de crédito (demanda de fondos prestables) se iguala con la oferta de crédito (oferta de fondos prestables).
+        \item Un aumento en la inversión desplaza la curva de crédito hacia arriba (se demandan más prestamos), lo que aumenta la tasa de interés.
+        \item En el mismo sentido:
+        \begin{itemize}
+            \item Un aumento en la deuda del gobierno (financia deficit con deuda).
+            \item Un aumento del consumo financiado con deuda.
+        \end{itemize}
+        \item Como en estos dos ultimos casos aumenta la tasa de interes, eso hará caer la inversión (en equilibrio), que es lo que llamamos \textit{crowding out}.
+        \item Un aumento en el ahorro desplaza la curva de oferta de fondos prestables hacia abajo, permitiendo una menor tasa de interés de equilibrio.
+    \end{itemize}
+    
 \end{frame}
 
 \begin{frame}{El mercado de crédito}
     \begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$FP$};
-\draw[thin](1,1.5)--(9,9) node [right] {$O_{FP}$};
-\draw[thin](1,9)--(9,1.2) node [right] {$D_{FP}$};
-\draw[thin](2.5,9)--(10.5,1.2) node [above right] {$D_{FP}'$};
-\draw[thick,dashed,gray] (0,5.2)--(4.9,5.2)--(4.9,0);
-\draw[thick,dashed,gray] (0,5.9)--(5.7,5.9)--(5.7,0);
-\draw[fill] (4.9,5.2) circle [radius =0.075]; 
-\draw[fill] (5.7,5.9) circle [radius =0.075]; 
-\node[below] at (4.9,0) {\footnotesize $FP^{*}$};
-\node[left] at (0,5.2) {\footnotesize $r^{*}$};
-\node[below] at (5.7,0) {\footnotesize $FP'$};
-\node[left] at (0,5.9) {\footnotesize $r'$};
-\end{tikzpicture}
-\end{center}
-\end{figure}
-\end{center}  
+        \begin{figure}[H]
+        \renewcommand{\figurename}{Figure}
+            \begin{center}
+                    \begin{tikzpicture}[scale=0.6]
+                        \draw[very thick,<->] (0,11) node[left]{$r$}--(0,0)--(11,0) node[below]{$FP$};
+                        \draw[thin](1,1.5)--(9,9) node [right] {$O_{FP}$};
+                        \draw[thin](1,9)--(9,1.2) node [right] {$D_{FP}$};
+                        \draw[thin](2.5,9)--(10.5,1.2) node [above right] {$D_{FP}'$};
+                        \draw[thick,dashed,gray] (0,5.2)--(4.9,5.2)--(4.9,0);
+                        \draw[thick,dashed,gray] (0,5.9)--(5.7,5.9)--(5.7,0);
+                        \draw[fill] (4.9,5.2) circle [radius =0.075]; 
+                        \draw[fill] (5.7,5.9) circle [radius =0.075]; 
+                        \node[below] at (4.9,0) {\footnotesize $FP^{*}$};
+                        \node[left] at (0,5.2) {\footnotesize $r^{*}$};
+                        \node[below] at (5.7,0) {\footnotesize $FP'$};
+                        \node[left] at (0,5.9) {\footnotesize $r'$};
+                    \end{tikzpicture}
+            \end{center}
+        \end{figure}
+    \end{center}  
 \end{frame}
 
 
