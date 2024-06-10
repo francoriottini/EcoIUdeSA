@@ -53,30 +53,8 @@
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 \usepackage{hyperref}
 \usepackage{tikz}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
-\usepackage{tcolorbox}
-%add citation management using BibLaTeX
-\usepackage[citestyle=authoryear-comp, %define style for citations
-    bibstyle=authoryear-comp, %define style for bibliography
-    maxbibnames=10, %maximum number of authors displayed in bibliography
-    minbibnames=1, %minimum number of authors displayed in bibliography
-    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
-    minnames=1, %maximum number of authors displayed in citations before using et al.
-    datezeros=false, % do not print dates with leading zeros
-    date=long, %use long formats for dates
-    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
-    url=false,% show no urls in bibliography (applies only if not a mandatory field)
-    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
-    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
-    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
-    ]{biblatex}
-\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
 
+\usepackage{tcolorbox}
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -106,29 +84,13 @@
 
 \usetheme{Boadilla}
 
-%set options of hyperref package
-\hypersetup{
-    bookmarksnumbered=true, %put section numbers in bookmarks
-    naturalnames=true, %use LATEX-computed names for links
-    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
-    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
-    colorlinks=true, %color links
-    anchorcolor=black, %set color of anchors
-    linkcolor=beamerblue, %set link color to beamer blue
-    citecolor=blue, %set cite color to beamer blue
-    pdfpagemode=UseThumbs, %set default mode of PDF display
-    breaklinks=true, %break long links
-    pdfstartpage=1 %start at first page
-    }
-
-
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 25: Politica monetaria}
+\\ Magistral 25: Política Monetaria}
 \date{}
-\author[Ertola Navajas y Fariña]{Ertola Navajas y Fariña}
+\author[Riottini]{Riottini Franco}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -140,7 +102,7 @@
 \centering
 Magistral 25
 
-\includegraphics[scale=0.2]{Slides Principios de Economia/Figures/logoUDESA.jpg} 
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
 
@@ -148,11 +110,11 @@ Magistral 25
 
 \begin{itemize}
     \item Vamos a usar lo que vimos hasta ahora para darle una representación gráfica al sistema 
-    \item Esto va implicar graficar conjuntamente el mercado de bienes, dinero, crédito y trabajo
+    \item Esto va implicar graficar conjuntamente el mercado de bienes y dinero.
     \item En los gráficos que siguen usamos la siguiente terminología, 
     \begin{itemize}
         \item P: el nivel de precios de la economía
-        \item Q: el nivel del producto
+        \item Y: el nivel del producto
         \item i: la tasa de interés nominal
         \item M: la cantidad de dinero
         \item FP: la cantidad de crédito
@@ -163,173 +125,125 @@ Magistral 25
 
 \end{frame}
 
-
 \begin{frame}{El mecano en el mundo clásico}
-    
-\begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-    \begin{minipage}[b]{0.45\textwidth}
-        \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11)--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-\node[right] at (0,11) {$p$};
 
-
-\node[] at(6,-1.5) {\underline{Mercado de Bienes}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-\draw[semithick](4, 0)--(4, 9) node [above]{\footnotesize $OA$};
-
-\draw[thick, gray, dashed] (4,3)--(0,3);
-\end{tikzpicture}
-\end{center}
-     \end{minipage}
-  %  \hfill
-    \begin{minipage}[b]{0.45\textwidth}
     \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11) node[above]{$i$}--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
-\node[right] at (0,11) {};
+        \begin{figure}[H]
+        \renewcommand{\figurename}{Figure}
+            \begin{center}
+                \begin{minipage}[b]{0.45\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.4]
+                            \draw[very thick,<-] (0,11)--(0,0);
+                            \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
+                            \node[left] at (0,11) {$p$};
+                            \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
+                            \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
+                            \draw[semithick](4, 0)--(4, 9) node [above]{\footnotesize $OA$};
+                            \draw[thick, gray, dashed] (4,3)--(0,3);
+                        \end{tikzpicture}
+                    \end{center}
+                \end{minipage}
+                \begin{minipage}[b]{0.45\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.4]
+                        \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
+                        \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
+                        \node[right] at (0,11) {};
+                        \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
+                        \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}(P,\, Y)$};
+                        \draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
+                        \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
+                        \end{tikzpicture}
+                    \end{center}
+                \end{minipage}
+            \end{center}
+        \end{figure}
+    \end{center} 
 
-\node[] at(6,-1.5) {\underline{Mercado de Dinero}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}$};
-\draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
-
- \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
-
-\end{tikzpicture}
-\end{center}
-    \end{minipage}
-\end{center}
-\vspace{0.7cm}
-\label{fig:C35.3}
-\end{figure}
-\end{center} 
-  
-  
 \end{frame}
-
-
 
 \begin{frame}{El mecano en el mundo keynesiano}
- 
- \begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-    \begin{minipage}[b]{0.45\textwidth}
-        \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11)--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-\node[right] at (0,11) {$p$};
-
-
-\node[] at(6,-1.5) {\underline{Mercado de Bienes}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-\draw[semithick](0, 5)--(9,7) node [right]{\footnotesize $OA$};
- \draw[thick, gray, dashed] (2,0)--(2,9);
-\end{tikzpicture}
-\end{center}
-     \end{minipage}
-  %  \hfill
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
     \begin{minipage}[b]{0.45\textwidth}
     \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11) node[above]{$i$}--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
-\node[right] at (0,11) {};
-
-
-\node[] at(6,-1.5) {\underline{Mercado de Dinero}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}$};
-\draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
-
- \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
-
-\end{tikzpicture}
-\end{center}
+    \begin{tikzpicture}[scale=0.4]
+    \draw[very thick,<-] (0,11)--(0,0);
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
+    \node[left] at (0,11) {$p$};
+    \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
+    \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
+    \draw[semithick](0, 5)--(9,7) node [right]{\footnotesize $OA$};
+    \draw[thick, gray, dashed] (2,0)--(2,9);
+    \end{tikzpicture}
+    \end{center}
     \end{minipage}
-\end{center}
-\vspace{0.7cm}
-\label{fig:C35.4}
-\end{figure}
-\end{center} 
- 
+    \begin{minipage}[b]{0.45\textwidth}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.4]
+    \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
+    \node[right] at (0,11) {};
+    \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
+    \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}(P,\, Y)$};
+    \draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
+    \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
+    \end{tikzpicture}
+    \end{center}
+    \end{minipage}
+    \end{center}
+    \end{figure}
+    \end{center} 
 \end{frame}
-
-
-
-%---------------------------------------------------------------------------%
-%---------------------------------------------------------------------------%
-
-\begin{frame}{}
-\centering 	\huge \textbf{Política monetaria} 
-\vspace{2mm}
-\hrule
-\end{frame}
-%---------------------------------------------------------------------------%
-%---------------------------------------------------------------------------%
 
 \begin{frame}{Política Monetaria en el mundo clásico}
- 
- \begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-    \begin{minipage}[b]{0.45\textwidth}
-        \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11)--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-\node[right] at (0,11) {$p$};
 
-\node[] at(6,-1.5) {\underline{Mercado de Bienes}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-\draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $DA'$};
-\draw[semithick](4, 0)--(4, 9) node [above]{\footnotesize $OA$};
-\draw[thick, gray, dashed] (4,3)--(0,3);
-\draw[thick, gray, dashed] (4,5)--(0,5);
-   \draw[fill] (4,3) circle [radius =0.11] node[right] {$A$}; 
-      \draw[fill] (4,5) circle [radius =0.11] node[right] {$B$}; 
-\end{tikzpicture}
-\end{center}
-     \end{minipage}
-  %  \hfill
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
     \begin{minipage}[b]{0.45\textwidth}
     \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11) node[above]{$i$}--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
-\node[right] at (0,11) {};
-
-
-\node[] at(6,-1.5) {\underline{Mercado de Dinero}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}$};
-\draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d^{'}}$};
-\draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
- \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o}'$};
- \draw[thick, gray, dashed] (6.5,3.35)--(0,3.35);
-   \draw[fill] (3.5,3.35) circle [radius =0.11] node[right] {$A$}; 
-      \draw[fill] (6.5,3.35) circle [radius =0.11] node[right] {$B$}; 
-\end{tikzpicture}
-\end{center}
+    \begin{tikzpicture}[scale=0.4]
+    \draw[very thick,<-] (0,11)--(0,0);
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
+    \node[left] at (0,11) {$p$};
+    \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
+    \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
+    \draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $DA'$};
+    \draw[semithick](4, 0)--(4, 9) node [above]{\footnotesize $OA$};
+    \draw[thick, gray, dashed] (4,3)--(0,3);
+    \draw[thick, gray, dashed] (4,5)--(0,5);
+    \draw[fill] (4,3) circle [radius =0.11] node[above right] {$A$}; 
+    \draw[fill] (4,5) circle [radius =0.11] node[above right] {$B$}; 
+    \end{tikzpicture}
+    \end{center}
     \end{minipage}
-\end{center}
-\vspace{0.7cm}
-\label{fig:C35.4}
-\end{figure}
-\end{center} 
-
- 
+    \begin{minipage}[b]{0.45\textwidth}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.4]
+    \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
+    \node[right] at (0,11) {};
+    \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
+    \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}(P_0,\, Y_0)$};
+    \draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$};
+    \draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
+    \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
+    \draw[thick, gray, dashed] (6.5,3.35)--(0,3.35);
+    \draw[fill] (3.5,3.35) circle [radius =0.11] node[above right] {$A$}; 
+    \draw[fill] (6.5,3.35) circle [radius =0.11] node[above right] {$B$}; 
+    \end{tikzpicture}
+    \end{center}
+    \end{minipage}
+    \end{center}
+    \end{figure}
+    \end{center}
 \end{frame}
 
-
-
-%---------------------------------------------------------------------------%
 
 \begin{frame}{Política monetaria en el mundo clásico}
 \begin{itemize}
@@ -338,89 +252,60 @@ Magistral 25
     \item Por lo que el aumento en la demanda presiona sobre los precios
     \item Lo que lleva a que los precios aumenten proporcionalmente a lo que aumentó la cantidad de dinero
     \item Oferta y demanda de dinero simplemente se corren para encontrar el equilibrio en el mismo nivel.
-    \item $\uparrow M V(i)=\uparrow P Y$ 
-    \item Dicotomía clásica (“Neutralidad del dinero”) - $(Y \text { e } i \text { constante, } M \rightarrow P)$
+    \item $\uparrow M V=\uparrow P Y$ 
+    \item Dicotomía clásica (“Neutralidad del dinero”) - $(Y \text{ constante, } M \rightarrow P)$
     \end{itemize}
- 
-
 \end{frame}
-
-%---------------------------------------------------------------------------%
-
-\begin{frame}{¿Cómo se recauda el impuesto inflacionario?}
-
-    \begin{itemize}
-        \item El gobierno emite un dinero
-        \item Esto aumenta lo precios
-        \item Ese aumento de precios hace que los tenedores de pesos puedan consumir menos.
-        \item De esa manera parte del producto lo apropia el Estado
-    \end{itemize}
-    
-\end{frame}
-
-%---------------------------------------------------------------------------%
 
 \begin{frame}{Política monetaria en el mundo keynesiano}
-  
-\begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-    \begin{minipage}[b]{0.45\textwidth}
-        \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11)--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-\node[right] at (0,11) {$p$};
-
-
-\node[] at(6,-1.5) {\underline{Mercado de Bienes}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-\draw[semithick] (1.75,9).. controls (2.25,3.5) and (6.5,2.5) .. (9, 2.25) node [right]{\footnotesize $DA'$};
-\draw[semithick](0, 5)--(9, 7) node [right]{\footnotesize $OA$};
- \draw[thick, gray, dashed] (2,0)--(2,9) node [right]{\footnotesize $OALP$};
-   \draw[fill] (2,5.5) circle [radius =0.11] node[left] {$A$}; 
-  \draw[fill] (2.8,5.65) circle [radius =0.11] node[right] {$B$}; 
-  \draw[fill] (2,7.65) circle [radius =0.11] node[right] {$C$}; 
- 
-\end{tikzpicture}
-\end{center}
-     \end{minipage}
-  %  \hfill
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
     \begin{minipage}[b]{0.45\textwidth}
     \begin{center}
-\begin{tikzpicture}[scale=0.4]
-\draw[very thick,<-] (0,11) node[above]{$i$}--(0,0);
-\draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
-\node[right] at (0,11) {};
-
-\node[] at(6,-1.5) {\underline{Mercado de Dinero}};
-\draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}$};
-\draw[semithick] (1.75,9).. controls (2.25,3) and (6.75, 2.5) .. (9, 2.15) node [right]{\footnotesize $M^{d^{'}}$};
-\draw[semithick, gray, dashed] (2.5,9).. controls (2.25,3.7) and (6.75, 3.5) .. (9, 2.9) node [right]{\footnotesize $M^{d^{''}}$};
-\draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
- \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o}'$};
- \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o}'$};
-
-
- \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
- \draw[thick, gray, dashed] (6.5,2.625)--(0,2.625);
-
-  \draw[fill] (3.35,3.35) circle [radius =0.11] node[right] {$A$}; 
-  \draw[fill] (6.5,2.625) circle [radius =0.11] node[right] {$B$}; 
-   \draw[fill] (6.5,3.35) circle [radius =0.11] node[right] {$C$}; 
-\end{tikzpicture}
-\end{center}
+    \begin{tikzpicture}[scale=0.4]
+    \draw[very thick,<-] (0,11)--(0,0);
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
+    \node[right] at (0,11) {$p$};
+    \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
+    \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
+    \draw[semithick] (1.75,9).. controls (2.25,3.5) and (6.5,2.5) .. (9, 2.25) node [right]{\footnotesize $DA^{'}$};
+    \draw[semithick](0, 5)--(9, 7) node [right]{\footnotesize $OA$};
+    \draw[semithick, gray, fill] (2,0)--(2,9) node [right]{\footnotesize $OALP$};
+    \draw[fill] (2,5.5) circle [radius =0.11] node[below left] {$A$}; 
+    \draw[fill] (2.8,5.65) circle [radius =0.11] node[above right] {$B$}; 
+    \draw[fill] (2,7.65) circle [radius =0.11] node[right] {$C$};
+    \end{tikzpicture}
+    \end{center}
     \end{minipage}
-\end{center}
-\vspace{0.7cm}
-\label{fig:C35.5}
-\end{figure}
-\end{center}   
+    \begin{minipage}[b]{0.45\textwidth}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.4]
+    \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
+    \node[right] at (0,11) {};
+    \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
+    \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}(P_0,\, Y_0)$};
+    \draw[semithick] (1.75,9).. controls (2.25,3) and (6.75, 2.5) .. (9, 2.15) node [right]{\footnotesize $M^{d^{'}}(P_1,\, Y_1)$};
+    \draw[semithick, gray, dashed] (2.5,9).. controls (2.25,3.7) and (6.75, 3.5) .. (9, 2.9) node [right]{\footnotesize $M^{d^{''}}(P_2,\, Y_0)$};
+    \draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
+    \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
+    \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
+    \draw[semithick, gray, dashed] (3.5,3.35)--(0,3.35);
+    \draw[semithick, gray, dashed] (6.5,2.625)--(0,2.625);
+    \draw[fill] (3.35,3.35) circle [radius =0.11] node[above right] {$A$}; 
+    \draw[fill] (6.5,2.625) circle [radius =0.11] node[right] {$B$}; 
+    \draw[fill] (6.5,3.35) circle [radius =0.11] node[above right] {$C$}; 
+    \end{tikzpicture}
+    \end{center}
+    \end{minipage}
+    \end{center}
+    \end{figure}
+    \end{center}   
 \end{frame}
 
 
-%---------------------------------------------------------------------------%
 \begin{frame}{Política monetaria en el mundo keynesiano}
 
 \begin{itemize}
@@ -433,8 +318,6 @@ Magistral 25
 
 \end{frame}
 
-%---------------------------------------------------------------------------%
-
 \begin{frame}{¿Es efectiva la política monetaria?}
 
     \begin{itemize}
@@ -446,11 +329,9 @@ Magistral 25
     
 \end{frame}
 
-%---------------------------------------------------------------------------%
-
 \begin{frame}{¿Cómo funciona la política monetaria?}
     
-    \centering\includegraphics[width=11cm]{Slides Principios de Economia/P81.png}\
+    \centering\includegraphics[width=11cm]{../Figures/C40.8.png}\
 
 \end{frame}
 
