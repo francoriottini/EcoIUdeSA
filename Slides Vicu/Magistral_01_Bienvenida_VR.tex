@@ -1,0 +1,375 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage[english]{babel} %set language; note: after changing this, you need to delete all auxiliary files to recompile
+\usepackage[utf8]{inputenc} %define file encoding; latin1 is the other often used option
+\usepackage{csquotes} % provides context sensitive quotation facilities
+\usepackage{graphicx} %allows for inserting figures
+\usepackage{booktabs} % for table formatting without vertical lines
+\usepackage{textcomp} % allow for example using the Euro sign with \texteuro
+\usepackage{stackengine}
+\usepackage{wasysym}
+\usepackage{tikzsymbols}
+\usepackage{textcomp}
+\usepackage{ragged2e}
+% ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
+\setbeamertemplate{navigation symbols}
+
+%\newcommand{\bubblethis}[2]{
+ %       \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+ %       (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
+ %       aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
+ %   }%
+%\tikzset{face/.style={shape=circle,minimum size=4ex,shading=radial,outer sep=0pt,
+ %       inner color=white!50!yellow,outer color= yellow!70!orange}}
+
+% Some commands to make the code easier
+\newcommand{\emoticon}[1][]{%
+  \node[face,#1] (emoticon) {};
+  %% The eyes are fixed.
+  \draw[fill=white] (-1ex,0ex) ..controls (-0.5ex,0.2ex)and(0.5ex,0.2ex)..
+        (1ex,0.0ex) ..controls ( 1.5ex,1.5ex)and( 0.2ex,1.7ex)..
+        (0ex,0.4ex) ..controls (-0.2ex,1.7ex)and(-1.5ex,1.5ex)..
+        (-1ex,0ex)--cycle;}
+\newcommand{\pupils}{
+  %% standard pupils
+  \fill[shift={(0.5ex,0.5ex)},rotate=80] 
+       (0,0) ellipse (0.3ex and 0.15ex);
+  \fill[shift={(-0.5ex,0.5ex)},rotate=100] 
+       (0,0) ellipse (0.3ex and 0.15ex);}
+
+\newcommand{\emoticonname}[1]{
+  \node[below=1ex of emoticon,font=\footnotesize,
+        minimum width=4cm]{#1};}
+\usepackage{scalerel}
+\usetikzlibrary{positioning}
+\usepackage{xcolor,amssymb}
+\newcommand\dangersignb[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\newcommand\dangersignw[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\color{white}\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\usepackage{fontawesome} % Social Icons
+\usepackage{epstopdf} % allow embedding eps-figures
+\usepackage{tikz} % allows drawing figures
+\usepackage{amsmath,amssymb,amsthm} %advanced math facilities
+\usepackage{lmodern} %uses font that support italic and bold at the same time
+\usepackage{hyperref}
+\usepackage{tikz}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
+
+\usefonttheme[onlymath]{serif} %set math font to serif ones
+
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7} %define beamerblue color for later use
+
+%%% defines highlight command to set text blue
+\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+
+
+%%%%%%% commands defining backup slides so that frame numbering is correct
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+%%%% end of defining backup slides
+
+%Specify figure caption, see also http://tex.stackexchange.com/questions/155738/caption-package-not-working-with-beamer
+\setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
+%\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
+
+
+\usetheme{Boadilla}
+
+%set options of hyperref package
+\hypersetup{
+    bookmarksnumbered=true, %put section numbers in bookmarks
+    naturalnames=true, %use LATEX-computed names for links
+    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
+    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
+    colorlinks=true, %color links
+    anchorcolor=black, %set color of anchors
+    linkcolor=beamerblue, %set link color to beamer blue
+    citecolor=blue, %set cite color to beamer blue
+    pdfpagemode=UseThumbs, %set default mode of PDF display
+    breaklinks=true, %break long links
+    pdfstartpage=1 %start at first page
+    }
+
+
+% --------------------
+% Overall information
+% --------------------
+\title[Principios de Economía]{Principios de Economía \vspace{4mm}
+\\ }
+\date{}
+\author[Victoria Rosino]{Victoria Rosino}
+\vspace{0.4cm}
+\institute[]{Universidad de San Andrés} 
+
+\begin{document}
+
+\begin{frame}
+    \vspace{0.4cm}
+    \titlepage
+    \centering
+    \vspace{-0.5cm}
+    \includegraphics[scale=0.3]{Slides Principios de Economia/Figures/udesa_logo.jpg} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Profesores y mails}
+    \begin{itemize}
+        \item Victoria (\href{mailto:rosinom@udesa.edu.ar}{rosinom@udesa.edu.ar}) \vspace{2mm}
+        \item Franco (\href{mailto:vazquezf@udesa.edu.ar} {vazquezf@udesa.edu.ar}) \vspace{2mm}
+        \item Gabriel (\href{mailto:gpessi@udesa.edu.ar} {gpessi@udesa.edu.ar}) 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Clases de consulta}
+    \begin{itemize}
+        \item Todos tenemos horarios de consulta semanales \vspace{2mm}
+        \item Se publican en la página principal del Campus Virtual \vspace{2mm}
+        \item Los horarios pueden cambiar \vspace{2mm}
+        \item ¡\textbf{Aprovechen las consultas desde el comienzo}!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modalidad de trabajo}
+    \begin{itemize}
+        \item ¡Este curso implica mucho trabajo! Pero...  \vspace{2mm}
+        \item ¡Vamos a trabajar en temas muy interesantes y útiles!  \vspace{2mm}
+        \item 27 clases magistrales a lo largo del semestre 
+            \begin{itemize}
+            \vspace{2mm}
+                \item 14 antes del receso de parciales, 13 en la segunda parte \vspace{2mm}
+                \item ¿Cuándo? Martes de 14:00 a 15:30 y Viernes de 9:00 a 10:30.  \vspace{2mm}
+            \end{itemize} 
+        \item 14 tutoriales, una vez por semana, empezando \textbf{esta semana}. \vspace{2mm}
+        \item Vamos a trabajar con este libro \vspace{2mm}  \\
+         Ertola y Struzenegger [2023]:  \textit{\href{https://principiosdeeconomia.com}{Principios de Economía}} \vspace{2mm} 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Es importante comenzar a estudiar desde el primer día}
+    \begin{itemize}
+        \item Este curso tiene \textbf{EXAMEN FINAL}... \vspace{2mm}
+        \item ... pero contiene un alto número de puntos de evaluación a lo largo del semestre: \vspace{2mm}
+        \begin{itemize}
+            \item 10 pop-quizzes
+            \item 11 tutoriales (con distintas evaluaciones dentro) y 2 trabajos prácticos
+            \item 1 examen parcial escrito presencial en el receso intermedio (fin de abril)
+        \end{itemize} \vspace{2mm}
+        \item que nos permite tener una proxy del desempeño del alumno: la ``\textbf{nota umbral}''
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Nota ``umbral''}
+    \begin{itemize}
+        \item La nota ``umbral'' es un indicador del trabajo durante el semestre que \textbf{puede dar acceso a ``privilegios'' de evaluación} \vspace{2mm}
+        \item ¿Cuenta todo? NO! \vspace{2mm}
+        \begin{itemize}
+            \item Los 8 mejores quizzes
+            \item Las mejores 9 ejercitaciones de tutoriales y los 2 trabajos prácticos
+            \item La nota del primer examen parcial
+        \end{itemize} \vspace{2mm}
+        \item ¿Cómo la calculo? Haciendo un promedio de las notas que cuentan:
+    \end{itemize}
+    \begin{center}
+    $N_{umbral}=1/3N_{quizzes}+1/3N_{tutoriales}+1/3N_{parcial 1}$    
+    \end{center}  
+\end{frame}
+
+\begin{frame}
+    \frametitle{Nota "umbral"}
+    \begin{itemize}
+        \item La nota umbral se define el último día de clases, antes del final (poca anticipación así que vayan calculándola ustedes)
+        \begin{itemize} \vspace{2mm}
+            \item Si la nota umbral es igual o mayor que 6 ($N_{umbral} \geq 6$) entonces acceden al Segundo Parcial
+            \item Si la nota umbral es menor que 6 ($N_{umbral} < 6$) entonces deben rendir Examen Final      
+        \end{itemize} \vspace{2mm}   
+        \item ¿Cómo son esos exámenes? Todo está en el programa
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{¿Quiénes rinden Examen Final?} 
+    \begin{itemize}
+        \item Aquellos que desaprobaron el examen parcial. \vspace{2mm}
+        \item Aquellos que, habiendo aprobado el parcial, tienen una nota umbral menor a 6. \vspace{2mm}
+        \item Está contemplada la posibilidad de dar el final para aquellos que puedan acceder al segundo parcial pero deseen rendir el final para 'mejorar' la nota del parcial. Quien quiera hacer esto, debe confirmar la decisión vía mail a los profesores. 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pop-quizzes}
+    10 exámenes sorpresa (muy cortos) \vspace{2mm}
+    \begin{itemize}
+        \item Sólo 4 minutos, al principio de la clase (lleguen puntual!)
+        \item 5 preguntas sobre la lectura del día
+        \item Multiple choice y/o verdadero/falso
+        \item ¿Cómo me preparo? Leyendo los capítulos del libro indicados en el calendario de lecturas
+        \item El primero no será sorpresa... ¡es el viernes!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Nota del curso}
+    \small
+    \begin{itemize}
+        \item Para los que hayan accedido al segundo parcial: \\
+    \end{itemize}
+    \begin{center}{$N_{curso}=0,1N_{quizzes}+0,2N_{tutorial}+0,35N_{parcial 1}+0,35N_{parcial 2}$}
+    \end{center} \vspace{2mm}
+    \begin{itemize}
+        \item Para los que hayan accedido al final:
+    \end{itemize} 
+    \begin{center}
+    {$N_{curso}=0,1N_{quizzes}+0,2N_{tutorial}+0,7N_{final}$}
+    \end{center} \vspace{2mm}
+    \begin{itemize}    
+        \item Deben notar que, si van a rendir final, la nota del parcial NO cuenta!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Para aprobar este curso}
+    Para pasar este curso es estrictamente necesario obtener al menos 4 puntos en: \vspace{2mm}
+    \begin{itemize}
+        \item Ambos parciales ($N_{parcial 1} \geq 4$ y $N_{parcial 2} \geq 4$) o el examen final sin redondeo ($N_{final} \geq 4$)
+    \end{itemize}
+    \centering y \vspace{2mm}
+    \begin{itemize}
+        \item La nota del curso ($N_{curso} \geq 4$)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Recuperatorio}
+    \begin{itemize}
+        \item Es igual que un examen final. \vspace{2mm}
+        \item Sólo para los estudiantes que hayan tenido una nota ‘umbral’ igual o mayor a 6
+    \end{itemize}
+    \begin{center}
+     $N_{umbral}=1/3N_{quizzes}+1/3N_{tutorial}+1/3N_{parcial 1} \geq 6$   
+    \end{center}
+    \begin{itemize} \vspace{2mm}
+        \item El recuperatorio es como un examen final pero la nota del curso será como máximo 6: \vspace{2mm}
+    \end{itemize}
+    \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.3} 
+    \setlength{\arrayrulewidth}{0.7pt} 
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Nota en el recuperatorio} & 4,00-6,49 & 6,50-8,99 & 9,00-10 \\ 
+        \hline
+        \textbf{Nota en el curso ($N_{\text{curso}}$)} & 4 & 5 & 6 \\ 
+        \hline
+    \end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Comunicación y Campus Virtual}
+    \begin{itemize}
+        \item Prácticamente toda la información relevante del curso va a estar disponible en el Campus Virtual. Entren regularmente y activen las notificaciones diarias. \vspace{2mm}
+        \item Dos Campus Virtual: \vspace{2mm}
+        \begin{itemize}
+            \item E010 - Economía I (\textbf{Grupo 6}) 1er. Semestre 2025 \\
+            Campus virtual de \textbf{esta} cátedra. Encontrarán el cronograma, el programa, las slides de magistrales, grabaciones de clases y cualquier comunicación entre ustedes y yo. \vspace{2mm}
+            \item Evaluaciones Economía I - E010
+            \\ Para quizzes, entrega de ejercitaciones, tps y exámenes. También contiene las guías de tutoriales, soluciones y exámenes modelo.  \vspace{2mm}
+        \end{itemize}
+        \item ¡Hablen! Pregunten en clase a los tutores \vspace{2mm}
+        \item Contáctennos por correo electrónico 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \Huge ¿Preguntas?
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Feedback sobre las clases}
+    \begin{itemize}
+        \item Realmente nos interesa saber cómo va el curso \vspace{2mm}
+        \item 2 opciones: \vspace{2mm}
+        \begin{itemize}
+            \item Nos pueden enviar un mail y contarnos qué piensan 
+            \vspace{2mm}
+            \item Nos pueden contestar una encuesta anónima que no podremos rastrear... Por supuesto, no podremos responder a estos mensajes!
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Plagio y deshonestidad intelectual}
+    \justify
+    \small{
+    La Universidad de San Andrés exige un estricto apego a los cánones de honestidad intelectual. La existencia de plagio configura un grave deshonor, impropio en la vida universitaria. Su configuración no sólo se produce con la existencia de copia literal en los exámenes sino toda vez que se advierta un aprovechamiento abusivo del esfuerzo intelectual  - ajeno. El Código de Ética de la Universidad considera conducta punible la apropiación de labor intelectual ajena desmereciendo los contenidos de novedad y originalidad que es dable esperar en los trabajos requeridos. La presunta violación a estas normas dará lugar a la conformación de un Tribunal de Ética que, en función de la gravedad de la falta, recomendará sanciones disciplinarias que pueden incluir el apercibimiento, la suspensión o expulsión.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Estructura del programa}
+    \begin{itemize}
+        \item Introducción
+        \item Escasez y elección
+        \item Interacciones sociales
+        \item Instituciones, poder, ganadores y perdedores
+        \item Dentro de la firma
+        \item Firmas eligiendo precio y cantidad
+        \item Tomando precios
+        \item Mercado laboral
+        \item Crédito, dinero y bancos
+        \item Fallas de mercado
+        \item Fluctuaciones económicas
+        \item Política fiscal
+        \item Política monetaria
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ahora si podemos comenzar...}
+    \centering
+    \huge
+    ¡ BIENVENIDOS a ECONOMIA I !
+\end{frame}
+
+\end{document}
