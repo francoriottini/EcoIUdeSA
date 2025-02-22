@@ -108,6 +108,12 @@
     boxrule = 1.5pt,
     colframe = black % frame color
 }
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
+
 % --------------------
 % Overall information
 % --------------------
@@ -140,49 +146,39 @@ Magistral 1}
 %     \end{center}
 % \end{frame}
 
-\begin{frame}
-\frametitle{¿Qué es la economía?}
-\begin{itemize}
-    \item Etimología de la palabra economía: del griego \textit{oikos} (casa, patrimonio) y \textit{nemein} (administrar, gestionar) \vspace{2mm}
-    \item Es una ciencia: tiene un objeto propio (la asignación de recursos escasos), un método (hipotético - deductivo) y un conjunto de modelos capaces de explicar los fenómenos que se observan en la realidad
-    \item Es una ciencia empírica: se puede contrastar con la realidad 
-    \item Es una ciencia social: estudia diversos aspectos de las sociedades
-    \vspace{2mm}
-    \begin{center}
-        \begin{boxA}
-        La economía es una ciencia empírica y social que se ocupa de la manera en que se administran los recursos escasos
-        \end{boxA}
-    \end{center}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{¿Qué es la economía?}
-ESTO NO...\vspace{1mm} \\
-\centering 
-\includegraphics[scale=0.7]{../Figures/Introduccion_1.2_boladecristal.jpg}
-\\
-¡No es una ciencia exacta!
-\end{frame}
-
-\begin{frame}
-\frametitle{¿Qué hace un economista?}
-\begin{itemize}
-    \item Busca asignar eficientemente recursos escasos \vspace{3mm} \\
-    \item ¿Que quiere decir ``eficientemente''? Depende del objetivo que tengamos en mente! Pero siempre tendrá que ver con utilizar los recursos de la mejor manera posible (desaprovechando lo menor cantidad posible) \vspace{3mm} \\
-    \item ¿Qué mecanismos tiene para realizar dicha asignación? 
+\begin{frame}{¿Qué es la economía?}
     \begin{itemize}
-        \item Sorteo?
-        \item El que primero levanta la mano?
-        \item El que más necesita?
-        \item Designar alguien que decida?
-        \begin{boxA}
-            \begin{center}
-                \textbf{O EL MERCADO !}
-            \end{center}
-        \end{boxA}
+        \item Etimología de la palabra economía: del griego \textit{oikos} (casa, patrimonio) y \textit{nemein} (administrar, gestionar) \vspace{2mm}
+        \item Es una ciencia: tiene un objeto propio (la asignación de recursos escasos), un método (hipotético - deductivo) y un conjunto de modelos capaces de explicar los fenómenos que se observan en la realidad
+        \item Es una ciencia empírica: se puede contrastar con la realidad 
+        \item Es una ciencia social: estudia diversos aspectos de las sociedades
+        \vspace{2mm}
+        \begin{center}
+            \begin{boxA}
+            La economía es una ciencia empírica y social que se ocupa de la manera en que se administran los recursos escasos
+            \end{boxA}
+        \end{center}
+        \item Definitivamente \textbf{no} es una ciencia exacta
     \end{itemize}
-\end{itemize}
+\end{frame}
+
+\begin{frame}{¿Qué hace un economista?}
+    \begin{itemize}
+        \item Busca asignar eficientemente recursos escasos \vspace{3mm} \\
+        \item ¿Que quiere decir ``eficientemente''? Depende del objetivo que tengamos en mente! Pero siempre tendrá que ver con utilizar los recursos de la mejor manera posible (desaprovechando lo menor cantidad posible) \vspace{3mm} \\
+        \item ¿Qué mecanismos tiene para realizar dicha asignación? 
+        \begin{itemize}
+            \item Sorteo?
+            \item El que primero levanta la mano?
+            \item El que más necesita?
+            \item Designar alguien que decida?
+            \begin{boxA}
+                \begin{center}
+                    \textbf{O EL MERCADO !}
+                \end{center}
+            \end{boxA}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -241,23 +237,21 @@ Estudiar las causas y consecuencias de los problemas sociales es un reto
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{¿Cómo hacer frente a estas preguntas?}
-    \begin{itemize}
-            \item Vamos a pensar utilizando modelos económicos... \vspace{2mm}
-            \item y vamos confrontar esos modelos con la realidad
-    \end{itemize} \vspace{2mm}
-\begin{center}
-    \includegraphics[scale=0.4]{../C1.9.png}
-\end{center}
+\begin{frame}{¿Cómo hacer frente a estas preguntas?}
+        \begin{itemize}
+                \item Vamos a pensar utilizando modelos económicos... \vspace{2mm}
+                \item y vamos confrontar esos modelos con la realidad
+        \end{itemize} \vspace{2mm}
+    \begin{center}
+        \includegraphics[scale=0.5]{../Figures/C.1.4.png}
+    \end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{¿Cómo construimos modelos?}
+\begin{frame}{¿Que es un modelo?}
 \begin{itemize}
     \item ¡El mundo es muy complejo! Para entenderlo debemos simplificar la realidad \vspace{2mm} \\ $\Rightarrow$
     Supuestos y modelos \vspace{2mm}
-    \item ¿Que es un modelo? Es una simplificación de la realidad \vspace{2mm}
+    \item Es una simplificación de la realidad \vspace{2mm}
     \item Construimos una descripción simplificada en base a \textbf{la pregunta de interés} 
     \item  \href{https://www.youtube.com/watch?v=zwDA3GmcwJU}{``Del rigor de la ciencia''} 
     Jorge Luis Borges
@@ -307,13 +301,6 @@ Estudiar las causas y consecuencias de los problemas sociales es un reto
 \end{itemize} 
 \end{frame}
 
-%\begin{frame}
-%\frametitle{Un ejemplo}
-%\begin{center}
-%    \includegraphics[scale=1.4]{../Figures/InflacionEspaÃ±a.png}
-%\end{center}
-%\end{frame}
-
 \begin{frame}
 \frametitle{¿Por qué vamos a usar gráficos?}
 \begin{itemize}
@@ -329,47 +316,66 @@ Estudiar las causas y consecuencias de los problemas sociales es un reto
 \begin{frame}
 \frametitle{La correlación...}
 \begin{center}
-    \includegraphics[scale=0.55]{../Figures/Introduccion_1.5_ovbias.jpg}
+    \includegraphics[scale=0.55]{../Figures/C2.13.png}
 \end{center}
-\end{frame}
-
-\begin{frame} \label{uno}
-\frametitle{Algunas explicaciones}
-\begin{itemize}
-    \item OJO al interpretar relaciones entre variables porque correlación no implica causalidad  \vspace{2mm}
-    \item Endogeneidad: ``todo tiene que ver con todo'' \vspace{1mm}
-    \item ¿Qué creen que observaríamos en un grafico con cantidad de policias y crimenes?
-    \begin{center}
-        \includegraphics[scale=0.10]{../Figures/Introduccion_1.7_Dopolice.jpg}
-    \end{center}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Algunas explicaciones}
-    \begin{itemize} 
-        \item ¿En qué sentido va la correlación?
-           \item Potenciales fuentes de confusión:
-           \begin{itemize}
-               \item Omisión de variables
-               \item Causalidad inversa.
-               \item Simultaneidad
-           \end{itemize}
-       \end{itemize}
-\end{frame}
-
-\begin{frame} 
-\frametitle{¿Qué podemos hacer?}
-\begin{itemize}
-
-    \item  En algunos casos se pueden diseñar experimentos o utilizar experimentos naturales (exógenos por definición) para detectar eventos que producen un cambio claro en una variable
-     \item Usamos técnicas estadísticas que nos permitan "descubrir" la causalidad a partir los datos que tenemos. Para ello usamos algo que los economistas llaman "econometría". 
-\end{itemize}
 \end{frame}
 
 \begin{frame}
-\begin{center}
-    \Huge Importante: Leer capitulo 2, 3 y 4
-\end{center}
+    \frametitle{Algunas explicaciones}
+    \begin{itemize}
+        \item OJO al interpretar relaciones entre variables porque \textcolor{blue}{correlación no implica causalidad} 
+        \begin{boxB}
+        \textbf{Correlación}: relación recíproca entre dos o más acciones, variables o fenómenos. \\
+        \textbf{Causalidad}: relación causa-efecto. Hay causalidad si mover una variable x genera un cambio en la variable y.
+        \end{boxB}
+        \item Endogeneidad: ``todo tiene que ver con todo'' \vspace{1mm}
+        \begin{itemize} 
+         \item ¿En qué sentido va la correlación?
+            \item Potenciales fuentes de confusión:
+            \begin{itemize}
+                \item {Omisión de variables}  
+                \item {Simultaneidad} 
+                \item {Error de medición en la variable explicativa}
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{¿Qué podemos hacer?}
+    \begin{itemize}
+        \item  En algunos casos se pueden diseñar experimentos o utilizar experimentos naturales (exógenos por definición) para detectar eventos que producen un cambio claro en una variable (algunos ejemplos \hyperlink{appendix}{acá})
+        \item Usamos técnicas estadísticas que nos permitan "descubrir" la causalidad a partir los datos que tenemos. Para ello usamos algo que los economistas llaman "econometría". 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \LARGE  \textbf{IMPORTANTE}  \\ \vspace{1cm}
+        \Large 
+        \begin{boxB}
+        \centering Leer capítulos 2, 3 y 4 de esta clase
+        \end{boxB}
+        \vspace{0.5cm}
+        \begin{boxB}
+        Leer capítulos 5 y 6 para el viernes - HAY QUIZ!
+        \end{boxB}
+    \end{center}
+\end{frame}
+
+\begin{frame} \label{appendix}
+    \frametitle{Experimentos}
+    \begin{center}
+    \includegraphics[scale=0.1]{Slides Principios de Economia/Figures/rct_vacunas.png}
+    \end{center}
+    “Improving immunisation coverage in rural India: clustered randomised controlled evaluation of immunization campaigns with and without incentives” - Banerjee, Duflo, Glennerster \& Kothari (2010) \\  \vspace{2mm}
+\end{frame}
+    
+\begin{frame} 
+    \frametitle{Experimentos naturales}
+    \begin{center}
+        \includegraphics[scale=0.5]{../Figures/Do_Police_Induce_Crime.png}
+    \end{center}
 \end{frame}
 
 \end{document}
