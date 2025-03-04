@@ -10,6 +10,14 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{ragged2e} % para alinear
+\usepackage{graphicx}  % Para incluir imágenes
+\usepackage{tikz}  
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{wrapfig}
 % ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}
 
@@ -76,7 +84,11 @@
     boxrule = 1.5pt,
     colframe = black % frame color
 }
-
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \newcommand{\backupbegin}{
    \newcounter{framenumberappendix}
    \setcounter{framenumberappendix}{\value{framenumber}}
@@ -101,7 +113,7 @@
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 3: Preferencias y utilidad}
 \date{}
-\author[Riottini]{Franco Riottini}
+\author[Franco Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -113,68 +125,231 @@
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
-\begin{frame}
-\frametitle{Las preferencias del estudiante}
-\centering
-\includegraphics[scale=0.55]{../Figures/Tema_02.11_rp9.png}
-\end{frame}
-
-\begin{frame}
-\frametitle{Hay distintas combinaciones...}
-\centering
-\includegraphics[scale=0.60]{../Figures/Tema_02.12_rp10.jpg}
-\end{frame}
-
-\begin{frame}
-\frametitle{...que me dejan igual de feliz}
-\centering
-\includegraphics[scale=0.55]{../Figures/Tema_02.13_rp11.jpg}
-\begin{itemize}
-    \item No nos interesa el "nivel de felicidad" en esta curva\dots
-    \item \dots ya que posiblemente entre ustedes tengan distinto nivel de "felicidad" en estos puntos\dots
-    \item \dots sino que nos interesa \textbf{compararlos!}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Pero hay infinitas combinaciones...}
-\centering
-\includegraphics[scale=0.6]{../Figures/Tema_02.15_rp12.jpg}
-% C7_3.jpg 
-\end{frame}
-
-\begin{frame}
-\frametitle{... que podemos comparar}
-\centering
-\includegraphics[scale=0.6]{../Figures/Tema_02.15_rp13.jpg}
-% C7_4.jpg y agregarle flechitas hacia la curva de indiferencia mas alta  
-\end{frame}
-
-\begin{frame}
-\frametitle{Y construimos un mapa de preferencias}
-\centering
-\includegraphics[scale=0.6]{../Figures/Tema_02.16_rp14.jpg}
-\end{frame}
-
-\begin{frame}
-\frametitle{Supuestos de la relación de preferencias}
-\begin{enumerate}
-\item Completitud: Los consumidores pueden \textbf{comparar} y \textbf{ordenar} cualquier par de canastas de bienes
-\item Monotonicidad fuerte: Si una canasta tiene al menos una unidad más de un bien, entonces esa canasta es preferida. Esto produce curvas de indiferencia que tienen las siguientes propiedades:
+\begin{frame}{Las preferencias del estudiante}
     \begin{itemize}
-        \item Las curvas de indiferencia tienen pendiente negativa. 
-        \item Las curvas de indiferencia más altas corresponden a niveles de utilidad más altos (más es mejor).
-        \item No hay saciedad local
+        \item Hasta ahora vimos que nuestros ingresos imponen una restricción que puede influir en nuestra elección de consumo. \vspace{2mm}
+        \begin{itemize}
+        \item Cuando tenemos que decidir qué canasta queremos consumir, debemos limitarnos a elegir entre todas las canastas \textbf{alcanzables}.  \vspace{3mm}
+        \end{itemize}
+        \item ¿Qué nos falta para resolver el problema del consumidor?  \vspace{2mm}
+        \begin{itemize}
+        \item Necesitamos identificar qué \textbf{prefiere} entre todas las canastas que se pueden alcanzar.
+        \end{itemize}
     \end{itemize}
-\item Transitividad: Si un consumidor prefiere la canasta A a la B y la B a la C, entonces prefiere la canasta A a la C.
+\end{frame}
+
+\begin{frame}{Las preferencias del estudiante}
+    \begin{center}
+    \begin{tikzpicture}
+        % Ejes
+        \draw[thick,->] (0,0) -- (6,0) node[below] {Pizza};
+        \draw[thick,->] (0,0) -- (0,5.5) node[left] {Cerveza};
+        % Imágenes
+        \node at (0.7,4.5) {\includegraphics[width=1.2cm]{../Figures/cerveza.png}};
+        \node at (5,0.8) {\includegraphics[width=1.5cm]{../Figures/pizza.jpg}};
+        % Texto
+        \node at (3.2,2.5) {\textbf{{\large ¿Cómo prefieren combinarlos?}}};
+    \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Tenemos distintas combinaciones...}
+    Supongamos que tenemos un conjunto de canastas de pizza y cerveza. 
+    \begin{center}
+        \renewcommand{\arraystretch}{1.5} % Ajuste de altura de filas
+        \setlength{\arrayrulewidth}{1pt} % Grosor de bordes
+        \setlength{\tabcolsep}{10pt} % Espaciado en columnas
+        \begin{tabular}{>{\bfseries}c|c|c}
+            \textbf{\textcolor{blue}{Canasta}} & \textbf{\textcolor{blue}{Pizza}} & \textbf{\textcolor{blue}{Cerveza}} \\
+            \hline
+            A & 3  & 15  \\
+            B & 5  & 11  \\
+            C & 10 & 7   \\
+            D & 15 & 5   \\
+            E & 20 & 3   \\
+            F & 15 & 11  \\
+            G & 20 & 9   \\
+            H & 15 & 15  \\
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{...que podemos representar así}
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+    
+            \node at (14.5,5) {\includegraphics[width=3.5cm]{../Figures/tabla_canastas.jpg}};
+    
+            % Ejes
+            \draw[thick,->] (0,0) -- (12,0) node[below right] {Pizza};
+            \draw[thick,->] (0,0) -- (0,8.5) node[left] {Cerveza};
+            
+             % Etiquetas de cantidades de cerveza
+            \node[left] at (0,7.5) {15};
+            \node[left] at (0,5.5) {11};
+            \node[left] at (0,4.5) {9};
+            \node[left] at (0,3.5) {7};
+            \node[left] at (0,2.5) {5};
+            \node[left] at (0,1.5) {3};
+    
+            % Etiquetas de cantidades de pizza
+            \node[below] at (1.5,0) {3};
+            \node[below] at (2.5,0) {5};
+            \node[below] at (5,0) {10};
+            \node[below] at (7.5,0) {15};
+            \node[below] at (10,0) {20};
+    
+            \only<2->{
+            \draw[dashed] (0,7.5) -- (1.5,7.5);
+            \draw[dashed] (1.5,7.5) --(1.5,0) ;
+            \fill[red] (1.5,7.5) circle (2.5pt) node[above right] {A};
+            }
+            
+            \only<3->{
+            \draw[thick,->,blue] (1.5,7.5) -- (1.5,5.6);
+            \draw[thick,->,blue] (1.5,5.5) -- (2.4,5.5);
+            \draw[dashed] (0,5.5) -- (2.5,5.5);
+            \draw[dashed] (2.5,5.5) --(2.5,0);
+            \fill[black] (1.5,5.5) circle (2.5pt);
+            \fill[red] (2.5,5.5) circle (2.5pt) node[above right] {B};
+            \node[right,blue] at (1.4,6.5) {\scalebox{0.8}{4}};
+            \node[above,blue] at (2,4.8) {\scalebox{0.8}{2}};
+            }
+    
+            % Flechas indicando la TMT
+            \only<4->{
+            \draw[thick,->,blue] (2.5,5.5) -- (2.5,3.6);
+            \draw[thick,->,blue] (2.5,3.5) -- (4.9,3.5);
+            \draw[thick,->,blue] (5,3.5) -- (5,2.6);
+            \draw[thick,->,blue] (5,2.5) -- (7.4,2.5);
+            \draw[thick,->,blue] (7.5,2.5) -- (7.5,1.6);
+            \draw[thick,->,blue] (7.5,1.5) -- (9.9,1.5);
+    
+            % Puntos clave en rojo
+            \fill[black] (2.5,3.5) circle (2.5pt);
+            \fill[red] (5,3.5) circle (2.5pt) node[above right] {C};
+            \fill[black] (5,2.5) circle (2.5pt);
+            \fill[black] (7.5,1.5) circle (2.5pt);
+            \fill[red] (7.5,2.5) circle (2.5pt) node[above right] {D};
+            \fill[red] (10,1.5) circle (2.5pt) node[above right] {E};
+    
+    
+            % Etiquetas de TMT
+            \node[right,blue] at (2.5,4.5) {\scalebox{0.8}{4}};
+            \node[right,blue] at (4.9,3) {\scalebox{0.8}{2}};
+            \node[above,blue] at (3.7,2.85) {\scalebox{0.8}{5}};
+            \node[above,blue] at (6.3,1.85) {\scalebox{0.8}{5}};
+            \node[above,blue] at (8.8,0.8) {\scalebox{0.8}{5}};
+            
+            % Líneas punteadas
+            \draw[dashed] (0,3.5) -- (2.4,3.5);
+            \draw[dashed] (0,2.5) --(4.9,2.5);
+            \draw[dashed] (5,2.5) --(5,0);
+            \draw[dashed] (0,1.5) --(7.4,1.5);
+            \draw[dashed] (7.5,1.5) --(7.5,0);
+            \draw[dashed] (10,1.5) --(10,0);
+            }
+            
+             % F G y H
+            \only<5->{
+            \draw[dashed] (7.5,7.5) --(0,7.5);
+            \draw[dashed] (7.5,7.5) --(7.5,0);
+    
+            \draw[dashed] (0,5.5) --(7.5,5.5);
+            \draw[dashed] (0,4.5) --(10,4.5);
+            \draw[dashed] (10,4.5) --(10,1.5);
+            \fill[red] (7.5,7.5) circle (2.5pt) node[above right] {H};
+            \fill[red] (7.5,5.5) circle (2.5pt) node[above right] {F};
+            \fill[red] (10,4.5) circle (2.5pt) node[above right] {G};
+            }
+    
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+    
+\begin{frame}{Algunas nos dejan igual de feliz}
+    Supongamos que el estudiante revela que se encuentra indiferente entre las canastas A, B, C, D y E
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+    
+            % Ejes
+            \draw[thick,->] (0,0) -- (12,0) node[below right] {Pizza};
+            \draw[thick,->] (0,0) -- (0,8.5) node[left] {Cerveza};
+            
+             % Etiquetas de cantidades de cerveza
+            \node[left] at (0,7.5) {15};
+            \node[left] at (0,5.5) {11};
+            \node[left] at (0,4.5) {9};
+            \node[left] at (0,3.5) {7};
+            \node[left] at (0,2.5) {5};
+            \node[left] at (0,1.5) {3};
+    
+            % Etiquetas de cantidades de pizza
+            \node[below] at (1.5,0) {3};
+            \node[below] at (2.5,0) {5};
+            \node[below] at (5,0) {10};
+            \node[below] at (7.5,0) {15};
+            \node[below] at (10,0) {20};
+    
+            % Puntos clave en rojo
+            \fill[red] (1.5,7.5) circle (2.5pt) node[above right] {A};
+            \fill[red] (2.5,5.5) circle (2.5pt) node[above right] {B};
+            \fill[red] (5,3.5) circle (2.5pt) node[above right] {C};
+            \fill[red] (7.5,2.5) circle (2.5pt) node[above right] {D};
+            \fill[red] (10,1.8) circle (2.5pt) node[above right] {E};
+    
+             % F G y H
+            \fill[red] (7.5,7.5) circle (2.5pt) node[above right] {H};
+            \fill[red] (7.5,5.5) circle (2.5pt) node[above right] {F};
+            \fill[red] (10,4.5) circle (2.5pt) node[above right] {G};
+            
+            % Curva de indiferencia
+            \only<2->{
+            \draw[thick, red] plot[smooth, tension=0.4] coordinates {(1.3,8) (1.5,7.5) (2.5,5.5) (3.5,4.5) (5,3.5) (7.5,2.5) (10,1.8) (11,1.6)};
+            }
+            \only<3->{
+            \draw[thick, red] plot[smooth, tension=0.4] coordinates {(4.65,8) (5.1,7.5) (6.1,6.5) (7.5,5.5) (8.5,5) (10,4.5) (11,4.3)};
+            }
+            \only<4->{
+            \draw[thick, red] plot[smooth, tension=0.4] coordinates {(7,8) (7.5,7.5) (8.5,7) (10,6.5) (11,6.3)};
+            }
+    
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Las curvas de indiferencia}
     \begin{itemize}
-        \item Las curvas de indiferencia no se cruzan
+        \item Todas las posibles canastas que otorgan el mismo nivel de utilidad o felicidad se encuentran sobre una misma \textbf{curva de indiferencia}. \vspace{2mm}
+        \item ¿Qué nivel de felicidad nos dan esas canastas? 
+        \begin{itemize}
+        \item No nos interesa cuánto. Lo único relevante es si una canasta tiene una utilidad mayor a otra. 
+        \item Vemos que las canastas F y G están sobre otra curva de indiferencia. Osea que nos dan otro nivel de utilidad. Lo mismo sucede con la canasta H. \vspace{1mm}
+        \end{itemize}
+        \item La cantidad de curvas de indiferencia podemos suponer que es \textbf{infinita}. Esto nos forma un \textbf{mapa de indiferencia}, donde las que están más a la derecha y arriba brindan más utilidad.
     \end{itemize}
-\item Convexidad: Los consumidores prefieren consumir canastas de consumo \textit{balanceadas} antes que aquellas canastas que tienen mucho de un solo bien
-    \begin{itemize}
-        \item Las curvas de indiferencia son convexas: se hacen más empinadas a la izquierda y más planas a la derecha 
-    \end{itemize}
-\end{enumerate} 
+\end{frame}
+
+\begin{frame}{Supuestos de la relación de preferencias}
+    \begin{enumerate}
+    \item \textcolor{blue}{Completitud}: Los consumidores pueden \textbf{comparar} y \textbf{ordenar} cualquier par de canastas de bienes.
+    \item \textcolor{blue}{Transitividad}: Si un consumidor prefiere la canasta A a la B y la B a la C, entonces prefiere la canasta A a la C.
+        \begin{itemize}
+            \item Las curvas de indiferencia no se cruzan
+        \end{itemize}
+    \item \textcolor{blue}{Monotonicidad fuerte}: Si una canasta tiene al menos una unidad más de un bien, entonces esa canasta es preferida. Esto implica que:
+        \begin{itemize}
+            \item Las curvas de indiferencia tienen pendiente negativa. 
+            \item Las curvas de indiferencia más altas corresponden a niveles de utilidad más altos (más es mejor).
+        \end{itemize}
+    
+    \item \textcolor{blue}{Convexidad}: Los consumidores prefieren consumir canastas de consumo \textit{balanceadas} antes que aquellas canastas que tienen mucho de un solo bien.
+        \begin{itemize}
+            \item Las curvas de indiferencia son convexas: se hacen más empinadas a la izquierda y más planas a la derecha 
+        \end{itemize}
+    \end{enumerate} 
 \end{frame}
 
 
@@ -190,7 +365,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Tasa Marginal de sustitución}
+\frametitle{Tasa Marginal de Sustitución}
 \begin{itemize}
     \item Lo que estoy dispuesto a sacrificar para beneficiarme de una unidad adicional de un bien va cambiando a lo largo de la curva de indiferencia.
     \item La pendiente de la curva de indiferencia describe esa relacion: es la tasa marginal de sustitución
@@ -199,80 +374,93 @@
 \includegraphics[scale=0.5]{../Figures/C7.9.png}
 \end{frame}
 
-\begin{frame}
-\frametitle{Tasa Marginal de Sustitución}
-\begin{itemize}
-    \item La TMS es la cantidad de unidades de un bien que el individuo está dispuesto a sacrificar a cambio de una unidad adicional del otro bien, de tal manera que se mantiene constante su nivel de utilidad.
-    \item Es la pendiente de las curvas de indiferencia:
-    \begin{align*}
-        UMg_x \cdot \Delta X &= UMg_y \cdot - \Delta Y \\
-        TMS = \frac{\Delta Y}{\Delta X} &= - \frac{UMg_x}{UMg_y}
-    \end{align*}    
-    \item Intuitivamente, nos indica cuántos porrones de cerveza estamos dispuestos a sacrificar a cambio de consumir una porción adicional de pizza.
-    \item ¡No es constante!
-\end{itemize} 
-\end{frame}
-
-\begin{frame}
-\frametitle{Bonus: Las curvas de indiferencias pueden tener formas diferentes}
-\begin{itemize}
-    \item Bienes sustitutos perfectos %agregar link con imagen
-    \item Bienes complementarios perfectos %agregar link con imagen
-    \item Bien y mal % agregar link con imagen
-    \item Bien neutral % agregar link con imagen
-\end{itemize} 
-\end{frame}
-
-\begin{frame}
-\frametitle{Comportamiento del consumidor}
-\begin{itemize}
-    \item Se puede entonces ver a los consumidores como individuos que tienen:
+\begin{frame}{Tasa Marginal de Sustitución}
     \begin{itemize}
-        \item[1.] Recursos limitados. Por lo tanto, enfrentan una restricción presupuestaria. Solo puede elegir entre las canastas de consumo alcanzables
-        para él
-        \item[2.] Ciertas preferencias sobre diferentes productos. Para elegir la canasta que más le gusta, debe tener en cuenta
-        sus preferencias
-    \end{itemize}
-    \item También hacemos un supuesto adicional:
+        \item La TMS es la cantidad de unidades de un bien que el individuo está \textbf{dispuesto} a sacrificar a cambio de una unidad adicional del otro bien, de tal manera que se mantiene constante su nivel de utilidad.
+        \item Es la pendiente de las curvas de indiferencia:
+        \begin{align*}
+            \Delta U &= 0 \\
+            \Delta U = UMg_x \cdot \Delta X &+ UMg_y \cdot \Delta Y = 0 \\
+            UMg_x \cdot \Delta X &= UMg_y \cdot - \Delta Y \\
+            TMS = \frac{\Delta Y}{\Delta X} &= - \frac{UMg_x}{UMg_y}
+        \end{align*}    
+        \item Intuitivamente, nos indica cuántos porrones de cerveza ($Y$) estamos dispuestos a sacrificar a cambio de consumir una porción adicional de pizza ($X$).
+        \item ¡No es constante!
+    \end{itemize} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bonus: Las curvas de indiferencias pueden tener formas diferentes}
+    \begin{columns}
+        \column{0.55\textwidth}
+        \begin{itemize}
+            \item Bienes sustitutos perfectos
+            \item Bienes complementarios perfectos
+            \item Bien y mal
+            \item Bien neutral
+        \end{itemize}
+        \column{0.5\textwidth}
+        \includegraphics[scale=0.35]{../Figures/CI_casos.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Comportamiento del consumidor}
     \begin{itemize}
-    \item Los individuos son \textbf{racionales}: Toman la mejor decisión posible dada la información.
-    \end{itemize}
-\end{itemize} 
+        \item Se puede ver entonces a los consumidores como individuos que tienen: \vspace{-2mm}
+        \begin{itemize}
+            \item[1.] \textbf{Recursos limitados}. Por lo tanto, enfrentan una restricción presupuestaria. Solo puede elegir entre las canastas de consumo alcanzables
+            para él.
+            \item[2.] Ciertas \textbf{preferencias} sobre diferentes productos. Para elegir la canasta que más le gusta, debe tener en cuenta
+            sus preferencias.
+        \end{itemize}
+        \item También hacemos un supuesto adicional:
+        \begin{itemize}
+        \item Los individuos son \textbf{racionales}: toman la mejor decisión posible dada la información.
+        \end{itemize}
+    \end{itemize} 
 \end{frame}
 
 \begin{frame}
-\frametitle{Volviendo al problema del estudiante:}
-\centering
-\includegraphics[scale=0.65]{../Figures/Tema_02.18_rp16.jpg}
+    \frametitle{Volviendo al problema del estudiante:}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            \node at (3,3) {\includegraphics[width=8.5cm]{../Figures/problema_consumidor.png}};
+            \node[right] at (-1.8,2.5) {\textbf{Restricción }};
+            \node[right] at (-1.8,2) {\textbf{presupuestaria}};
+            \draw[->] (0.5,2) -- (2,2);
+            \node[above] at (5,3.5) {\textbf{Curvas de indiferencia}};
+            \draw[->] (5,3.4) -- (4.5,3);
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}
-\frametitle{Equilibrio}
-\centering
-\includegraphics[scale=0.65]{../Figures/Tema_02.19_rp17.jpg}
-\end{frame}
-
-\begin{frame}
-\frametitle{Maximizando la utilidad}
-\begin{itemize}
-    \item Una idea central en economía es que las personas buscan maximizar su felicidad
+\begin{frame}{Maximizando la utilidad}
     \begin{itemize}
-    \item En la jerga se dice que los individuos intentan ``maximizar su utilidad''
-    \item La función de utilidad es la que describe cómo las canastas de bienes se traducen en utilidad
-    \item Las curvas de indiferencia no son otra cosa que ``cortes'' de esa función para distintos niveles de utilidad
-    \end{itemize}
-    \begin{boxA}
-        \begin{center}
-        Los individuos van a elegir la canasta que más le gusta (por pertenecer la curva de indiferencia más alta) dentro del conjunto de todas las canastas alcanzables
-        \end{center}
-    \end{boxA}
-\end{itemize} 
+        \item Una idea central en economía es que las personas buscan maximizar su felicidad. \vspace{2mm}
+        \begin{itemize}
+        \item En la jerga se dice que los individuos intentan ``maximizar su utilidad''. \vspace{2mm}
+        \item Pero no nos olvidemos que los individuos enfrentan una restricción presupuestaria. \vspace{2mm}
+        \end{itemize} 
+        \item Entonces, la pregunta central es: ¿cuál es la mayor utilidad que se puede alcanzar dada la restricción presupuestaria? \vspace{2mm}
+        \begin{itemize}
+        \item Nos estamos preguntando por la canasta situada en la curva de indiferencia más alta que, al mismo tiempo, sea una de las canastas factibles. 
+        \vspace{2mm}
+        \end{itemize} 
+        \begin{boxB}
+        \centering La elección del individuo se basa en maximizar su utilidad sujeto a la restricción presupuestaria
+        \end{boxB}
+        \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Tratemos de entender para que sirve pensar de este modo...}
-\centering
-\includegraphics[scale=0.5]{../Figures/Tema_02.23_rp21.png}
+    \frametitle{Equilibrio}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            \node at (3,3) {\includegraphics[width=8.5cm]{../Figures/equilibrio.png}};
+            \node[above] at (3.5,3) {\textbf{Equilibrio}};
+            \draw[->] (3,3) -- (2.5,2.5);
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -466,6 +654,10 @@
         \item Aumenta el costo de oportunidad de la pizza, porque el precio relativo de la pizza ha aumentado (ahora es una cerveza entera!).
     \end{itemize}
     \item \textbf{Efecto ingreso}: El efecto que el ingreso menor tendría si no hubiera cambios en el costo de oportunidad
+    \begin{itemize}
+        \item Gráficamente, ``es como'' si la restricción se desplazara hacia adentro.
+    \end{itemize}
+    
     \item \textbf{Efecto sustitución}: El efecto del cambio en el costo de oportunidad, porque cambiaron los precios relativos (aumentó la TMT, o sea la pendiente de la RP).
 \end{itemize} 
 \end{frame}
