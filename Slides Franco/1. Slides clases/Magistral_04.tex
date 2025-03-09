@@ -10,6 +10,9 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+
 % ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}
 
@@ -55,6 +58,11 @@
     fontupper = \bf,
     boxrule = 1.5pt,
     colframe = black % frame color
+}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
 }
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
@@ -171,18 +179,58 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Si aumenta el precio de la pizza}
-\centering
-\includegraphics[scale=0.6]{../Figures/Tema_02.20_rp18.jpg}
+\begin{frame}{Si aumenta el precio de la pizza:}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+    \draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(9,0) node[below]{Pizza};
+    \draw [thick] (1.95,5.55) to [out=270,in=190] (6.5,1.85);
+    \node [right] at (6.5,1.8) {$U_1$};
+    \node[below] at (7.5,0) {\footnotesize 40};
+    \draw [thick] (0,4.8) -- (7.5,0);
+    \draw [thick, blue] (0,4.8) -- (3.7,0);
+    \node[below] at (-0.3,5.2) {\footnotesize 20};
+    \node [right] at (3.4,2.8) {$A$};
+    \draw[fill] (3.43,2.6) circle [radius =0.1];
+    \node[right] at (6.3,6.5) {¿Qué es esto?};
+    \node[right] at (5.7,6) {\textbf{Manteniendo todo}};
+    \node[right] at (5.6,5.5) {\textbf{lo demás constante}};
+    \draw[->, thick, blue] (6,0.5) -- (4,0.5);
+    \node[right, blue] at (6.3,4) {\textbf{Las pizzas se}};
+    \node[right, blue] at (5.6,3.5) {\textbf{volvieron más caras}};
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
 \end{frame}
-
-\begin{frame}
-\frametitle{El nuevo equilibrio es B}
-\centering
-\includegraphics[scale=0.6]{../Figures/Tema_02.22_rp20.jpg}
-\end{frame}
-
+  
+  
+\begin{frame}{El nuevo equilibrio es B}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+    \draw[very thick,<->] (0,6.5) node[left]{Cerveza}--(0,0)--(9,0) node[below]{Pizza};
+    \draw [thick] (1.95,5.55) to [out=270,in=190] (6.5,1.85);
+    \node [right] at (6.5,1.8) {$U_1$};
+    \node[below] at (7.5,0) {\footnotesize 40};
+    \draw [thick] (0,4.8) -- (7.5,0);
+    \draw [thick, blue] (0,4.8) -- (3.7,0);
+    \node[below] at (-0.3,5.2) {\footnotesize 20};
+    \node [right] at (3.4,2.8) {$A$};
+    \draw[fill] (3.43,2.6) circle [radius =0.1];
+    \draw [thick, blue] (1.35,4.5) to [out=270,in=190] (5.2,0.7);
+    \node [right, blue] at (5.3,0.7) {$U_2$};
+    \node [right, blue] at (2.2,2.1) {$B$};
+    \draw[fill, blue] (2.2,2) circle [radius =0.1];
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
+    \end{frame}
 \begin{frame}
 \frametitle{Pensemos un minuto que tenemos aquí...}
 \begin{itemize}
@@ -240,17 +288,14 @@
 \end{frame}
 
 \begin{frame}
-  \begin{boxA}
     \begin{center}
       El conjunto de canastas de consumo óptimas forman lo que denominamos la curva precio-consumo.
     \end{center}
-  \end{boxA}
-
-  \begin{boxA}
+  \begin{boxB}
     \begin{center}
       La demanda individual es la cantidad de un bien que un individuo está dispuesto a comprar a cada precio.
     \end{center}
-  \end{boxA}
+  \end{boxB}
   \begin{center}
     En nuestro ejemplo, tenemos la curva de demanda de pizza, que nos indica la cantidad de porciones de pizza que Paula está dispuesta a comprar a cada precio de la porción de pizza.
   \end{center}
@@ -262,61 +307,249 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{¿Como construir la demanda de mercado?}
-  \begin{itemize}
-    \item Para construir la demanda total de un mercado, sumamos las cantidades individuales demandadas para cada precio.
-  \end{itemize}
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.8]{../Figures/C10.2.png}      
-  \end{figure} 
+    \frametitle{¿Cómo construimos la curva de demanda del mercado?}
+    Supongamos que hay dos consumidores con la misma demanda individual \vspace{1mm}
+    \begin{figure}[H]
+    \begin{center}
+    \begin{tikzpicture}[scale=0.75]
+        % Configuración de ejes
+        \draw[thick,->] (0,0) -- (9,0) node[below] {$Q$};
+        \draw[thick,->] (0,0) -- (0,6) node[left] {$P$};
+        
+        % Curva de demanda individual
+        \draw[thick, color=blue] (0,4) -- (4,0);
+        \node[above, blue] at (4.4,4.4) {Demanda de cada consumidor};
+        \draw[->, thick, blue] (1,3.2) -- (1.7,4.2);
+    
+        % Curva de demanda del mercado
+        \draw[thick] (0,4) -- (8,0);
+        \node[right] at (5,3) {Demanda de Mercado};
+        \draw[->, thick] (5,1.7) -- (5.5,2.5);
+    
+        % Líneas punteadas
+        \draw[dashed, gray] (2,0) -- (2,3);
+        \draw[dashed, gray] (4,0) -- (4,2);
+        \draw[dashed, gray] (6,0) -- (6,1);
+        \draw[dashed, gray] (0,3) -- (2,3);
+        \draw[dashed, gray] (0,2) -- (4,2);
+        \draw[dashed, gray] (0,1) -- (6,1);
+        
+        % Etiquetas de puntos
+        \fill (2,3) circle (2pt);
+        \fill (4,2) circle (2pt);
+        \fill (6,1) circle (2pt);
+        
+        % Etiquetas eje Y
+        \node[left] at (0,4) {40};
+        \node[left] at (0,3) {30};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,1) {10};
+    
+        % Etiquetas eje X
+        \node[below] at (1,0) {10};
+        \node[below] at (2,0) {20};
+        \node[below] at (3,0) {30};
+        \node[below] at (4,0) {40};
+        \node[below] at (5,0) {50};
+        \node[below] at (6,0) {60};
+        \node[below] at (7,0) {70};
+        \node[below] at (8,0) {80};
+        \node[left] at (0,0) {0};
+    
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \centering Para cada precio, tenemos que sumar las cantidades individuales demandadas de todos los consumidores
 \end{frame}
-
+    
 \begin{frame}
-  \frametitle{¿Y si tenemos demandas individuales distintas?}
-  \begin{itemize}
-    \item Seguimos sumando las cantidades demandadas a cada precio. Eso no quita que haya puntos en donde solo demanda una sola persona, como en el siguiente ejemplo.
-  \end{itemize}
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.8]{../Figures/C10.3.png}       
-  \end{figure}
+      \frametitle{¿Y si tenemos demandas individuales distintas?}
+    \begin{figure}[H]
+    \begin{center}
+    \begin{tikzpicture}[scale=0.75]
+        % Configuración de ejes
+        \draw[thick,->] (0,0) -- (11,0) node[below] {$Q$};
+        \draw[thick,->] (0,0) -- (0,7) node[left] {$P$};
+        
+        % Curva de demanda Franco
+        \draw[thick, color=blue] (0,4) -- (4,0);
+        \node[above, blue] at (1.3,0.9) {\footnotesize Demanda};
+        \node[above, blue] at (1.35,0.5) {\footnotesize de Franco};
+    
+        % Curva de demanda Victoria
+        \draw[thick, color=WildStrawberry] (0,5.97) -- (5.97,0);
+        \node[above, WildStrawberry] at (2.2,5.5) {\footnotesize Demanda};
+        \node[above, WildStrawberry] at (2.2,5) {\footnotesize de Victoria};
+    
+        % Curva de demanda del mercado
+        \draw[thick] (0,6) -- (2,4) -- (10,0);
+        \node[right] at (7.6,2.3) {\footnotesize \textbf{Demanda}};
+        \node[right] at (7.5,1.9) {\footnotesize \textbf{de mercado}};
+        \draw[->, thick] (7,1.7) -- (7.4,2.1);
+    
+        % Líneas punteadas
+        \draw[dashed, gray] (1,0) -- (1,5);
+        \draw[dashed, gray] (2,0) -- (2,4);
+        \draw[dashed, gray] (4,0) -- (4,3);
+        \draw[dashed, gray] (6,0) -- (6,2);
+        \draw[dashed, gray] (8,0) -- (8,1);
+        \draw[dashed, gray] (0,5) -- (1,5);
+        \draw[dashed, gray] (0,4) -- (2,4);
+        \draw[dashed, gray] (0,3) -- (4,3);
+        \draw[dashed, gray] (0,2) -- (6,2);
+        \draw[dashed, gray] (0,1) -- (8,1);
+        
+        % Etiquetas de puntos
+        \fill (0,6) circle (2pt);
+        \fill (1,5) circle (2pt);
+        \fill (2,4) circle (2pt);
+        \fill (4,3) circle (2pt);
+        \fill (6,2) circle (2pt);
+        \fill (8,1) circle (2pt);
+        \fill (10,0) circle (2pt);
+        
+        % Etiquetas eje Y
+        \node[left] at (0,6) {60};
+        \node[left] at (0,5) {50};
+        \node[left] at (0,4) {40};
+        \node[left] at (0,3) {30};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,1) {10};
+    
+        % Etiquetas eje X
+        \node[below] at (1,0) {10};
+        \node[below] at (2,0) {20};
+        \node[below] at (3,0) {30};
+        \node[below] at (4,0) {40};
+        \node[below] at (5,0) {50};
+        \node[below] at (6,0) {60};
+        \node[below] at (7,0) {70};
+        \node[below] at (8,0) {80};
+        \node[below] at (9,0) {90};
+        \node[below] at (10,0) {100};
+    
+        \node[left] at (0,0) {0};
+    
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    Seguimos sumando las cantidades demandadas a cada precio. Pero pueden haber puntos en donde solo demanda una sola persona, como en $P = 50$
+    
 \end{frame}
 
   
-\begin{frame}
-  \frametitle{¿Qué es la demanda?}
-  \begin{itemize}
-    \item La curva de demanda muestra cuál es la cantidad máxima del bien que estan dispuestos a consumir los individuos a cada precio, o \vspace{2mm}
-    \item ...  cuál es la disposición máxima a pagar de los consumidores para cada cantidad del bien.
-    
-    \centering
-    \includegraphics[scale=0.7]{../Figures/C10.4.png}
-  \end{itemize}
+\begin{frame}{¿Qué es la demanda?}
+    \begin{itemize}
+        \item La curva de demanda muestra cuál es la cantidad máxima del bien que están dispuestos a consumir los individuos a \textit{cada precio}, o \vspace{2mm}
+        \item ...  cuál es la disposición máxima a pagar de los consumidores para \textit{cada cantidad} del bien.
+    \end{itemize}
+    \begin{center}
+        \begin{figure}[H]
+        \renewcommand{\figurename}{Figure}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.65]
+            \draw[thick,->] (0,0) -- (7,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,6.5) node[left] {$P$};
+            \draw [thick] (1,5.5) -- (6,1);
+            \node [right] at (6,1) {$D$};
+            \node [right] at (3.2,3.7) {$A$};
+            \fill (3.2,3.5) circle (3pt);
+            \draw[dashed, gray] (3.2,0) -- (3.2,3.5);
+            \draw[dashed, gray] (0,3.5) -- (3.2,3.5);
+            \node[below] at (3.2,0) {40};
+            \node[left] at (0,3.5) {30};
+            \end{tikzpicture}
+        \end{center}
+        \end{figure}
+    \end{center}
 \end{frame}
 
-\begin{frame}{Factores que afectan a la función de demanda}
-  \begin{itemize}
-    \item El ingreso (bienes normales, inferiores o neutrales)
-    \item El precio de otros bienes (sustitutos y complementarios)
-    \item Los gustos y preferencias del consumidor
-    \item Las expectativas del consumidor
-    \item Shocks externos
-  \end{itemize}
-  \begin{boxA}
+\begin{frame}
+\frametitle{Desplazamientos \textbf{sobre} la curva de demanda}
+
+    \begin{itemize}
+        \item Si cambia el \textbf{precio} de un bien, se modifica su \textbf{cantidad demandada}.\vspace{2mm}
+        \item La curva de demanda no se modifica, nos desplazamos \textbf{sobre} la curva.\vspace{2mm}
+    \end{itemize}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.65]
+        \draw[thick,->] (0,0) -- (7,0) node[below] {$Q$};
+        \draw[thick,->] (0,0) -- (0,6.5) node[left] {$P$};
+        \draw [thick] (1,5.5) -- (6,1);
+        \node [right] at (6,1) {$D$};
+
+        % Punto A
+        \node [right] at (3.2,3.7) {$A$};
+        \fill (3.2,3.5) circle (3pt);
+        \draw[dashed, gray] (3.2,0) -- (3.2,3.5);
+        \draw[dashed, gray] (0,3.5) -- (3.2,3.5);
+        \node[below] at (3.2,0) {40};
+        \node[left] at (0,3.5) {30};
+        
+        % Punto B
+        \node [right] at (4.4,2.7) {$B$};
+        \fill (4.6,2.3) circle (3pt);
+        \draw[dashed, gray] (4.6,0) -- (4.6,2.3);
+        \draw[dashed, gray] (0,2.3) -- (4.6,2.3);
+        \node[below] at (4.6,0) {60};
+        \node[left] at (0,2.3) {20};
+        \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Factores que afectan a la función de demanda}
+    \begin{itemize}
+        \item El ingreso (bienes normales, inferiores o neutrales)
+        \item El precio de otros bienes (sustitutos y complementarios)
+        \item Los gustos y preferencias del consumidor
+        \item El número de compradores
+        \item Las expectativas del consumidor
+        \item Shocks externos
+    \end{itemize}
+    \vspace{2mm}
+    \begin{boxB}
     \begin{center}
       No confundir cambios en la demanda con cambios en las cantidades demandadas
     \end{center}
-  \end{boxA}
+    \end{boxB}
 \end{frame}
 
-\begin{frame}
-\frametitle{¿Cómo se determina el ingreso?}
-\begin{itemize}
-    \item Hasta el momento, asumíamos que  conocíamos el ingreso sin preguntarnos como se obtenía. 
-    \item Ahora vamos a utilizar las herramientas aprendidas para explicar cómo un individuo determina su ingreso laboral.
-    \item A su vez, entender la decisión ocio-trabajo nos será de gran utilidad en la sección de macroeconomía. 
-\end{itemize}
+\begin{frame}{Algunos ejemplos - Bienes complementarios}
+    \begin{center}
+        \includegraphics[scale=0.24]{../Figures/M4.1.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Algunos ejemplos - Bienes sustitutos}
+    \begin{center}
+        \includegraphics[scale=0.3]{../Figures/M4.2.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Algunos ejemplos - Gustos y preferencias}
+    \begin{center}
+        \includegraphics[scale=0.45]{../Figures/M4.3.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Algunos ejemplos - Shocks externos}
+    \begin{center}
+        \includegraphics[scale=0.55]{../Figures/M4.5.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{¿Cómo se determina el ingreso?}
+    \begin{itemize}
+        \item Hasta el momento, asumíamos que  conocíamos el ingreso sin preguntarnos como se obtenía. 
+        \item Ahora vamos a utilizar las herramientas aprendidas para explicar cómo un individuo determina su ingreso laboral.
+        \item A su vez, entender la decisión ocio-trabajo nos será de gran utilidad en la sección de macroeconomía. 
+    \end{itemize}
 \end{frame}
 
 
