@@ -48,6 +48,7 @@
 \usepackage{fontawesome} % Social Icons
 \usepackage{epstopdf} % allow embedding eps-figures
 \usepackage{tikz} % allows drawing figures
+\usetikzlibrary{decorations.pathreplacing}
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 
@@ -297,7 +298,7 @@
     \end{center}
   \end{boxB}
   \begin{center}
-    En nuestro ejemplo, tenemos la curva de demanda de pizza, que nos indica la cantidad de porciones de pizza que Paula está dispuesta a comprar a cada precio de la porción de pizza.
+    En nuestro ejemplo, tenemos la curva de demanda de pizza, que nos indica la cantidad de porciones de pizza que la persona está dispuesta a comprar a cada precio de la porción de pizza.
   \end{center}
   \begin{boxA}
     \begin{center}
@@ -572,22 +573,67 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Gráficamente..}
-  \begin{center}
-    \includegraphics[scale=0.5]{../Figures/C9.1.png}
-  \end{center}
-\end{frame}
+\begin{frame}{Gráficamente..}
+    Supongamos que el salario por hora es igual a \$10
+        \begin{center}
+        \begin{figure}[H]
+        \renewcommand{\figurename}{Figure}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+        \draw[very thick,<->] (0,10) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
+        
+        \draw[fill] (7.5,0) circle [radius =0.12] node [below] {\footnotesize 24};
+        
+        
+        \draw[fill] (0,6.5) circle [radius =0.12] node [left] {\footnotesize \$240};
+        
+        
+        \draw[thin](0,6.5)--(7.5,0);
+        \draw[thick, dashed,gray] (4.75,2.3)--(4.75,0);
+        \draw[thick, dashed,gray] (4.75,2.3)--(0 ,2.3);
+        \node[below] at (4.75,0){\footnotesize 19};
+        \node[left] at (0,2.3){\footnotesize \$ 50};
+        
+    
+        \end{tikzpicture}
+        \end{center}
+        \label{fig:C6.17}
+        \end{figure}
+        \end{center}
+    \end{frame}
 
-\begin{frame}
-  \frametitle{La TMT en el modelo ocio - consumo}
-  \begin{itemize}
-    \item La TMT ahora nos dice cuál es el costo de oportunidad de una hora de ocio.
-    \item Representa el salario por hora (que se transforma en consumo)
-  \end{itemize}
-  \begin{center}
-    \includegraphics[scale=0.35]{../Figures/C9.2.png}
-  \end{center}
+\begin{frame}{La TMT en el modelo ocio - consumo}
+        \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.6]
+    \draw[very thick,<->] (0,10) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
+    \draw[thin](0,6.5)--(7.5,0);
+    \draw[thick, dashed,gray] (4.75,2.3)--(4.75,0);
+    \draw[thick, dashed,gray] (4.75,2.3)--(0 ,2.3);
+    \draw[thick, dashed,gray] (4.15,2.9)--(4.15,0);
+    \draw[thick, dashed,gray] (4.15,2.9)--(0 ,2.9);
+    \node[below] at (4.75,0){\footnotesize 19};
+    \node[left] at (0,2.3){\footnotesize \$ 50};
+    \node[below] at (4,0){\footnotesize 18};
+    \node[left] at (0,2.9){\footnotesize \$ 60};
+    \draw[fill] (0,6.5) circle [radius =0.12] node [left] {\footnotesize \$240};
+    \draw [thin, decorate,decoration={brace,amplitude=4pt, mirror},xshift=0pt,yshift=5pt] (-1.5,2.8) -- (-1.5,2);
+    \draw [thin,decorate,decoration={brace,amplitude=4pt, mirror},xshift=0pt,yshift=5pt](3.9,-0.9) -- (4.85,-0.9);
+    \draw[fill] (7.5,0) circle [radius =0.12] node [below] {\footnotesize 24};
+    \node[left] at (-1.75,2.9){\scriptsize Salario};   
+    \node[left] at (-1.6,2.3){\scriptsize por hora};
+    \node[] at (4.1,-1.2){\scriptsize Una hora más de trabajo}; 
+    \node[] at (4.2,-1.7){=}; 
+    \node[] at (4.1,-2.1){\scriptsize Una hora menos de ocio};
+    \node[above] at (9,7) {\small La TMT representa el costo de};
+    \node[above] at (9,6.3) {\small oportunidad de una hora de ocio,};
+    \node[above] at (9,5.6) {\small es decir, el salario por hora};
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -600,72 +646,165 @@
   \end{center}
 \end{frame}
 
+\begin{frame}{El equilibrio}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.6]
+    \draw[very thick,<->] (0,11) node[left]{Consumo}--(0,0)--(11,0) node[right]{Horas de ocio};
+    \draw[thin] (1.75,9).. controls (2.15,4.35) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $U_2$};
+    \draw[thin] (0,8)--(9.75,0) ;
+    \draw[thick,gray,dashed] (3.9,0)--(3.9,4.9)--(0,4.85);
+    \draw[fill] (3.9,4.85) circle [radius =0.11] node [above] {\scriptsize A};
+    % \draw[fill] (1.4,6.9) circle [radius =0.11] node [above] {\scriptsize B};      
+    % \draw[fill] (2.2,6.2) circle [radius =0.11] node [above] {\scriptsize C};  
+    % \node[below] at (1.4,0) {\footnotesize 5};
+    % \node[below] at (2.2,0) {\footnotesize 6};
+    \node[below] at (3.9,0) {\footnotesize 14};
+    \node[below] at (9.75,0) {\footnotesize 24};
+    \node[left] at (0,8) {\footnotesize \$ 240};
+    \node[left] at (0,4.85) {\footnotesize \$ 100};
+    % \node[left] at (0,6.2) {\footnotesize \$ 900};
+    % \node[left] at (0,6.9) {\footnotesize \$ 950};
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
+\end{frame}
+
+\begin{frame}{¿Por qué G no es un equilibrio?}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.6]
+    \draw[very thick,<->] (0,11) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
+    \draw[thin, gray] (0.75,9).. controls (2,3) and (6, 2) .. (9, 1.75) node [right]{\footnotesize $U_1$} ;
+    \draw[thin] (1.75,9).. controls (2.15,4.35) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $U_2$};
+        \draw[thin] (0,8)--(9.75,0) ;
+        \draw[thick,gray,dashed] (3.9,0)--(3.9,4.9)--(0,4.85);
+    %  \draw[thick,gray,dashed] (1.4,0)--(1.4,6.9)--(0,6.9);
+    % \draw[thick,gray,dashed] (2.2,0)--(2.2,6.2)--(0,6.2); 
+    \draw[thick,gray,dashed] (6.4,0)--(6.4,2.75)--(0,2.75);
+    \draw[thick,gray,dashed] (7.35,0)--(7.35,1.975)--(0,1.975);
+    \draw[thick,gray,dashed] (0,2.195)--(6.4,2.195);
+    \draw[fill] (3.9,4.85) circle [radius =0.11] node [above] {\scriptsize A};
+    \draw[fill] (7.35,1.975) circle [radius =0.11] node [above] {\scriptsize G};
+    \draw[fill] (6.4,2.195) circle [radius =0.11] node [below left] {\scriptsize F};
+    \draw[fill] (6.4,2.75) circle [radius =0.11] node [above] {\scriptsize E};
+    % \draw[fill] (1.4,6.9) circle [radius =0.11] node [above] {\scriptsize B};      
+    % \draw[fill] (2.2,6.2) circle [radius =0.11] node [above] {\scriptsize C};  
+    % \node[below] at (1.4,0) {\footnotesize 5};
+    % \node[below] at (2.2,0) {\footnotesize 6};
+    \node[below] at (3.9,0) {\footnotesize 14};
+    \node[below] at (6.4,0) {\footnotesize 21};
+    \node[below] at (7.35,0) {\footnotesize 22};
+    \node[left] at (0,1.7) {\footnotesize \$ 20};
+    \node[left] at (0,2.195) {\footnotesize \$ 22};
+    \node[left] at (0,2.85) {\footnotesize \$ 30};
+    \node[left] at (0,4.85) {\footnotesize \$ 100};
+    % \node[left] at (0,6.2) {\footnotesize \$ 900};
+    % \node[left] at (0,6.9) {\footnotesize \$ 950};
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
+\end{frame}
+
+\begin{frame}{¿Por qué B no es un equilibrio?}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.6]
+    \draw[very thick,<->] (0,11) node[left]{Consumo}--(0,0)--(11,0) node[below]{Horas de ocio};
+    \draw[thin, gray] (0.75,9).. controls (2,3) and (6, 2) .. (9, 1.75) node [right]{\footnotesize $U_1$} ;
+    \draw[thin, gray] (1.25,9).. controls (2.07,3.75) and (6.5, 2.5) .. (9, 2.25) node [right]{\footnotesize $U_11$} ;
+    \draw[thin] (1.75,9).. controls (2.15,4.35) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $U_2$};
+     \draw[thin] (0,8)--(9.75,0) ;
+     \draw[thick,gray,dashed] (3.9,0)--(3.9,4.9)--(0,4.85);
+    \draw[thick,gray,dashed] (1.4,0)--(1.4,6.9)--(0,6.9);
+    \draw[thick,gray,dashed] (1.8,0)--(1.8,6.2)--(0,6.2); 
+    \draw[thick,gray,dashed] (2.2,0)--(2.2,6.2)--(0,6.2); 
+    \draw[fill] (3.9,4.85) circle [radius =0.11] node [above] {\scriptsize A};
+    \draw[fill] (1.4,6.9) circle [radius =0.11] node [above] {\scriptsize B};      
+    \draw[fill] (1.8,6.2) circle [radius =0.11] node [below] {\scriptsize C};  
+    \draw[fill] (2.2,6.2) circle [radius =0.11] node [above] {\scriptsize D};  
+    \node[below] at (1.4,0) {\footnotesize 5};
+    \node[below] at (1.8,0) {\footnotesize 6};
+    \node[below] at (2.2,0) {\footnotesize 7};
+    \node[below] at (3.9,0) {\footnotesize 14};
+    \node[left] at (0,4.85) {\footnotesize \$ 100};
+    \node[left] at (0,6.2) {\footnotesize \$ 170};
+    \node[left] at (0,6.9) {\footnotesize \$ 190};
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Un shock de ingreso extra}
+    Supongamos que hay un shock de ingresos no relacionado al salario (por ejemplo, un regalo)
+    \begin{center}
+        \includegraphics[scale=0.9]{../Figures/C9.7.png}
+    \end{center}
+\end{frame}
+
 \begin{frame}
-\frametitle{El equilibrio}
+    \frametitle{Un aumento del salario}
+    Si aumenta el salario, podemos hacer nuevamente la descomposición entre efecto ingreso y efecto sustitución. \vspace{2mm} \pause
+  \begin{itemize}  
+        \item El \textbf{efecto ingreso} está relacionado con el cambio en la decisión de ocio- trabajo como consecuencia de un cambio en el ingreso. 
+        \begin{itemize}
+        \item Con el aumento del salario, se puede mantener el nivel de consumo con menos horas de trabajo $\Rightarrow$ el individuo prefiere trabajar menos y tener más ocio. \vspace{2mm} \pause
+        \end{itemize}
+        \item El \textbf{efecto sustitución} está relacionado al aumento en el costo de oportunidad del ocio. 
+        \begin{itemize}
+        \item Cuando el salario aumenta, perder una hora de trabajo implica perder un salario más alto $\Rightarrow$ el individuo prefiere trabajar más y reducir su tiempo de ocio. \pause
+        \end{itemize}
+        \end{itemize}
+    \begin{boxB}
+        \centering El \textbf{efecto final} sobre la cantidad de horas de ocio-trabajo \textbf{va a depender de qué efecto predomina}
+    \end{boxB}
+\end{frame}
+
+\begin{frame}
+\frametitle{Un aumento del salario}
 \begin{center}
-\includegraphics[scale=0.6]{../Figures/C9.4.png}
+\includegraphics[scale=0.45]{../Figures/C9.8.png}
+\end{center}
+En este caso, efecto ingreso $>$ efecto sustitución (aumentan el ocio)
+\end{frame}
+
+\begin{frame}
+\frametitle{Un aumento del salario II}
+\begin{center}
+\includegraphics[scale=0.5]{../Figures/C9.9.png}
+\end{center}
+En este caso, efecto ingreso $<$ efecto sustitución (disminuye el ocio)
+\end{frame}
+
+\begin{frame}
+\frametitle{Descomponiendo el efecto total}
+\begin{center}
+\includegraphics[scale=0.5]{../Figures/C9.10.png}
 \end{center}
 \end{frame}
 
 \begin{frame}
-  \frametitle{¿Por qué G no es un equilibrio?}
-  \begin{center}
-    \includegraphics[scale=0.45]{../Figures/C9.6.png}
-  \end{center}
+\frametitle{Descomponiendo el efecto total}
+\begin{center}
+\includegraphics[scale=0.5]{../Figures/C9.11.png}
+\end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{¿Por qué B no es un equilibrio?}
-  \begin{center}
-    \includegraphics[scale=0.9]{../Figures/C9.5.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Un shock de ingreso extra}
-  \begin{center}
-    \includegraphics[scale=0.9]{../Figures/C9.7.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Un aumento del salario}
-  \begin{center}
-    \includegraphics[scale=0.9]{../Figures/C9.8.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Un aumento del salario II}
-  \begin{center}
-    \includegraphics[scale=0.9]{../Figures/C9.9.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Descomponiendo el efecto total}
-  \begin{center}
-    \includegraphics[scale=0.9]{../Figures/C9.10.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Descomponiendo el efecto total}
-  \begin{center}
-    \includegraphics[scale=0.9]{../Figures/C9.11.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{El largo plazo}
-  \begin{itemize}
-
-    \item En la practica parece ser que hay una compensación exacta entre el efecto sustitución y el efecto ingreso.
-    \item Eso quiere decir que los aumentos visualizados en el ingreso a lo largo de la historia no se tradujeron en una baja muy grande del tiempo trabajado.
-    \item En el corto plazo, puede cambiar alguna decisión, pero no solemos pensar en el ocio como un bien normal (o sea que cuando aumenta el costo de oportunidad -salario- aumente mi consumo de ocio) ni como un bien inferior (cuando aumenta el salario - costo de oportunidad del ocio - disminuya el consumo de ocio).
-
-  \end{itemize}
-
+\begin{frame}{El largo plazo}
+    \begin{itemize}
+        \item En la practica parece ser que hay una compensación exacta entre el efecto sustitución y el efecto ingreso.
+        \item Eso quiere decir que los aumentos visualizados en el ingreso a lo largo de la historia no se tradujeron en una baja muy grande del tiempo trabajado.
+        \item En el corto plazo, puede cambiar alguna decisión, pero no solemos pensar en el ocio como un bien normal (o sea que cuando aumenta el costo de oportunidad -salario- aumente mi consumo de ocio) ni como un bien inferior (cuando aumenta el salario - costo de oportunidad del ocio - disminuya el consumo de ocio).
+    \end{itemize}
 \end{frame}
 
 
