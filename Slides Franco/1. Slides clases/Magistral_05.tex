@@ -10,6 +10,9 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 % ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}
 
@@ -84,7 +87,11 @@
     boxrule = 1.5pt,
     colframe = black % frame color
 }
-
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usepackage{hyperref}
 
 %%%% end of defining backup slides
@@ -115,81 +122,74 @@
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
-\begin{frame}
-    \frametitle{El comportamiento de la firma}
+\begin{frame}{El comportamiento de la firma}
     \begin{itemize}
-        \item ¿Cuál es el objetivo de las empresas?
+        \item ¿Cuál es el objetivo de las empresas? \vspace{2mm}
         \begin{center}
-            ¡¡¡GANAR DINERO!!!
-        \end{center}
-        \item Seguramente los empresarios tienen otros objetivos, pero quizás los satisfacen usando parte de sus ganancias. 
-        \item Las empresas que no buscan ganar dinero van a tener problemas para sobrevivir.
+            ¡GANAR DINERO!
+        \end{center}  \vspace{2mm}
+         \item Seguramente los empresarios tienen otros objetivos, pero quizás los satisfacen usando parte de sus ganancias. 
+         \item Las empresas que no buscan ganar dinero van a tener problemas para sobrevivir 
         \item Las decisiones que toman las empresas dependen de 
         \begin{itemize}
-            \item de las características del mercado (la demanda), y
-            \item de los costos de producción,
-            \item ... las políticas gubernamentales (por ejemplo impuestos) van a afectar las decisiones
+            \item las características del mercado (la demanda) y
+            \item los costos de producción, 
+            \item pero las políticas gubernamentales (por ejemplo impuestos) van a afectar también las decisiones
         \end{itemize}    
     \end{itemize}    
-\end{frame}
+    \end{frame}
 
-\begin{frame}
-\frametitle{Restricciones y decisiones}
-\begin{itemize}
-    \item La firma se enfrenta a dos grandes restricciones:
+\begin{frame}{Restricciones y decisiones}
+    \begin{itemize}
+        \item Las decisiones que toma una empresa dependen de tres aspectos:
+            \begin{itemize} 
+            \item \textcolor{blue}{La demanda del mercado}: ¿qué es lo que los consumidores están dispuestos a comprar? ¿y a qué precios?
+            \item  \textcolor{blue}{Las características del mercado}: ¿cómo se comportan las otras empresas? ¿hay muchos competidores?
+            \item  \textcolor{blue}{Sus capacidades tecnológicas}: las características de su función de producción dada por sus costos de producción  \vspace{2mm}
+            \end{itemize}
+        \item Una empresa debe adaptarse a las dos primeras restricciones (no las puede cambiar), pero la última sí depende ella.  \vspace{2mm}
+        \item Tomando en cuenta estas restricciones, la empresa toma decisiones sobre:
         \begin{itemize}
-        \item Las características del mercado \\
-        - ¿Qué es lo que los consumidores están dispuestos a comprar? \\
-        - ¿Cómo se comportan las otras empresas?
-        \item Sus capacidades tecnológicas \\
-        - Las características de su función de producción dada por sus costos de producción
+            \item el precio al que ofrece sus productos...
+            \item ... y la cantidad de este producto que va a producir
         \end{itemize}
-    \item Tomando en cuenta estas restricciones, la empresa toma decisiones
-    \begin{itemize}
-        \item Sobre el precio al que ofrece sus productos...
-        \item ... y la cantidad de este producto que va a producir
-    \end{itemize}
-\end{itemize} 
-\end{frame}
-
-\begin{frame}
-\frametitle{¿Que información necesita la firma para decidir qué precio cobrar?}
-    Para decidir qué precio cobrar, una empresa necesita información sobre la demanda
-    \begin{itemize}
-        \item ¿Qué es la demanda?
-    La demanda es cuánto están dispuestos a pagar los consumidores potenciales por su producto
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{El problema de la firma}
-\begin{itemize}
-    \item Una vez que conocemos la demanda... ¿cómo se elige cuánto producir y el precio que cobrar?
-    \vspace{2mm}
-    \item El problema principal de la empresa es el de la maximización del beneficio
-    \begin{itemize}
-        \item ¿Qué es el beneficio? \vspace{2mm} \\
-        \begin{center} 
-        Beneficio = Ingresos Totales – Costos Totales
-        \end{center}
-        \vspace{2mm}
-        \item ¿Qué es el ingreso total? 
-        \vspace{2mm} \\ 
-        El valor de la producción al precio ofrecido ($p \cdot q$)
-        \vspace{2mm}
-        \item ¿Qué es el costo total?
-        \vspace{2mm} \\ 
-        Los costos por unidad, por la cantidad de unidades producidas ($c \cdot q$)
     \end{itemize} 
-\end{itemize} 
+    \end{frame}
+
+\begin{frame}
+    \frametitle{El problema de la firma}
+    \begin{itemize}
+        \item Si conocemos la demanda... ¿cómo se elige cuánto producir y qué precio cobrar?
+        \vspace{2mm}
+        \item El problema principal de la empresa es la maximización del beneficio \vspace{2mm} 
+            \begin{itemize}
+            \item ¿Qué es el beneficio? \vspace{2mm}  
+                \begin{center}
+                Beneficio = Ingresos \ Totales - Costos \ Totales \\  \vspace{2mm}
+                $\Pi = IT - CT $ 
+                \end{center}
+                \vspace{2mm}
+            \item ¿Qué es el ingreso total?  
+            El valor de la producción al precio ofrecido \\ \vspace{1mm} 
+                \begin{center}
+                $IT = p \cdot q$
+                \end{center}
+            \vspace{2mm}
+            \item ¿Qué es el costo total?
+            Los costos por unidad, por la cantidad de unidades producidas \\ \vspace{1mm} 
+                \begin{center}
+                $CT = c \cdot q$
+                \end{center}
+        \end{itemize} 
+    \end{itemize} 
 \end{frame}
 
 \begin{frame}
-\frametitle{Vamos a ser maestros pizzeros}
+\frametitle{Pensemos el ejemplo de una pizzería}
 \centering
-\includegraphics[scale=0.6]{../Figures/Tema_06.12_maestrospizzeros.jpg}
+\includegraphics[scale=0.25]{../Figures/pizzeria.jpeg}
 \end{frame}
-
+        
 \begin{frame}
     \frametitle{Pensando en los costos}
     \begin{itemize}
