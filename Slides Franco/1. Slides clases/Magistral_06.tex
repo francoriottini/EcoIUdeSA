@@ -91,7 +91,11 @@
     boxrule = 1.5pt,
     colframe = black % frame color
 }
-
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usetheme{Boadilla}
 
 \usepackage{hyperref}
@@ -118,35 +122,32 @@
 \end{frame}
 
 
-\begin{frame}{Ayer finalizamos así}
+\begin{frame}{Volvemos a este gráfico}
     \centering
     \includegraphics[scale=0.5]{../Figures/C13.8b.png} 
 \end{frame}
 
-\begin{frame}
-\frametitle{Entonces... ¿Cómo decidimos cuanto producir?}
+\begin{frame}{Entonces... ¿cómo decidimos cuánto producir?}
     \begin{itemize}
         \item Por un momento, supongamos que el precio de la pizza es $p$
-            \item ¿Me conviene producir una pizza adicional?     
+            \item ¿Me conviene producir una pizza adicional?  
         \begin{itemize}
-            \item Si uno aumenta una unidad de producto, recibe p
-            \item Pero al mismo tiempo sus costos se incrementan en Cmg
+            \item Si uno aumenta una unidad de producto, recibe $p$
+            \item Pero a la vez tiene que pagar el costo de esa unidad ($CMg$)
         \end{itemize}
-        \item La diferencia entre el precio p y el costo marginal CMg es el beneficio marginal
+        \item La diferencia entre el precio $p$ y el $CMg$ es el beneficio marginal
         \item ¿Me conviene producir una pizza adicional?
         \begin{itemize}
             \item Si el beneficio marginal es positivo entonces SÍ conviene producir una pizza adicional
             \item Pero si el beneficio marginal es negativo entonces NO conviene producir una pizza adicional
         \end{itemize} 
         \item ¿Qué significa que el beneficio marginal sea igual 0?
-        \begin{boxA}
+        \begin{boxB}
             \centering
             Para cada cantidad producida, el costo marginal nos dice cuál es el precio mínimo que está dispuesto a aceptar el productor
-        \end{boxA}
+        \end{boxB}
     \end{itemize}
 \end{frame}
-
-
 
 \begin{frame}
 \frametitle{La curva de oferta de la empresa}
@@ -164,24 +165,42 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Los costos de largo plazo}
+    \frametitle{Entendiendo el punto de cierre}
     \begin{itemize}
-        \item En el largo plazo, la empresa puede ajustar cualquier cantidad de insumos requeridos para la producción
-        \item Los costos de una empresa dependen de su escala y el tipo de tecnología de producción
-        \item Empresas grandes pueden ser más rentables que las pequeñas debido diversas ventajas:
-        \begin{itemize}
-            \item Ventajas tecnológicas \\
-            - Producción a gran escala permite mejorar la especialización y bajar los costos
-            \item Ventajas de costos \\
-            - Por ejemplo, empresas grandes, con mayor poder de negociación, pueden comprar recursos en términos más favorables
-            \item Ventajas de demanda \\
-            - Por ejemplo, efectos de red (valor de la producción aumenta con el número de usuarios)
-        \end{itemize}
+        \item Supongamos que producimos 120 pizzas. El costo total ($CT$) de esas 120 pizzas es \$1.200 (\$400 de costo fijo y \$800 de costo variable). 
+        \item ¿Qué pasa si el precio al que vendemos es \$15? \\ \pause
+        Los ingresos totales serían: $IT=\$15 \cdot 120 = 1800$
+        \\ 
+        Y los beneficios: $\Pi= IT -CT=1800-1200=600 $ $\Rightarrow$ ganancia \pause
+        \item ¿Y si el precio al que vendemos es \$8? \\ \pause
+        $IT = \$8 \cdot 120 = 960$
+        \\ 
+        $\Pi = 960-1200=-240 $ $\Rightarrow$ pérdida $\Rightarrow$ ¿le conviene producir? \pause \textbf{Sí} \pause
+        \item ¿Y si el precio al que vendemos es \$5? \\ \pause
+        $IT = \$5 \cdot 120 = 600$
+        \\ 
+        $\Pi = 600-1200=-600 $ $\Rightarrow$ pérdida $\Rightarrow$ ¿le conviene producir? \pause \textbf{No} \pause
+            \begin{boxB}
+            \centering
+            La empresa produce a partir del precio que le permite cubrir al menos los costos variables
+        \end{boxB}
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Rendimientos a escala}
+\begin{frame}{Los costos de largo plazo}
+\begin{itemize}
+    \item En el largo plazo, la empresa puede ajustar cualquier cantidad de insumos requeridos para la producción. Es decir, \textbf{no hay insumos fijos} y, por ende, tampoco hay costos fijos. 
+    \item Los costos de una empresa dependen de su escala y el tipo de tecnología de producción
+    \item Empresas grandes pueden ser más rentables que las pequeñas debido diversas ventajas:
+    \begin{itemize}
+        \item Ventajas tecnológicas: producción a gran escala permite mejorar la especialización y bajar los costos.
+        \item Ventajas de costos: por ejemplo, empresas grandes, con mayor poder de negociación, pueden comprar recursos en términos más favorable.
+        \item Ventajas de demanda: por ejemplo, efectos de red (valor de la producción aumenta con el número de usuarios).
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rendimientos a escala}
 \begin{itemize}
     \item ¿Qué sucede con la producción cuando aumentamos la cantidad de insumos productivos en la misma proporción?
     \begin{itemize}
@@ -218,14 +237,12 @@
             plot (\x, {0.3*(\x-4.3)^2 + 2});
             \node at (4.3,3.2) {\scriptsize Haciendo pizzas};
             \node at (4.3,2.9) {\scriptsize en varios locales};
-
         }
         \only<3->{
             \draw[thick, domain=5.7:8.6, smooth, variable=\x, color=electricBlue]
             plot (\x, {0.3*(\x-7.1)^2 + 3});
             \node at (7.1,4.1) {\scriptsize El imperio};
             \node at (7.1,3.8) {\scriptsize de las pizzas};
-
         }
     \end{tikzpicture}
 \end{frame}
@@ -242,33 +259,128 @@
         \centering
         La oferta del mercado refleja la cantidad de bienes que se va ofertar de manera conjunta en el mercado a cada precio. Por lo tanto, se obtiene mediante la suma de las cantidades de bienes que ofrece cada uno los productores a cada precio.
     \end{boxA}
-    \centering
-    \includegraphics[scale=0.6]{../Figures/T14.1.png}
+    \renewcommand{\arraystretch}{1.2} % Espaciado entre filas
+    \begin{table}[h]
+        \centering
+        \rowcolors{2}{gray!10}{white} % Alternar colores en las filas
+        \setlength{\arrayrulewidth}{1pt} % Grosor de líneas
+        \arrayrulecolor{black} % Color de líneas
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \rowcolor{blue!20} % Color de la primera fila (encabezado)
+            \textbf{P} & \textbf{QEmpresa$_1$} & \textbf{QEmpresa$_2$} & \textbf{QEmpresa$_3$} & \textbf{QTotal} \\
+            \hline
+            0  & 4  & 0  & 0  & 4  \\
+            10 & 6  & 0  & 10 & 16 \\
+            20 & 8  & 0  & 20 & 28 \\
+            30 & 10 & 0  & 30 & 40 \\
+            40 & 12 & 20 & 40 & 72 \\
+            50 & 14 & 30 & 50 & 94 \\
+            60 & 16 & 40 & 60 & 116 \\
+            \hline
+        \end{tabular}
+    \end{table}
 \end{frame}
 
-\begin{frame}
-    \frametitle{La oferta del mercado}
+\begin{frame}{La oferta del mercado}
     \centering
     \includegraphics[scale=0.5]{../Figures/C14.1.png}
 \end{frame}
 
-\begin{frame}
-    \frametitle{La oferta del mercado}
-    \centering
-    \includegraphics[scale=0.6]{../Figures/C14.2.png}
+\begin{frame}{La interpretación de la oferta del mercado}
+    \begin{itemize}
+        \item La oferta del mercado refleja la cantidad de bienes que se va ofrecer de manera conjunta en el mercado a cada precio.
+        \item Alternativamente, se puede interpretar como la mínima disposición a cobrar que tienen los productores para cada cantidad del producto que venden.
+    \end{itemize}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.65]
+        \draw[thick,->] (0,0) -- (8,0) node[below] {$Q$};
+        \draw[thick,->] (0,0) -- (0,6.5) node[left] {$P$};
+        \draw [thick] (1,2) -- (7,5);
+        \node [right] at (7.1,5.2) {Oferta};
+        % Punto A
+        \node [right] at (3,3.6) {$A$};
+        \fill (3.2,3.1) circle (3pt);
+        \draw[dashed, gray] (3.2,0) -- (3.2,3.1);
+        \draw[dashed, gray] (0,3.1) -- (3.2,3.1);
+        \node[below] at (3.2,0) {40};
+        \node[left] at (0,3.1) {30};
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
+
+\begin{frame}{Desplazamientos \textbf{sobre} la curva de oferta}
+        \begin{itemize}
+            \item Si cambia el \textbf{precio} del producto, se modifica su \textbf{cantidad ofrecida}.
+            \item La curva de oferta no se modifica, nos desplazamos \textbf{sobre} la curva.\vspace{1mm}
+        \end{itemize}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+            \draw[thick,->] (0,0) -- (8,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,6.5) node[left] {$P$};
+            \draw [thick] (1,2) -- (7,5);
+            \node [right] at (7.1,5.2) {Oferta};
+            % Punto A
+            \node [right] at (3.1,3.5) {$A$};
+            \fill (3.2,3.1) circle (3pt);
+            \draw[dashed, gray] (3.2,0) -- (3.2,3.1);
+            \draw[dashed, gray] (0,3.1) -- (3.2,3.1);
+            \node[below] at (3.2,0) {40};
+            \node[left] at (0,3.1) {30};
+            % Punto B
+            \node [right] at (5.5,4.7) {$B$};
+            \fill (5.6,4.3) circle (3pt);
+            \draw[dashed, gray] (5.6,0) -- (5.6,4.3);
+            \draw[dashed, gray] (0,4.3) -- (5.6,4.3);
+            \node[below] at (5.6,0) {60};
+            \node[left] at (0,4.3) {40};
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
 
 \begin{frame}{Factores que afectan a la curva de oferta}
     \begin{itemize}
         \item La tecnología y sus cambio
         \item El precio de los insumos requeridos para la producción
-        \item Los precios de bienes relacionados
         \item El número de vendedores que puede variar en el mercado
         \item Las distintas políticas gubernamentales (como por ejemplo los impuestos)
         \item Las expectativas de los productores
         \item Otras influencias externas (como por ejemplo el clima en el caso de productos agrícolas)  
     \end{itemize}
+    \begin{boxB}
+        \begin{center}
+          No confundir cambios en la oferta con cambios \\ en las cantidades ofrecidas
+        \end{center}
+    \end{boxB}
 \end{frame}
+
+% \begin{frame}
+% \frametitle{Algunos ejemplos}
+%     \begin{center}
+%     \includegraphics[scale=0.35]{Slides Principios de Economia/Figures/Magistral_06/M6.1.png}
+%     \end{center}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Algunos ejemplos}
+%     \begin{center}
+%     \includegraphics[scale=0.35]{Slides Principios de Economia/Figures/Magistral_06/M6.2.png}
+%     \end{center}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Algunos ejemplos}
+%     \begin{center}
+%     \includegraphics[scale=0.5]{Slides Principios de Economia/Figures/Magistral_06/M6.3.png}
+%     \end{center}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Algunos ejemplos}
+%     \begin{center}
+%     \includegraphics[scale=0.45]{Slides Principios de Economia/Figures/Magistral_06/M6.4.png}
+%     \end{center}
+% \end{frame}
 
 \end{document}
 
