@@ -10,6 +10,9 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 % ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}
 
@@ -61,7 +64,7 @@
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
 \definecolor{beamerblue}{rgb}{0.2,0.2,0.7} %define beamerblue color for later use
-
+\definecolor{electricBlue}{RGB}{44,117,255}
 %%% defines highlight command to set text blue
 \newcommand{\highlight}[1]{{\color{blue}{#1}}}
 
@@ -199,24 +202,32 @@
         \item Si el cociente es igual a 1, entonces hay rendimientos constantes a escala
         \item Si el cociente es menor a 1, entonces hay rendimientos decrecientes a escala
     \end{itemize}
-
-\end{frame}
-\begin{frame}
-    \frametitle{Costos en el largo plazo}
-    \centering
-    \includegraphics[scale=0.6]{../Figures/Tema_06.24.jpg}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Costos en el largo plazo}
+\begin{frame}{Costos Medios en el largo plazo}
     \centering
-    \includegraphics[scale=0.6]{../Figures/Tema_06.25.jpg}
-\end{frame}
+    \begin{tikzpicture}[scale=0.8, line cap=round, line join=round]
+        \draw[->, thick] (0,0) -- (9,0) node[below] {\scriptsize Pizzas};
+        \draw[->, thick] (0,0) -- (0,7) node[left] {\scriptsize CMe};
+        \draw[thick, domain=0:3, smooth, variable=\x, color=electricBlue]
+        plot (\x, {0.3*(\x-1.5)^2 + 3});
+        \node at (1.5,4.1) {\scriptsize Haciendo};
+        \node at (1.5,3.8) {\scriptsize pizzas en casa};
+        \only<2->{
+            \draw[thick, domain=2.7:5.9, smooth, variable=\x, color=electricBlue]
+            plot (\x, {0.3*(\x-4.3)^2 + 2});
+            \node at (4.3,3.2) {\scriptsize Haciendo pizzas};
+            \node at (4.3,2.9) {\scriptsize en varios locales};
 
-\begin{frame}
-    \frametitle{Costos en el largo plazo}
-    \centering
-    \includegraphics[scale=0.6]{../Figures/Tema_06.26.jpg}
+        }
+        \only<3->{
+            \draw[thick, domain=5.7:8.6, smooth, variable=\x, color=electricBlue]
+            plot (\x, {0.3*(\x-7.1)^2 + 3});
+            \node at (7.1,4.1) {\scriptsize El imperio};
+            \node at (7.1,3.8) {\scriptsize de las pizzas};
+
+        }
+    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
