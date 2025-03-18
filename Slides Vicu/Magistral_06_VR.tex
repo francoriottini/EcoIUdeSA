@@ -145,7 +145,7 @@
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{3mm}
-\\ Magistral 5 \vspace{3mm} \\ Dentro de la firma II}
+\\ Magistral 6 \vspace{3mm} \\ Dentro de la firma II}
 \date{}
 \author[Victoria Rosino]{Victoria Rosino}
 \vspace{0.3cm}
@@ -162,38 +162,31 @@
 \end{frame}
 
 \begin{frame}{La última clase terminamos así}
-\begin{center}
-    \begin{tikzpicture}[scale=0.75]
-        % Ejes
-        \draw[thick,->] (0,0) -- (11,0) node[below] {$q$};
-        \draw[thick,->] (0,0) -- (0,9) node[left] {Costos};
-        \node[left] at (0,8.5) {Me y Mg};
-        
-        % Curvas
-        \draw[thick] (1.5,7) to[out=-30,in=170] (5.5,5.5) to[out=0,in=225] (9,7) node[right] {$CMeT$};;
-        \draw[thick] (1,5) to[out=-30,in=170] (5,3.5)to[out=0,in=225] (9,5) node[right] {$CMeV$};;
-        \draw[thick] plot[smooth] coordinates {(1.5,3) (3.5,2) (5,3.5) (6,8)} node[right] {$CMg$};
-
-        % Puntos de intersección
-        \filldraw (5.5,5.5)  circle (3pt) node[below right] {\footnotesize $E$};
-        \filldraw (5,3.5) circle (3pt) node[below right] {\footnotesize $F$};
-
-        % Líneas punteadas horizontales
-        \draw[dashed] (0,5.5) -- (5.5,5.5);
-        \draw[dashed] (0,3.5) -- (5,3.5);
-
-        % Líneas punteadas verticales
-        \draw[dashed] (5.5,0) -- (5.5,5.5) node[above] {};
-        \draw[dashed] (5,0) -- (5,3.5) node[above] {};
-
-        % Etiquetas de puntos específicos
-        \node[left] at (0,3.5) {\(\frac{CT_F}{q_F}\)};
-        \node[left] at (0,5.5) {\(\frac{CT_E}{q_E}\)};
-        \node[below] at (5,0) {\footnotesize $q_F$};
-        \node[below] at (5.5,0) {\footnotesize $q_E$};
-
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+    \draw[very thick,<->] (0,13) node[left]{Costos}--(0,0)--(13,0) node[below]{q};
+    \node[below] at (-1.25,12.75) {Medios};
+    \draw[thin] (3,5)..controls (6.5,2) and (7.5,2) .. (8.75,12) node[above] {\scriptsize $CMg$};
+    \draw[thin] (2,8.5)..controls (7.5,5) and (8,5) .. (13,8.5)node[above left] {\scriptsize $CMeV$};
+    \draw[thin] (3.5,11.5)..controls (7.5,7.5) and (8.75,7.5) .. (13,11.5) node[above left] {\scriptsize $CMeT$};
+    
+    \draw[thick,gray,dashed] (8.3,8.5)--(8.3,0);
+    \draw[thick,gray,dashed] (0,8.5)--(8.3,8.5);
+    \node[below] at (8.75,0) {\footnotesize $q_E$};
+    \filldraw (8.3,8.5) circle (3pt) node[above left] {\footnotesize $E$};
+    \node[left] at (0,8.5) {\(\frac{CT_E}{q_E}\)};
+    
+    \draw[thick,gray,dashed] (7.75,5.85)--(7.75,0);
+    \draw[thick,gray,dashed] (0,5.85)--(7.75,5.85);
+    \node[below] at (7.75,0) {\footnotesize $q_F$};
+    \filldraw (7.75,5.85) circle (3pt) node[above left] {\footnotesize $F$};
+    \node[left] at (0,5.85) {\(\frac{CT_F}{q_F}\)};
+    
     \end{tikzpicture}
-\end{center}
+    \end{center}
+    \end{figure} 
 \end{frame}
 
 \begin{frame}
@@ -220,35 +213,25 @@
 \end{frame}
 
 \begin{frame}{La curva de oferta de la empresa (corto plazo)}
-\begin{center}
-    \begin{tikzpicture}[scale=0.75]
-        % Ejes
-        \draw[thick,->] (0,0) -- (11,0) node[below] {$q$};
-        \draw[thick,->] (0,0) -- (0,9) node[left] {Costos};
-        \node[left] at (0,8.5) {Me y Mg};
-        
-        % Curvas
-        \draw[thick] (1.5,7) to[out=-30,in=170] (5.5,5.5) to[out=0,in=225] (9,7) node[right] {$CMeT$};;
-        \draw[thick] (1,5) to[out=-30,in=170] (5,3.5)to[out=0,in=225] (9,5) node[right] {$CMeV$};;
-        \draw[thick] plot[smooth] coordinates {(1.5,3) (3.5,2) (5,3.5) (6,8)} node[right] {$CMg$};
-
-        % Líneas punteadas verticales
-        \draw[dashed] (5,0) -- (5,3.5) node[above] {};
-
-        % Etiquetas de puntos específicos
-        \node[below] at (5,0) {\footnotesize $q_{CMeV}^{min}$};
-
-        % Oferta
-        \draw[very thick, blue] plot[smooth] coordinates {(5,3.5) (5.5,5.5) (6,8)};
-        \draw[thick,blue, ->] (5.6,7) -- (4.5,7.4) ;
-        \node[left, blue] at (4.5,7.5) {Oferta};
-
-        \filldraw[red] (5,3.5) circle (3pt) node[above] {};  
-        \draw[thick,red, ->] (5.1,3.4) -- (6,3);
-        \node[right, red] at (6,3) {Punto de cierre};
-
+\begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+    \draw[very thick,<->] (0,13) node[left]{Costos}--(0,0)--(13,0) node[below]{q};
+    \node[below] at (-1.25,12.75) {Medios};
+    \draw[thick,gray,dashed] (7.75,5.85)--(7.75,0);
+    \draw[thin] (3,5)..controls (6.5,2) and (7.5,2) .. (8.75,12) node[above] {\scriptsize $CMg$};
+    \draw[thick, blue] (7.7,5.8)..controls (7.73,5.9) and (8,6) .. (8.75,12) node[below left] {Oferta};
+    \draw[thin] (2,8.5)..controls (7.5,5) and (8,5) .. (13,8.5)node[above left] {\scriptsize $CMeV$};
+     \draw[thin] (3.5,11.5)..controls (7.5,7.5) and (8.75,7.5) .. (13,11.5) node[above left] {\scriptsize $CMeT$};
+    \node[below] at (7.75,0) {\scriptsize $q_{CMeV}^{min}$};
+    \draw[fill, red] (7.75,5.85) circle [radius =0.1];
+    \draw[thin, <-, red] (8,5.5)--(8.7,4.5);
+    \node[red] at (10.35,4.5) {Punto de};
+    \node[red] at (10.35,3.8) {cierre};
     \end{tikzpicture}
-\end{center}
+    \end{center}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -506,11 +489,11 @@ La oferta de mercado se obtiene sumando las cantidades que están dispuestas a p
 \end{frame}
 
 \begin{frame}
-    \frametitle{Qu{e es la oferta?}}
-    \begin{itemize}
-        \item  La oferta del mercado refleja la cantidad de bienes que se va ofrecer de manera conjunta en el mercado a cada precio.
-        \item Alternativamente, se puede interpretar como la mínima disposición a cobrar que tienen los productores para cada cantidad del producto que venden.
-    \end{itemize}
+    \frametitle{Interpretación de la oferta de mercado}
+\begin{itemize}
+    \item  La oferta del mercado refleja la cantidad de bienes que se va ofrecer de manera conjunta en el mercado a cada precio.
+    \item Alternativamente, se puede interpretar como la mínima disposición a cobrar que tienen los productores para cada cantidad del producto que venden.
+\end{itemize}
 
     \begin{center}
         \begin{tikzpicture}[scale=0.65]
@@ -567,7 +550,6 @@ La oferta de mercado se obtiene sumando las cantidades que están dispuestas a p
     \begin{itemize}
         \item La tecnología y sus cambios
         \item El precio de los insumos requeridos para la producción
-        \item Los precios de bienes relacionados
         \item El número de vendedores que hay en el mercado
         \item Las distintas políticas gubernamentales (por ejemplo, los impuestos)
         \item Las expectativas de los productores
@@ -608,7 +590,6 @@ La oferta de mercado se obtiene sumando las cantidades que están dispuestas a p
     \includegraphics[scale=0.45]{Slides Principios de Economia/Figures/Magistral_06/M6.4.png}
     \end{center}
 \end{frame}
-
 \end{document}
 
 

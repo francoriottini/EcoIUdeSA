@@ -265,6 +265,7 @@
 \end{frame}
 
 \begin{frame}{Regla de decisión básica}
+
     \begin{itemize}
         \item Para tomar una decisión, las empresas van a utilizar el análisis marginal $\Rightarrow$ tener en cuenta beneficios y costos de producir una unidad más.
         \item \textbf{Beneficio económico marginal}: cómo cambia el beneficio total de la empresa cuando cambia la cantidad producida: \\
@@ -276,8 +277,8 @@
 \end{frame}
 
 \begin{frame}{Regla de decisión básica}
-    \begin{itemize}
-        \item Esto es comparar ingreso marginal ($IMg$) con costo marginal ($CMg$): 
+\begin{itemize}
+\item Esto es comparar ingreso marginal ($IMg$) con costo marginal ($CMg$): 
         \[
         BMg = IMg - CMg
         \]
@@ -292,6 +293,7 @@
         \end{center}
     \end{boxB}
 \end{frame}
+
 
 \begin{frame}{La función de producción}
     \begin{boxA}
@@ -362,6 +364,12 @@
         \includegraphics[scale=0.3]{Slides Principios de Economia/Figures/Magistral_05/C12.5.png} 
     \end{minipage}
 \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Producto marginal y medio}
+    \centering
+    \includegraphics[scale=0.27]{Slides Principios de Economia/Figures/Magistral_05/C12.7.jpg}
 \end{frame}
 
 \begin{frame}{Producción y costos}
@@ -526,12 +534,40 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{
-La estructura de costos de corto plazo de la empresa}
-\centering
-\vspace{3mm}
-\includegraphics[scale=0.32]{Slides Principios de Economia/Figures/Magistral_05/C13.8.jpg}
+\frametitle{La estructura de costos de corto plazo de la empresa}
+
+
+
+\begin{figure}[H]
+\renewcommand{\figurename}{Figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw[very thick,<->] (0,13) node[left]{Costos}--(0,0)--(13,0) node[below]{q};
+\node[below] at (-1.25,12.75) {Medios};
+\draw[thin] (3,5)..controls (6.5,2) and (7.5,2) .. (8.75,12) node[above] {\scriptsize $CMg$};
+\draw[thin] (2,8.5)..controls (7.5,5) and (8,5) .. (13,8.5)node[above left] {\scriptsize $CMeV$};
+\draw[thin] (3.5,11.5)..controls (7.5,7.5) and (8.75,7.5) .. (13,11.5) node[above left] {\scriptsize $CMeT$};
+
+
+
+\draw[thick,gray,dashed] (8.3,8.5)--(8.3,0);
+\draw[thick,gray,dashed] (0,8.5)--(8.3,8.5);
+\node[below] at (8.75,0) {\footnotesize $q_E$};
+\filldraw (8.3,8.5) circle (3pt) node[above left] {\footnotesize $E$};
+\node[left] at (0,8.5) {\(\frac{CT_E}{q_E}\)};
+
+\draw[thick,gray,dashed] (7.75,5.85)--(7.75,0);
+\draw[thick,gray,dashed] (0,5.85)--(7.75,5.85);
+\node[below] at (7.75,0) {\footnotesize $q_F$};
+\filldraw (7.75,5.85) circle (3pt) node[above left] {\footnotesize $F$};
+\node[left] at (0,5.85) {\(\frac{CT_F}{q_F}\)};
+
+\end{tikzpicture}
+\end{center}
+\end{figure}
 \end{frame}
+
+
 
 
 \begin{frame}
@@ -543,6 +579,8 @@ La estructura de costos de corto plazo de la empresa}
     \item Si el costo marginal es menor al costo medio, el costo medio disminuye al aumentarla producción
 \end{itemize}
 \end{frame}
+
+
 
 %\begin{frame}
 %\frametitle{El error de confundir Cme con Cmg}
