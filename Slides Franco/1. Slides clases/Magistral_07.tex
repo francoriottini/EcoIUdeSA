@@ -188,29 +188,33 @@
 
 \begin{frame}{Ejemplo - Economías de escala}
     \begin{itemize}
-    \item Las industrias químicas utilizan una gran cantidad de tuberías para transportar su producción. 
-    \item ¿Cuánto cuesta construir la tubería? Depende de la circunferencia (la pared de la tubería es una hoja de metal enrollada)
-    \item Pero la cantidad de producto que puede pasar por la tubería está determinado por el área
+        \item Las industrias químicas utilizan una gran cantidad de tuberías para transportar su producción. 
+        \item ¿Cuánto cuesta construir la tubería? Depende de la circunferencia (el metal enrollado). Supongamos que cada metro de metal cuesta $\$10$. 
+        \item Pero la cantidad de producto que puede pasar por la tubería está determinado por el volumen (más ancho pasan más litros)
     \end{itemize}
 
     \begin{table}[h]
     \centering
     \renewcommand{\arraystretch}{1} % Espaciado entre filas
     \begin{adjustbox}{width=0.8\textwidth}
-    \begin{tabular}{lcc}
-    \toprule
-    \textbf{Tamaño de la tubería} & \textbf{Circunferencia (\(2\pi r\))} & \textbf{Área (\(\pi r^2\))} \\
-    \midrule
-    Pequeña ($d =4; r=2$) & 12.5 pulgadas  & 12.5 pulgadas²  \\
-    Mediana ($d =8; r=4$) & 25.1 pulgadas  & 50.2 pulgadas²  \\
-    Grande ($d =16; r=8$) & 50.2 pulgadas  & 201.1 pulgadas² \\
-    \bottomrule
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Tamaño de la tubería} & \textbf{Circunferencia (\(2\pi r\))} & \textbf{Costo} & \textbf{Volumen (\(\pi r^2h\))} & \textbf{CTMe} \\
+        &  &  & (Caudal en l/s) & \\
+        \midrule
+        Pequeña ($d =4; r=2$) & $\sim$ 12.5cm & \$1250 & $\sim$ 1256cm³ & \$12.5 \\
+        &  & & (100 l/s) & \\
+        Mediana ($d =8; r=4$) & $\sim$ 25cm & \$2500  & $\sim$ 5026cm³ & \$6.25 \\
+        &  & & (400 l/s) & \\
+        Grande ($d =16; r=8$) & $\sim$ 50cm & \$5000  & $\sim$ 20106cm³ & \$3.125\\
+        &  & & (1600 l/s) & \\
+        \bottomrule
     \end{tabular}
     \end{adjustbox}
     \end{table}
     \centering
     \begin{itemize}
-    \item Una duplicación del costo de producción de la tubería (diámetro) permite que la empresa química produzca cuatro veces más material. 
+    \item Al duplicar ($\uparrow$ 100\%) los insumos (tamaño de las tuberías), la producción total (litros) aumenta cuatro veces más ($\uparrow$ 300\%). 
     \[ \frac{\Delta \% Q}{\Delta \% I} =\frac{ 300\% }{100\%}=3\]
     \end{itemize}
 \end{frame}
