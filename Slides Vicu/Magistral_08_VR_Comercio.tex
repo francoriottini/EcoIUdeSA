@@ -702,63 +702,62 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}
-\frametitle{Inglaterra cuando comercia}
-\centering
-\begin{figure}[h]
+\begin{frame}{Inglaterra cuando comercia}
     \centering
-    \begin{tikzpicture}[scale=0.95]
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[scale=0.95]
 
-        % Ejes
-        \draw[thick,->] (0,0) -- (7,0) node[right] {$Q_{V}^{I}$};
-        \draw[thick,->] (0,0) -- (0,6.5) node[left] {$Q_{T}^{I}$};
+            % Ejes
+            \draw[thick,->] (0,0) -- (7,0) node[right] {$Q_{V}^{I}$};
+            \draw[thick,->] (0,0) -- (0,6.5) node[left] {$Q_{T}^{I}$};
 
-        \node[left] at (0,5) {\scriptsize $100$};
-        \node[below] at (5,0) {\scriptsize $100$};
-        
-        \draw[thick, black] (0,5) -- (5,0);
-        
-        \fill (2.5,2.5) circle (2.5pt);
+            \node[left] at (0,5) {\scriptsize $100$};
+            \node[below] at (5,0) {\scriptsize $100$};
+            
+            \draw[thick, black] (0,5) -- (5,0);
+            
+            \fill (2.5,2.5) circle (2.5pt);
 
-        \draw [thick, black] (1.2,5.7) to [out=269,in=180] (6,1.08);
-        \node [right, black] at (6.1,1.1) {\scriptsize $U_1$};
+            \draw [thick, black] (1.2,5.7) to [out=269,in=180] (6,1.08);
+            \node [right, black] at (6.1,1.1) {\scriptsize $U_1$};
 
-        % Lineas punteadas
-        \draw[thin, dashed] (2.5,2.5) --  (0,2.5); \node[left] at (0.1,2.4) {\scriptsize $Q_{T_I}^{*}$};
-        \draw[thin, dashed] (2.5,2.5) -- (2.5,0); \node[below] at (2.4,0) {\scriptsize $Q_{V_I}^{*}$};
+            % Lineas punteadas
+            \draw[thin, dashed] (2.5,2.5) --  (0,2.5); \node[left] at (0.1,2.4) {\scriptsize $Q_{T_I}^{*}$};
+            \draw[thin, dashed] (2.5,2.5) -- (2.5,0); \node[below] at (2.4,0) {\scriptsize $Q_{V_I}^{*}$};
 
-        % Con comercio
-        \draw[thick, Green] (0,5) -- (6.3,0);
-        \draw [thick, Green] (1.6,6.2) to [out=270,in=145] (2.8,2.8) to [out=325,in=180] (5.9,1.6);
-        \node [right, Green] at (6,1.6)  {\small $U_2$};
-        \draw[fill, Green] (2.8,2.8) circle [radius =0.09] node[above right] {A};
+            % Con comercio
+            \draw[thick, Green] (0,5) -- (6.3,0);
+            \draw [thick, Green] (1.6,6.2) to [out=270,in=145] (2.8,2.8) to [out=325,in=180] (5.9,1.6);
+            \node [right, Green] at (6,1.6)  {\small $U_2$};
+            \draw[fill, Green] (2.8,2.8) circle [radius =0.09] node[above right] {A};
 
-        \draw[thin, dashed, Green] (2.8,2.8) --  (0,2.8); \node[left, Green] at (0.1,2.9) {\scriptsize $Q_{T_I}^{C}$};
-        \draw[thin, dashed, Green] (2.8,2.8) -- (2.8,0); \node[below, Green] at (3,0) {\scriptsize $Q_{V_I}^{C}$};
+            \draw[thin, dashed, Green] (2.8,2.8) --  (0,2.8); \node[left, Green] at (0.1,2.9) {\scriptsize $Q_{T_I}^{C}$};
+            \draw[thin, dashed, Green] (2.8,2.8) -- (2.8,0); \node[below, Green] at (3,0) {\scriptsize $Q_{V_I}^{C}$};
 
-        \draw[->, thick, Green] (2.85,2.8) -- (3.4,2.9);
-        \node[above right, Green] at (3.3,3) {\footnotesize Consumo con};
-        \node[above right, Green] at (3.5,2.7) {\footnotesize comercio};
+            \draw[->, thick, Green] (2.85,2.8) -- (3.4,2.9);
+            \node[above right, Green] at (3.3,3) {\footnotesize Consumo con};
+            \node[above right, Green] at (3.5,2.7) {\footnotesize comercio};
 
-        \draw[fill] (0,5) circle [radius =0.09];
-        \draw[->, thick] (-0.05,5.1) -- (-0.5,5.4);
-        \node[ left] at (-0.5,5.8) {\footnotesize Producción con};
-        \node[ left] at (-0.5,5.4) {\footnotesize especialización};
+            \draw[fill] (0,5) circle [radius =0.09];
+            \draw[->, thick] (-0.05,5.1) -- (-0.5,5.4);
+            \node[ left] at (-0.5,5.8) {\footnotesize Producción con};
+            \node[ left] at (-0.5,5.4) {\footnotesize especialización};
 
-         % Expo Impo
-        \draw[thick, Blue] (0,-1) --  (2.8,-1); 
-        \draw[thick, Blue] (0,-0.7) --  (0,-1); 
-        \draw[thick, Blue] (2.8,-0.7) --  (2.8,-1); 
-        \node[below, Blue] at (1.5,-1) {\footnotesize Importaciones de Inglaterra};
+            % Expo Impo
+            \draw[thick, Blue] (0,-1) --  (2.8,-1); 
+            \draw[thick, Blue] (0,-0.7) --  (0,-1); 
+            \draw[thick, Blue] (2.8,-0.7) --  (2.8,-1); 
+            \node[below, Blue] at (1.5,-1) {\footnotesize Importaciones de Inglaterra};
 
-        \draw[thick, Blue] (-1,5) --  (-1,2.8); 
-        \draw[thick, Blue] (-1,2.8) --  (-0.7,2.8); 
-        \draw[thick, Blue] (-1,5) --  (-0.7,5); 
-        \node[below, Blue] at (-2.1,4.5) {\footnotesize Exportaciones};
-        \node[below, Blue] at (-2.1,4.1) {\footnotesize de Inglaterra};
+            \draw[thick, Blue] (-1,5) --  (-1,2.8); 
+            \draw[thick, Blue] (-1,2.8) --  (-0.7,2.8); 
+            \draw[thick, Blue] (-1,5) --  (-0.7,5); 
+            \node[below, Blue] at (-2.1,4.5) {\footnotesize Exportaciones};
+            \node[below, Blue] at (-2.1,4.1) {\footnotesize de Inglaterra};
 
-    \end{tikzpicture}
-\end{figure}
+        \end{tikzpicture}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
