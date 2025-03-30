@@ -90,7 +90,11 @@
     boxrule = 1.5pt,
     colframe = black % frame color
 }
-
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usetheme{Boadilla}
 
 \usepackage{hyperref}
@@ -101,7 +105,7 @@
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 9: Instituciones}
 \date{}
-\author[Riottini]{Franco Riottini}
+\author[Franco Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -138,7 +142,7 @@
         \centering
         “Una de las conclusiones más interesantes del neoinstitucionalismo económico es que la política y la economía están inextricablemente relacionadas y que no podemos explicar el desempeño económico de una determinada sociedad sin considerar esta relación.” Douglas C. North
     \end{boxA}
-    \includegraphics[scale=0.35]{../Figures/North (1990).jpg}
+    \includegraphics[scale=0.45]{../Figures/North (1990).png}
     \includegraphics[scale=0.35]{../Figures/North and Thomas book.jpg}
     \begin{boxA}
         \footnotesize
@@ -153,7 +157,7 @@
         \item Una asignación es el resultado de una interacción económica, pero está determinada por distintos factores:
         \begin{itemize}
             \item La tecnología y los recursos naturales determinan lo posible.
-            \item Las instituciones dificultan o facilitan el accionar de los agentes\dots
+            \item Las instituciones que dificultan o facilitan el accionar de los agentes\dots
         \end{itemize}
         \item Generalmente, nos interesan dos aspectos sobre las instituciones:
         \begin{itemize}
@@ -165,7 +169,9 @@
 
 \begin{frame}
 \frametitle{¿Qué es una institución?}
-De acuerdo a North son las reglas del juego en una sociedad, que reducen la incertidumbre y proveen un marco para la interacción social
+    \begin{boxB}
+        De acuerdo a North son las reglas del juego en una sociedad, que reducen la incertidumbre y proveen un marco para la interacción social
+    \end{boxB}
     \begin{itemize}
         \item Reducen los costos de transacción, proporcionando una estructura a la vida cotidiana.
         \item Definen y limitan el conjunto de opciones de los individuos.
@@ -174,7 +180,7 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
         \item Afectan la performance de la economía.
         \item Pueden inducir a aumentar o reducir la productividad.
     \end{itemize}
-\end{frame}
+\end{frame} 
 
 \begin{frame}
 \frametitle{Formales o informales}
@@ -184,49 +190,52 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
 
 
 \begin{frame}{¿Qué es una institución?}
-    Greif [2006] dio una definición más precisa:
+    \begin{itemize}
+        \item Greif [2006] dio una definición más precisa:
         \begin{boxA}
             \centering
             ``Una institución es un sistema de reglas, creencias, normas y organizaciones que juntas generan una regularidad en la conducta''\vspace{2mm}
         \end{boxA}
-    Una regularidad en el comportamiento social 
+        \item Una regularidad en el comportamiento social 
         \begin{itemize}
-            \item Comportamiento en situaciones recurrentes...
-            \item ... llevado a cabo por individuos que ocupan una posición social particular.\vspace{2mm}
+            \item Las instituciones buscan guiar el comportamiento social en situaciones recurrentes. \vspace{2mm}
         \end{itemize}
-    Cada componente del sistema
+        \item Podemos reconocer varios componentes en el sistema: reglas, normas, creencias y organizaciones. 
         \begin{itemize}
-            \item Es social al ser hecho por el hombre...
-            \item ... y exógeno a cada individuo cuyo comportamiento influye
+            \item Son sociales al ser hechos por el hombre...
+            \item ... e influyen el comportamiento de manera exógena.
         \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Los componentes del sistema}
-\begin{itemize}
-    \item Las reglas, cuando son reconocidas socialmente, guían el comportamiento
-    \begin{itemize}
-        \item Crean un conocimiento compartido.
-        \item Proveen información y coordinan el comportamiento.
-        \item Indican el comportamiento socialmente aceptable.
-    \end{itemize}
-    \item Las creencias y normas motivan a seguir reglas
-    \begin{itemize}
-        \item Normas y creencias internalizadas.
-    \end{itemize}
-    \item Las organizaciones (formales o informales)
-    \begin{itemize}
-        \item Producen y difunden reglas.
-        \item Perpetúan creencias y normas.
-        \item Influyen en el conjunto de creencias factibles.
-    \end{itemize}
-\end{itemize}
+    \frametitle{Discutamos ejemplos...}
+    \centering
+    \includegraphics[scale=0.55]{../Figures/M9.1.jpg}
 \end{frame}
 
 \begin{frame}
-\frametitle{Discutamos ejemplos...}
-\centering
-\includegraphics[scale=0.45]{../Figures/Tema_04.1_examples.png}
+    \frametitle{Los componentes del sistema}
+    \begin{itemize}
+        \item \textbf{Reglas o normas}: cuando son reconocidas socialmente, proveen información y guían el comportamiento.
+            \begin{itemize}
+            \item Usar cinturón de seguridad
+            \item El jugador debe decir “uno” cuando le quede una sola carta 
+            \item Hacer fila cuando hay que esperar (y no colarse) 
+            \item Dar propina
+            \item No hacer trampa en un juego
+            \end{itemize}
+        \item \textbf{Creencias}: pensamientos que motivan a seguir las reglas y normas
+            \begin{itemize}
+            \item “Si vas despacio, no hace falta cinturón”/ “El cinturón te salva la vida”
+            \item “La familia está primero”
+            \item  “La gratitud es señal de buena educación” \vspace{1mm}
+            \end{itemize}
+        \item \textbf{Organizaciones} (formales o informales): producen y difunden reglas y suelen ser las encargadas de perpetuar creencias y normas. 
+            \begin{itemize}
+            \item La Iglesia, la familia, el Congreso
+            \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -244,6 +253,13 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
         \includegraphics[scale=0.2]{../Figures/Why-Nations-Fail.jpg}
     \end{center}
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \includegraphics[scale=0.35]{../Figures/M9.4.png} \vspace{2mm}
+    \includegraphics[scale=0.35]{../Figures/M9.3.png} \\ \vspace{2mm}
+    \small Fuente: Acemoglu, Johnson \& Robinson (2001)
 \end{frame}
 
 \begin{frame}{Instituciones y eficiencia}
@@ -266,7 +282,7 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
             \item ¿Qué define que es justo?
         \end{itemize}
     \end{itemize}
-    \item  Una asignación puede ser considerada justo o  injusta por la forma en que se llegó a ese resultado\vspace{2mm}
+    \item  Una asignación puede ser considerada justo o  injusta por la forma en que se llegó a ese resultado
     \begin{itemize}
         \item Un juicio procedimental de la justicia
         \begin{itemize} 
@@ -284,6 +300,9 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
         \begin{itemize}
             \item El velo de la ignorancia: Imaginarse detrás del velo de la ignorancia, es decir, imaginarse un tema sin saber que lugar ocuparemos en esa sociedad.
             \item Elaboramos un juicio o evaluamos una institución desde atrás de ese velo.
+            \begin{center}
+                \includegraphics[scale=0.15]{../Figures/Rawls (1971).png}
+            \end{center}
         \end{itemize}
         \item Por ejemplo: ¿los ricos deberían pagar más impuestos? ¿las personas con habilidades especiales deberían recibir una compensación del resto de la sociedad? 
     \end{itemize}
@@ -298,32 +317,63 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
             \item Qué tipo de políticas públicas son las mejores para lidiar con la injusticia.
         \end{itemize}
     \end{itemize}
+    \begin{boxA}
+        La economía no es una ciencia moral, pero dada la configuración moral de la sociedad (canalizada a través de su sistema político) la economía nos puede ayudar a entender que asignación de recursos es la mejor.
+    \end{boxA}
 \end{frame}
 
 
-\begin{frame}{Entendiendo el valor de las instituciones}
-    Arrancamos con una frontera de posibilidades de producción.
-    \begin{itemize}
-    \item La frontera factible nos indica lo que es tecnológicamente posible.
-    \item Pero ahora vamos a sumar una restricción que considera lo que es biológicamente posible.
+\begin{frame}
+\frametitle{Entendiendo el valor de las instituciones}
+\begin{itemize}
+    \item Vamos a visualizar el rol de las instituciones en la asignación de los recursos con un sencillo modelo. 
+    \item Pensemos que existe un único trabajador y el factor productivo es la tierra (la propiedad de la tierra va a definir la nuestra discusión)
+    \item Arrancamos con una frontera de posibilidades de producción 
         \begin{itemize}
-            \item ¿Qué significa esto?
-            \begin{itemize}
-                \item Hay un mínimo de recursos que el individuo necesita para sobrevivir, aún si no produce nada...
-                \item ... y cuantas mas energías utiliza produciendo, más recursos va a necesitar
-            \end{itemize}
+        \item La frontera factible nos indica lo que es \textbf{tecnológicamente} posible, es decir, cuánto se puede producir cómo máximo en función de las horas de trabajo.
+        \end{itemize}
+    \item Pero ahora vamos a sumar una restricción que considera lo que es \textbf{biológicamente} posible.
+        \begin{itemize} 
+            \item Hay un mínimo de recursos que el individuo necesita para sobrevivir, aún si no produce nada...
+            \item  ... y cuanta más energía utiliza produciendo, más recursos va a necesitar.
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{La restricción biológica}
+\begin{frame}
+\frametitle{La restricción biológica}
     \centering
-    \includegraphics[scale=0.6]{../Figures/C19.6.png}
+    \begin{center}
+    \begin{figure}[H]
+    \renewcommand{\figurename}{Figure}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.6]
+    \draw[fill,orange!20] (1.05,8.45)--(2,5.25)--(3,3.8)--(5,2.5)--(8.5,1.65)--(7,4.2)--(5,6.5)--(3,7.75);
+    \draw[very thick,<->] (0,11) node[left]{Gachas}--(0,0)--(11,0) node[right]{Horas de ocio};
+    \draw[thin, brown] (1,9).. controls (2,3) and (4, 2.5) .. (9.2, 1.5) node[right]{\scriptsize Restricción Biológica};
+    \draw[thin] (0,8.5).. controls (6,8.25) and (9, 1) .. (9,0);
+    \draw[thick, dashed, gray] (0,1.5)--(9,1.5)--(9,0);
+    \draw[thick, dashed, gray] (1.05,0)--(1.05,8.25);
+    \draw[thick, dashed, gray] (0,8.3)--(1.05,8.3);
+    \node[below] at (1.05,0) {\footnotesize $4$};
+    \node[below] at (9,0) {\footnotesize 24};
+    \node[left] at (0,1.5) {\footnotesize $200$};
+    \node[left] at (0,8.25) {\footnotesize $1.000$};
+    \draw[fill] (9,1.5) circle [radius =0.1] node[above]{\scriptsize B};
+    \draw[fill] (1.05,8.35) circle [radius =0.1] node[above right]{\scriptsize C};
+    %\node[right] at (1,5) {\scriptsize Restricción Biológica};
+    \node[] at (3.85,6) {\scriptsize Conjunto};
+    \node[] at (3.85,5.5) {\scriptsize tecnológicamente};
+    \node[] at (3.85,5) {\scriptsize factible};
+    \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center}
 \end{frame}
 
 
 \begin{frame}{El objetivo es comparar distintas instituciones}
-    Comparamos escenarios donde:
+    Comparamos escenarios donde: \vspace{2mm}
         \begin{itemize}
             \item Situaciones históricas
             \begin{itemize}
@@ -332,53 +382,156 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
                 \item Servidumbre con renta fija (Medioevo)
                 \item Servidumbre con renta variable (Medioevo)
                 \item La China comunista
-                \item Un país con sindicatos
+                \item Un país con sindicatos\vspace{2mm}
             \end{itemize}
-        \end{itemize}
-    ¿En qué forma queremos compararlas? Por ahora, en términos de eficiencia de Pareto
-\end{frame}
-
-\begin{frame}{¿Qué punto elige el amo?}
-    \centering
-    \includegraphics[scale=0.6]{../Figures/C19.7.png}
-\end{frame}
-
-
-\begin{frame}{El equilibrio de la esclavitud}
-    \centering
-    \includegraphics[scale=0.45]{../Figures/C19.8.png}
-\end{frame}
-
-\begin{frame}{Ahora el esclavo se libera!}
-    \begin{center}
-        \includegraphics[scale=0.5]{../Figures/C19.9.png}   
-    \end{center}
-    \begin{itemize}
-        \item Ahora el campesino toma en cuenta la desutilidad del trabajo. Puede decidir no hacerlo.
-        \item Toma en cuenta el costo de oportunidad. El trabajador tiene otros ingresos u opciones que le garantizan la supervivencia.
+     \item ¿En qué forma queremos compararlas? Por ahora, en términos de eficiencia de Pareto
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{La decisión del campesino libre}
+\frametitle{1. La esclavitud: ¿qué punto elige el amo?}
 \begin{center}
-    \includegraphics[scale=0.6]{../Figures/C19.10.png}   
+\begin{figure}[H]
+\renewcommand{\figurename}{Figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[fill,orange!20] (1.05,8.45)--(2,5.25)--(3,3.8)--(5,2.5)--(8.5,1.65)--(7,4.2)--(5,6.5)--(3,7.75);
+\draw[very thick,<->] (0,11) node[left]{Gachas}--(0,0)--(11,0) node[right]{Horas de ocio};
+\draw[thin, brown] (1,9).. controls (2,3) and (4, 2.5) .. (9.2, 1.5) node[right]{\scriptsize Restricción Biológica};
+\draw[thin] (0,8.5).. controls (6,8.25) and (9, 1) .. (9,0);
+\draw[thick, dashed, gray] (0,1.5)--(9,1.5)--(9,0);
+\draw[thick, dashed, gray] (1.05,0)--(1.05,8.25);
+\draw[thick, dashed, gray] (0,8.25)--(1.05,8.25);
+\node[below] at (1.05,0) {\footnotesize $4$};
+\node[below] at (3,0) {\footnotesize $10$};
+\node[below] at (9,0) {\footnotesize 24};
+\node[left] at (0,1.5) {\footnotesize $200$};
+\node[left] at (0,4) {\footnotesize $500$};
+\node[left] at (0,8.25) {\footnotesize $1.000$};
+\node[left] at (0,7.8) {\footnotesize $900$};
+\draw[fill] (9,1.5) circle [radius =0.1] node[above]{\scriptsize B};
+\draw[thick, <->] (3,4.25)--(3,7.5) ; 
+\node[right] at (3.1,6) {\scriptsize Excedente para el amo};
+\draw[thick, dashed, gray] (3,0)--(3,7.8);
+\draw[thick, dashed, gray] (0,4)--(3,4);
+\draw[thick, dashed, gray] (0,7.8)--(3,7.8);
+
+\draw[fill] (3,7.75) circle [radius =0.1] node[above right]{\scriptsize D};
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{1. La esclavitud: el equilibrio de la esclavitud}
+\centering
+\centering
+\includegraphics[scale=0.55]{../Figures/C19.10.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{2. Ahora el esclavo se libera!}
+        \begin{itemize}
+            \item El trabajador podrá decidir libremente la cantidad de horas a trabajar.
+            \item A diferencia de lo que sucedía con el caso del esclavo, ahora el trabajador va a tener en cuenta el costo del esfuerzo de su trabajo (la desutilidad del trabajo)  \vspace{1mm}
+            \item Vamos a asumir que el trabajador, si no trabaja, tiene acceso a un monto mínimo que le permite vivir \vspace{1mm}
+            \item Construimos la \textbf{curva de indiferencia de reserva del trabajador}. Esta curva de indiferencia nos indica todas las combinaciones de ocio y producto que le dan al agricultor la misma utilidad que su opción de reserva
+            \begin{itemize}
+                \item  Es decir, la curva de indiferencia incluye el costo de oportunidad de no trabajar.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{2. Ahora el esclavo se libera!}
+\begin{center}
+\begin{figure}[H]
+\renewcommand{\figurename}{Figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\draw[fill,violet!20] (3.4,7.6)--(4,5)--(4.5,4.3)--(5,3.75)--(7,2.35)--(8.5,1.7)--(7,4.28)--(4.5,6.88)--(4,7.25);
+\draw[very thick,<->] (0,11) node[left]{Gachas}--(0,0)--(11,0) node[right]{Horas de ocio};
+\draw[thin, black] (1,9).. controls (2,3) and (4, 2.5) .. (9.2, 1.5) node[right]{\scriptsize Restricción Biológica};
+\draw[thin] (0,8.5).. controls (6,8.25) and (9, 1) .. (9,0);
+\node[right] at (4.1,5.5) {\tiny Conjunto};
+\node[right] at (4,5) {\tiny económicamente};
+\node[right] at (4.6,4.5) {\tiny posible};
+\draw[thin, brown] (3.2,9.5).. controls (3.5,5) and (4, 3.5) .. (9, 1.5);
+\draw[thick, dashed, gray] (0,1.5)--(9,1.5)--(9,0);
+\node[left] at (0,1.5) {\footnotesize $y_s$};
+
+\draw[fill] (9,1.5) circle [radius =0.1] node[above]{\scriptsize B};
+\node[] at (5.5,9.5) {\scriptsize Curva de indiferencia};
+\node[] at (5.5,9) {\scriptsize  de reserva};
+\node[] at (2,10) {\scriptsize Restricción};
+\node[] at (2,9.5) {\scriptsize  biológica};
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{2. La decisión del campesino libre}
+\begin{center}
+\begin{figure}[H]
+\renewcommand{\figurename}{Figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[fill,orange!20] (1.05,8.45)--(2,5.25)--(3,3.8)--(5,2.5)--(8.5,1.65)--(7,4.2)--(5,6.5)--(3,7.75);
+\draw[fill,violet!20] (3.4,7.6)--(4,5)--(4.5,4.3)--(5,3.75)--(7,2.35)--(8.5,1.7)--(7,4.28)--(4.5,6.88)--(4,7.25);
+\draw[very thick,<->] (0,11) node[left]{Gachas}--(0,0)--(11,0) node[right]{Horas de ocio};
+\draw[thin, black] (1,9).. controls (2,3) and (4, 2.5) .. (9.2, 1.5) node[right]{\scriptsize Restricción Biológica};
+\draw[thin] (0,8.5).. controls (6,8.25) and (9, 1) .. (9,0);
+
+\draw[thin, brown] (3.2,9.5).. controls (3.5,5) and (4, 3.5) .. (9, 1.5);
+\draw[thick, dashed, gray] (0,1.5)--(9,1.5)--(9,0);
+%\draw[thick, dashed, gray] (1.05,0)--(1.05,8.25);
+%\draw[thick, dashed, gray] (0,8.25)--(1.05,8.25);
+%\node[below] at (1.05,0) {\footnotesize $4$};
+\node[below] at (5.5,0) {\footnotesize $18$};
+\node[below] at (9,0) {\footnotesize 24};
+\node[left] at (0,1.5) {\footnotesize $200$};
+\node[left] at (0,2.4) {\footnotesize $350$};
+\node[left] at (0,3.3) {\footnotesize $450$};
+\node[left] at (0,6) {\footnotesize $750$};
+%\node[left] at (0,8.25) {\footnotesize $1.000$};
+%\node[left] at (0,7.8) {\footnotesize $900$};
+\draw[fill] (9,1.5) circle [radius =0.1] node[above]{\scriptsize B};
+%\draw[thick, <->] (3,4.25)--(3,7.5);
+\draw[thick, dashed, gray] (5.5,0)--(5.5,6);
+\draw[thick, dashed, gray] (0,6)--(5.5,6);
+\draw[thick, dashed, gray] (0,3.3)--(5.5,3.3);
+\draw[thick, dashed, gray] (0,2.4)--(5.5,2.4);
+%\draw[thick, dashed, gray] (0,7.8)--(3,7.8);
+\node[] at (5.5,9.5) {\scriptsize Curva de indiferencia};
+\node[] at (5.5,9) {\scriptsize  de reserva};
+\node[] at (2,10) {\scriptsize Restricción};
+\node[] at (2,9.5) {\scriptsize  biológica};
+%\node[] at (4.9,5.45) {\tiny Conjunto};
+%\node[] at (5.2,5) {\tiny económicamente};
+%\node[] at (5.5,4.55) {\tiny posible};
+
+\end{tikzpicture}
+\end{center}
+\end{figure}
 \end{center}
 \end{frame}
 
 \begin{frame}{Las diferencias entre la esclavitud y la libertad}
-    \centering
-    \includegraphics[scale=0.45]{../Figures/C19.11.png}
+\centering
+\includegraphics[scale=0.55]{../Figures/C19.13.jpg}
 \end{frame}
 
-
 \begin{frame}{Las diferencias entre la esclavitud y la libertad}
-    \begin{itemize}
-        \begin{boxA}
-            \centering
-            En el óptimo, el trabajador elegirá el nivel de trabajo donde el costo marginal iguala a la producción marginal, que es el punto en el que se maximiza la diferencia entre estas dos curvas.
-        \end{boxA}
+        \begin{boxB}
+        \centering
+        En el óptimo, el trabajador elegirá el nivel de trabajo donde el costo marginal iguala a la producción marginal, que es el punto en el que se maximiza la diferencia entre estas dos curvas.
+        \end{boxB}
+        \begin{itemize}
         \item El punto máximo es cuando se iguala la pendiente de la curva de transformación con la de la curva de indiferencia de reserva. 
         \item El dueño de la tierra trabaja menos que en el régimen de esclavitud.
         \item Pero eso es óptimo: porque el régimen de esclavitud no tomaba en cuenta su desutilidad!
@@ -386,93 +539,160 @@ De acuerdo a North son las reglas del juego en una sociedad, que reducen la ince
     \end{itemize}
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Servidumbre medieval: servidumbre fija}
+\frametitle{3. Servidumbre medieval: servidumbre fija }
 \begin{itemize}
-    \item Estamos en la edad media donde un señor feudal es dueño de la tierra. 
-    \item Se le permite a un campesino trabajar la tierra pero a cambio de una "servidumbre". 
-    \item  En este caso asumimos que el pago es un monto fijo de producción 
-    \item Reduce lo que se lleva el campesino desplazando su retorno hacia abajo.
+    \item Estamos en la Edad Media donde un señor feudal es dueño de la tierra. 
+    \item Se le permite a un campesino trabajar la tierra pero a cambio de una "arrendamiento". 
+    \item  En este caso asumimos que el pago es un \textbf{monto fijo} de producción. \vspace{1mm}
+    \item Para tomar la decisión de cuántas horas trabajar, el agricultor va a mirar la cantidad de producción que obtiene (por sobre su curva de indiferencia de reserva) luego de realizarle el pago al feudo \vspace{1mm}
+        \begin{itemize}
+        \item Tenemos que mirar la \textbf{nueva FPP} luego de pagar la renta
+        \item Reduce lo que se lleva el campesino desplazando su retorno \textbf{paralelamente} hacia abajo. \vspace{1mm}
+        \end{itemize}
     \item La producción no se modifica pero sí su distribución (ahora el campesino tiene que pasarle parte al señor feudal). 
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Servidumbre medieval: servidumbre fija}
-    \centering
-    \includegraphics[scale=0.45]{../Figures/C19.12.png}
-\end{frame}
+\begin{frame}
+\frametitle{3. Servidumbre medieval: servidumbre fija}
 
-\begin{frame}{Servidumbre medieval: un porcentaje de la producción}
+\begin{columns}
+  \begin{column}{0.55\textwidth}
+    \centering
+    \includegraphics[scale=0.55]{../Figures/C19.14.jpg}
+  \end{column}
+
+\begin{column}{0.45\textwidth}
     \begin{itemize}
-        \item Ahora asumimos que el pago es un porcentaje de la producción 
-        \item Reduce lo que se lleva el campesino desplazando su retorno hacia abajo pero no de manera paralela sino que lo que se reduce crece con la producción
-        \item La producción ahora cae respecto al caso anterior
-        \item Hay una distorsión en la producción pero el riesgo está mejor distribuido entre productor y señor feudal. 
+        \item \small La pendiente de la FPP no se modifica
+        \item \small El agricultor elige la misma cantidad de horas de trabajo que si fuese el dueño de la tierra    \item \small La diferencia es que, en el modelo donde el trabajador es dueño de la tierra, todo el excedente se lo quedaba el agricultor
+        \item \small Llegamos a una situación eficiente
     \end{itemize}
+  \end{column}
+\end{columns}
+
 \end{frame}
 
 \begin{frame}
-\frametitle{Servidumbre medieval: un porcentaje de la producción}
-\centering
-\includegraphics[scale=0.45]{../Figures/C19.13.png}
+\frametitle{4. Servidumbre medieval: un porcentaje de la producción }
+\begin{itemize}
+    \item Ahora asumimos que el pago es un \textbf{porcentaje de la producción} $\rightarrow$ lo que se debe pagar al terrateniente aumenta a medida que aumenta la producción.
+    \item Reduce lo que se lleva el campesino desplazando su retorno hacia abajo pero no de manera paralela sino que lo que se reduce crece con la producción
+    \item La producción ahora cae respecto al caso anterior
+     \item Hay una distorsión en la producción pero el riesgo está mejor distribuido entre el productor y el señor feudal. 
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Diversificando riesgo en la Edad Media}
+\begin{frame}
+\frametitle{4. Servidumbre medieval: un porcentaje de la producción}
+\begin{columns}
+  \begin{column}{0.55\textwidth}
     \centering
-    \includegraphics[scale=0.4]{../PastedGraphic-1.pdf}
+    \includegraphics[scale=0.28]{../Figures/C19.15.jpg}
+  \end{column}
+
+\begin{column}{0.45\textwidth}
     \begin{itemize}
-        \item Una manera de acotar el riesgo era partiendo las parcelas y distribuyéndolas en un área geográfica más amplia. 
+        \item \small La pendiente de la FPP sí se modifica
+        \item \small El ingreso marginal que logra el trabajador se reduce y esto reduce su incentivo a trabajar.
+        \item \small El trabajador elige trabajar menos horas, en comparación a si fuese dueño de la tierra o si contrato es con monto fijo.
+        \item \small Este contrato genera una asignación ineficiente
     \end{itemize}
+  \end{column}
+\end{columns}
+
 \end{frame}
 
-\begin{frame}{La China de Mao}
-    \begin{center}
-        \includegraphics[scale=0.6]{../Figures/C19.15.png}
-    \end{center}
-    \begin{itemize}
-        \item Si siempre recibo lo mismo, sin importar la cantidad que trabajo, el óptimo está en el punto A donde el ocio es pleno y la producción es 0... 
+
+\begin{frame}
+\frametitle{Diversificando riesgo en la Edad Media}
+\centering
+\includegraphics[scale=0.4]{../Figures/C19.16.png}
+
+\begin{itemize}
+    \item Una manera de acotar el riesgo era partiendo las parcelas y distribuyéndolas en un área geográfica más amplia. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La China de Mao}
+\begin{center}
+\begin{figure}[H]
+\renewcommand{\figurename}{Figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw[fill,orange!20] (1.05,8.45)--(2,5.25)--(3,3.8)--(5,2.5)--(8.5,1.65)--(7,4.2)--(5,6.5)--(3,7.75);
+\draw[very thick,<->] (0,11) node[left]{Gachas}--(0,0)--(11,0) node[right]{Horas de ocio};
+\draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5);
+\draw[thin] (0,8.5).. controls (6,8.25) and (9, 1) .. (9,0);
+%\draw[fill] (8.5,1.6) circle [radius =0.1] node[left]{$A$};
+\draw[fill] (9,0) circle [radius =0.1];
+%\draw[thick, <->] (4.5,0.15)--(4.5,4.35);
+%\draw[thick, <->] (4.5,6.75)--(4.5,4.65);
+\node[above right] at (9,0) {\scriptsize A};
+%\node[] at (3.55,5.5) {\scriptsize dictador};
+%\node[] at (3.5,2) {\scriptsize Para el};
+%\node[] at (3.4,1.5) {\scriptsize productor};
+\node[below] at (9,0) {\footnotesize 24};
+%\node[below] at (8.5,0) {\footnotesize 23};
+%\node[left] at (0,1.6) {\footnotesize 120 gr};
+%\draw[thin, dashed, gray] (0,1.6)--(8.5,1.6);
+%\draw[thin, dashed, gray] (8.5,0)--(8.5,1.6);
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\end{center}
+\begin{itemize}
+\item Si siempre recibo lo mismo, sin importar la cantidad de trabajo, el óptimo está en el punto A donde el ocio es pleno y la producción es 0
     \end{itemize}
 \end{frame}
 
 \begin{frame}{La China de Mao }
-    \frametitle{¿Qué pasa si hay un salario mínimo o un bono obligatorio?}
-    \centering
-    \includegraphics[scale=0.45]{../Figures/C19.18.png}
-\end{frame}
-
-\begin{frame}
-\frametitle{La China de Mao }
+\small
 \begin{itemize}
     \item Cuando Mao llega al poder decide la colectivización de las granjas
     \item Lo que recibe cada productor es independiente de lo que produce. 
-    
     \item El productor maximiza su utilidad minimizando su trabajo 
      \item La producción baja a cero.  
      \item 40 millones de personas murieron de hambre
      \item ¡Vaya si las instituciones importan! 
 \end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{../Figures/C19.18.png}
+\end{center}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{¿Qué pasa si hay un salario mínimo o un bono obligatorio?}
 \centering
-\includegraphics[scale=0.33]{../Figures/InstitucionesBono.png}
-\end{frame}
-
-\begin{frame}
-\frametitle{¿Qué pasa si hay un salario mínimo o un bono obligatorio?}
-\centering
-\includegraphics[scale=0.45]{../Figures/C19.19.png}
+\includegraphics[scale=0.33]{../Figures/M9.5.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{El gobierno sindical de Sudáfrica}
 \begin{itemize}
     \item La remuneración de los trabajadores la define un "sindicato". 
-    \item Asumimos esa remuneración es mayor a la que ocurriría naturalmente
-    \item Definido el salario el dueño de la tierra define cuanto producir
-    \item La producción cae, pero la parte de la torta que se lleva el trabajador puede subir. 
+    \item  Asumimos esa remuneración es mayor a la que ocurriría naturalmente
+    \item Definido el salario, el dueño de la tierra define cuánto producir
+    \item  La producción cae, pero la parte de la torta que se lleva el trabajador puede subir. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{¿Qué pasa si hay un salario mínimo o un bono obligatorio?}
+\centering
+\includegraphics[scale=0.29]{../Figures/C19.19.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusiones}
+\begin{itemize}
+    \item Las instituciones importan! \vspace{1mm}
+    \item Las asignaciones económicas no solo dependen de las restricciones tecnológicas, biólogas y las preferencias, sino que también están condicionadas por las instituciones (tanto formales como informales) que limitan o afectan el conjunto viable de una situación.\vspace{1mm}
+    \item Como los economistas pensamos en eficiencia,  querríamos evitar situaciones como la colectivización China o los contratos de arrendamiento que distorsionan la producción.
 \end{itemize}
 \end{frame}
 
