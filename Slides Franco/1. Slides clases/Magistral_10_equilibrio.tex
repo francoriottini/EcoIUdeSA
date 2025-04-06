@@ -15,6 +15,21 @@
 \usepackage{colortbl}
 \usepackage{adjustbox}
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+
+
+\usepackage{amssymb}
+\usepackage{multirow}
+
+% Colores
+\definecolor{rojo}{RGB}{221, 36, 36}
+\definecolor{celeste}{RGB}{173, 216, 230}
+
+\newcommand{\up}{\textcolor{blue}{\Large$\uparrow$}}
+\newcommand{\down}{\textcolor{red}{\Large$\downarrow$}}
+\newcommand{\question}{\textcolor{red}{\Large\textbf{?}}}
+
+
 % ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
 \setbeamertemplate{navigation symbols}
 
@@ -60,10 +75,31 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-
+\usepackage{hyperref}
 \usepackage{tikz}
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 \usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
 
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
@@ -91,13 +127,34 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
+
+\usetheme{Boadilla}
+
+%set options of hyperref package
+\hypersetup{
+    bookmarksnumbered=true, %put section numbers in bookmarks
+    naturalnames=true, %use LATEX-computed names for links
+    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
+    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
+    colorlinks=true, %color links
+    anchorcolor=black, %set color of anchors
+    linkcolor=beamerblue, %set link color to beamer blue
+    citecolor=blue, %set cite color to beamer blue
+    pdfpagemode=UseThumbs, %set default mode of PDF display
+    breaklinks=true, %break long links
+    pdfstartpage=1 %start at first page
+    }
+
 \newtcolorbox{boxA}{
     fontupper = \bf,
     boxrule = 1.5pt,
     colframe = black % frame color
 }
-
-\usetheme{Boadilla}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 
 % --------------------
 % Overall information
@@ -105,7 +162,7 @@
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 10: Equilibrio de mercado}
 \date{}
-\author[Riottini]{Franco Riottini}
+\author[Franco Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -117,15 +174,9 @@
 \end{frame} 
 
 \begin{frame}
-\frametitle{Motivación: El precio de TurboMan}
-\centering
-\href{https://www.youtube.com/watch?v=LCK5jetqpeM}{\includegraphics[scale=0.1]{../Figures/Tema_04.01_Turboman.jpg}}
-\end{frame}
-
-\begin{frame}
-\frametitle{Motivación: El precio del petroleo}
-\centering
-\includegraphics[scale=0.35]{../Figures/Tema_04.01_new.jpg}
+    \frametitle{Motivación: El precio del petróleo}
+    \centering
+    \includegraphics[scale=1]{../Figures/M10.1.png}
 \end{frame} 
 
 \begin{frame}
@@ -147,30 +198,122 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Las curvas se encuentran en un punto}
-    \centering
-    \includegraphics[scale=0.6]{../Figures/C15.1.png}
-\end{frame}
+
+\begin{frame}{Las curvas se cruzan en un punto}
+        \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=1.1]
+            \draw[thick,->] (0,0) -- (6,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,6) node[left] {$P$};
+    
+            %Demanda
+            \draw [thick, Blue] (0,5) -- (5,0);
+            \node [right, Blue] at (4.8,0.4) {$D$};
+            %Oferta
+            \draw [thick, RubineRed] (0,0) -- (5,5);
+            \node [right, RubineRed] at (5,5) {$O$};
+    
+            % Punto E
+            \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+            \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+            \fill (2.5,2.5) circle (3pt);
+            \node [above] at (2.5,2.6) {$E$};
+            \node[below] at (2.5,0) {$Q^*$};
+            \node[left] at (0,2.5) {$P^*$};
+            
+            \end{tikzpicture}
+        \end{center}
+        \end{figure}
+    \end{frame}
 
 \begin{frame}{Equilibrio}
     \begin{itemize}
         \item En el precio de equilibrio se igualan las cantidades ofrecidas con las cantidades demandadas.
-        \item Si el precio es superior al de equilibrio, hay un exceso de oferta. Si esto pasa, los productores decidirán disminuir sus precios, aumentando la cantidad demandadas y disminuyendo las cantidades ofrecidas.
-        \item Si el precio es inferior al de equilibrio, hay un exceso de demanda. Hay escacez en el mercado. Los productores observan esta situacion, aumentan los precios, disminuyendo la cantidad demandada y aumentando la cantidad ofrecida.
+        \item Si el precio es superior al de equilibrio ($P > P^*$), hay un exceso de oferta. Si esto pasa, los productores decidirán disminuir sus precios, aumentando la cantidad demandadas y disminuyendo las cantidades ofrecidas.
+        \item Si el precio es inferior al de equilibrio ($P < P^*$), hay un exceso de demanda. Hay escasez en el mercado. Los productores observan esta situación, aumentan los precios, disminuyendo la cantidad demandada y aumentando la cantidad ofrecida.
         \item En ambos casos lo que tiene que quedar claro es que nos movemos \textbf{a lo largo de las curvas} de oferta y demanda. No se desplazan las curvas cuando lo que se mueve es el precio\dots
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Exceso de oferta}
-\centering
-\includegraphics[scale=0.6]{../Figures/C15.2.png}
+\begin{frame}{Exceso de oferta}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.1]
+    
+    % Ejes
+    \draw[thick, ->] (0,0) -- (6,0) node[right] {$Q$};
+    \draw[thick, ->] (0,0) -- (0,6) node[left] {$P$};
+    
+    % Curvas de oferta y demanda
+    \draw [thick] (0,5) -- (5,0);
+    \node [right] at (4.8,0.4) {$D$};
+    \draw [thick] (0,0) -- (5,5);
+    \node [right] at (5,5) {$O$};
+    
+    % Precio de equilibrio y líneas punteadas
+    \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+    \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+    \fill (2.5,2.5) circle (2pt);
+    \node [above] at (2.5,2.6) {$E$};
+    \node[below] at (2.5,0) {$Q^*$};
+    \node[left] at (0,2.5) {$P^*$};
+    
+    % Precio P1 más alto
+    \coordinate (P1L) at (1,4);
+    \coordinate (P1R) at (4,4);
+    \filldraw[black] (P1L) circle (1.5pt);
+    \filldraw[black] (P1R) circle (1.5pt);
+    \draw[dashed] (P1L) -- (P1R);
+    \draw[dashed] (P1L) -- (P1L |- 0,0) node[below] {$Q^1_d$};
+    \draw[dashed] (P1R) -- (P1R |- 0,0) node[below] {$Q^1_o$};
+    \draw[dashed] (P1L) -- (0,4) node[left] {$P_1$};
+    
+    % Exceso de oferta
+    \draw[decorate,decoration={brace, amplitude=5pt},draw=Blue,
+    text=Blue] (1,4.2) -- (4,4.2) node[midway, above=8pt] {Exceso de oferta};
+    
+    \end{tikzpicture}
+    \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Exceso de demanda}
-\centering
-\includegraphics[scale=0.6]{../Figures/C15.3.png}
+    \frametitle{Exceso de demanda}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.1]
+    
+    % Ejes
+    \draw[thick, ->] (0,0) -- (6,0) node[right] {$Q$};
+    \draw[thick, ->] (0,0) -- (0,6) node[left] {$P$};
+    
+    % Curvas de oferta y demanda
+    \draw [thick] (0,5) -- (5,0);
+    \node [right] at (4.8,0.4) {$D$};
+    \draw [thick] (0,0) -- (5,5);
+    \node [right] at (5,5) {$O$};
+    
+    % Precio de equilibrio y líneas punteadas
+    \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+    \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+    \fill (2.5,2.5) circle (2pt);
+    \node [above] at (2.5,2.6) {$E$};
+    \node[below] at (2.5,0) {$Q^*$};
+    \node[left] at (0,2.5) {$P^*$};
+    
+    % Precio P1 más alto
+    \coordinate (P2L) at (1,1);
+    \coordinate (P2R) at (4,1);
+    \filldraw[black] (P2L) circle (1.5pt);
+    \filldraw[black] (P2R) circle (1.5pt);
+    \draw[dashed] (P2L) -- (P2R);
+    \draw[dashed] (P2L) -- (P2L |- 0,0) node[below] {$Q^2_o$};
+    \draw[dashed] (P2R) -- (P2R |- 0,0) node[below] {$Q^2_d$};
+    \draw[dashed] (P2L) -- (0,1) node[left] {$P_2$};
+    
+    % Exceso de demanda
+    \draw[decorate,decoration={brace, mirror, amplitude=5pt},draw=Blue,
+    text=Blue] (1,0.9) -- (4,0.9) node[midway, below=5pt] {Exceso de demanda};
+    
+    \end{tikzpicture}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -190,314 +333,284 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Ejemplo 1. ¿Qué pasa si aumenta el precio de un bien sustituto?}
-\centering
-\includegraphics[scale=0.45]{../Figures/C15.6.png}
+    \frametitle{Ejemplo 1. Aumento en el precio de un bien sustituto}
+        \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+            \draw[thick,->] (0,0) -- (7.5,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,7.5) node[left] {$P$};
+    
+            %Demanda
+            \draw [thick] (0,5) -- (5,0);
+            \node [right] at (4.8,0.4) {$D$};
+            %Oferta
+            \draw [thick] (0,0) -- (6,6);
+            \node [right] at (6,6) {$O$};
+    
+            % Punto E
+            \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+            \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+            \fill (2.5,2.5) circle (2pt);
+            \node [above] at (2.5,2.55) {\footnotesize $E_1$};
+            \node[below] at (2.5,0) {\small $Q_{1}^{*}$};
+            \node[left] at (0,2.5) {\small $P_{1}^{*}$};
+    
+            % Cambios de demanda
+            \draw [thick, blue] (0,6.5) -- (6.5,0);
+            \node [right, blue] at (6.2,0.4) {$D_2$};
+    
+            \draw[dashed, gray] (3.25,0) -- (3.25,3.25);
+            \draw[dashed, gray] (0,3.25) -- (3.25,3.25);
+            \fill[blue] (3.25,3.25) circle (2.5pt);
+            \node [above, blue] at (3.25,3.35) {\footnotesize $E_2$};
+            \node[below, blue] at (3.25,0) {\small $Q_{2}^{*}$};
+            \node[left, blue] at (0,3.25) {\small $P_{2}^{*}$};
+    
+            \draw[dashed, gray] (2.5,2.5) -- (4,2.5);
+            \draw[dashed, gray] (4,0) -- (4,2.5);
+            \fill (4,2.5) circle (2pt);
+            \node[below] at (4,0) {\small $Q_{1}^{d}$};
+    
+            % Exceso de demanda
+            \draw[decorate,decoration={brace, mirror, amplitude=5pt},draw=blue, text=blue] (2.5,-0.8) -- (4,-0.8) node[midway, below=5pt] {\footnotesize Exceso de demanda al precio $P_{1}^{*}$};
+    
+            \end{tikzpicture}
+        \end{center}
+        \end{figure}
+\end{frame}
+    
+\begin{frame}{Ejemplo 2. Aumenta el costo de producir el bien}
+        \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+            \draw[thick,->] (0,0) -- (7.5,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,7.5) node[left] {$P$};
+    
+            %Demanda
+            \draw [thick] (0,5) -- (5,0);
+            \node [right] at (4.8,0.4) {$D$};
+            %Oferta
+            \draw [thick] (0,0) -- (5,5);
+            \node [right] at (5,5) {$O$};
+    
+            % Punto E
+            \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+            \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+            \fill (2.5,2.5) circle (2pt);
+            \node [above] at (2.5,2.55) {\footnotesize $E_1$};
+            \node[below] at (2.5,0) {\small $Q_{1}^{*}$};
+            \node[left] at (0,2.5) {\small $P_{1}^{*}$};
+    
+            % Cambios de ofera
+            \draw [thick, blue] (0,1.5) -- (5,6.5);
+            \node [right, blue] at (5,6.5) {$O_2$};
+    
+            \draw[dashed, gray] (1.75,0) -- (1.75,3.25);
+            \draw[dashed, gray] (0,3.25) -- (1.75,3.25);
+            \fill[blue] (1.75,3.25) circle (2.5pt);
+            \node [above, blue] at (1.75,3.35) {\footnotesize $E_2$};
+            \node[below, blue] at (1.75,0) {\small $Q_{2}^{*}$};
+            \node[left, blue] at (0,3.25) {\small $P_{2}^{*}$};
+    
+            \draw[dashed, gray] (1,0) -- (1,2.5);
+            \fill (1,2.5) circle (2pt);
+            \node[below] at (1,0) {\small $Q_{1}^{o}$};
+    
+            % Exceso de demanda
+            \draw[decorate,decoration={brace, mirror, amplitude=5pt},draw=blue, text=blue] (1,-0.8) -- (2.5,-0.8) node[midway, below=5pt] {\footnotesize Exceso de demanda al precio $P_{1}^{*}$};
+    
+            \end{tikzpicture}
+        \end{center}
+        \end{figure}
+        
+\end{frame}
+    
+\begin{frame}{Ejemplo 3: Caída en los ingresos y avance tecnológico}
+        \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.9]
+            \draw[thick,->] (0,0) -- (7.5,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,7.5) node[left] {$P$};
+    
+            %Demanda
+            \draw [thick] (0,5) -- (5,0);
+            \node [right] at (4.8,0.4) {$D$};
+            %Oferta
+            \draw [thick] (0,0) -- (5,5);
+            \node [right] at (5,5) {$O$};
+    
+            % Punto E
+            \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+            \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+            \fill (2.5,2.5) circle (2pt);
+            \node [above] at (2.5,2.55) {\footnotesize $E_1$};
+            \node[below] at (2.7,0) {\small $Q_{1}^{*}$};
+            \node[left] at (0,2.5) {\small $P_{1}^{*}$};
+    
+            % Cambios de oferta
+            \only<2->{
+            \draw [thick, blue] (1,0) -- (6.6,5.5);
+            \node [right, blue] at (6.5,5.5) {$O_2$};
+            }
+            % Cambios de demanda
+            \only<3->{
+            \draw [thick, blue] (0,3.25) -- (3.25,0);
+            \node [right, blue] at (3.2,0.3) {$D_2$};
+            }
+            % Nuevo equilibrio
+            \only<4->{
+            \draw[dashed, gray] (2.125,0) -- (2.125,1.15);
+            \draw[dashed, gray] (0,1.15) -- (2.125,1.15);
+            \fill[blue] (2.125,1.15) circle (2.5pt);
+            \node [above, blue] at (2.125,1.25) {\footnotesize $E_2$};
+            \node[below, blue] at (2.125,0) {\small $Q_{2}^{*}$};
+            \node[left, blue] at (0,1.25) {\small $P_{2}^{*}$};
+            
+            \node[right] at (3.2,7.5) {\footnotesize Notar que acá la demanda };
+            \node[right] at (3,7.1) {\footnotesize disminuyó relativamente más};
+            \node[right] at (3,6.7) {\footnotesize que lo que aumentó la oferta};
+            }
+            \end{tikzpicture}
+        \end{center}
+        \end{figure} 
+\end{frame}
+    
+    
+\begin{frame}{Ejemplo 3: Caída en los ingresos y avance tecnológico}
+        \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.9]
+            \draw[thick,->] (0,0) -- (7.5,0) node[below] {$Q$};
+            \draw[thick,->] (0,0) -- (0,7.5) node[left] {$P$};
+    
+            %Demanda
+            \draw [thick] (0,5) -- (5,0);
+            \node [right] at (4.8,0.4) {$D$};
+            %Oferta
+            \draw [thick] (0,0) -- (5,5);
+            \node [right] at (5,5) {$O$};
+    
+            % Punto E
+            \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+            \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+            \fill (2.5,2.5) circle (2pt);
+            \node [above] at (2.5,2.55) {\footnotesize $E_1$};
+            \node[below] at (2.5,0) {\small $Q_{1}^{*}$};
+            \node[left] at (0,2.5) {\small $P_{1}^{*}$};
+    
+            % Cambios de oferta
+            \draw [thick, blue] (2.15,0) -- (7,4.75);
+            \node [right, blue] at (7,4.75) {$O_2$};
+    
+            % Cambios de demanda
+            \draw [thick, blue] (0,3.75) -- (3.75,0);
+            \node [right, blue] at (3.75,0.3) {$D_2$};
+    
+            % Nuevo equilibrio
+            \draw[dashed, gray] (2.95,0) -- (2.95,0.8);
+            \draw[dashed, gray] (0,0.8) -- (2.95,0.8);
+            \fill[blue] (2.95,0.8) circle (2.5pt);
+            \node [above, blue] at (3.05,0.8) {\footnotesize $E_2$};
+            \node[below, blue] at (3.05,0) {\small $Q_{2}^{*}$};
+            \node[left, blue] at (0,0.8) {\small $P_{2}^{*}$};
+    
+            \node[right] at (3.2,7.5) {\footnotesize Notar que acá la demanda };
+            \node[right] at (3,7.1) {\footnotesize disminuyó relativamente menos};
+            \node[right] at (3,6.7) {\footnotesize que lo que aumentó la oferta};
+            
+            \end{tikzpicture}
+        \end{center}
+        \end{figure}
+\end{frame}
+
+\begin{frame}{Ejemplo 4: Caída en precio de un bien sustituto y shock climático negativo}
+    \begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+        \draw[thick,->] (0,0) -- (7.5,0) node[below] {$Q$};
+        \draw[thick,->] (0,0) -- (0,7.5) node[left] {$P$};
+
+        %Demanda
+        \draw [thick] (0,5) -- (5,0);
+        \node [right] at (4.8,0.4) {$D$};
+        %Oferta
+        \draw [thick] (0,0) -- (5,5);
+        \node [right] at (5,5) {$O$};
+
+        % Punto E
+        \draw[dashed, gray] (2.5,0) -- (2.5,2.5);
+        \draw[dashed, gray] (0,2.5) -- (2.5,2.5);
+        \fill (2.5,2.5) circle (2pt);
+        \node [above] at (2.5,2.55) {\footnotesize $E_1$};
+        \node[below] at (2.5,0) {\small $Q_{1}^{*}$};
+        \node[left] at (0,2.5) {\small $P_{1}^{*}$};
+
+        % Cambios de oferta
+        \draw [thick, blue] (0,2.15) -- (5,7.15);
+        \node [right, blue] at (5,7.15) {$O_2$};
+
+        % Cambios de demanda
+        \draw [thick, blue] (0,3.75) -- (3.75,0);
+        \node [right, blue] at (3.75,0.3) {$D_2$};
+
+        % Nuevo equilibrio
+        \draw[dashed, gray] (0.8,0) -- (0.8,2.98);
+        \draw[dashed, gray] (0,2.98) -- (0.8,2.98);
+        \fill[blue] (0.8,2.96) circle (2.1pt);
+        \node [above, blue] at (0.9,3.05) {\footnotesize $E_2$};
+        \node[below, blue] at (0.8,0) {\small $Q_{2}^{*}$};
+        \node[left, blue] at (0,2.98) {\small $P_{2}^{*}$};
+        
+        \end{tikzpicture}
+    \end{center}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{Ejemplo 2, ¿Qué pasa si aumenta el costo de producir el bien?}
-\centering
-\includegraphics[scale=0.45]{../Figures/C15.7.png}
+    \frametitle{Otros ejemplos}
+        \begin{enumerate}
+            \item Un libro se viraliza por BookTok, pero aumenta el precio del papel de impresión
+            \item Un incendio afecta la producción de yerba en Misiones, mientras el precio del té baja en los supermercados 
+            \item El Estado aprueba un bono que mejora el poder de compra de jubilados, mientras se reduce un impuesto a los medicamentos
+        \end{enumerate}
+    
 \end{frame}
-
+    
+    
 \begin{frame}
-\frametitle{Ejemplo 3: ¿Qué sucede si caen los ingresos de los consumidores y, al mismo tiempo, hay un avance tecnológico?}
-\centering
-\includegraphics[scale=0.5]{../Figures/C15.8.png}
+    \frametitle{Conclusiones}
+        \begin{itemize}
+            \item Cuando se desplace la oferta \textbf{o} la demanda (\textbf{una sola curva}), tendremos un nuevo equilibrio con un precio y una cantidad distintos.
+            \item Cuando se desplacen \textbf{ambas curvas}, una de las variables del nuevo equilibrio quedará indeterminada. Es decir, dependerá de la magnitud de los cambios en la oferta y la demanda.    
+        \end{itemize}
+    \begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{adjustbox}{scale=0.8}
+    \begin{tabular}{|>{\columncolor{Blue!30}}c|c|c|c|c|}
+    \hline
+    \rowcolor{white}
+    \textbf{} & \cellcolor{red!60}\textbf{MISMA} & \cellcolor{red!60}\textbf{AUMENTO} & \cellcolor{red!60}\textbf{DESCENSO} \\
+    \rowcolor{white}
+    \textbf{} & \cellcolor{red!60}\textbf{OFERTA} & \cellcolor{red!60}\textbf{OFERTA} & \cellcolor{red!60}\textbf{OFERTA} \\
+    \hline
+    \textbf{MISMA DEMANDA} 
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering = PRECIO \\ = CANTIDAD} 
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \down PRECIO \\ \up CANTIDAD}
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \up PRECIO \\ \down CANTIDAD} \\
+    \hline
+    \textbf{AUMENTO DEMANDA} 
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \up PRECIO \\ \up CANTIDAD}
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \question PRECIO \\ \up CANTIDAD}
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \up PRECIO \\ \question CANTIDAD} \\
+    \hline
+    \textbf{DESCENSO DEMANDA} 
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \down PRECIO \\ \down CANTIDAD}
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \down PRECIO \\ \question CANTIDAD}
+    & \parbox[c][1.5cm][c]{2.5cm}{\centering \question PRECIO \\ \down CANTIDAD} \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+    \end{center}
 \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Qué desplazamientos de la curvas son consistentes con estos dos puntos?}
-% \centering
-% \includegraphics[scale=0.6]{../Figures/Tema_07.6_equilibrioofertademanda3.jpg}
-% % HACER GRAFICO QUE SEA IGUAL QUE EL LIBRO
-% \end{frame}
-
-
-% \begin{frame}
-% \frametitle{Beneficios para todos!}
-% \begin{itemize}
-%     \item Los compradores y vendedores comercian en forma voluntaria, ya que ambos se benefician
-% \end{itemize}
-% \centering
-% %\includegraphics[scale=0.5]{Figures/winwin.jp}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Pensando a lo Pareto}
-% \begin{itemize}
-%     \item ¿Cuándo una asignación es mejor que otra?
-%     \begin{itemize}
-%         \item Una asignación A domina en el sentido de Pareto (Pareto dominates) a otra si al menos alguien está mejor en A y nadie está peor
-%         \item Si una asignación no está dominada en el sentido de Pareto por ninguna otra, decimos que es eficiente en el sentido de Pareto (Pareto-efficient)
-%     \end{itemize}
-%     \item ¡ATENCION! Puede haber más de una asignación Pareto eficiente pero el criterio no nos dice cuál es mejor, y tampoco nos dice nada sobre equidad 
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo medimos las ganancias?}
-% \begin{itemize}
-%     \item Podemos medir los beneficios mutuos de una asignación con lo que denominamos 'excedentes' 
-%     \begin{itemize}
-%         \item ¿Cuál es la ganancia para el consumidor? \\
-%         - Cualquier comprador cuya disposición a pagar por un bien sea más alta que el precio de mercado recibe un excedente igual a la diferencia entre esta disposición y el precio pagado
-%         \item ¿Cuál es la ganancia para el productor? \\
-%         - Si el costo marginal de producir un bien es inferior al precio de mercado, el productor recibe un excedente
-%     \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Excedentes}
-% \begin{itemize}
-%     \item Las ganancias totales del intercambio están determinadas por los excedentes de consumidores y productores
-%     \begin{itemize}
-%         \item El excedente del consumidor \\ - Diferencia entre disposición a pagar y precio de compra
-%         \item Excedente del productor \\ - Diferencia entre precio y costo de una unidad adicional
-%     \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Las ganancias del intercambio: la asignación eficiente}
-% \includegraphics[scale=0.55]{../Figures/Tema_07.3_equilibrioofertademanda_0.jpg}
-% \end{frame} 
-
-% \begin{frame}
-% \frametitle{Equilibrio y excedentes}
-% \begin{center}
-% \includegraphics[scale=0.5]{../Figures/Tema_07.23_newexcedentes.jpg}
-% \end{center}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Pérdida de peso muerto}
-% \begin{itemize}
-%     \item ¿Qué pasa si no terminamos en una asignación eficiente? 
-%     \item Tenemos una ‘pérdida de peso muerto’
-%     \begin{itemize}
-%         \item Pérdida de excedente total con respecto a una asignación eficiente \\
-%         - Es decir, hay ganancias no explotadas del comercio
-%     \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Precio inicial y excedentes}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.23_newexcedentes1.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Mejora de Pareto}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.23_newexcedentes2.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Eficiencia de Pareto}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.23_newexcedentes3.jpg}
-% \end{frame}
-
-% \end{document}
-
-
-% \begin{frame}
-% \frametitle{Sensibilidad de la demanda}
-% \begin{itemize}
-%     \item La pendiente de la curva de demanda tiene información relevante para las empresas
-%     \begin{itemize}
-%         \item La pendiente muestra la relación costo-beneficio que la firma enfrenta entre precio y cantidad
-%      \end{itemize}
-%     \item ¿Nos ayuda a pensar qué tan sensible es la demanda ante cambios en los precios?
-%     \begin{itemize}
-%         \item En parte, si, pero para pensar en esto usamos el concepto de \textbf{elasticidad-precio}: \\
-%         - Intuitivamente, se refiere al grado de reacción de los consumidores a cambios en el precio del producto 
-%     \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Elasticidad precio de la demanda}
-% \begin{itemize}
-%     \item A diferencia de la pendiente, la elasticidad precio mira cambios porcentuales:
-%     \begin{center}
-%     \includegraphics[scale=0.7]{../Figures/Tema_06.43_elasticidadformula.png}
-%     \end{center}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Elasticidad precio de la demanda}
-% \begin{itemize}
-%     \item Medida de sensibilidad: ¿cuál es el cambio \% en la cantidad demandada ante un cambio de 1\% en el precio? \\
-%     \begin{itemize}
-%         \item Como la demanda cae ante un aumento en el precio, se suele cambiar el signo para que la relación nos de positiva (esto facilita la interpretación)
-%     \end{itemize}
-%     \item ¿Qué tan elástica? \\
-%     - Si $e > 1$ decimos que la demanda es elástica \\
-%     - Si $e = 1$ decimos que la demanda es unitaria \\
-%     - Si $e < 1$ decimos que la demanda es inelástica
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Elasticidad y pendiente}
-% \begin{itemize}
-%     \item Ambos conceptos están relacionados
-%     \begin{center}
-%     \includegraphics[scale=0.5]{../Figures/Tema_06.44_elasticidadpendiente.png}
-%     \end{center}
-%         \begin{itemize}
-%         \item La pendiente forma parte del concepto de elasticidad
-%         \item Una curva de demanda muy empinada es relativamente inelástica, y una bastante plana es elástica
-%         \end{itemize}
-%     \item ¡Pero no son lo mismo!
-%         \begin{itemize}
-%             \item Notar que la elasticidad puede cambiar a medida que nos movemos a lo largo de la curva de demanda, aun si la pendiente no lo hace
-%             \item ¡Y viceversa!
-%         \end{itemize}
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Elasticidad constante}
-% \includegraphics[scale=0.6]{../Figures/Tema_06.45_elasticidad.png}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{Pendiente constante}
-% \includegraphics[scale=0.6]{../Figures/Tema_06.46_elasticidad2.png}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una demanda elástica?}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.24_equilibrioyexcedente2.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una demanda inelástica?}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.25_equilibrioyexcedente3.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una oferta elástica?}
-% \includegraphics[scale=0.6]{../Figures/Tema_07.26_equilibrioyexcedente4.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{¿Cómo son los excedentes con una oferta inelástica?}
-% \includegraphics[scale=0.55]{../Figures/Tema_07.25_equilibrioyexcedente3.jpg}
-% \end{frame}
-
-
-
-
-
-
-
-
-% \begin{frame}
-% \frametitle{20. ¿Por qué es eficiente?}
-% \begin{itemize}
-%     \item Los participantes son tomadores de precios
-%     \begin{itemize}
-%         \item No hay poder de mercado
-%         \item La competencia impide a los vendedores aumentar el precio, y a los compradores bajarlo
-%     \end{itemize}
-%     \item Los contratos son completos
-%         \begin{itemize}
-%         \item Los detalles del intercambio pueden ser definidos en forma clara, y estos contratos se pueden hacer cumplir
-%         \end{itemize}
-%     \item No hay externalidades
-%         \begin{itemize}
-%         \item La transacción sólo afecta a los compradores y vendedores
-%         \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-
-% Si llego con el modelo de la telaraña esta bueno para explicarlo
-
-% \begin{frame}
-% \frametitle{3. El precio de la soja}
-% \centering
-% \includegraphics[scale=0.5]{Figures/Tema_04.02_new.jpg}
-% \end{frame} 
-
-
-% \begin{frame}
-% \frametitle{41. El impacto de los impuestos}
-% \begin{itemize}
-%     \item ¿Qué es un impuesto?
-%     \begin{itemize}
-%         \item Es un tributo generalmente establecido por el Estado 
-%         - para financiar sus gastos
-%         - para ‘guiar’ el comportamiento (por ejemplo en el caso de externalidades)
-%     \end{itemize}
-%     \item Existen diversos tipos:
-%     \begin{itemize}
-%         \item Al consumo, al trabajo, al ingreso, a la propiedad, etc.
-%     \end{itemize}
-%     \item Un impuesto aumentará el precio que los consumidores pagan sobre un bien...
-%     \item La elasticidad precio de la demanda tendrá influencia sobre el efecto del impuesto
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{42. Impuestos y eficiencia}
-% \begin{itemize}
-%     \item La introducción de impuestos aleja la economía del equilibrio competitivo
-%     \begin{itemize}
-%         \item Los impuestos sobre oferentes/consumidores desplazan la curva de oferta/demanda porque el precio es más alto para cada cantidad
-%         \item Al recaudar impuestos el Estado genera una pérdida de peso muerto
-%     \end{itemize}
-%     \item La recaudación se extrae del excedente de consumidores y productores
-%     \begin{itemize}
-%         \item La incidencia del impuesto depende de la elasticidad relativa de consumidores y productores
-%         \item El grupo menos elástico lleva más de la carga fiscal
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{43. Impacto de un impuesto a los vendedores}
-% \includegraphics[scale=0.6]{Figures/Tema_07.29_impuesto1.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{44. Impacto de un impuesto a los vendedores}
-% \includegraphics[scale=0.6]{Figures/Tema_07.30_impuesto2.jpg}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{45. Impacto de los impuestos}
-% \begin{itemize}
-%     \item ¿Cuánto va a cambiar los impuestos el comportamiento de los individuos?
-%     \begin{itemize}
-%         \item ¿Qué tan grande va a ser la pérdida de peso muerto? \\
-%         - ¿Porqué es relevante conocer la elasticidad de demanda? \\
-%         - ¿Qué tipo de productos tienen demanda inelástica?
-%     \end{itemize}
-%     \item ¿Qué hace el gobierno con los recursos que recauda?
-%     \item A veces el gobierno quiere cambiar el comportamiento
-% \end{itemize}
-% \end{frame}
-
-% \begin{frame}
-% \frametitle{46. Impuestos y elasticidad}
-% \begin{itemize}
-%     \item Un impuesto puede reducir mucho las ventas si su demanda es altamente elástica
-%     \begin{itemize}
-%         \item ¡Y eso puede ser lo que el gobierno intenta hacer! \\
-%         - P.ej., impuestos sobre bienes ‘malos’ para la sociedad como el tabaco o el alcohol o por contaminar
-%     \end{itemize}
-%     \item Pero si un impuesto causa una importante caída en las ventas, también reduce los ingresos del impuesto
-%     \item Si un gobierno que desea aumentar los ingresos a partir del impuesto, debería elegir gravar productos con demanda inelástica
-%     \begin{itemize}
-%         \item ¿Qué tipo de productos pueden tener una demanda de estas características?
-%     \end{itemize}
-% \end{itemize}
-% \end{frame}
 
 \end{document}
