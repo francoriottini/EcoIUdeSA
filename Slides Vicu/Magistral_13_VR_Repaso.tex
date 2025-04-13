@@ -1,0 +1,273 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage[english]{babel} %set language; note: after changing this, you need to delete all auxiliary files to recompile
+\usepackage[utf8]{inputenc} %define file encoding; latin1 is the other often used option
+\usepackage{csquotes} % provides context sensitive quotation facilities
+\usepackage{graphicx} %allows for inserting figures
+\usepackage{booktabs} % for table formatting without vertical lines
+\usepackage{textcomp} % allow for example using the Euro sign with \texteuro
+\usepackage{stackengine}
+\usepackage{wasysym}
+\usepackage{tikzsymbols}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+
+
+\usepackage{amssymb}
+\usepackage{multirow}
+
+% Colores
+\definecolor{rojo}{RGB}{221, 36, 36}
+\definecolor{celeste}{RGB}{173, 216, 230}
+
+\newcommand{\up}{\textcolor{blue}{\Large$\uparrow$}}
+\newcommand{\down}{\textcolor{red}{\Large$\downarrow$}}
+\newcommand{\question}{\textcolor{red}{\Large\textbf{?}}}
+
+
+% ELIMINAR COMANDOS DE NAVEGACION%%%%%%%%%%%
+\setbeamertemplate{navigation symbols}
+
+%\newcommand{\bubblethis}[2]{
+ %       \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+ %       (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
+ %       aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
+ %   }%
+%\tikzset{face/.style={shape=circle,minimum size=4ex,shading=radial,outer sep=0pt,
+ %       inner color=white!50!yellow,outer color= yellow!70!orange}}
+
+%% Some commands to make the code easier
+\newcommand{\emoticon}[1][]{%
+  \node[face,#1] (emoticon) {};
+  %% The eyes are fixed.
+  \draw[fill=white] (-1ex,0ex) ..controls (-0.5ex,0.2ex)and(0.5ex,0.2ex)..
+        (1ex,0.0ex) ..controls ( 1.5ex,1.5ex)and( 0.2ex,1.7ex)..
+        (0ex,0.4ex) ..controls (-0.2ex,1.7ex)and(-1.5ex,1.5ex)..
+        (-1ex,0ex)--cycle;}
+\newcommand{\pupils}{
+  %% standard pupils
+  \fill[shift={(0.5ex,0.5ex)},rotate=80] 
+       (0,0) ellipse (0.3ex and 0.15ex);
+  \fill[shift={(-0.5ex,0.5ex)},rotate=100] 
+       (0,0) ellipse (0.3ex and 0.15ex);}
+
+\newcommand{\emoticonname}[1]{
+  \node[below=1ex of emoticon,font=\footnotesize,
+        minimum width=4cm]{#1};}
+\usepackage{scalerel}
+\usetikzlibrary{positioning}
+\usepackage{xcolor,amssymb}
+\newcommand\dangersignb[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\newcommand\dangersignw[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\color{white}\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\usepackage{fontawesome} % Social Icons
+\usepackage{epstopdf} % allow embedding eps-figures
+\usepackage{tikz} % allows drawing figures
+\usepackage{amsmath,amssymb,amsthm} %advanced math facilities
+\usepackage{lmodern} %uses font that support italic and bold at the same time
+\usepackage{hyperref}
+\usepackage{tikz}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
+
+\usefonttheme[onlymath]{serif} %set math font to serif ones
+
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7} %define beamerblue color for later use
+
+%%% defines highlight command to set text blue
+\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+
+
+%%%%%%% commands defining backup slides so that frame numbering is correct
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+%%%% end of defining backup slides
+
+%Specify figure caption, see also http://tex.stackexchange.com/questions/155738/caption-package-not-working-with-beamer
+\setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
+%\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
+
+
+\usetheme{Boadilla}
+
+%set options of hyperref package
+\hypersetup{
+    bookmarksnumbered=true, %put section numbers in bookmarks
+    naturalnames=true, %use LATEX-computed names for links
+    citebordercolor={1 1 1}, %color of border around cites, here: white, i.e. invisible
+    linkbordercolor={1 1 1}, %color of border around links, here: white, i.e. invisible
+    colorlinks=true, %color links
+    anchorcolor=black, %set color of anchors
+    linkcolor=beamerblue, %set link color to beamer blue
+    citecolor=blue, %set cite color to beamer blue
+    pdfpagemode=UseThumbs, %set default mode of PDF display
+    breaklinks=true, %break long links
+    pdfstartpage=1 %start at first page
+    }
+
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
+
+% --------------------
+% Overall information
+% --------------------
+\title[Economía I]{Economía I \vspace{3mm}
+\\ Magistral 13 \vspace{3mm} \\ Repaso}
+\date{}
+\author[Victoria Rosino]{Victoria Rosino}
+\vspace{0.3cm}
+\institute[]{Universidad de San Andrés} 
+
+\begin{document}
+
+\begin{frame}
+\vspace{0.3cm}
+\titlepage
+\centering
+\vspace{-0.9cm}
+\includegraphics[scale=0.3]{Slides Principios de Economia/Figures/udesa_logo.jpg} 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Repaso: Teoría de Juegos}
+    ¿Cuál es la \textbf{mejor respuesta} de cada individuo?
+    \begin{itemize}
+        \item  Se denomina mejor respuesta a aquella estrategia que proporciona al jugador el pago más elevado, condicional a lo que se conjetura que harán los demás
+    \end{itemize}
+    \vspace{2mm}
+    ¿Qué es una \textbf{estrategia dominante}?
+    \begin{itemize}
+        \item  Una estrategia dominante es una mejor respuesta a todas las posibles estrategias de otro jugador. Si un agente tiene una estrategia dominante \textbf{siempre} la va a jugar, independientemente de la estrategia que juegue el rival.
+        \item Si se encuentra un resultado donde cada individuo juega su estrategia dominante, entonces nos encontramos con un equilibrio en estrategia dominante.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Repaso: Teoría de Juegos}
+\textbf{Equilibrio de Nash}
+    \begin{itemize}
+        \item  Un perfil de estrategias es un equilibrio de Nash si, dadas las estrategias del rival, cada uno de los agentes está jugando su mejor respuesta.
+    \end{itemize}
+    \begin{boxB}
+        \centering
+        En un equilibrio de Nash, ninguno de los jugadores tiene incentivos a desviarse, debido a que no puede obtener un pago mayor cambiando de estrategia.
+    \end{boxB}
+   \textbf{ Equilibrio Pareto eficiente}
+        \begin{itemize}
+        \item   En un equilibrio Pareto eficiente, no hay otra situación o alternativa en donde uno esté mejor y ninguno esté peor. 
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ejercicio - Teoría de Juegos}
+Dos empresas rivales, A y B, venden productos similares. Ambas están evaluando si gastar en una costosa campaña publicitaria o no. La publicidad aumenta significativamente sus ventas si la otra empresa no hace publicidad. Pero si ambas hacen publicidad, el gasto se neutraliza y las ganancias son menores. Si ninguna hace publicidad, ambas mantienen sus clientes actuales.
+    \begin{itemize}
+        \item El costo de hacer publicidad es de \$3.000 para la empresa A y \$2.000 para la empresa B.
+        \item Si \textbf{solo una empresa} hace publicidad, esa empresa gana \$10.000 en ventas, mientras que la otra solo gana \$2.000.
+        \item Si \textbf{ambas hacen publicidad}, cada una gana \$6.000 en ventas.
+        \item Si \textbf{ninguna hace publicidad}, cada una gana \$5.000.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio - Teoría de Juegos}
+\begin{enumerate}
+    \item Construir la matriz de pagos con las ganancias netas.
+    \item Identificar, si lo hay, el Equilibrio de Nash.
+    \item ¿Hay estrategias dominantes para alguna de las empresas?
+    \item Si hay equilibrio de Nash ¿es Pareto eficiente?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio - Teoría de Juegos}
+\begin{center}
+\renewcommand{\arraystretch}{1.8} % <-- Espaciado vertical
+\begin{tabular}{c|c|c}
+ & \textbf{B: Publicidad} & \textbf{B: No Publicidad} \\
+\hline
+\textbf{A: Publicidad} & (3.000,\ 4.000) & (7.000,\ 2.000) \\
+\textbf{A: No Publicidad} & (2.000,\ 8.000) & (5.000,\ 5.000) \\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+Si el objetivo de la empresa fuera maximizar los ingresos totales, la empresa debería disminuir el precio si se encuentra en un punto de la curva de demanda con elasticidad precio mayor a 1
+\end{frame}
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+A una empresa en un mercado de competencia perfecta nunca le conviene seguir produciendo si su precio es menor al costo medio total porque tendría pérdidas
+\end{frame}
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+El efecto sustitución siempre actúa en dirección opuesta al cambio de precio, mientras que el efecto ingreso puede reforzarlo o contrarrestarlo.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+En todo el mundo se comen hamburguesas. Sin embargo, las campañas que promueven el vegetarianismo están afectando su popularidad entre los consumidores. A la vez, el precio de la carne aumentó debido a restricciones productivas. Esto genera que tanto el precio como la cantidad de equilibrio de hamburguesas caigan. 
+\end{frame}
+
+
+
+\end{document}
