@@ -17,7 +17,7 @@ def add_instruction(paragraph, parts):
     paragraph.paragraph_format.space_after = Pt(4)
 
 # Cargar archivo Excel
-archivo = r'G:\Otros ordenadores\Mi portátil\UDESA\ECO I\Otoño 2024\Alumnos E010 Economía I Grupo 13 - Teórica 1.xlsx'
+archivo = r'G:\Otros ordenadores\Mi portátil\UDESA\ECO I\Otoño 2024\Alumnos_Parcial_O2025.xlsx'
 df = pd.read_excel(archivo)
 
 # Preparar nombres completos
@@ -61,7 +61,10 @@ for i, nombre in enumerate(df['Nombre completo'], 1):
     paragraph_datos = cell_datos.paragraphs[0]
     paragraph_datos.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
-    run_datos = paragraph_datos.add_run(f'Estudiante: {nombre}\nGrupo: 13\n')
+    # Dato del grupo
+    grupo = df.loc[i - 1, 'Grupo']
+
+    run_datos = paragraph_datos.add_run(f'Estudiante: {nombre}\nGrupo: {grupo}\nOrden: {i}')
     run_datos.font.size = Pt(11)
     run_datos.bold = True
 
@@ -208,5 +211,5 @@ for i, nombre in enumerate(df['Nombre completo'], 1):
         doc.add_page_break()
 
 # Guardar
-doc.save('Caratulas_Grupo13.docx')
-print("Documento generado correctamente con nombre en la esquina superior derecha.")
+doc.save('Caratulas_O2025.docx')
+print("Documento generado correctamente.")
