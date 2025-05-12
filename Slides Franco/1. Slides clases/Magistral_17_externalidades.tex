@@ -10,6 +10,14 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usetikzlibrary{patterns} 
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings}
 \newcommand{\bubblethis}[2]{
         \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
         (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
@@ -86,7 +94,11 @@
     boxrule = 1.5pt,
     colframe = black % frame color
 }
-
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usetheme{Boadilla}
 
 % --------------------
@@ -95,7 +107,7 @@
 \title[Economía I]{Economía I \vspace{4mm}
 \\ Magistral 17: Distorsiones de mercado II}
 \date{}
-\author[Riottini]{Riottini Franco}
+\author[Franco Riottini]{Riottini Franco}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -109,34 +121,65 @@
 
 
 \begin{frame}{Distorsiones al equilibrio de mercado}
+    En muchas ocasiones el mercado no funciona tan perfectamente. Puede haber dos tipos de distorsiones:
     \begin{itemize}
-        \item Por las características de la realidad.
+        \item Creadas por el hombre:
+        \begin{itemize}
+            \item Monopolios artificiales (escribanos, low cost, SUBE)
+            \vspace{1mm}
+            \item Impuestos
+            \vspace{1mm}
+            \item Precios máximos o mínimos (cepo, "Precios Justos")
+            \vspace{1mm}
+            \item Regulación (ley de alquileres)
+        \end{itemize}
+        \vspace{1mm}
+        \item Por las características de la realidad:
         \begin{itemize}
             \item Monopolios naturales (red eléctrica, agua, gas)   
-             \vspace{1mm}
-            \item Externalidades
-             \vspace{1mm}
+            \vspace{1mm}
+            \item \textbf{Externalidades} (vacunación, contaminación)
+            \vspace{1mm}
             \item Bienes públicos
             \vspace{1mm}
             \item Problemas de información
             \begin{itemize}
                 \item Atributos ocultos (selección adversa)
-                 \vspace{1mm}
+                \vspace{1mm}
                 \item Acciones ocultas (moral hazard o riesgo moral)
             \end{itemize}        
         \end{itemize}
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Desparasitación, Educación y Salud: Un Ciclo Virtuoso}
+    \small
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{../Figures/deworming_children.jpg}
+        \tiny{\centering \textit{Fuente: World Concern}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{itemize}
+        \item \textbf{Desparasitación escolar} reduce infecciones intestinales.
+        \item Mejora la salud general de los niños tratados y de sus compañeros no tratados.
+        \item Aumenta la asistencia escolar al reducir el ausentismo por enfermedad.
+        \item Mayor tiempo en la escuela fomenta mejores hábitos de salud y aprendizaje.
+        \item Se generan \textbf{externalidades positivas} en la comunidad.
+        \end{itemize}
+    \end{column}
+    \end{columns}
+\end{frame}
+
 \begin{frame}{Externalidades}
     \begin{itemize}
         \item Sucede cuando una decisión económica genera un beneficio o costo \textbf{externo}
         \item Afecta a terceros que no son capaces de internalizar estos beneficios o costos
-        \item La clave es que estos beneficios o costos \textbf{¡no se reflejan en los precios!}
-        \begin{boxA}
+        \item \textcolor{blue}{La clave es que estos beneficios o costos \textbf{¡no se reflejan en los precios!}}
+        \begin{boxB}
             \centering
             Una externalidad sucede cuando el efecto de una decisión económica genera un beneficio (o un costo) a un tercero sin que este pague o tenga que pagar por él
-        \end{boxA}
+        \end{boxB}
         \item Dos tipos de externalidades: 
         \begin{itemize}
             \item Externalidades negativas
@@ -145,18 +188,81 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Un ejemplo}
-    \centering
-    \href{https://econ.video/2022/06/20/the-g-word-with-adam-conover-externalities-regulation/}{\includegraphics[scale=0.35]{../Figures/ExternalidadP.png}}  
-\end{frame}
+% \begin{frame}{Un ejemplo}
+%     \centering
+%     \href{https://econ.video/2022/06/20/the-g-word-with-adam-conover-externalities-regulation/}{\includegraphics[scale=0.35]{../Figures/ExternalidadP.png}}  
+% \end{frame}
 
 \begin{frame}{Externalidades}
-    \begin{itemize}
-        \item ¿Que pasa con la cantidad?
-        \item ¿Como afecta esto a los productores y consumidores?
-        \item ¿Como es la perdida o ganancia social?
-    \end{itemize}
+    \small
+    \begin{columns}
+        \begin{column}{0.5\textwidth}    
+            \begin{figure} [H]
+            \centering
+            \begin{tikzpicture}[scale=0.5]
+            
+            \draw[thick,<->] (0,10) node[left]{$P$}--(0,0)--(10,0) node[below]{$Q$};
+            
+            \node [below] at (3.5,0) {{$Q_0$}};
+            \draw[fill] (3.5,5) circle [radius =0.1] node[above] {\scriptsize $E$};
+            \node [left] at (0,5) {$P_0$};
+            
+            % Flecha a la curva de oferta
+            \draw[<-, semithick] (8,8.6)..controls (8.5,8.8) and (8.8,9.5)..(9.1,10.2);
+            \node at (8.2,10.5) {\tiny ¿Costo marginal social o privado?};
+
+            % Flecha a la curva de demanda
+            \draw[<-, semithick] (8,1.25)..controls (8.7,1.6) and (9.1,2.1)..(9.5,2.9);
+            \node at (8.3,3.2) {\tiny ¿Utilidad marginal social o privado?};
+
+            \draw[thick,gray, dashed](0,5)--(3.5,5)--(3.5,0);
+            \draw[thin](0,8.5)--(8,0.5) node[right] {$D$};
+            \draw[black, domain=0:7] plot (\x, {1.5+\x}) node[right] {$O$};
+            \end{tikzpicture}
+            \end{figure} 
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Las curvas siempre fueron \textbf{sociales}, aun que las veíamos como privadas.
+                \item Si las curvas \textit{sociales} son diferentes a las \textit{privadas}, entonces hay una externalidad.
+                \item ¿Que pasa con las cantidades de equilibrio?
+                \item ¿Como afecta esto a productores y consumidores?
+                \item ¿Como es la perdida o ganancia social?
+            \end{itemize}
+        \end{column}
+    \end{columns}
 \end{frame}
+
+\begin{frame}{Tipos de externalidades}
+    \small
+    \begin{itemize}
+        \item Se clasifican según:
+        \begin{itemize}
+            \item Si ocurren en el consumo o en la producción
+            \item Si el efecto es negativo (daño) o positivo (beneficio)
+        \end{itemize}
+    \end{itemize}
+
+    \vspace{0.3cm}
+    \begin{table}[]
+    \centering
+    \scriptsize
+    \begin{tabular}{|p{2.5cm}|p{2cm}|p{2.5cm}|p{3cm}|}
+        \hline
+        \textbf{Tipo de externalidad} & \textbf{Curva afectada} & \textbf{Desplazamiento} & \textbf{Ejemplo típico} \\
+        \hline
+        Negativa en producción  & Oferta  & Hacia arriba (\( \uparrow \)) & Contaminación industrial \\
+        \hline
+        Negativa en consumo     & Demanda & Hacia abajo (\( \downarrow \)) & Fumar en espacios cerrados \\
+        \hline
+        Positiva en producción  & Oferta  & Hacia abajo (\( \downarrow \)) & Apicultura que mejora cultivos vecinos \\
+        \hline
+        Positiva en consumo     & Demanda & Hacia arriba (\( \uparrow \)) & Vacunación, educación \\
+        \hline
+    \end{tabular}
+    \end{table}
+\end{frame}
+
 
 \begin{frame}{Externalidades negativas}
     \begin{boxA}
@@ -169,7 +275,7 @@
     \begin{itemize}
         \item La contaminación es un ejemplo clásico de externalidades negativas.
         \item El productor contaminante \textbf{no paga} por el costo extra que le está imponiendo a otros.
-        \item Como no internaliza el costo "total" de su producción, produce más de lo que sería socialmente deseable.
+        \item Como no internaliza el costo ``total'' de su producción, produce más de lo que sería socialmente deseable.
         \item Para modelarlo, diferenciaremos entre costos marginales \textbf{privados} y costos marginales \textbf{sociales}.
     \end{itemize}
 \end{frame}
@@ -204,10 +310,10 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Otro ejemplo}
-    \centering  
-    \href{https://econ.video/2022/06/21/the-g-word-with-adam-conover-external-benefits-of-gps/}{\includegraphics[scale=0.25]{../Figures/ExternalidadPII.png}}  
-\end{frame}
+% \begin{frame}{Otro ejemplo}
+%     \centering  
+%     \href{https://econ.video/2022/06/21/the-g-word-with-adam-conover-external-benefits-of-gps/}{\includegraphics[scale=0.25]{../Figures/ExternalidadPII.png}}  
+% \end{frame}
 
 \begin{frame}{Externalidades positivas}
     \begin{center}
