@@ -458,6 +458,55 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Incidencia de un subsidio a los vendedores}
+\begin{figure} [H]
+\centering
+\begin{tikzpicture}[scale=0.6]
+\draw[fill,red!20] (0,5.5) -- (0,6.55) -- (4.1,6.55) -- (3,5.5);
+\draw[fill,blue!20] (0,5.5) -- (0,4.35) -- (4.1,4.35) -- (3,5.5);
+\draw[fill,black!20] (4.1,6.55)--(4.1,4.35)--(3,5.5);
+\node [right] at (6,5.5) {\scriptsize Triángulo de};
+\node [right] at (6.25,5) {\scriptsize Harberger};
+\draw[semithick, <-] (4,5)..controls (4.5,4.6) and (5.5,4.6)..(6.2,5);
+
+\draw[thick,<->] (0,10) node[left]{$P$}--(0,0)--(10,0) node[below]{$Q$};
+%\node [below left] at (0,0) {$0$};
+\node [below] at (3,0) {{$Q_0$}};
+\draw[fill] (3,5.5) circle [radius =0.1] node[above] {\scriptsize $E$};
+\node [left] at (0,5.5) {$P_0$};
+\node [left] at (0,6.55) {$P_P$};
+\node [left] at (0,4.4) {$P_C$};
+\node [below] at (4.1,0) {{$Q_s$}};
+%\node [below] at (5.25,0) {150};
+\draw[thick,gray, dashed](0,6.55)--(4.1,6.55)--(4.1,0);
+\draw[thick,gray, dashed](0,4.35)--(4.1,4.35);
+
+\draw [thin,decorate,decoration={brace,amplitude=3pt},xshift=5pt,yshift=0pt](-1.35,4.35) -- (-1.35,6.55);
+\draw (-1.5,5.5) node[left]{{\scriptsize Subsidio ($s$)}};
+
+\draw[fill] (4.1,6.55) circle [radius =0.1] ;
+\draw[fill] (4.1,4.35) circle [radius =0.1] ;
+\draw[thick,gray, dashed](0,5.5)--(3,5.5)--(3,0);
+\draw[thin](0,8.5)--(8,0.5) node[right] {$D$};
+\draw[black, domain=0:7] plot (\x, {2.5+\x}) node[right] {$O$};
+
+\draw[thick](0,0.3)--(7,7.2) node[right] {$O^{'}$};
+
+\draw [color=BlueGreen, thick] (0,6.55) rectangle (4.1,4.35);
+\draw[thick,->, BlueGreen] (3,6.6) -- (3, 7.5);
+\node [above, BlueGreen] at (3,7.75) {\scriptsize Gasto del};
+\node [above, BlueGreen] at (3,7.25) {\scriptsize gobierno};
+
+\draw[fill,red!20] (-3.5,3) rectangle (-2,2.5); 
+\node [right] at (-3.6,2.75) {\scriptsize $\Delta EP$};
+
+\draw[fill,blue!20] (-3.5,2) rectangle (-2,1.5); 
+\node [right] at (-3.6,1.75) {\scriptsize $\Delta EC$};
+
+\end{tikzpicture}
+\end{figure} 
+\end{frame}
 
 \begin{frame}{Distorsiones al equilibrio de mercado}
     En muchas ocasiones el mercado no funciona tan perfectamente. Puede haber dos tipos de distorsiones: \vspace{1mm}
@@ -822,7 +871,7 @@
    \end{figure} 
 \end{frame}
    
-\begin{frame}{Poniéndole precio a una carretera}
+\begin{frame}{Monopolio natural eficiente: Poniéndole precio a una carretera}
    \begin{figure} [H]
    \centering
    \begin{tikzpicture}[scale=0.6]
