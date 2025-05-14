@@ -61,7 +61,12 @@
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 \usepackage{hyperref}
 \usepackage{tikz}
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 \usepackage{tcolorbox}
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
@@ -280,11 +285,11 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Externalidades negativas}
-    \begin{center}
-        \includegraphics[scale=0.7]{../Figures/C25.2.png}
-    \end{center}
-\end{frame}
+% \begin{frame}{Externalidades negativas}
+%     \begin{center}
+%         \includegraphics[scale=0.7]{../Figures/C25.2.png}
+%     \end{center}
+% \end{frame}
 
 \begin{frame}{Externalidades negativas}
     \begin{figure} [H]
@@ -295,7 +300,7 @@
 \draw[thick, dashed, gray] (6.8,3)--(6.8,0);
 \draw [semithick] (0,0)..controls (6,1.75) and (7,2) .. (8,5.75) node [right] {\scriptsize $CMg \hspace{0.1cm} Privado$};
 %\draw [semithick] (0 ,0)..controls (6,0.75) and (7,1) .. (8,4.75) node [right] {\scriptsize $Externalidad$};
-\draw [semithick] (0,0)..controls (6,2.5) and (7,3) .. (8,10) node [right] {\scriptsize $CMg \hspace{0.1cm} Total$ = CMg Privado + Externalidad};
+\draw [semithick] (0,0)..controls (6,2.5) and (7,3) .. (8,10) node [right] {\scriptsize $CMg \hspace{0.1cm} Social$ = CMg Privado + Externalidad};
 \draw[thick, ->, blue] (8.1,6.2) -- (8.1,9);
 \node[right, blue] at (8.2,7.5) {\scriptsize Externalidad};
 \draw[semithick] (0,3)--(8.5,3) node[right] {\footnotesize $D$};
@@ -315,12 +320,9 @@
 \end{frame}
 
 \begin{frame}{Externalidad positiva}
-    \begin{boxA}
-        Las externalidades positivas tienen lugar cuando el efecto de
-        toda decisión de producción, consumo u otro tipo de decisión
-        económica de un agente genera un beneficio sobre un tercero sin
-        que este pague por él.
-    \end{boxA}
+    \begin{boxB}
+        Las \textbf{externalidades positivas} tienen lugar cuando el efecto de toda decisión de producción, consumo u otro tipo de decisión económica de un agente genera un \textbf{beneficio sobre un tercero sin que este pague por él}.
+    \end{boxB}
     \begin{itemize}
         \item La educación es un ejemplo clásico de externalidades positivas.
         \item El individuo que se educa recibe un beneficio, pero también lo recibe la sociedad.
@@ -609,11 +611,74 @@
 \end{frame}
 
 \begin{frame}{Selección Adversa}
+\label{volver}
     \begin{itemize}
         \item Cuando hay selección adversa, el riesgo (al igual que vamos a ver en riesgo moral) es que el mercado desaparezca.
         \vspace{1mm}
-        \item Veamos un ejemplo clásico: el mercado de los limones de Akerlof.
+        \item Akerlof desarrolló un modelo para explicar este problema (que luego le valió un Nobel) usando el mercado de los autos usados (\hyperlink{hdos}{el conocido modelo de los \textit{lemons}}).
         \vspace{1mm}
+        \item La intuición del modelo es la siguiente:
+        \begin{itemize}
+            \item Los vendedores conocen la calidad de su auto (buenos o malos), pero los compradores no pueden distinguir entre ambos antes de comprar.
+            \item Ante este problema de información, los compradores ofrecen un precio promedio (dependiendo la probabilidad de que el auto sea un \textit{lemon}), que no refleja adecuadamente el valor de los autos buenos.
+            \item Como consecuencia, los propietarios de los autos buenos no tienen incentivos para vender, ya que el precio ofrecido es demasiado bajo, quedando en el mercado solo los autos “limones”.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Riesgo Moral}
+    \begin{boxB}
+        \centering
+        El \textbf{riesgo moral} es el problema que surge cuando no podemos ver el accionar de la contraparte (\textbf{acciones ocultas}).
+    \end{boxB}
+    \begin{itemize}
+        \item Lo importante es que el agente está desempeñando una tarea en nombre del principal. Pero el principal no puede monitorear perfectamente la conducta del agente.
+        \item Es decir, un agente toma una decisión o realiza una acción que afecta su utilidad y la utilidad del principal.
+        \item ¿Contratos laborales atados a objetivos? ¿Pagos en acciones de la empresa?
+        \item ¿Por qué los propietarios te piden una garantía para alquilar?
+        \item ¿Es el FMI bueno para los países?
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Riesgo Moral}
+\label{volver2}
+    \begin{itemize}
+        \item Cuando hay riesgo moral también existe la probabilidad de que el mercado desaparezca.
+        \item Un \hyperlink{htres}{modelo utilizando el mercado de seguros} permite ver que, bajo el problema de riesgo moral, el mercado asegurador desaparecería.
+        \item La intuición de este modelo es la siguiente
+         \begin{itemize}
+            \item Las aseguradoras no pueden observar directamente el comportamiento de los consumidores una vez que tienen cobertura.
+            \item El problema es que, al estar asegurado, el consumidor podría reducir su esfuerzo en prevenir el daño, incrementando la probabilidad de siniestros y, por lo tanto, los costos que enfrentan las aseguradoras.
+            \item Dado esto, las empresas encarecerían el precio de la cobertura que termina resultando conveniente no contratarlo. Es decir, el mercado asegurador desaparece!
+        \end{itemize}
+        \item \hyperlink{moralhazard}{Graficamente pueden ver otro pequeño ejemplo.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Discusiones}
+    \begin{itemize}
+        \item ¿Por qué pierden valor los autos al salir de la concesionaria? \vspace{1mm}
+        \item Políticas de deducibles \vspace{1mm}
+        \item Obama care
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ejemplos}
+    \begin{itemize}
+    \item \href{https://www.youtube.com/watch?v=qlg0qakJhKU}{\textbf{Matilda}}
+    \item \href{https://www.youtube.com/watch?v=akA8co61He4}{\textbf{Tomates verdes fritos}}
+    \item \href{https://www.youtube.com/watch?v=X8BPfLhH6MA}{\textbf{Friends}}
+    \item \href{https://videos.criticalcommons.org/media/encoded/16/jtierney86/43ba1b1ac3e94df3974f987cc912ae_Hxgbfl1.mp4}{\textbf{The Daily Show}}
+    \item \href{http://videos.criticalcommons.org/transcoded/http/www.criticalcommons.org/Members/JJWooten/clips/always-sunny-paying-for-care/video_file/mp4-high/always-sunny-cost-of-care-mp4.mp4}{\textbf{Always sunny}}
+    \item \href{https://www.youtube.com/watch?v=SrPu-xGrKrk}{\textbf{Buying a car}}
+    \item \href{https://www.youtube.com/watch?v=ZZq0ShjEd-E}{\textbf{But he has a Bud Light}}
+    \end{itemize}
+\end{frame}
+
+\begin{frame} \label{hdos}
+\frametitle{Selección Adversa: Los limones de Akerlof}
+    \begin{itemize}
         \item Hay dos tipos de autos: buenos y malos (limones)
         \begin{itemize}
             \item Para el vendedor el auto bueno vale $\$1000$ y el malo $\$500$.
@@ -623,6 +688,7 @@
         \item Si el comprador piensa que la probabilidad que un auto sea bueno es $\mu$ y que sea malo  $(1-\mu)$, el \textbf{valor esperado} para un auto típico en el mercado sería:
         \[\mu 1500 + (1-\mu) 750= 750 + \mu 750\] 
     \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Selección Adversa: Los limones de Akerlof}
@@ -683,40 +749,17 @@
     \end{itemize}
     \item El mercado para autos buenos desapareció aun cuando dijimos al principio que estos tenían más valor para los consumidores que para los vendedores. 
     \end{itemize}   
-\end{frame}
 
-\begin{frame}{Riesgo Moral}
-    \begin{boxB}
-        \centering
-        El \textbf{riesgo moral} es el problema que surge cuando no podemos ver el accionar de la contraparte (\textbf{acciones ocultas}).
-    \end{boxB}
-    \begin{itemize}
-        \item Lo importante acá es que un Agente toma una decisión o realiza una acción que afecta su
-        utilidad y la utilidad del Principal.
-        \item ¿Contratos laborales atados a objetivos? ¿Pagos en acciones de la empresa?
-        \item ¿Por qué los propietarios te piden una garantía para alquilar?
-    \end{itemize}
-    \centering
-    % \includegraphics[scale=0.4]{../Figures/FMI_Riesgo_Moral.jpg}
+    \hyperlink{volver}{\beamerbutton{Volver}}
+    
 \end{frame}
 
 
-\begin{frame}{Ejemplos}
-    \begin{itemize}
-    \item \href{https://www.youtube.com/watch?v=qlg0qakJhKU}{\textbf{Matilda}}
-    \item \href{https://www.youtube.com/watch?v=akA8co61He4}{\textbf{Tomates verdes fritos}}
-    \item \href{https://www.youtube.com/watch?v=X8BPfLhH6MA}{\textbf{Friends}}
-    \item \href{https://videos.criticalcommons.org/media/encoded/16/jtierney86/43ba1b1ac3e94df3974f987cc912ae_Hxgbfl1.mp4}{\textbf{The Daily Show}}
-    \item \href{http://videos.criticalcommons.org/transcoded/http/www.criticalcommons.org/Members/JJWooten/clips/always-sunny-paying-for-care/video_file/mp4-high/always-sunny-cost-of-care-mp4.mp4}{\textbf{Always sunny}}
-    \item \href{https://www.youtube.com/watch?v=SrPu-xGrKrk}{\textbf{Buying a car}}
-    \item \href{https://www.youtube.com/watch?v=ZZq0ShjEd-E}{\textbf{But he has a Bud Light}}
-    \end{itemize}
-
-\end{frame}
 
 
-\begin{frame}{Riesgo moral y el colapso del mercado de seguros}
+\begin{frame}{Riesgo moral y el colapso del mercado de seguros} \label{htres}
  \begin{itemize}
+
     \item Imaginemos una persona que tiene que comprar un seguro de incendio para su casa
     \begin{itemize}
     \item la casa puede no incendiarse y el individuo no pierde nada : Evento Bueno con probabilidad $p$
@@ -725,7 +768,7 @@
     \vspace{1mm}
     \item La probabilidad del evento bueno depende en parte de alguna acción del individuo, vamos a decir que depende del esfuerzo del individuo: $p(e)$
     \begin{itemize}
-    \item Por ejemplo: el individuo esta alerta a no dejar electrodomésticos enchufados, ni hornallas encendidas, le hace mantenimiento al hagor, etc.
+    \item Por ejemplo: el individuo esta alerta a no dejar electrodomésticos enchufados, ni hornallas encendidas, le hace mantenimiento al hagor, etc. \pause
     \end{itemize}
     \item La clave es entender que quien ofrece el seguro no puede ver esta acción o esfuerzo
 \end{itemize}
@@ -759,18 +802,58 @@
     \item Le es indiferente si se produce el evento bueno o el malo 
     \item Pero entonces $e=0$, es decir, no va a esforzarse por cuidar la casa, y la probabilidad del evento malo va a ser más alta \vspace{2mm}
     \item Si el individuo no hace nada el siniestro ocurre con probabilidad $(1-p)=1$, y en este caso, $p=0$ y $\pi=1$
-    \item La utilidad para el individuo de comprar seguro es $y-L$, que resulta peor que no comprar seguro $y$
+    \item La utilidad para el individuo de comprar seguro es $y-L$, que resulta peor que la utilidad esperada sin seguro ($y - (1-p(e))L$).
     \item ¡Es decir que el mercado asegurador desaparece! 
   \end{itemize}   
+
+\hyperlink{volver2}{\beamerbutton{Volver}}
 \end{frame}
 
-
-\begin{frame}{Discusiones}
+\begin{frame}{Riesgo Moral en el Mercado de Seguros} \label{moralhazard}
     \begin{itemize}
-        \item ¿Por qué pierden valor los autos al salir de la concesionaria? \vspace{1mm}
-        \item Políticas de deducibles \vspace{1mm}
-        \item Obama care
+            \item \textbf{Demanda de seguros (D)}: Depende del riesgo de incidente ($p$) y de la cantidad ($Q$).
+            \[P = a - \frac{b}{p} Q \qquad p\in[0,1]\]
+            \item A medida que aumenta $p$, la demanda se hace más elástica (menos empinada!).
+            \item Cuanto mas alto es el riesgo, más despacio cae el precio que estoy dispuesto a pagar por unidades adicionales de cobertura.
+            \item \textbf{Oferta de seguros (O)}: Depende del riesgo de incidente ($p$) y de las cantidades que vendan (aun que esto puede no ser importante).
+            \[P = p + c Q \qquad p\in[0,1]\]
+            \item A medida que aumenta $p$ cambia la ordenada al origen de la oferta.
+            \item Ahora, cuando el esfuerzo baja, el riesgo aumenta...
     \end{itemize}
+\end{frame}
+    
+\begin{frame}
+    \frametitle{Riesgo Moral en el Mercado de Seguros}
+    \begin{center}
+        \begin{tikzpicture}[scale=1,every node/.style={scale=0.7, inner sep=0, outer sep=0}]
+        % Ejes
+        \draw[->] (0,0) -- (6,0) node[below right] {$Q$};
+        \draw[->] (0,0) -- (0,6) node[above left] {$P$};
+        
+        % Curva de Demanda
+        \draw[thick, black] (0,4) -- (2,0.5) node[below right] {$D (p = 0.2)$};
+        \draw[thick, blue] (0,4) -- (4,0.5) node[below right] {$D' (p = 0.4)$};
+        \draw[dashed, blue] (0,4) -- (7,0.5) node[below right] {$D''$};
+
+        % Curva de Oferta
+        \draw[thick, black] (0,0.5) -- (5,4) node[below right] {$O$};
+        \draw[thick, red] (0,1.5) -- (5,5) node[below right] {$O'$};
+        \draw[dashed, red] (0,4) -- (3.5,6.5) node[below right] {$O''$};
+
+        % Números de valores en y
+        \node[black, anchor=east] at (-0.2, 0.5) {$p = 0.2$};
+        \node[black, anchor=east] at (-0.2, 1.5) {$p = 0.4$};
+
+        % % Etiquetas de puntos
+        % \draw[dotted] (3,0) -- (3,3) -- (0,3);
+        % \node at (3,-0.3) {C*};
+        % \node at (-0.3,3) {P*};
+        
+        % Punto de equilibrio
+        % \node at (3,3) [circle,fill,inner sep=1.5pt]{};
+    \end{tikzpicture}
+    \end{center}
+    \hyperlink{volver2}{\beamerbutton{Volver}}
 \end{frame}
 
 \end{document}
