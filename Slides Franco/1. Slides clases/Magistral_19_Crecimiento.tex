@@ -14,6 +14,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{colortbl}
 \usepackage{adjustbox}
+\usetikzlibrary{decorations.pathreplacing}
 \newcommand{\bubblethis}[2]{
         \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
         (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
@@ -123,11 +124,11 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Crecimiento del GDP per cápita}
-    \begin{figure} [H]   
-        \includegraphics[scale=0.5]{../Figures/C17.1.png}
-    \end{figure}
-\end{frame}
+% \begin{frame}{Crecimiento del GDP per cápita}
+%     \begin{figure} [H]   
+%         \includegraphics[scale=0.5]{../Figures/C17.1.png}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{La Gran Divergencia}
     \begin{itemize}
@@ -144,7 +145,7 @@
         \item El crecimiento económico total tiene dos componentes:
         \begin{itemize}
             \item Aumento de la población (más trabajadores).
-            \item Aumento del producto por persona (productividad).
+            \item \textbf{Aumento del producto por persona (productividad)}.
         \end{itemize}
         \item La “revolución del crecimiento moderno” es que crece el \textbf{PIB per cápita}.
         \item Se rompe la trampa maltusiana: más personas \textbf{y} más riqueza por persona.
@@ -152,45 +153,92 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Factores del crecimiento}
+    \begin{center}
+        \begin{tikzpicture}[font=\sffamily]
+
+        % Flecha vertical (factores directos e indirectos)
+        \draw[thick, <->] (0.5, -0.8) -- (0.5, 5.3);
+        \node[] at (-0.5, 4.5) {\footnotesize \textbf{Factores}};
+        \node[] at (-0.5, 4.2) {\footnotesize \textbf{directos}};
+        \node[] at (-0.5, 0.2) {\footnotesize \textbf{Factores}};
+        \node[] at (-0.5, -0.2) {\footnotesize \textbf{indirectos}};
+
+        % Rectángulos de factores
+        \node[draw, fill=blue!50, minimum width=5cm, minimum height=1cm, anchor=west] at (1, 0) {\textbf{Geografía}};
+        \node[draw, fill=blue!32, minimum width=5cm, minimum height=1cm, anchor=west] at (1, 1.1) {\textbf{Cultura}};
+        \node[draw, fill=blue!25, minimum width=5cm, minimum height=1cm, anchor=west] at (1, 2.2) {\textbf{Instituciones}};
+        \node[draw, fill=blue!15, minimum width=5cm, minimum height=1cm, anchor=west] at (1, 3.3) {\textbf{Innovación / tecnología}};
+        \node[draw, fill=white, minimum width=5cm, minimum height=1cm, anchor=west] at (1, 4.4) {\textbf{Acumulación de factores}};
+
+        % Llave del costado
+        \draw[decorate, decoration={brace, amplitude=10pt}, thick] (6.5, 5) -- (6.5, -0.5);
+
+        % Flecha hacia Growth
+        \node[draw, fill=blue!70, text=white, minimum width=2cm, minimum height=1cm] at (8.3,2.2) {\textbf{Crecimiento}};
+
+
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
 \begin{frame}{Momentos clave del despegue}
+    \small
     \begin{itemize}
-        \item La Revolución Industrial ($\sim$1760-1840) cambió la trayectoria del desarrollo.
-        \item Gran Bretaña lidera: máquina de vapor, industria textil, ferrocarriles.
+        \item La \textit{Revolución Industrial} ($\sim$1760-1840) cambió la trayectoria del desarrollo.
+        \item \textbf{Gran Bretaña lidera}: máquina de vapor, industria textil, ferrocarriles.
         \item Tecnología permitió producción sostenida por encima del crecimiento poblacional.
-        \item Comienzan procesos acumulativos: inversión, educación, urbanización.
-        \item Primeros países en industrializarse logran ventajas persistentes.
+        \item Comienzan procesos acumulativos: inversión, educación, urbanización, innovación.
+        \item Primeros países en industrializarse logran ventajas persistentes (\textit{path dependence}).
+        \item Revoluciones institucionales:
+        \begin{itemize}
+            \scriptsize
+            \item \textbf{EE.UU. (1787):} Constitución que limita el poder estatal y protege derechos de propiedad.
+            \item \textbf{Francia (1789):} Fin del orden estamental, avance hacia igualdad jurídica y libertad ocupacional.
+            \item Cambios políticos crean entornos más predecibles y favorables al emprendimiento.
+            \item Los derechos civiles y la división de poderes fortalecen las instituciones inclusivas.
+            \item Ejemplos que inspiraron transformaciones institucionales globales.
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Revoluciones institucionales}
-    \begin{itemize}
-        \item \textbf{EE.UU. (1787):} Constitución que limita el poder estatal y protege derechos de propiedad.
-        \item \textbf{Francia (1789):} Fin del orden estamental, avance hacia igualdad jurídica y libertad ocupacional.
-        \item Cambios políticos crean entornos más predecibles y favorables al emprendimiento.
-        \item Los derechos civiles y la división de poderes fortalecen las instituciones inclusivas.
-        \item Ejemplos que inspiraron transformaciones institucionales globales.
-    \end{itemize}
-\end{frame}
 
 \begin{frame}{Cultura y crecimiento}
     \begin{itemize}
         \item La cultura influye en valores como trabajo, ahorro, confianza y cooperación.
-        \item Max Weber: la ética protestante y el espíritu del capitalismo.
+        \item \textbf{Max Weber:} la ética protestante y el espíritu del capitalismo.
+        \begin{itemize}
+            \item El protestantismo (Lutero) es una escisión del catolicismo.
+            \item Países protestantes (ej: Alemania, Escandinavia) desarrollaron una ética de trabajo y ahorro.
+        \end{itemize}
         \item Sociedades con alta confianza interpersonal y baja corrupción suelen ser más productivas.
         \item Cultura puede fomentar acumulación de capital humano y respeto a las reglas.
+        \item Respeto de autoridad y normas $\Rightarrow$ mejores resultados fiscales, tributarios y regulatorios.
         \item Difícil de cuantificar, pero relevante para explicar trayectorias diferenciadas.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Recursos y geografía}
+    \small
     \begin{itemize}
-        \item Factores geográficos: clima, acceso a ríos y mares, fertilidad del suelo, enfermedades endémicas.
-        \item Jared Diamond: ventajas iniciales en Eurasia explican su temprana supremacía.
-        \item Jeffrey Sachs: clima tropical está asociado a menor crecimiento.
-        \item Presencia de recursos naturales puede impulsar el crecimiento, pero no lo garantiza.
-        \item La “maldición de los recursos”: sin buenas instituciones, pueden frenar el desarrollo.
+        \item \textbf{Factores geográficos}: clima, acceso a costas y ríos, calidad del suelo o enfermedades endémicas.
+        
+        \item \textbf{Jared Diamond}: Eurasia tuvo ventajas geográficas estructurales
+        \begin{itemize}
+            \item \textbf{Eje este-oeste}: climas similares $\rightarrow$ difusión de cultivos y animales.
+            \item \textbf{Variedad de animales domesticables}: caballos, vacas, ovejas, cabras.
+            \item \textbf{Fertilidad del suelo}: regiones más fértiles permitieron una agricultura más productiva.
+            \item \textbf{Proximidad entre civilizaciones}: intercambio de ideas y tecnologías.
+        \end{itemize}
+
+        \item \textbf{Jeffrey Sachs}: \textit{clima tropical} presenta obstáculos al desarrollo.
+
+        \item \textbf{Abundancia de recursos naturales} puede impulsar el crecimiento cuando hay buena gestión: permite exportar, atraer divisas, financiar infraestructura o programas sociales. Pero el efecto no es automático.
+
+        \item \textbf{“Maldición de los recursos”}: en ausencia de buenas instituciones, la riqueza natural puede generar corrupción, conflictos internos, sobredependencia de un sector, o “enfermedad holandesa”.
     \end{itemize}
 \end{frame}
+
 
 \begin{frame}{Instituciones vs. cultura vs. geografía}
     \begin{itemize}
@@ -217,7 +265,6 @@
 \end{frame}
 
 \begin{frame}{Instituciones}
-    
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width=0.8\textwidth]{../Figures/C26.2.png}
@@ -261,12 +308,6 @@
         \item El crecimiento económico es el aumento sostenido de la producción de bienes y servicios.
         \item Se mide típicamente con el \textbf{PIB real per cápita}.
         \item ¿Pero cómo se medía el crecimiento en el pasado?
-        \item ¿Y qué limitaciones tiene esta medida?
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Medición del crecimiento en el largo plazo}
-    \begin{itemize}
         \item Antes del siglo XX, no existía el concepto de “PIB”.
         \item Se usaban indicadores indirectos: 
         \begin{itemize}
@@ -279,15 +320,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Nacimiento del PIB}
-    \begin{itemize}
-        \item El concepto moderno de PIB surge en los años 1930 (Simon Kuznets).
-        \item Mide el \textbf{valor monetario de los bienes y servicios finales} producidos en un país en un año.
-        \item El \textbf{PIB per cápita} aproxima el ingreso promedio de la población.
-        \item Se convirtió en el principal indicador del “progreso económico”.
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Indicadores alternativos}
     \begin{itemize}
         \item Sabemos que el PIB tiene limitaciones, por ende hay alternativas que lo complementan:
@@ -296,7 +328,7 @@
             \item \textbf{Índice de pobreza multidimensional.}
             \item \textbf{Indicadores de bienestar subjetivo} (“felicidad nacional bruta”).
         \end{itemize}
-        \item Aún así, el PIB sigue siendo una referencia clave para comparar economías.
+        \item Aún así, el PIB sigue siendo una referencia clave para comparar economías (principalmente a precios de EE.UU. - PBI PPP-).
     \end{itemize}
 \end{frame}
 
