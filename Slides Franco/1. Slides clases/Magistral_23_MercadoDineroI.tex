@@ -10,6 +10,12 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usepackage{tikz} % allows drawing figures
+\usetikzlibrary{decorations.pathreplacing}
 \newcommand{\bubblethis}[2]{
         \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
         (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
@@ -51,9 +57,32 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
+\usepackage{hyperref}
 \usepackage{tikz}
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 \usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -80,16 +109,25 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
-
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usetheme{Boadilla}
 
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 24: Mercado de dinero}
+\\ Magistral 23: Mercado de dinero}
 \date{}
-\author[Riottini]{Riottini Franco}
+\author[Franco Riottini]{Franco Riottini}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -100,14 +138,6 @@
 \titlepage
 \centering
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
-\end{frame}
-
-\begin{frame}{Las funciones del dinero}
-    \begin{itemize}
-        \item \textbf{Medio de cambio}: el dinero es utilizado como un mecanismo para realizar transacciones $\rightarrow$ fundamental la confianza
-        \item \textbf{Unidad de cuenta}: el dinero es también una medida que sirve para definir precios así como para registrar activos y deudas $\rightarrow$ corroido por la inflación
-        \item \textbf{Depósito de valor}: el dinero permite transferir poder adquisitivo del presente al futuro $\rightarrow$ corroido por la inflación
-   \end{itemize}
 \end{frame}
 
 \begin{frame}{Tipos de dinero}
@@ -136,40 +166,56 @@
     \begin{itemize}
         \item Comienza a usarse en China en el Siglo VII
         \item Antes de los bancos centrales los emitían los bancos 
-        
+    \end{itemize}
 \begin{figure} [H]   
-  \centering
-  \includegraphics[width=.35\textwidth]{../Figures/C32.2.jpg}
-      \caption{Dollar de Bank of Rahway, New Jersey, 1850. Via Wikimedia Commons}
-  \label{fig:C32.2}
+    \centering
+    \includegraphics[width=.35\textwidth]{../Figures/C32.2.jpg}
+    \caption{Dollar de Bank of Rahway, New Jersey, 1850. Via Wikimedia Commons}
 \end{figure}
 
 \begin{figure} [H]   
-  \centering
-  \includegraphics[width=.35\textwidth]{../Figures/C32.3.jpeg}
-      \caption{Detroit City Bank \$3 Note}
-  \label{fig:C32.3}
+    \centering
+    \includegraphics[width=.35\textwidth]{../Figures/C32.3.jpeg}
+    \caption{Detroit City Bank \$3 Note}
 \end{figure}
-\end{itemize}
+
 \end{frame}
         
 \begin{frame}{El dinero}
-        \begin{figure} [H]   
-  \centering
-  \includegraphics[width=.35\textwidth]{../Figures/C32.4.jpg}
-      \caption{Billetes emitidos por el Banco Provincia de Buenos Aires}
-  \label{fig:C32.4}
-\end{figure}
+    \begin{figure} [H]   
+    \centering
+        \includegraphics[width=.35\textwidth]{../Figures/C32.4.jpg}
+        \caption{Billetes emitidos por el Banco Provincia de Buenos Aires}
+    \end{figure}
+    \begin{figure} [H]   
+        \centering\includegraphics[width=.35\textwidth]{../Figures/C32.5.jpg}
+        \caption{Billetes emitidos por el Banco Provincia de Buenos Aires}
+    \end{figure}
+    \begin{itemize}
+        \item Luego lo monopolizaron los bancos centrales
+        \item Y hoy volvemos a la multiplicidad de monedas 
+    \end{itemize}     
+\end{frame}
 
-\begin{figure} [H]   
-\centering\includegraphics[width=.35\textwidth]{../Figures/C32.5.jpg}
-\caption{Billetes emitidos por el Banco Provincia de Buenos Aires}
-\end{figure}
-       \begin{itemize}
-           \item  Luego lo monopolizaron los bancos centrales
-    \item Y hoy volvemos a la multiplicidad de monedas 
-       \end{itemize}     
-        \end{frame}
+\begin{frame}{Funciones del dinero}
+    \small
+    \begin{center}
+    \begin{tabular}{@{}p{0.27\textwidth} p{0.5\textwidth} p{0.17\textwidth}@{}}
+    \toprule
+    \textbf{Función} & \textbf{Definición operativa} & \textbf{Fragilidad principal} \\
+    \midrule
+    \textbf{\alert{Medio de cambio}} & Instrumento aceptado para cancelar transacciones & Confianza \\
+    \textbf{\alert{Unidad de cuenta}} & Patrón numérico para fijar precios y registrar deudas & Inflación \\
+    \textbf{\alert{Depósito de valor}} & Vehículo que permite transferir poder de compra al futuro & Inflación \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    \small
+    \begin{boxA}
+        \centering
+        ¿Cuánta liquidez desea la economía y quién la provee?
+    \end{boxA}
+\end{frame}
 
 
 \begin{frame}{La demanda de dinero}
@@ -181,14 +227,37 @@
         \item Costo de oportunidad $\Rightarrow i \Rightarrow $ la demanda de dinero depende negativamente de la tasa de interés que es el costo de oportunidad del dinero
     \end{itemize}
     \item La llegada de las tarjetas de crédito, el dinero bancario y la agilidad de transferir dinero de activos líquidos a dinero, entre otros, son elementos que han ido cambiando drásticamente la demanda de dinero en el tiempo
+    \item La demanda de dinero puede referirse a distintas ‘clases’ de dinero, según el nivel de liquidez que consideramos relevante.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{La oferta de dinero}
+\begin{frame}{La oferta de dinero y los agregados monetarios}
+    \small
+    \begin{block}{\textbf{¿Qué es la oferta de dinero?}}
     \begin{itemize}
-       \item Oferta primaria. Determinada por el Banco Central que incluye en la base monetaria.
-       \item Oferta secundaria. Dinero creado por los bancos comerciales al otorgar créditos a partir de depósitos.
-       \end{itemize}
+        \item No hay una única medida: depende del grado de liquidez del activo considerado.
+        \item El dinero puede ser creado tanto por el Banco Central (\alert{oferta primaria}) como por los bancos comerciales (\alert{oferta secundaria}).
+    \end{itemize}
+    \end{block}
+    \vspace{0.3em}
+    \begin{center}
+    \small
+    \setlength{\tabcolsep}{3.5pt}
+    \begin{tabular}{@{}l p{0.33\textwidth} p{0.23\textwidth}@{}}
+    \toprule
+    \textbf{Agregado} & \textbf{Componentes} & \textbf{Quién lo crea} \\
+    \midrule
+    \textbf{M0}  & Circulante + encajes bancarios         & BCRA \\
+    \textbf{M1}  & Circulante + depósitos a la vista      & BCRA + bancos \\
+    \textbf{M2}  & M1 + caja de ahorro                    & Bancos \\
+    \textbf{M3}  & M2 + plazo fijo                        & Bancos \\
+    \textbf{M\textit{n}} & M3 + otros activos líquidos        & Sistema financiero \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    \vspace{0.5em}
+    \footnotesize
+    A mayor número del agregado, menor liquidez pero mayor inclusión de activos.
 \end{frame}
 
 \begin{frame}
@@ -209,15 +278,27 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{El balance del Banco Central}
-        \begin{figure} [H] 
-            \centering
-            \includegraphics[width=6.5cm]{../Figures/C37.8.png}
-        \end{figure}
-        \begin{figure} [H] 
-            \centering
-            \includegraphics[width=8.5cm]{../Figures/Mejora_Balance_Central.png}
-        \end{figure}
+\begin{frame}
+    \begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{8pt}
+    \begin{tabular}{>{\columncolor{yellow!70}}c|>{\columncolor{yellow!40}}c}
+    \multicolumn{2}{c}{\cellcolor{yellow!90}\textbf{Banco Central}} \\
+    \textbf{Activo} & \textbf{Pasivo} \\
+    \hline
+    \textbf{Reservas Internacionales} & \begin{tikzpicture}
+                % Texto "Base"
+                \node[anchor=east] (base) at (0,0) {\textbf{Base}};
+                % Llave (brace)
+                \draw [decorate,decoration={brace,amplitude=7pt}] (0.2,-0.5) -- (0.2,0.5);
+                % Elementos agrupados
+                \node[anchor=west] at (0.3,0.4) {Circulante};
+                \node[anchor=west] at (0.3,-0.4) {Encaje de los bancos};
+                \end{tikzpicture} \\
+    \textbf{Crédito doméstico} & \textbf{Pasivos remunerados} \\
+    \end{tabular}
+    \end{table}
 \end{frame}
 
 \begin{frame}{¿Qué más hace el Banco Central?}
@@ -281,16 +362,43 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{El multiplicador monetario}
+\begin{itemize}
+    \item[\textbullet] \textbf{Ejemplo 1:} circulante inicial = 100, encajes = 10\%
+    \begin{center}
+        \scriptsize
+        \includegraphics[width=8.5cm]{../Figures/C37.15.png}
+        
+        \vspace{0.3em}
+        M0 (Base monetaria) = Circulante + Encajes = $100 + 0 + 10 + 9 + 8.1 + \dots =  111.1$
+        
+        \vspace{0.3em}
+        $M1 = \text{circulante} + \text{depósitos} = 100 + 90 + 81 + 72.9 + \dots = 1000$
+    \end{center}
 
-\begin{frame}{Los agregados monetarios}
-    \begin{itemize}
-        \item M0 = Base monetaria = Circulante + Encajes bancarios
-        \item M1 = Circulante + Depósitos en cuenta corriente
-        \item M2 = M1 + Caja de Ahorro
-        \item M3 = M2 + Plazo Fijo
-        \item M? = M3 + saldos de tarjetas?, programa de millajes? 
-        \item etc.
-    \end{itemize}
+    \item[\textbullet] \textbf{Ejemplo 2:} circulante inicial = 100, encajes = 20\%
+    \begin{center}
+        \scriptsize
+        \includegraphics[width=8.5cm]{../Figures/C37.16.png}
+        
+        \vspace{0.3em}
+        M0 (Base monetaria) = Circulante + Encajes = $100 + 0 + 20 + 16 + 12.8 + \dots = 125$
+        
+        \vspace{0.3em}
+        $M1 = \text{circulante} + \text{depósitos} = 100 + 80 + 64 + 51.2 + \dots = 500$
+    \end{center}
+\end{itemize}
 \end{frame}
+
+\begin{frame}{¿Qué pasa si el Banco Central emite más dinero?}
+    \begin{boxB}
+        \centering
+        En las próximas clases vamos a dar un paso más y tratar de responder una pregunta clave para toda la macroeconomía:
+
+        \vspace{0.2em}
+        \textit{Si el Banco Central emite más dinero, ¿qué pasa con los precios? ¿y con el poder de compra de la gente?}
+    \end{boxB}
+\end{frame}
+
 
 \end{document}
