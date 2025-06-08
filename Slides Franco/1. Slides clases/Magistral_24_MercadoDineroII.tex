@@ -10,6 +10,12 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usepackage{tikz} % allows drawing figures
+\usetikzlibrary{decorations.pathreplacing}
 \newcommand{\bubblethis}[2]{
         \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
         (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
@@ -51,10 +57,32 @@
 \usepackage{tikz} % allows drawing figures
 \usepackage{amsmath,amssymb,amsthm} %advanced math facilities
 \usepackage{lmodern} %uses font that support italic and bold at the same time
-
+\usepackage{hyperref}
 \usepackage{tikz}
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 \usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -81,16 +109,25 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
-
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usetheme{Boadilla}
 
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 25: Mercado de dinero II}
+\\ Magistral 24: Mercado de dinero II}
 \date{}
-\author[Riottini]{Riottini Franco}
+\author[Franco Riottini]{Riottini Franco}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -105,38 +142,54 @@ Magistral 25
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
-
-
 \begin{frame}{La teoría cuantitativa del dinero}
+
+    \begin{block}{España y el oro de América}
+        La llegada masiva de metales preciosos a Europa generó un aumento en la cantidad de dinero en circulación, lo que llevó a un incremento en los precios.
+    \end{block}
+
+    La respuesta de los economistas clásicos fue simple, pero revolucionaria:
+    \[
+    M \times V = P \times Y
+    \]
+    Donde:
     \begin{itemize}
-        \item La teoría cuantitativa del dinero (TCD)
-            
-        $$M*V=P*Y$$
-
-        \item Donde podemos suponer que $Y$ y $V$ son constantes (al menos en el corto plazo).
-        \item La ecuación se transforma en una ecuación de determinación de los precios
-        
-        $$P=\left(\frac{M^{*} V}{Y}\right)$$
-
-        \item Aumentos en \textit{M} son seguidos por aumentos en \textit{P}
+        \item \(M\): cantidad de dinero en circulación,
+        \item \(V\): velocidad de circulación del dinero,
+        \item \(P\): nivel general de precios,
+        \item \(Y\): producción real de la economía.
     \end{itemize}
-        
+
+    Si la cantidad de dinero crece más rápido que la producción, los precios suben. Si el dinero circula más rápido (por desconfianza, inflación esperada, digitalización), los precios suben también.
+
 \end{frame}
 
-\begin{frame}{Inflación}
-    \begin{itemize}
-    \item La TCD con tasas de crecimiento:
-        $$\frac{\vartriangle M}{M} + \frac{\vartriangle V}{V} = \frac{\vartriangle P}{P} + \frac{\vartriangle Y}{Y}$$
-    \item Sabiendo que la inflación es $\pi = \frac{\vartriangle P}{P}$, luego la inflación es:
-        $$\pi = \frac{\vartriangle M}{M} - \frac{\vartriangle Y}{Y} + \frac{\vartriangle V}{V}$$
-    \item Según este enfoque, la tasa de crecimiento del dinero es un predictor esencial de la inflación.
-    \item Mas aún pensando en el corto plazo, donde $Y$ y $V$ están fijos.
-    \end{itemize}
+
+\begin{frame}{¿Qué determina la inflación?}
+    \textit{
+    ¿Puede un país imprimir dinero para resolver todos sus problemas, o eso termina inevitablemente en inflación?
+    }
+
+    \vspace{1.2em}
+    La teoría cuantitativa del dinero nos da una respuesta matemática y empírica:
+
+    \[
+    \frac{\Delta M}{M} + \frac{\Delta V}{V} = \frac{\Delta P}{P} + \frac{\Delta Y}{Y}
+    \]
+
+    Si la velocidad (\(V\)) y la producción (\(Y\)) no cambian mucho, entonces:
+
+    \[
+    \pi = \frac{\Delta M}{M} + \frac{\Delta V}{V} - \frac{\Delta Y}{Y}
+    \]
+    donde \(\pi\) es la inflación.
+
 \end{frame}
 
-\begin{frame}{Evolución de la base monetaria vs. IPC}
-\centering\includegraphics[width=11cm]{../Figures/C33.4.jpg}\
-\end{frame}
+
+% \begin{frame}{Evolución de la base monetaria vs. IPC}
+% \centering\includegraphics[width=11cm]{../Figures/C33.4.jpg}\
+% \end{frame}
 
 \begin{frame}{Evolución de la base monetaria vs. IPC}
     \centering
@@ -147,8 +200,8 @@ Magistral 25
 % \centering\includegraphics[width=11cm]{../Figures/P56.png}\
 % \end{frame}
 
-\begin{frame}{Velocidad de circulación como diferencia entre M0 y M2}
-\centering\includegraphics[width=10cm]{../Figures/C38.8.png}\
+\begin{frame}{Velocidad de circulación}
+\centering\includegraphics[width=10cm]{../Figures/C38.10.png}\
 \end{frame}
 
 \begin{frame}{Teorías alternativas de la inflación}
@@ -173,7 +226,7 @@ Magistral 25
 % \end{frame}
 
 
-\begin{frame}{¿Por qué emitir dinero!?}
+\begin{frame}{¿Por qué emitir dinero?}
     \begin{itemize}
         \item La inflación puede funcionar como variable de ajuste
         \item El gobierno se queda con el impuesto inflacionario
@@ -200,23 +253,9 @@ Magistral 25
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Emisión y señoreaje}
-    \begin{itemize}
-        \item Recordemos que los gobiernos pueden financiarse imprimiendo dinero
-        \begin{itemize}
-            \item Bonos que el Banco Central se ve obligado a aceptar: Monetización de la deuda
-        \end{itemize}
-        \item Uso del señoreaje
-        \begin{itemize}
-            \item Retorno por la creación de dinero
-            \item Como la expansión monetaria típicamente conlleva a una subida de precios, funciona como un impuesto inflacionario sobre tenedores de dinero 
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Efectos negativos}
     \begin{itemize}
-        \item Rompe el sistema de precios
+        \item Obvio: Rompe el sistema de precios
         \item Dificultad para establecer contratos de largo plazo, algo central en cualquier economía moderna.
         \item  Obliga a las personas a economizar el uso del dinero, algo que los economistas llaman el costo de suela de zapatos
         \item Menor crecimiento
@@ -288,51 +327,69 @@ Magistral 25
 \end{frame}
 
 \begin{frame}{Movimientos de la demanda de dinero}
-\begin{center}
-\begin{figure}[H]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$M$};
-\draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d} (P_0, Y_1)$};
-\draw[thin] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d^{'}} (P_0, Y_0)$};
-\draw[thick](4, 0)--(4, 9) node [above]{\footnotesize $M^{o}$};
-\draw[thick,gray, dashed](0,3)--(7.8,3);
-\node[left] at (0,3) {\footnotesize $i_0$};
-\draw[thick,gray, dashed](0,5)--(4,5);
-\node[left] at (0,5) {\footnotesize $i_1$};
-\node[below] at (4,0) {\footnotesize $M_0$};
-\draw[fill](4,3) circle [radius =0.1];
-\draw[fill](4,5) circle [radius =0.1];
-\end{tikzpicture}
-\end{center}
-\end{figure}
-\end{center} 
+
+\begin{columns}
+    \column{0.4\textwidth}
+    Si aumenta el producto de $Y_0$ a $Y_1$, la demanda de dinero aumenta y presiona a la tasa de interés a la suba: \\ \vspace{2mm}
+    \footnotesize
+    \centering
+    Hay exceso de demanda de dinero a la tasa $i_0$ \\  $\downarrow$ \\ la gente convierte depósitos en dinero \\ $\downarrow$ \\ cae la oferta de FP \\ $\downarrow$ \\ la tasa de interés sube para equilibrar el mercado de crédito.
+    
+    \column{0.6\textwidth}
+    \begin{center}
+        \begin{figure}[H]
+        \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+        \draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$M$};
+        \draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d} (P_0, Y_0)$};
+        \draw[thin, blue] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d^{'}} (P_0, Y_1)$};
+        \draw[thick](4, 0)--(4, 9) node [above]{\footnotesize $M^{o}$};
+        \draw[thick,gray, dashed](0,3)--(7.8,3);
+        \node[left] at (0,3) {\footnotesize $i_0$};
+        \draw[thick,gray, dashed](0,5)--(4,5);
+        \node[left] at (0,5) {\footnotesize $i_1$};
+        \node[below] at (4,0) {\footnotesize $M_0$};
+        \draw[fill](4,3) circle [radius =0.1];
+        \draw[fill](4,5) circle [radius =0.1];
+        \end{tikzpicture}
+        \end{center}
+        \end{figure}
+    \end{center} 
+
+    \end{columns}
 \end{frame}
 
 
 \begin{frame}{Movimientos de la oferta de dinero}
-\begin{center}
-\begin{figure}[h!]
-\renewcommand{\figurename}{Figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$M$};
-\draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d} (P_0, Y_0)$};
-\draw[thick](4, 0)--(4, 9) node [above]{\footnotesize $M^{o}$};
-\draw[thick](5.5, 0)--(5.5, 9) node [above]{\footnotesize $M^{o^{'}}$};
-\draw[thick,gray, dashed](0,3)--(4,3);
-\node[left] at (0,3) {\footnotesize $i_0$};
-\draw[thick,gray, dashed](0,2.3)--(5.5,2.3);
-\node[left] at (0,2) {\footnotesize $i_1$};
-\node[below] at (4,0) {\footnotesize $M_0$};
-\node[below] at (5.5,0) {\footnotesize $M_1$};
-\draw[fill](4,3) circle [radius =0.1];
-\draw[fill](5.5,2.3) circle [radius =0.1];
-\end{tikzpicture}
-\end{center}
-\end{figure}
-\end{center} 
+    \begin{columns}
+    \column{0.4\textwidth}
+    Si el Banco Central emite dinero, la oferta de dinero se desplaza a la derecha y genera una baja de la tasa de interés: \\ \vspace{2mm}
+    \footnotesize
+    \centering
+    Hay exceso de oferta de dinero a la tasa $i_0$ \\  $\downarrow$ \\ la gente lo deposita \\ $\downarrow$ \\ sube la oferta de FP \\ $\downarrow$ \\ la tasa de interés cae para equilibrar el mercado de crédito.
+
+    \column{0.6\textwidth}
+    \begin{center}
+    \begin{figure}[h!]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+        \draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$M$};
+        \draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d} (P_0, Y_0)$};
+        \draw[thick](4, 0)--(4, 9) node [above]{\footnotesize $M^{o}$};
+        \draw[thick, blue](5.5, 0)--(5.5, 9) node [above]{\footnotesize $M^{o^{'}}$};
+        \draw[thick,gray, dashed](0,3)--(4,3);
+        \node[left] at (0,3) {\footnotesize $i_0$};
+        \draw[thick,gray, dashed](0,2.3)--(5.5,2.3);
+        \node[left] at (0,2) {\footnotesize $i_1$};
+        \node[below] at (4,0) {\footnotesize $M_0$};
+        \node[below] at (5.5,0) {\footnotesize $M_1$};
+        \draw[fill](4,3) circle [radius =0.1];
+        \draw[fill](5.5,2.3) circle [radius =0.1];
+        \end{tikzpicture}
+    \end{center}
+    \end{figure}
+    \end{center} 
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Mercado de dinero}
@@ -386,37 +443,34 @@ Magistral 25
 \end{frame}
 
 \begin{frame}{Pensando en la relación}
+\small
     \begin{itemize}
-        \item Definimos la tasa de interés real como:
-
-            \[1+r_t=(1+i_t)\frac{P_t}{P_{t+1}^{e}}\]
-
-        \item Recordemos
-
-            \[\pi_t=\frac{P_t - P_{t-1}}{P_{t-1}}=\frac{P_t}{P_{t+1}} - 1\]
-
-            \[\frac{P_t}{P_{t-1}}= 1 + \pi_t \]
-
-        \item Si $\frac{P_t}{P_{t-1}}$ es igual a $(1 + \pi_t)$, podemos establecer:
-
-            \[\frac{P_{t+1}^e}{P_{t}}= 1 + \pi_{t+1}^e \]
-
+        \item Supongamos que invierto $\$100$ hoy ($t$) y la tasa de interés nominal  es $i=10\%$. ¿Cuánto obtengo mañana? 
+        \[100 \times (1+i_t)= 100 \times (1+10\%)=110\]
+        Este es el valor en pesos futuros. Pero eso no nos dice nada sobre qué podemos comprar con ese dinero si los precios también suben...
+        \item ¿Cómo corregimos por inflación? Hagamos un paréntesis: si un producto cuesta $\$100$ y la inflación es 10\%, el año que viene cuesta:
+        \[100 \times (1 + \pi) = 100 \times 1{,}10 = 110\]
+        Es decir, los $\$110$ de mañana son $\$100$ a precios de hoy:
+        \[100=\frac{110}{(1 + \pi)}\]
+        Dividir por $1 + \pi$ es la forma de traer los pesos del futuro a precios actuales.
+        \item Dado el ejemplo, los $\$100$ invertidos se convierten en $110$ (por $i=10\%$), pero si los precios también suben 10\% ($\pi=10\%$), entonces no ganamos poder adquisitivo $\rightarrow$ la tasa de interés real es 0\%. 
     \end{itemize}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Intereses e inflación}
 \begin{itemize}
     \item Por ende, la relación entre las tasas de interés y la inflación esperada es
 
-        \[1+r_t=\frac{(1+i_t)}{(1+\pi_{t+1}^e)}\]
+        \[1+r_t=\frac{(1+i_t)}{(1+\pi_{t+1}^{e})}\]
 
     \item Suponiendo que el valor de las variables no es demasiado grande... $\frac{(1+x)}{(1+y)} \approx 1 + x - y $
     \item ... obtenemos la ecuación de Fisher: 
 
-        \[r_t \approx i_t - \pi_{t+1}^e\]
+        \[r_t \approx i_t - \pi_{t+1}^{e}\]
 
-        \[i_t \approx r_t + \pi_{t+1}^e\]
+        \[i_t \approx r_t + \pi_{t+1}^{e}\]
 
     \item Entender que ambas tasas estan relacionadas nos permite entender la relación entre el mercado monetario y el mercado de crédito.
     \end{itemize}
@@ -432,7 +486,7 @@ Magistral 25
             \vspace{2mm}
         \item Si la tasa de inflación esperada para mañana es 5\%, entonces la tasa de interés real es: \\
         \begin{center}
-            $r_{HOY} = i_{HOY}-\pi_{\text{MAÑANA}}^e$ \\
+            $r_{HOY} = i_{HOY}-\pi_{\text{MAÑANA}}^{e}$ \\
             \vspace{2mm}
             $r_{HOY} = 10\%-5\% $ \\
             \vspace{2mm}
@@ -457,119 +511,72 @@ Magistral 25
 
 \begin{frame}{Equilibrio: Mercado monetario y de crédito}
     \begin{center}
-    \begin{figure}[H]
-    \renewcommand{\figurename}{Figure}
-    \begin{center}
-    \begin{minipage}[b]{0.45\textwidth}
-    \begin{center}
-        \begin{tikzpicture}[scale=0.4]
-            \draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$FP$};
-            \node[] at(5,-1.5) {\underline{Mercado de Crédito}};
-            \node[left] at(0,6.2) {\scriptsize $i_0$};
-            \node[left] at(0,4.9) {\scriptsize $i_1$};
-            \node[left] at(0,4.2) {\scriptsize $i_2$};
-            \draw[thin](0.5,1.5)--(8.5,9) node [above] {$O_{FP}$};
-            \draw[thin](3,1.5)--(11,9) node [below] {$O_{FP^{'}}$};
-            \draw[thin](4.5,1.5)--(11,7.5) node [below] {$O_{FP^{''}}$};
-            \draw[thin](2.5,9)--(10.5,1.2) node [right] {$D_{FP}$};
-            \draw[fill] (5.4,6.15) circle [radius =0.11] node [below] {\scriptsize A};
-            \draw[fill] (6.7,4.9) circle [radius =0.11] node [right] {\scriptsize B};
-            \draw[fill] (7.6,4.2) circle [radius =0.11] node [below] {\scriptsize C};
-            \draw[thick,dashed,gray] (0,4.9)--(6.7,4.9);
-            \draw[thick,dashed,gray] (0,4.2)--(7.2,4.2);
-            \draw[thick,dashed,gray] (0,6.2)--(5,6.2);
-        \end{tikzpicture}
-    \end{center}
-    \end{minipage}
-    \begin{minipage}[b]{0.45\textwidth}
-    \begin{center}
-        \begin{tikzpicture}[scale=0.4]
-            \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
-            \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
-            \node[] at (6,-1.5) {\underline{Mercado de Dinero}};
-            \draw[thin] (2.75, 9).. controls (3, 7) and (4,2.75) .. (9,2.25) node [right]{\footnotesize $M^{d} (P_0, Y_0)$};
-            \draw[thin] (3.25, 9).. controls (4, 7) and (5,3) .. (9,3) node [right]{\footnotesize $M^{d^{'}} (P_0, Y_1)$};
-            \draw[thin] (3.75, 9).. controls (4,7.75) and (5,4) .. (9,3.5);
-            \node[right] at (9,3.65) {\footnotesize $M^{d^{''}} (P_0, Y_2)$};
-            \draw[thin] (3.5,0)--(3.5,9) node [above]{\footnotesize $M^{o}$};
-            \draw[thin] (7,0)--(7,9) node [above]{\footnotesize $M^{o^{'}}$};
-            \draw[fill] (3.5,6.25) circle [radius =0.11] node [below left] {\scriptsize A};
-            \draw[fill] (7,3.45) circle [radius =0.11] node[left] {\scriptsize B};
-            \draw[fill] (6.9,4.2) circle [radius =0.11] node[above right] {\scriptsize C};
-            \draw[thick,dashed,gray] (0,4.9)--(11,4.9);
-            \draw[thick,dashed,gray] (0,4.2)--(11,4.2);
-            \draw[thick,dashed,gray] (0,6.2)--(11,6.2);
-            \node[below] at (3.5,0) {\footnotesize $M_0$};
-            \node[below] at (7,0) {\footnotesize $M_1$};
-            \draw[thin,gray] (3.5,6.3)--(7,6.3);
-            \node[above] at (5.3,6.45) {\scriptsize Gap};
-        \end{tikzpicture}
-    \end{center}
-    \end{minipage}
-    \end{center}
-    \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \begin{minipage}[b]{0.45\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.4]
+                            \draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$FP$};
+                            \node[] at(5,-1.5) {\underline{Mercado de Crédito}};
+                            \node[left] at(0,6.2) {\scriptsize $i_0$};
+                            \draw[thin](0.5,1.5)--(8.5,9) node [above] {\scriptsize $O_{FP}$};
+                            \draw[thin](2.5,9)--(10.5,1.2) node [right] {\scriptsize $D_{FP}$};
+                            \draw[fill] (5.4,6.15) circle [radius =0.11] node [below] {\scriptsize A};
+                            \draw[thick,dashed,gray] (0,6.2)--(11,6.2);
+                            \only<2->{
+                                \node[left, blue] at(0,4.9) {\scriptsize $i_1$};
+                                \draw[thin, blue](3,1.5)--(11,9) node [above] {\scriptsize $O_{FP}^{'}$};
+                                \draw[fill, blue] (6.7,4.9) circle [radius =0.11] node [right] {\scriptsize B};
+                                \draw[thick,dashed,gray] (0,4.9)--(6.7,4.9);
+                            }
+                            \only<3->{
+                            \node[left, green!50!black] at(0,4.2) {\scriptsize $i_2$};
+                            \draw[thin, green!50!black](4.5,1.5)--(11,7.5) node [above right] {\scriptsize $O_{FP}^{''}$};
+                            \draw[fill, green!50!black] (7.6,4.2) circle [radius =0.11] node [below] {\scriptsize C};
+                            \draw[thick,dashed,gray] (0,4.2)--(11,4.2);
+                            }
+                        \end{tikzpicture}
+                    \end{center}
+                \end{minipage}
+                \begin{minipage}[b]{0.45\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.4]
+                            \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
+                            \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
+                            \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
+                            \draw[thin] (2.75, 9).. controls (3, 7) and (4,2.75) .. (9,2.25) node [right]{\footnotesize $M^{d} (P_0, Y_0)$};
+                            \draw[thin](3.5,0)--(3.5,9) node [above]{\footnotesize $M^{o}$};
+                            \draw[thin](7,0)--(7,9) node [above]{\footnotesize $M^{o^{'}}$};
+                            \draw[fill] (3.5,6.25) circle [radius =0.11] node [below left] {\scriptsize A};
+                            \node[below] at (3.5,0) {\footnotesize $M_0$};
+                            \node[below] at (7,0) {\footnotesize $M_1$};
+                            \draw [thin,gray,decorate,decoration={brace,amplitude=3pt},xshift=0pt,yshift=5pt](3.6,6.3) -- (7,6.3); 
+                            \draw[thick,dashed,gray] (0,6.2)--(11,6.2);
+                            \node[above] at(5.3,6.45) {\scriptsize Gap};
+                            \only<2->{
+                                \draw[thin, blue] (3.25, 9).. controls (4, 7) and (5,3) .. (9,3) node [right]{\footnotesize $M^{d^{'}} (P_0, Y_1)$};
+                                \draw[fill, blue] (7,3.45) circle [radius =0.11] node[left] {\scriptsize B};
+                            }
+                            \only<3->{
+                            \node [right, green!50!black] at (9,3.65) {\footnotesize $M^{d^{''}} (P_0, Y_2)$};
+                            \draw[thin, green!50!black] (3.75, 9).. controls (4,7.75) and (5,4) .. (9,3.5);
+                            \draw[fill, green!50!black] (6.9,4.2) circle [radius =0.11] node[above right] {\scriptsize C};
+                            \draw[thick,dashed,gray] (0,4.2)--(11,4.2);
+                            }
+                        \end{tikzpicture}
+                    \end{center}
+                \end{minipage}
+            \end{center}
+        \end{figure}
     \end{center} 
+    \begin{itemize}
+        \footnotesize
+        \item Partimos de un equilibrio A y aumenta la oferta de dinero. A la tasa $i_0$ hay exceso de oferta de dinero (Gap) \pause
+        \item \textcolor{blue}{La gente deposita ese exceso y aumenta $O_{FP}$ $\rightarrow$ cae $i$ $\rightarrow$, $\uparrow C, \uparrow I$. Esto genera que $\uparrow Y$ y la demanda de dinero sea mayor. Pasamos a B} \pause
+        \item \textcolor{green!50!black}{En tanto la tasa de interés del mercado de crédito se mantenga por encima de la del mercado de dinero, el proceso continua hasta llegar a C}
+    \end{itemize} 
 \end{frame}
 
-
-% \begin{frame}{Equilibrio: Mercado monetario y de crédito}
-%     \begin{center}
-%     \begin{figure}[H]
-%     \renewcommand{\figurename}{Figure}
-%     \begin{center}
-%         \begin{minipage}[b]{0.45\textwidth}
-%             \begin{center}
-%                 \begin{tikzpicture}[scale=0.4]
-%                     \draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$FP$};
-%                     \node[] at(5,-1.5) {\underline{Mercado de Crédito}};
-%                     \node[left] at(0,4.2) {\scriptsize $i_0$};
-%                     \node[left] at(0,7.1) {\scriptsize $i_1$};
-%                     \node[left] at(0,6.2) {\scriptsize $i_2$};
-%                     \draw[thin](0.5,1.5)--(8.5,9) node [above] {$O_{FP}$};
-%                     \draw[thin](2.5,1.5)--(10.5,9) node [above] {$O_{FP}'$};
-%                     %\draw[thin](3,1.5)--(11,9) node [below] {$O_{FP}'$};
-%                     %\draw[thin](4.5,1.5)--(11,7.5) node [below] {$O_{FP}''$};
-%                     \draw[thin](1.8,6)--(6.8,1.2) node [left] {$D_{FP}$};
-%                     %\draw[thin](1.5,8)--(8.5,1.2) node [above] {$D_{FP}''$};
-%                     \draw[thin](2.5,11)--(10.5,3.2) node [left] {$D_{FP}'$};
-
-%                     \draw[thick,dashed,gray] (0,4.2)--(11,4.2);
-%                     \draw[thick,dashed,gray] (0,6.2)--(11,6.2);
-%                     \draw[thick,dashed,gray] (0,7.1)--(11,7.1);
-
-%                     \draw[fill] (6.5,7.1) circle [radius =0.11] node [right] {\scriptsize B};
-%                     \draw[fill] (7.4,6.2) circle [radius =0.11] node [above right] {\scriptsize C};
-%                     \draw[fill] (3.5,4.25) circle [radius =0.11] node [below] {\scriptsize A};
-%                 \end{tikzpicture}
-%             \end{center}
-%         \end{minipage}
-%         \begin{minipage}[b]{0.45\textwidth}
-%             \begin{center}
-%                 \begin{tikzpicture}[scale=0.4]
-%                     \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
-%                     \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
-%                     \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
-%                     \draw[thin] (2.75, 9).. controls (3, 7) and (4,2.75) .. (9,2.25) node [right]{\footnotesize $M^{d}  (P_0, Y_0)$};
-%                     \draw[thin] (3.25, 9).. controls (3.75, 7) and (5,3) .. (9,3) node [right]{\footnotesize $M^{d^{'}}  (P_1, Y_0)$};
-%                     \draw[thin] (3.75, 9).. controls (4,7.75) and (5,4) .. (9,3.5);
-%                     \node [right] at (9,3.65) {\footnotesize $M^{d^{''}}  (P_2, Y_0)$};
-%                     \draw[thin](4.85,0)--(4.85,9) node [above]{\footnotesize $M^{o}$};
-%                     \draw[fill] (4.85,5.2) circle [radius =0.11] node [right] {\scriptsize B};
-%                     \draw[fill] (4.85,4.2) circle [radius =0.11] node[below left] {\scriptsize A};
-%                     \draw[fill] (4.85,6.2) circle [radius =0.11] node[above right] {\scriptsize C};
-%                     \draw[thick,dashed,gray] (0,4.2)--(11,4.2);
-%                     \draw[thick,dashed,gray] (0,6.2)--(11,6.2);
-%                     \draw[thick,dashed,gray] (0,7.1)--(11,7.1);
-
-%                     \draw[thin,gray] (2.85,7.3)--(4.85,7.3);
-%                     \node[above] at(3.85,7.5) {\scriptsize Gap};
-%                 \end{tikzpicture}
-%             \end{center}
-%         \end{minipage}
-%         \end{center}
-%         \end{figure}
-%         \end{center}
-% \end{frame}
 
 \begin{frame}{Tres lecciones y un corolario}
     \begin{itemize}
