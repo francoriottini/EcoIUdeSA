@@ -232,7 +232,7 @@ Magistral 24
 \end{frame}
 
 \begin{frame}{Política Monetaria en el mundo clásico}
-
+    
     \begin{center}
     \begin{figure}[H]
     \renewcommand{\figurename}{Figure}
@@ -243,14 +243,22 @@ Magistral 24
     \draw[very thick,<-] (0,11)--(0,0);
     \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
     \node[left] at (0,11) {$p$};
+    \node[left] at (0,3) {$p_0$};
+    \draw[thick, gray, dashed] (4,3)--(0,3);
     \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
     \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-    \draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $DA'$};
     \draw[semithick](4, 0)--(4, 9) node [above]{\footnotesize $OA$};
     \draw[thick, gray, dashed] (4,3)--(0,3);
-    \draw[thick, gray, dashed] (4,5)--(0,5);
-    \draw[fill] (4,3) circle [radius =0.11] node[above right] {$A$}; 
-    \draw[fill] (4,5) circle [radius =0.11] node[above right] {$B$}; 
+    
+    \draw[fill] (4,3) circle [radius =0.11] node[above right] {$A$};
+    \only<2->{
+        \draw[thick, blue, dashed] (4,5)--(0,5);
+        \node[left, blue] at (0,5) {$p_1$};
+        \draw[thick, gray, dashed] (7.5,3)--(4,3);
+        \draw[fill, blue] (7.5,3) circle [radius =0.11] node[above right] {$B$};
+        \draw[semithick, blue] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $DA'$};
+        \draw[fill, blue] (4,5) circle [radius =0.11] node[above right] {$C$};
+    }
     \end{tikzpicture}
     \end{center}
     \end{minipage}
@@ -262,30 +270,38 @@ Magistral 24
     \node[right] at (0,11) {};
     \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
     \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}(P_0,\, Y_0)$};
-    \draw[semithick] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$};
     \draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
     \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
-    \draw[thick, gray, dashed] (6.5,3.35)--(0,3.35);
-    \draw[fill] (3.5,3.35) circle [radius =0.11] node[above right] {$A$}; 
-    \draw[fill] (6.5,3.35) circle [radius =0.11] node[above right] {$B$}; 
+    \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
+    \draw[fill] (3.5,3.35) circle [radius =0.11] node[above right] {$A$};
+    \draw[fill] (6.5,2.05) circle [radius =0.11] node[right] {$B$};
+    \node[left] at (0,3.35) {$i_0$};
+    \only<2->{
+        \draw[thick, gray, dashed] (6.5,3.35)--(3.5,3.35);
+        \draw[semithick, blue] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$}; 
+        \draw[fill, blue] (6.5,3.35) circle [radius =0.11] node[above right] {$C$};
+    }
     \end{tikzpicture}
     \end{center}
     \end{minipage}
     \end{center}
     \end{figure}
     \end{center}
+    \begin{itemize}
+        \footnotesize
+        \item Incrementa $M_0$ y eso incrementa la demanda agregada.
+        \item A ese nivel de precios hay un exceso de demanda en el mercado de bienes y una baja en la tasa de interés en el mercado de dinero (y en el de crédito por desplazamiento de la oferta de FP).
+        \only<2->{
+        \item \textcolor{blue}{Eso presiona hacia arriba los precios e incrementa la demanda de dinero (lo que reduce la oferta de FP en el mercado de crédito).}}
+    \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Política monetaria en el mundo clásico}
-\begin{itemize}
-    \item “Aumenta la demanda agregada” al meter liquidez en el sistema 
-    \item Pero el producto está dado por la oferta agregada
-    \item Por lo que el aumento en la demanda presiona sobre los precios
-    \item Lo que lleva a que los precios aumenten proporcionalmente a lo que aumentó la cantidad de dinero
-    \item Oferta y demanda de dinero simplemente se corren para encontrar el equilibrio en el mismo nivel.
-    \item $\uparrow M V=\uparrow P Y$ 
-    \item Dicotomía clásica (“Neutralidad del dinero”) - $(Y \text{ constante, } M \rightarrow P)$
+    \begin{itemize}
+        \item La nueva demanda de dinero se mueve hasta que se alcanza el equilibrio original porque no cambió ninguna de las variables fundamentales, solo la cantidad de dinero.
+        \item En el mercado de crédito se desplazó solo la oferta de FP, primero aumentó (cuando se depósito el dinero excedente) y luego se redujo (cuando se demandó más dinero).
+        \item Este resultado suele llamarte \textit{neutralidad del dinero} porque el dinero no afecta a las variables reales de la economía, solo a los precios.
     \end{itemize}
 \end{frame}
 
@@ -299,15 +315,24 @@ Magistral 24
     \begin{tikzpicture}[scale=0.4]
     \draw[very thick,<-] (0,11)--(0,0);
     \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-    \node[right] at (0,11) {$p$};
+    \node[left] at (0,11) {$p$};
     \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
     \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-    \draw[semithick] (1.75,9).. controls (2.25,3.5) and (6.5,2.5) .. (9, 2.25) node [right]{\footnotesize $DA^{'}$};
+    \node[left] at (0,5.5) {$p_0$};
+    \draw[thick, gray, dashed] (0,5.5)--(2,5.5);
+
     \draw[semithick](0, 5)--(9, 7) node [right]{\footnotesize $OA$};
-    \draw[semithick, gray, fill] (2,0)--(2,9) node [right]{\footnotesize $OALP$};
-    \draw[fill] (2,5.5) circle [radius =0.11] node[below left] {$A$}; 
-    \draw[fill] (2.8,5.65) circle [radius =0.11] node[above right] {$B$}; 
-    \draw[fill] (2,7.65) circle [radius =0.11] node[right] {$C$};
+    \draw[fill] (2,5.5) circle [radius =0.11] node[below left] {$A$};
+    \only<2->{
+        \draw[semithick, blue] (1.75,9).. controls (2.25,3.5) and (6.5,2.5) .. (9, 2.25) node [right]{\footnotesize $DA^{'}$};
+        \draw[semithick, blue, dashed] (2.8,5.65)--(0,5.65);
+        \node[above left] at (0,5.65) {$p_1$};
+        \draw[fill, blue] (2.8,5.65) circle [radius =0.11] node[above right] {$B$};
+    }
+    \only<3->{
+        \draw[semithick, gray, fill] (2,0)--(2,9) node [right]{\footnotesize $OALP$};
+        \draw[fill] (2,7.65) circle [radius =0.11] node[right] {$C$};
+    }
     \end{tikzpicture}
     \end{center}
     \end{minipage}
@@ -319,32 +344,49 @@ Magistral 24
     \node[right] at (0,11) {};
     \node[] at(6,-1.5) {\underline{Mercado de Dinero}};
     \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d}(P_0,\, Y_0)$};
-    \draw[semithick] (1.75,9).. controls (2.25,3) and (6.75, 2.5) .. (9, 2.15) node [right]{\footnotesize $M^{d^{'}}(P_1,\, Y_1)$};
-    \draw[semithick, gray, dashed] (2.5,9).. controls (2.25,3.7) and (6.75, 3.5) .. (9, 2.9) node [right]{\footnotesize $M^{d^{''}}(P_2,\, Y_0)$};
+
     \draw[semithick](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
     \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
-    \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
-    \draw[semithick, gray, dashed] (3.5,3.35)--(0,3.35);
-    \draw[semithick, gray, dashed] (6.5,2.625)--(0,2.625);
-    \draw[fill] (3.35,3.35) circle [radius =0.11] node[above right] {$A$}; 
-    \draw[fill] (6.5,2.625) circle [radius =0.11] node[right] {$B$}; 
-    \draw[fill] (6.5,3.35) circle [radius =0.11] node[above right] {$C$}; 
+    \node[left] at (0,3.4) {$i_0$};
+    \draw[thick, gray, dashed] (0,3.35)--(3.4,3.35);
+    
+    \draw[fill] (3.4,3.35) circle [radius =0.11] node[above right] {$A$};
+    \only<2->{
+        \draw[semithick, blue] (1.75,9).. controls (2.25,3) and (6.75, 2.5) .. (9, 2.15) node [right]{\footnotesize $M^{d^{'}}(P_1,\, Y_1)$};
+        \draw[semithick, gray, dashed] (3.5,3.35)--(0,3.35);
+        \draw[semithick, blue, dashed] (6.5,2.625)--(0,2.625);
+        \node[left] at (0,2.625) {$i_1$};
+        \draw[fill, blue] (6.5,2.625) circle [radius =0.11] node[right] {$B$}; 
+    }
+    \only<3->{
+        \draw[semithick, gray, dashed] (2.5,9).. controls (2.25,3.7) and (6.75, 3.5) .. (9, 2.9) node [right]{\footnotesize $M^{d^{''}}(P_2,\, Y_0)$};
+        \draw[fill] (6.5,3.35) circle [radius =0.11] node[above right] {$C$};
+    }
     \end{tikzpicture}
     \end{center}
     \end{minipage}
     \end{center}
     \end{figure}
-    \end{center}   
+    \end{center}
+    \begin{itemize}
+        \footnotesize
+        \item Incrementa $M_0$ y eso incrementa la demanda agregada.
+        \only<2->{
+            \item \textcolor{blue}{Por el mismo mecanismo de antes llegamos al punto $B$. Sin embargo ahora la tasa de interés si baja y el producto aumenta.}
+        }
+        \only<2->{
+            \item \textcolor{gray}{Qué ocurre en el largo plazo? Los precios son flexibles y se converge igual que en el esquema clásico.}}
+    \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Política monetaria en el mundo keynesiano}
 
 \begin{itemize}
-    \item Ahora “aumenta la demanda agregada” pero ahora esto baja la tasa de interés y lleva a un aumento en el producto.
-    \item El dinero excedente reduce la tasa de interés en el mercado de crédito
-    \item $\uparrow M V(i) \downarrow=\bar{P} Y \uparrow$
-    \item (P constante $, M \rightarrow i, i \rightarrow Y)$
+    \item El aumento en la cantidad de dinero incrementa la oferta de FP en el mercado de crédito, lo que baja la tasa de interés. 
+    \item A diferencia del mundo clásico, ahora la baja en la tasa de interés incentiva a la demanda agregada que aumenta el nivel de producto vía un aumento en la inversión y el consumo y convalidado por un aumento en las cantidades ofrecidas. 
+    \item Ese aumento en $Y$ y, en parte, en $P$ lleva a un aumento en la demanda de dinero que me termina dejando en el punto $B$ (donde parte del incremento en la oferta de FP se reduce, parecido al caso clasico pero sin volver al original!).
+    \item En el largo plazo, tenemos que asumir que los precios van a ser flexibles y que, por ende, la oferta agregada va a converger a una oferta perfectamente inelástica. Esto nos hace volver al punto $C$ donde la tasa de interés vuelve a su nivel original y el producto se ubica en el nivel natural.
 \end{itemize}
  
 
