@@ -252,12 +252,14 @@ Magistral 24
     
     \draw[fill] (4,3) circle [radius =0.11] node[above right] {$A$};
     \only<2->{
-        \draw[thick, blue, dashed] (4,5)--(0,5);
-        \node[left, blue] at (0,5) {$p_1$};
         \draw[thick, gray, dashed] (7.5,3)--(4,3);
         \draw[fill, blue] (7.5,3) circle [radius =0.11] node[above right] {$B$};
         \draw[semithick, blue] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $DA'$};
-        \draw[fill, blue] (4,5) circle [radius =0.11] node[above right] {$C$};
+    }
+    \only<3->{
+        \draw[thick, green, dashed] (4,5)--(0,5);
+        \node[left, green] at (0,5) {$p_1$};
+        \draw[fill, green] (4,5) circle [radius =0.11] node[above right] {$C$};
     }
     \end{tikzpicture}
     \end{center}
@@ -274,12 +276,15 @@ Magistral 24
     \draw[semithick](6.5, 0)--(6.5, 9) node [above]{\footnotesize $M^{o'}$};
     \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
     \draw[fill] (3.5,3.35) circle [radius =0.11] node[above right] {$A$};
-    \draw[fill] (6.5,2.05) circle [radius =0.11] node[right] {$B$};
     \node[left] at (0,3.35) {$i_0$};
     \only<2->{
+        \draw[fill, blue] (6.5,2.05) circle [radius =0.11] node[right] {$B$};
+        \draw[thick, blue, dashed] (6.5,2.05)--(0,2.05);
+        \node[left, blue] at (0,2.05) {$i_1$};}
+    \only<3->{
         \draw[thick, gray, dashed] (6.5,3.35)--(3.5,3.35);
-        \draw[semithick, blue] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$}; 
-        \draw[fill, blue] (6.5,3.35) circle [radius =0.11] node[above right] {$C$};
+        \draw[semithick, green] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$}; 
+        \draw[fill, green] (6.5,3.35) circle [radius =0.11] node[above right] {$C$};
     }
     \end{tikzpicture}
     \end{center}
@@ -288,11 +293,12 @@ Magistral 24
     \end{figure}
     \end{center}
     \begin{itemize}
-        \footnotesize
-        \item Incrementa $M_0$ y eso incrementa la demanda agregada.
-        \item A ese nivel de precios hay un exceso de demanda en el mercado de bienes y una baja en la tasa de interés en el mercado de dinero (y en el de crédito por desplazamiento de la oferta de FP).
+        \scriptsize
+        \item Incrementa $M_0$, lo que genera un exceso de oferta de dinero en el mercado de dinero y presiona a la baja la tasa de interés (en el mercado de crédito hay un desplazamiento de la oferta de FP).
         \only<2->{
-        \item \textcolor{blue}{Eso presiona hacia arriba los precios e incrementa la demanda de dinero (lo que reduce la oferta de FP en el mercado de crédito).}}
+        \item \textcolor{blue}{Eso genera un incremento en la DA, sin embargo, a ese nivel de precios, hay un exceso de demanda en el mercado de bienes.}}
+        \only<3->{
+        \item \textcolor{green}{Eso presiona hacia arriba los precios e incrementa la demanda de dinero (lo que reduce la oferta de FP en el mercado de crédito).}}
     \end{itemize}
 \end{frame}
 
