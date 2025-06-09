@@ -10,6 +10,12 @@
 \usepackage{wasysym}
 \usepackage{tikzsymbols}
 \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usepackage{tikz} % allows drawing figures
+\usetikzlibrary{decorations.pathreplacing}
 \newcommand{\bubblethis}[2]{
         \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
         (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
@@ -53,8 +59,30 @@
 \usepackage{lmodern} %uses font that support italic and bold at the same time
 \usepackage{hyperref}
 \usepackage{tikz}
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 \usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
 
@@ -81,16 +109,25 @@
 \setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
 %\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
 
-
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
 \usetheme{Boadilla}
 
 % --------------------
 % Overall information
 % --------------------
 \title[Economía I]{Economía I \vspace{4mm}
-\\ Magistral 26: Política Monetaria}
+\\ Magistral 25: Política Monetaria y Fiscal}
 \date{}
-\author[Riottini]{Riottini Franco}
+\author[Franco Riottini]{Riottini Franco}
 \vspace{0.4cm}
 \institute[]{Universidad de San Andrés} 
 
@@ -100,32 +137,28 @@
 \begin{frame}
 \titlepage
 \centering
+Magistral 24
 
 \includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
 \end{frame}
 
-
-\begin{frame}{¡Se viene el mecano en gráficos!}
+\begin{frame}{El mecano en gráficos}
 
 \begin{itemize}
     \item Vamos a usar lo que vimos hasta ahora para darle una representación gráfica al sistema 
     \item Esto va implicar graficar conjuntamente el mercado de bienes y dinero.
     \item En los gráficos que siguen usamos la siguiente terminología, 
     \begin{itemize}
-        \item P: el nivel de precios de la economía
-        \item Y: el nivel del producto
-        \item i: la tasa de interés nominal
-        \item M: la cantidad de dinero
-        \item FP: la cantidad de crédito
-        \item w: el salario nominal
-        \item T: el nivel de empleo de la economía
+        \item \textit{P}P: el nivel de precios de la economía
+        \item \textit{Y}: el nivel del producto
+        \item \textit{i}: la tasa de interés nominal
+        \item \textit{M}: la cantidad de dinero
+        \item \textit{FP}: la cantidad de crédito
     \end{itemize}
 \end{itemize}
 
 \end{frame}
-
 \begin{frame}{El mecano en el mundo clásico}
-
     \begin{center}
         \begin{figure}[H]
         \renewcommand{\figurename}{Figure}
@@ -329,8 +362,9 @@
 \end{frame}
 
 \begin{frame}{¿Cómo funciona la política monetaria?}
-    \centering\includegraphics[width=11cm]{../Figures/C40.8.png}
-\end{frame}
+    
+    \centering\includegraphics[width=11cm]{../Figures/C40.8.png}\
 
+\end{frame}
 
 \end{document}
