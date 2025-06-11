@@ -155,8 +155,21 @@
         \item \textit{FP}: la cantidad de crédito
     \end{itemize}
 \end{itemize}
-
 \end{frame}
+
+\begin{frame}{Recordemos un par de cosas}
+\begin{itemize}
+    \item En el mercado de crédito, la demanda representa a la inversión (podemos incluir también al consumo, ya que sabemos que también depende de $i$) y a la deuda del gobierno.
+    \item La oferta de FP, en cambio, representa al ahorro de los individuos.
+    \item Movimientos a lo largo de las curvas, siempre representan cambios en cantidades:
+    \begin{itemize}
+        \item En el mercado de bienes, un cambio en $P$ va a afectar a la cantidad demandada y ofrecida de bienes pero \textbf{no} a la demanda u oferta agregada. 
+        \item En el mercado de crédito los cambios en $i$ se traducen en cambios en la cantidad invertida (y consumida) y cambios en la cantidad de ahorro ofrecido.
+        \item Lo mismo podemos pensar en el mercado de dinero y en el mercado de trabajo.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
 \begin{frame}{El mecano en el mundo clásico}
     \begin{center}
         \begin{figure}[H]
@@ -166,8 +179,8 @@
                     \begin{center}
                         \begin{tikzpicture}[scale=0.4]
                             \draw[very thick,<-] (0,11)--(0,0);
-                            \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-                            \node[left] at (0,11) {$p$};
+                            \draw[very thick,->] (0,0)--(11,0) node[below]{$Y$};
+                            \node[left] at (0,11) {$P$};
                             \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
                             \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
                             \draw[semithick](4, 0)--(4, 9) node [above]{\footnotesize $OA$};
@@ -203,8 +216,8 @@
     \begin{center}
     \begin{tikzpicture}[scale=0.4]
     \draw[very thick,<-] (0,11)--(0,0);
-    \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-    \node[left] at (0,11) {$p$};
+    \draw[very thick,->] (0,0)--(11,0) node[below]{$Y$};
+    \node[left] at (0,11) {$P$};
     \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
     \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
     \draw[semithick](0, 5)--(9,7) node [right]{\footnotesize $OA$};
@@ -241,8 +254,8 @@
     \begin{tikzpicture}[scale=0.4]
     \draw[very thick,<-] (0,11)--(0,0);
     \draw[very thick,->] (0,0)--(11,0) node[below]{$q$};
-    \node[left] at (0,11) {$p$};
-    \node[left] at (0,3) {$p_0$};
+    \node[left] at (0,11) {$P$};
+    \node[left] at (0,3) {$P_0$};
     \draw[thick, gray, dashed] (4,3)--(0,3);
     \node[] at(6,-1.5) {\underline{Mercado de Bienes}};
     \draw[semithick] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
@@ -256,9 +269,9 @@
         \draw[semithick, blue] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $DA'$};
     }
     \only<3->{
-        \draw[thick, green, dashed] (4,5)--(0,5);
-        \node[left, green] at (0,5) {$p_1$};
-        \draw[fill, green] (4,5) circle [radius =0.11] node[above right] {$C$};
+        \draw[thick, green!50!black, dashed] (4,5)--(0,5);
+        \node[left, green!50!black] at (0,5) {$P_1$};
+        \draw[fill, green!50!black] (4,5) circle [radius =0.11] node[above right] {$C$};
     }
     \end{tikzpicture}
     \end{center}
@@ -282,8 +295,8 @@
         \node[left, blue] at (0,2.05) {$i_1$};}
     \only<3->{
         \draw[thick, gray, dashed] (6.5,3.35)--(3.5,3.35);
-        \draw[semithick, green] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$}; 
-        \draw[fill, green] (6.5,3.35) circle [radius =0.11] node[above right] {$C$};
+        \draw[semithick, green!50!black] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d'}(P_1,\, Y_0)$}; 
+        \draw[fill, green!50!black] (6.5,3.35) circle [radius =0.11] node[above right] {$C$};
     }
     \end{tikzpicture}
     \end{center}
@@ -297,8 +310,73 @@
         \only<2->{
         \item \textcolor{blue}{Eso genera un incremento en la DA, sin embargo, a ese nivel de precios, hay un exceso de demanda en el mercado de bienes.}}
         \only<3->{
-        \item \textcolor{green}{Eso presiona hacia arriba los precios e incrementa la demanda de dinero (lo que reduce la oferta de FP en el mercado de crédito).}}
+        \item \textcolor{green!50!black}{Eso presiona hacia arriba los precios e incrementa la demanda de dinero (lo que reduce la oferta de FP en el mercado de crédito).}}
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Política Monetaria en el mundo clásico}
+    \begin{center}
+        \begin{figure}[H]
+            \begin{center}
+                \begin{minipage}[b]{0.45\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.4]
+                            \draw[very thick,<->] (0,11) node[left]{$i$}--(0,0)--(11,0) node[below]{$FP$};
+                            \node[] at(5,-1.5) {\underline{Mercado de Crédito}};
+                            \node[left] at(0,6.2) {\scriptsize $i_0$};
+                            \draw[thin](0.5,1.5)--(8.5,9) node [above] {\scriptsize $O_{FP} = O_{FP}^{''}$};
+                            \draw[thin](2.5,9)--(10.5,1.2) node [right] {\scriptsize $D_{FP}$};
+                            \draw[fill] (5.4,6.15) circle [radius =0.11] node [below] {\scriptsize A = \textcolor{green!50!black}{C}};
+                            \draw[thick,dashed,gray] (0,6.2)--(5.4,6.2);
+                            \node[left, blue] at(0,4.9) {\scriptsize $i_1$};
+                            \draw[thin, blue](3,1.5)--(11,9) node [below right] {\scriptsize $O_{FP}^{'}$};
+                            \draw[fill, blue] (6.7,4.9) circle [radius =0.11] node [right] {\scriptsize B};
+                            \draw[thick,dashed,gray] (0,4.9)--(6.7,4.9);
+                            % \node[left, green!50!black] at(0,4.2) {\scriptsize $i_2$};
+                            % \draw[thin, green!50!black](4.5,1.5)--(11,7.5) node [above right] {\scriptsize $O_{FP}^{''}$};
+                            % \draw[fill, green!50!black] (7.6,4.2) circle [radius =0.11] node [below] {\scriptsize C};
+                            % \draw[thick,dashed,gray] (0,4.2)--(11,4.2);
+                        \end{tikzpicture}
+                    \end{center}
+                \end{minipage}
+                \begin{minipage}[b]{0.45\textwidth}
+                    \begin{center}
+                        \begin{figure}[H]
+                        \renewcommand{\figurename}{Figure}
+                        \begin{center}
+                        \begin{tikzpicture}[scale=0.4]
+                        \draw[very thick,<->] (0,11) node[left]{$W$}--(0,0)--(11,0) node[below]{$T$};
+                        \node[] at(5,-1.5) {\underline{\small Mercado de Trabajo}};
+                        \draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5);
+                        \draw[thin, green!50!black] (2,9).. controls (3,3.25) and (5, 3) .. (10, 2);
+                        \node[right, green!50!black] at (10,2) {\tiny $T_d^{'}$};
+                        \node[below] at (9.5,2) {\tiny $T_d$};
+                        \draw[thin](3.5,2)--(3.5,9);
+                        \draw[thick, dashed, gray] (3.5,2)--(3.5,0);
+                        \node [] at (4.25,9) {\tiny $T_o$};
+                        \node [below] at (3.5,0) {\tiny  $T^*$};
+                        \draw[thin, dashed,gray] (0,3.35)--(3.5,3.35);
+                        \node [left] at (0,3.25) {\tiny  $W^*$};
+                        \draw[thin, dashed, green!50!black] (0,4.75)--(3.5,4.75);
+                        \node [left, green!50!black] at (0,4.75) {\tiny  $W^{**}$};
+                        \node [left] at (0,2) {\tiny  $\bar{W}$}  ;
+                        \draw[thin] (0,2)--(3.5,2);
+                        \draw[fill](3.5,3.35) circle [radius =0.1];
+                        \draw[fill, green!50!black](3.5,4.75) circle [radius =0.1];
+                        \end{tikzpicture}
+                        \end{center}
+                        \end{figure}
+                        \end{center}
+                \end{minipage}
+            \end{center}
+        \end{figure}
+    \end{center} 
+    \begin{itemize}
+        \fontsize{9pt}{10pt}\selectfont
+        \item Partimos de un equilibrio A y aumenta la oferta de FP (por el cambio en $M_0$).
+        \item \textcolor{blue}{Cae $i$ $\rightarrow$, Aumentan las cantidades invertidas y las cantidades consumidas. Llegamos a B.}
+        \item \textcolor{green!50!black}{Estos cambios en cantidades desplazan la DA para unos \textit{precios dados} ($P_0$), lo que incrementa el producto y \textbf{aumenta la demanda de dinero}. En consecuencia, la oferta de fondos prestables vuelve a retrotraerse a su nivel original (en el mercado de crédito) y la tasa de interés vuelve a su nivel original.}
+    \end{itemize} 
 \end{frame}
 
 
@@ -389,8 +467,8 @@
 
 \begin{itemize}
     \item El aumento en la cantidad de dinero incrementa la oferta de FP en el mercado de crédito, lo que baja la tasa de interés. 
-    \item A diferencia del mundo clásico, ahora la baja en la tasa de interés incentiva a la demanda agregada que aumenta el nivel de producto vía un aumento en la inversión y el consumo y convalidado por un aumento en las cantidades ofrecidas. 
-    \item Ese aumento en $Y$ y, en parte, en $P$ lleva a un aumento en la demanda de dinero que me termina dejando en el punto $B$ (donde parte del incremento en la oferta de FP se reduce, parecido al caso clasico pero sin volver al original!).
+    \item A diferencia del mundo clásico, ahora la baja en la tasa de interés incentiva a la demanda agregada que aumenta el nivel de producto, vía un aumento en las cantidades invertidas y consumidas, y convalidado por un aumento en las cantidades ofrecidas. 
+    \item Ese aumento en $Y$ y, en parte, en $P$ lleva a un aumento en la demanda de dinero que me termina dejando en el punto $B$ (donde parte del incremento en la oferta de FP se reduce, parecido al caso clasico pero sin volver completamente al original!).
     \item En el largo plazo, tenemos que asumir que los precios van a ser flexibles y que, por ende, la oferta agregada va a converger a una oferta perfectamente inelástica. Esto nos hace volver al punto $C$ donde la tasa de interés vuelve a su nivel original y el producto se ubica en el nivel natural.
 \end{itemize}
  
@@ -624,19 +702,19 @@
 \node[left, green!50!black] at (0,5.55) {\footnotesize $i_1$};
  \draw[thick, green!50!black, dashed] (3.5,5.55)--(0,5.55);
 }
-
-
 \end{tikzpicture}
 \end{center}
-    \end{minipage}
+\end{minipage}
 \end{center}
 \end{figure}
 \end{center} 
+
+    \vspace{-0.25cm}
     \begin{itemize}
         \scriptsize
         \item Aumenta la $DA$: $DA'=$ \textcolor{blue}{ $\downarrow C$} $+ I+$ \textcolor{blue}{$\uparrow \uparrow G $} $\rightarrow$ Se genera un exceso de demanda (punto B) que presiona los precios hacia arriba.
         \only<2->{
-            \item \textcolor{green!50!black}{A medida que suben los precios la demanda de dinero aumenta y también la tasa de interés. $\rightarrow$ En el mercado de credito, la oferta de FP se desplaza hacia la izquierda produciendo el crowding out.} 
+            \item \textcolor{green!50!black}{A medida que suben los precios la demanda de dinero aumenta y también la tasa de interés. $\rightarrow$ En el mercado de credito, la oferta de FP se desplaza hacia la izquierda (alternativamente se puede pensar que los consumidores demandan más credito para financiar su consumo) produciendo el crowding out. Este \textit{crowding out} se da en conjunto con un aumento en los precios, por ende me desplaza a lo largo de la DA.} 
         }
         \only<3->{\item Este crowding out es total, por lo que la DA vuelve a sus cantidades originales (punto C) y el producto no se mueve $\rightarrow$ Cuando la política fiscal se revierte tenes una pequeña etapa de recesión.}
     \end{itemize}
@@ -912,28 +990,34 @@
         \draw[very thick,<-] (0,11)--(0,0);
         \draw[very thick,->] (0,0)--(11,0) node[below]{$Y$};
         \node[left] at (0,11) {$P$};
-        \node[] at(6,-2.5) {\underline{Mercado de Bienes}};
+        \node[] at(6,-2.5) {\footnotesize \underline{Mercado de Bienes}};
         \draw[thin] (0.5,10).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $DA$};
-        \draw[thin] (2.65,10.75).. controls (3.75,5.75) and (8.5, 4.75) .. (9, 4.5) node [right]{\footnotesize $DA'$};
-        \draw[thin] (2,10.5).. controls (3.25,5) and (8.5, 3.75) .. (9, 3.75) node [right]{\footnotesize $DA''$};
+        % \draw[thin] (2.65,10.75).. controls (3.75,5.75) and (8.5, 4.75) .. (9, 4.5) node [right]{\footnotesize $DA'$};
+        % \draw[thin] (2,10.5).. controls (3.25,5) and (8.5, 3.75) .. (9, 3.75) node [right]{\footnotesize $DA''$};
+        \draw[thin] (2,10.5).. controls (3.25,5) and (8.5, 3.75) .. (9, 3.75) node [right]{\footnotesize $DA'$};
         \draw[thin](0, 5)--(9, 7) node [right]{\footnotesize $OA$};
         \draw [thin](2.1,-1.25) -- (3.3,-1.25);
         \draw (2.7,-1.75) node[]{\scriptsize $\Delta G $};
         \draw[thick, gray] (2.1,0)--(2.1,11) node [right]{\footnotesize $OALP$};
-        \draw[thick, gray, dashed] (3.3,5.7)--(3.3,0); 
+        % \draw[thick, gray, dashed] (3.3,5.7)--(3.3,0); 
         \draw[fill] (2,5.45) circle [radius =0.11] node[below left] {\scriptsize A};  
-        \draw[fill] (5.45,6.3) circle [radius =0.11] node[above] {\scriptsize B}; 
-        \draw[fill] (4.5,6.1) circle [radius =0.11] node[below left] {\scriptsize C};  
-        \draw[fill] (2.1,10) circle [radius =0.11] node[above left] {\scriptsize D};  
+        % \draw[fill] (5.45,6.3) circle [radius =0.11] node[above] {\scriptsize B}; 
+        % \draw[fill] (4.5,6.1) circle [radius =0.11] node[below left] {\scriptsize C};  
+        \draw[fill] (4.5,6.1) circle [radius =0.11] node[below left] {\scriptsize B};  
+        % \draw[fill] (2.1,10) circle [radius =0.11] node[above left] {\scriptsize D};  
+        \draw[fill] (2.1,10) circle [radius =0.11] node[above left] {\scriptsize C}; 
         \node[below] at (2.1,0) {\footnotesize $Y_0$};
-        \node[below] at (5.45,0) {\footnotesize $Y_1$};
-        \node[below] at (4.5,0) {\footnotesize $Y_2$};
+        % \node[below] at (5.45,0) {\footnotesize $Y_1$};
+        % \node[below] at (4.5,0) {\footnotesize $Y_2$};
+        \node[below] at (4.5,0) {\footnotesize $Y_1$};
         \node[left] at (0,5.35) {\footnotesize $P_0$};
-        \node[left] at (0,6.6) {\footnotesize $P_1$};
-        \node[left] at (0,6.05) {\footnotesize $P_2$};
-        \node[left] at (0,10) {\footnotesize $P_3$};
+        % \node[left] at (0,6.6) {\footnotesize $P_1$};
+        % \node[left] at (0,6.05) {\footnotesize $P_2$};
+        % \node[left] at (0,10) {\footnotesize $P_3$};
+        \node[left] at (0,6.05) {\footnotesize $P_1$};
+        \node[left] at (0,10) {\footnotesize $P_2$};
         \draw[thick, gray, dashed] (0,5.45)--(2,5.45);
-        \draw[thick, gray, dashed] (0,6.3)--(5.45,6.3)--(5.45,0);
+        % \draw[thick, gray, dashed] (0,6.3)--(5.45,6.3)--(5.45,0);
         \draw[thick, gray, dashed] (0,6.1)--(4.5,6.1)--(4.5,0);
         \draw[thick, gray, dashed] (0,10)--(2.1,10);
         \end{tikzpicture}
@@ -942,22 +1026,26 @@
         \begin{minipage}[b]{0.4\textwidth}
         \begin{center}
         \begin{tikzpicture}[scale=0.35]
-        \draw[very thick,<-] (0,11) node[above]{$i$}--(0,0);
+        \draw[very thick,<-] (0,11) node[left]{$i$}--(0,0);
         \draw[very thick,->] (0,0)--(11,0) node[below]{$M$};
         \node[right] at (0,11) {};
-        \node[] at(6,-2.5) {\underline{Mercado de Dinero}};
+        \node[] at(6,-2.5) {\footnotesize \underline{Mercado de Dinero}};
         \draw[thin] (1,9).. controls (2,3) and (4, 2.5) .. (9, 1.5) node [right]{\footnotesize $M^{d} (P_0, Y_0)$};
-        \draw[thin] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d^{'}} (P_2, Y_2)$};
-        \draw[thin, gray, dashed] (3,9).. controls (3.5,4) and (8, 3.5) .. (9,3.5) node [right]{\footnotesize $M^{d^{''}} (P_3, Y_0)$};
+        % \draw[thin] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d^{'}} (P_2, Y_2)$};
+        \draw[thin] (2.25,9).. controls (2.75,4) and (7, 3) .. (9, 2.75) node [right]{\footnotesize $M^{d^{'}} (P_1, Y_1)$};
+        % \draw[thin, gray, dashed] (3,9).. controls (3.5,4) and (8, 3.5) .. (9,3.5) node [right]{\footnotesize $M^{d^{''}} (P_3, Y_0)$};
+        \draw[thin, gray, dashed] (3,9).. controls (3.5,4) and (8, 3.5) .. (9,3.5) node [right]{\footnotesize $M^{d^{''}} (P_2, Y_0)$};
         \draw[thin](3.5, 0)--(3.5, 9) node [above]{\footnotesize $M^{o}$};
         \draw[thick, gray, dashed] (3.5,3.35)--(0,3.35);
         \draw[thick, gray, dashed] (3.5,5.55)--(0,5.55);
-        \draw[thick, gray, dashed] (3.5,6)--(0,6);
+        % \draw[thick, gray, dashed] (3.5,6)--(0,6);
         \draw[thick, gray, dashed] (3.5,6.7)--(0,6.7);
         \draw[fill] (3.5,3.4) circle [radius =0.11] node[right] {\scriptsize A};
         \draw[fill] (3.5,5.55) circle [radius =0.11] node[right] {\scriptsize C};  
-        \draw[fill] (3.5,6) circle [radius =0.11] node[right] {\scriptsize B};  
-        \draw[fill] (3.5,6.7) circle [radius =0.11] node[right] {\scriptsize D}; 
+         \draw[fill] (3.5,5.55) circle [radius =0.11] node[right] {\scriptsize B}; 
+        % \draw[fill] (3.5,6) circle [radius =0.11] node[right] {\scriptsize B};  
+        % \draw[fill] (3.5,6.7) circle [radius =0.11] node[right] {\scriptsize D};
+        \draw[fill] (3.5,6.7) circle [radius =0.11] node[right] {\scriptsize C}; 
         \node[below] at (3.5,0) {\footnotesize $M_0$};
         \node[left] at (0,3.4) {\footnotesize $i_0$};
         \node[left] at (0,5.55) {\footnotesize $i_1$};
@@ -968,6 +1056,7 @@
         \end{center}
         \end{figure}
     \end{center}
+    \vspace{-0.25cm}
     \begin{itemize}
         \scriptsize
         \item Aumenta la $DA$ y al aumentar el producto eso produce un \textbf{efecto multiplicador} vía un mayor consumo: $DA'=$ \textcolor{blue}{ $\uparrow C$} $+ I+$ \textcolor{blue}{$\uparrow \uparrow G $}
@@ -977,6 +1066,73 @@
         \only<3->{\item A largo plazo, el crowding out se termina produciendo y debemos volver a un equilibrio en el producto de LP.}
     \end{itemize}
 \end{frame}
+
+\begin{frame}{Los casos de Política Fiscal}
+
+\centering
+\scalebox{0.75}{
+\begin{tikzpicture}[
+  node distance=0.5cm and 0.9cm,
+  every node/.style={font=\footnotesize},
+  box/.style={rectangle, rounded corners, draw=blue!50, fill=blue!10, align=center, minimum width=2cm, minimum height=1cm},
+  resultA/.style={rectangle, draw=black, fill=green!10, align=center, minimum width=2cm, minimum height=1cm},
+    resultB/.style={rectangle, draw=black, fill=red!10, align=center, minimum width=2cm, minimum height=1cm},
+    resultC/.style={rectangle, draw=black, fill=yellow!10, align=center, minimum width=2cm, minimum height=1cm},
+  arrow/.style={thick, ->, >=stealth}
+  ]
+% Nivel 1
+\node[box] (start) {\textbf{Aumento del} \\ \textbf{Gasto Público}};
+
+% Nivel 2
+\node[box, below left=of start, xshift=-1cm] (imp) {Financiado con \\ \textbf{Impuestos}};
+\node[box, below right=of start, xshift=1cm] (deuda) {Financiado con \\ \textbf{Deuda}};
+
+% Nivel 3 impuestos
+\node[box, below=of imp, xshift=-1.5cm] (imp_perm) {Permanente};
+\node[box, below=of imp, xshift=1.5cm] (imp_trans) {Transitorio$^\mathbf{*}$};
+
+% Resultados impuestos
+\node[resultA, below=of imp_perm] (r1) {DA no cambia\\(↑G = ↓C)};
+\node[resultB, below=of imp_trans] (r2) {↑DA temporalmente\\ (↑G $>$ ↓C )};
+
+% Nivel 3 deuda
+\node[box, below=of deuda, xshift=-2cm] (ric) {Agentes\\ Ricardianos};
+\node[box, below=of deuda, xshift=2cm] (noric) {Agentes\\ No Ricardianos$^\mathbf{*}$};
+
+% Subniveles ricardianos
+\node[box, below=of ric, xshift=-1.5cm] (ric_perm) {Permanente};
+\node[box, below=of ric, xshift=1.5cm] (ric_trans) {Transitorio$^\mathbf{*}$};
+
+\node[resultA, below=of ric_perm] (r3) {DA no cambia\\(↑G = ↓C)};
+\node[resultB, below=of ric_trans] (r4) {↑DA temporalmente\\ (↑G $>$ ↓C )};
+
+% Subniveles no ricardianos
+%\node[result, below=of noric, xshift=-2cm] (r5) {DA ↑ fuerte\\(Multiplicador ↑)};
+\node[resultC, below=of noric, xshift=1.2cm] (r6) {↑DA \\ \underline{Clásicos}: ↑DA$=$↑G \\ \underline{Keynesianos}: ↑DA$>$↑G \\(multiplicador)};
+
+% Flechas
+\draw[arrow] (start) -- (imp);
+\draw[arrow] (start) -- (deuda);
+
+\draw[arrow] (imp) -- (imp_perm);
+\draw[arrow] (imp) -- (imp_trans);
+\draw[arrow] (imp_perm) -- (r1);
+\draw[arrow] (imp_trans) -- (r2);
+
+\draw[arrow] (deuda) -- (ric);
+\draw[arrow] (deuda) -- (noric);
+\draw[arrow] (ric) -- (ric_perm);
+\draw[arrow] (ric) -- (ric_trans);
+\draw[arrow] (ric_perm) -- (r3);
+\draw[arrow] (ric_trans) -- (r4);
+%\draw[arrow] (noric) -- (r5);
+\draw[arrow] (noric) -- (r6);
+
+\node[anchor=north west, font=\scriptsize, yshift=-1.2cm, align=left, text width=15.5cm] at (current bounding box.south west) {($^\mathbf{*}$) El resultado sobre el producto dependerá del modelo: en el clásico, el efecto es neutral; en el keynesiano, puede ser expansivo en el corto plazo};
+\end{tikzpicture}
+}
+\end{frame}
+
 
 \begin{frame}{Discusión}
 
@@ -995,74 +1151,8 @@
     \item Podes pensar que podes cuando no podes (si el mundo es clásico, las políticas sólo van a resultar en inflación o deflación)
     \item Si el marco político genera gobiernos débiles, puede existir prociclicalidad fiscal o exceso de gasto
     \item Las políticas pueden incrementar la incertidumbre y las expectativas son \textbf{fundamentales}.
-    \item La gente puede anticipar estas políticas haciéndolas menos efectivas (inconsistencia temporal y expectativas racionales), por ejemplo si vos aumentas el dinero y la gente se da cuenta al toque, los precios suben y no lográs nada
+    \item La gente puede anticipar estas políticas haciéndolas menos efectivas (inconsistencia temporal y expectativas racionales), por ejemplo, si aumentas el dinero y la gente lo percibe rápidamente, los precios ajustan rápido y no lográs nada.
     \end{itemize}
 \end{frame}
-
-% \begin{frame}{Los casos de Política Fiscal}
-
-% \centering
-% \scalebox{0.75}{
-% \begin{tikzpicture}[
-%   node distance=0.5cm and 0.9cm,
-%   every node/.style={font=\footnotesize},
-%   box/.style={rectangle, rounded corners, draw=blue!50, fill=blue!10, align=center, minimum width=2cm, minimum height=1cm},
-%   resultA/.style={rectangle, draw=black, fill=green!10, align=center, minimum width=2cm, minimum height=1cm},
-%     resultB/.style={rectangle, draw=black, fill=red!10, align=center, minimum width=2cm, minimum height=1cm},
-%     resultC/.style={rectangle, draw=black, fill=yellow!10, align=center, minimum width=2cm, minimum height=1cm},
-%   arrow/.style={thick, ->, >=stealth}
-%   ]
-% % Nivel 1
-% \node[box] (start) {\textbf{Aumento del} \\ \textbf{Gasto Público}};
-
-% % Nivel 2
-% \node[box, below left=of start, xshift=-1cm] (imp) {Financiado con \\ \textbf{Impuestos}};
-% \node[box, below right=of start, xshift=1cm] (deuda) {Financiado con \\ \textbf{Deuda}};
-
-% % Nivel 3 impuestos
-% \node[box, below=of imp, xshift=-1.5cm] (imp_perm) {Permanente};
-% \node[box, below=of imp, xshift=1.5cm] (imp_trans) {Transitorio$^\textbf{*}$};
-
-% % Resultados impuestos
-% \node[resultA, below=of imp_perm] (r1) {DA no cambia\\(↑G = ↓C)};
-% \node[resultB, below=of imp_trans] (r2) {↑DA temporalmente\\ (↑G $>$ ↓C )};
-
-% % Nivel 3 deuda
-% \node[box, below=of deuda, xshift=-2cm] (ric) {Agentes\\ Ricardianos};
-% \node[box, below=of deuda, xshift=2cm] (noric) {Agentes\\ No Ricardianos$^\textbf{*}$};
-
-% % Subniveles ricardianos
-% \node[box, below=of ric, xshift=-1.5cm] (ric_perm) {Permanente};
-% \node[box, below=of ric, xshift=1.5cm] (ric_trans) {Transitorio$^\textbf{*}$};
-
-% \node[resultA, below=of ric_perm] (r3) {DA no cambia\\(↑G = ↓C)};
-% \node[resultB, below=of ric_trans] (r4) {↑DA temporalmente\\ (↑G $>$ ↓C )};
-
-% % Subniveles no ricardianos
-% %\node[result, below=of noric, xshift=-2cm] (r5) {DA ↑ fuerte\\(Multiplicador ↑)};
-% \node[resultC, below=of noric, xshift=1.2cm] (r6) {↑DA \\ \underline{Clásicos}: ↑DA$=$↑G \\ \underline{Keynesianos}: ↑DA$>$↑G \\(multiplicador)};
-
-% % Flechas
-% \draw[arrow] (start) -- (imp);
-% \draw[arrow] (start) -- (deuda);
-
-% \draw[arrow] (imp) -- (imp_perm);
-% \draw[arrow] (imp) -- (imp_trans);
-% \draw[arrow] (imp_perm) -- (r1);
-% \draw[arrow] (imp_trans) -- (r2);
-
-% \draw[arrow] (deuda) -- (ric);
-% \draw[arrow] (deuda) -- (noric);
-% \draw[arrow] (ric) -- (ric_perm);
-% \draw[arrow] (ric) -- (ric_trans);
-% \draw[arrow] (ric_perm) -- (r3);
-% \draw[arrow] (ric_trans) -- (r4);
-% %\draw[arrow] (noric) -- (r5);
-% \draw[arrow] (noric) -- (r6);
-
-% \node[anchor=north west, font=\scriptsize, yshift=-1.2cm, align=left, text width=15.5cm] at (current bounding box.south west) {($^\textbf{*}$) El resultado sobre el producto dependerá del modelo: en el clásico, el efecto es neutral; en el keynesiano, puede ser expansivo en el corto plazo};
-% \end{tikzpicture}
-% }
-% \end{frame}
 
 \end{document}
