@@ -1,0 +1,246 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage[english]{babel} %set language; note: after changing this, you need to delete all auxiliary files to recompile
+\usepackage[utf8]{inputenc} %define file encoding; latin1 is the other often used option
+\usepackage{csquotes} % provides context sensitive quotation facilities
+\usepackage{graphicx} %allows for inserting figures
+\usepackage{booktabs} % for table formatting without vertical lines
+\usepackage{textcomp} % allow for example using the Euro sign with \texteuro
+\usepackage{stackengine}
+\usepackage{wasysym}
+\usepackage{tikzsymbols}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\usepackage{tikz} % allows drawing figures
+\usetikzlibrary{decorations.pathreplacing}
+\newcommand{\bubblethis}[2]{
+        \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+        (#1) {\underline{#1}};\node[overlay,cloud callout,callout relative pointer={(0.2cm,-0.7cm)},%
+        aspect=2.5,fill=yellow!90] at ($(#1.north)+(-0.5cm,1.6cm)$) {#2};}%
+    }%
+\tikzset{face/.style={shape=circle,minimum size=4ex,shading=radial,outer sep=0pt,
+        inner color=white!50!yellow,outer color= yellow!70!orange}}
+%% Some commands to make the code easier
+\newcommand{\emoticon}[1][]{%
+  \node[face,#1] (emoticon) {};
+  %% The eyes are fixed.
+  \draw[fill=white] (-1ex,0ex) ..controls (-0.5ex,0.2ex)and(0.5ex,0.2ex)..
+        (1ex,0.0ex) ..controls ( 1.5ex,1.5ex)and( 0.2ex,1.7ex)..
+        (0ex,0.4ex) ..controls (-0.2ex,1.7ex)and(-1.5ex,1.5ex)..
+        (-1ex,0ex)--cycle;}
+\newcommand{\pupils}{
+  %% standard pupils
+  \fill[shift={(0.5ex,0.5ex)},rotate=80] 
+       (0,0) ellipse (0.3ex and 0.15ex);
+  \fill[shift={(-0.5ex,0.5ex)},rotate=100] 
+       (0,0) ellipse (0.3ex and 0.15ex);}
+
+\newcommand{\emoticonname}[1]{
+  \node[below=1ex of emoticon,font=\footnotesize,
+        minimum width=4cm]{#1};}
+\usepackage{scalerel}
+\usetikzlibrary{positioning}
+\usepackage{xcolor,amssymb}
+\newcommand\dangersignb[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\newcommand\dangersignw[1][2ex]{%
+  \scaleto{\stackengine{0.3pt}{\scalebox{1.1}[.9]{%
+  \color{red}$\blacktriangle$}}{\color{white}\tiny\bfseries !}{O}{c}{F}{F}{L}}{#1}%
+}
+\usepackage{fontawesome} % Social Icons
+\usepackage{epstopdf} % allow embedding eps-figures
+\usepackage{tikz} % allows drawing figures
+\usepackage{amsmath,amssymb,amsthm} %advanced math facilities
+\usepackage{lmodern} %uses font that support italic and bold at the same time
+\usepackage{hyperref}
+\usepackage{tikz}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{tcolorbox}
+%add citation management using BibLaTeX
+\usepackage[citestyle=authoryear-comp, %define style for citations
+    bibstyle=authoryear-comp, %define style for bibliography
+    maxbibnames=10, %maximum number of authors displayed in bibliography
+    minbibnames=1, %minimum number of authors displayed in bibliography
+    maxcitenames=3, %maximum number of authors displayed in citations before using et al.
+    minnames=1, %maximum number of authors displayed in citations before using et al.
+    datezeros=false, % do not print dates with leading zeros
+    date=long, %use long formats for dates
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
+    ]{biblatex}
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
+
+
+\usefonttheme[onlymath]{serif} %set math font to serif ones
+
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7} %define beamerblue color for later use
+
+%%% defines highlight command to set text blue
+\newcommand{\highlight}[1]{{\color{blue}{#1}}}
+
+
+%%%%%%% commands defining backup slides so that frame numbering is correct
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+%%%% end of defining backup slides
+
+%Specify figure caption, see also http://tex.stackexchange.com/questions/155738/caption-package-not-working-with-beamer
+\setbeamertemplate{caption}{\insertcaption} %redefines caption to remove label "Figure".
+%\setbeamerfont{caption}{size=\scriptsize,shape=\itshape,series=\bfseries} %sets figure  caption bold and italic and makes it smaller
+
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = blue!70!black,, % frame color
+    colback = blue!7!white,
+}
+\usetheme{Boadilla}
+
+% --------------------
+% Overall information
+% --------------------
+\title[Economía I]{Economía I \vspace{4mm}
+\\ Magistral 26: Repaso}
+\date{}
+\author[Franco Riottini]{Riottini Franco}
+\vspace{0.4cm}
+\institute[]{Universidad de San Andrés} 
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\centering
+
+\includegraphics[scale=0.2]{../Figures/logoUDESA.jpg} 
+\end{frame}
+
+\begin{frame}{Repaso: Política Fiscal}
+    Un conflicto geopolítico en Oriente provoca un abrupto aumento en el precio global del petróleo. Siendo el petróleo un insumo esencial para la producción, Groenlandia enfrenta costos de producción más altos, lo que repercute en casi todos los sectores de su economía.
+    \begin{enumerate}
+        \item Dado este contexto, ¿cómo se ajustarán los precios y el producto y por qué? Responda y grafique desde la perspectiva clásica y keynesiana.
+        \item Grafique la dinámica en el mercado de bienes. ¿Qué herramientas de política económica recomendaría cada escuela de pensamiento para abordar estos shocks y por qué?
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Repaso: Política Fiscal}
+    
+\end{frame}
+
+\begin{frame}{Repaso: Política Monetaria}
+    Suponga que el Banco Central está pensando en comprar dólares y quiere conocer cuáles serán los efectos en equilibrio general de esta política monetaria.
+    \begin{enumerate}
+        \item  Muestre mediante un gráfico y explique qué pasará en el mercado de dinero y de bienes desde la perspectiva keynesiana.
+    \end{enumerate}
+\end{frame}
+\begin{frame}{Repaso: Política Monetaria}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio gráfico de política monetaria}
+\centering
+Grafique el mercado de dinero y el mercado de crédito. Señale y explique que pasa ante una política monetaria \textbf{contractiva}. Ahora agregue el mercado de bienes, en el caso keynesiano, y explique que pasa en equilibrio general.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio gráfico de política monetaria}
+\centering
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio gráfico de externalidades}
+\centering
+Grafique un mercado de competencia perfecta en el que existe una externalidad negativa en la producción. Explique el teorema de Coase si el derecho de producción está en manos de los productores y si está en manos de los consumidores. ¿Qué pasaría si el gobierno decide intervenir? Explique y grafique. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio gráfico de externalidades}
+\centering
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+Martina tiene el monopolio de entradas para un festival local. Para maximizar ganancias, iguala su costo marginal con el ingreso marginal y, a ese valor, fija el precio de las entradas.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+Cuando la oferta es más elástica que la demanda, los productores terminan absorbiendo la mayor parte del impuesto.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+En un pueblo de montaña, algunos vecinos proponen instalar una alarma comunitaria contra aludes. El sistema cuesta \$1 millón al año, pero en conjunto los vecinos lo valoran \$300.000. El gobierno decide instalarla para “estar seguros” y está decisión es adecuada. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+Si la cantidad de dinero aumenta un 8\%, la inflación es del 10\% y la economía crece al 3\%, la velocidad del dinero debe estar cayendo.
+\end{frame}
+
+\begin{frame}
+\frametitle{Ping Pong de Verdaderos/Falsos}
+\centering
+Una campaña masiva de educación financiera lleva a que las personas aumenten su nivel de ahorro. Esto necesariamente genera una caída en la demanda agregada.
+\end{frame}
+
+\begin{frame}{Repaso: Impuestos}
+    \small
+    \begin{itemize}
+        \item Los impuestos generan desplazamientos "ficticios" en las curvas.
+        \item Hay diferencias \textbf{gráficas} dependiendo de si el impuesto se cobra a vendedores o a compradores.
+        \item El impuesto genera una pérdida de eficiencia.
+        \item La carga del impuesto es distinta de acuerdo a la elasticidad de cada curva.
+    \end{itemize}
+
+    Sean las curvas de oferta y demanda de manzanas: \( P = Q + 10 \) y \( P = 130 - 3Q \), respectivamente. Las cantidades se expresan en kg.
+
+    \begin{enumerate}
+        \item Encuentre el precio y la cantidad de equilibrio y grafique.
+        \item El gobierno impone un impuesto de \$20 por cada kg. de manzanas vendido. Encuentre el equilibrio y grafique la situación luego de la política. Asuma que el impuesto se le cobra al productor. Calcule la recaudación y el excedente del consumidor y del productor.
+        \item Calcule la carga del impuesto que recae sobre los oferentes y la carga del impuesto que recae sobre los demandantes.
+        \item ¿Podemos saber si la demanda es más elástica que la oferta en el punto de equilibrio? Justifique.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Repaso: Impuestos}
+
+\end{frame}
+
+\end{document}
